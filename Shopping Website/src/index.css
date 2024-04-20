@@ -1,0 +1,360 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw; /* Use viewport width */
+  height: 350vh; /* Use viewport height */
+  background-color: green;
+  overflow-x: hidden;
+}
+
+.A, .B, .C {
+  width: 100%;
+  height: 30%;
+}
+
+
+
+
+
+/*------------------------------------------------------------------------------------------*/
+
+
+
+
+.A {
+  height: 40%;
+  background-color: rgb(247, 247, 247);
+}
+
+nav {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  height: 10%;
+  width: 100%;
+  background-color: rgb(44, 44, 44);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.363);
+}
+
+.Left_part1 {
+  width: 40%;
+  height: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+
+.Name_of_company {
+  width: 40%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h4 {
+  color: white;
+  font-family: sans-serif;
+  font-size: 25px;
+  padding-right: 15%;
+  margin: 0 auto;
+}
+
+.desk_links
+{
+  width: 60%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.801);
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+  margin-left: 5%;
+}
+
+.Right_part1 {
+  width: 35%;
+  height: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Input_container_one {
+  width: 60%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Input_one {
+  height: 90%;
+  width: 80%;
+  margin: 0 auto;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  border-right: none;
+  background-color: rgba(255, 255, 255, 0.055);
+  border-radius: 18px 0px 0px 18px;
+  color: rgba(255, 255, 255, 0.747);
+  padding-left: 7%;
+  outline: none;
+}
+
+.Search_icon {
+  width: 20%;
+  height: 100%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  border-left: none;
+  border-radius: 0px 18px 18px 0px;
+  background-color: rgba(255, 255, 255, 0.055);
+  cursor: pointer;
+  color: white;
+}
+
+.Search_ico {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.863);
+}
+
+
+.Icon_one {
+  width: 10%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+.User_ico {
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  font-size: 11px;
+  border-radius: 50%;
+  padding: 9px;
+  background-color: rgba(255, 255, 255, 0.329);
+  cursor: pointer;
+}
+
+.Button_container_one {
+  width: 28%;
+  height: 80%;
+}
+
+.Button_one {
+  height: 100%;
+  width: 80%;
+  background-color: rgba(60, 255, 0, 0.274);
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  border-radius: 17px;
+  color: white;
+  cursor: pointer;
+}
+
+.Cart_ico {
+  margin-right: 10%;
+}
+
+
+
+
+
+
+.Two_parts_1 {
+  background-color: yellow;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 4%;
+}
+
+.Upper_part_1 {
+  background-color: rgb(34, 34, 34);
+  width: 100%;
+  height: 55%;
+  display: flex;
+  flex-direction: row;
+}
+
+.Left_part_2 {
+  width: 55%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Shop_with_container {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.shop_with_header {
+  font-family: sans-serif;
+  font-size: 70px;
+  color: rgba(255, 255, 255, 0.719);
+  width: 70%;
+  margin-left: 18%;
+  margin-bottom: 5%;
+  font-family: "Signika", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.Clients_container {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: left;
+}
+
+.What_they_say_container {
+  width: 90%;
+  height: 70%;
+  padding-left: 18%;
+  padding-top: 0;
+}
+
+
+.what_they_say_header {
+  width: 80%;
+  font-family: "Signika", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  color: rgba(0, 216, 133, 0.603);
+  padding-left: 3%;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+
+
+
+.Right_part_2 {
+  width: 45%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Our_latest_container {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  align-items: flex-end;
+  background-color: rgba(210, 105, 30, 0.096);
+}
+
+.Our_latest_paragraph {
+  font-family: "Signika", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 30px;
+  padding-left: 7%;
+}
+
+.Shoe_size {
+  background-color: rgba(255, 123, 0, 0.048);
+  height: 50%;
+  width: 100%;
+}
+
+.Photos_and_shoesize_container {
+  width: 100%;
+  height: 50%;
+}
+
+
+
+
+
+
+.Lower_part_1 {
+  background-color: aliceblue;
+  width: 100%;
+  height: 45%;
+}
+
+
+
+.The_shoe {
+  height: 85%;
+  width: 40%;
+  position: absolute;
+  margin-top: 15%;
+  margin-left: 30%;
+  background-color: rgba(0, 255, 221, 0);
+}
+
+.Shoe_itself {
+    width: 100%; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure image doesn't exceed container width */
+    max-height: 100%; /* Ensure image doesn't exceed container height */
+    overflow: hidden;
+    filter: brightness(70%);
+}
+
+/*------------------------------------------------------------------------------------------*/
+
+
+
+.B {
+  background-color: green;
+}
+
+/*------------------------------------------------------------------------------------------*/
+
+.C {
+  background-color: blue;
+}
+
+/*------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+p{
+  color: white;
+}
