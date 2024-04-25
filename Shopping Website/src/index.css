@@ -36,6 +36,7 @@ nav {
   height: 10%;
   width: 100%;
   background-color: rgb(44, 44, 44);
+  z-index: 999;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.363);
 }
 
@@ -72,16 +73,28 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 5%;
 }
 
 a {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.801);
   font-family: sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 100;
-  margin-left: 5%;
+  margin-left: 2%;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 30px;
+  border-color: rgba(0, 128, 0, 0);
+  padding: 10px;
+  transition: border-color 0.3s ease;
 }
+
+a:hover {
+  border-color: rgba(0, 128, 0, 0.582);
+}
+
 
 .Right_part1 {
   width: 35%;
@@ -106,7 +119,7 @@ a {
   margin: 0 auto;
   border-style: solid;
   border-width: 1px;
-  border-color: white;
+  border-color: rgba(255, 255, 255, 0.534);
   border-right: none;
   background-color: rgba(255, 255, 255, 0.055);
   border-radius: 18px 0px 0px 18px;
@@ -120,7 +133,7 @@ a {
   height: 100%;
   border-style: solid;
   border-width: 1px;
-  border-color: white;
+  border-color: rgba(255, 255, 255, 0.534);
   border-left: none;
   border-radius: 0px 18px 18px 0px;
   background-color: rgba(255, 255, 255, 0.055);
@@ -167,10 +180,14 @@ a {
   background-color: rgba(60, 255, 0, 0.274);
   border-style: solid;
   border-width: 1px;
-  border-color: white;
+  border-color: rgba(255, 255, 255, 0.664);
   border-radius: 17px;
   color: white;
   cursor: pointer;
+}
+
+.Button_one:hover {
+  background-color: rgba(60, 255, 0, 0.438);
 }
 
 .Cart_ico {
@@ -208,50 +225,109 @@ a {
 
 .Shop_with_container {
   width: 100%;
-  height: 70%;
+  height: 75%;
   display: flex;
   align-items: flex-end;
 }
 
 .shop_with_header {
   font-family: sans-serif;
-  font-size: 70px;
+  font-size: 85px;
   color: rgba(255, 255, 255, 0.719);
   width: 70%;
-  margin-left: 18%;
-  margin-bottom: 5%;
+  margin-left: 14%;
+  margin-bottom: 9%;
   font-family: "Signika", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
 
-.Clients_container {
+.Products_container {
   width: 100%;
-  height: 30%;
+  height: 25%;
   display: flex;
-  justify-content: left;
+  flex-direction: row;
 }
 
-.What_they_say_container {
-  width: 90%;
-  height: 70%;
-  padding-left: 18%;
+.Item_and_price_container {
+  width: 130%;
+  height: 100%;
   padding-top: 0;
+  background-image: linear-gradient(to bottom, rgba(255, 166, 0, 0), rgba(255, 166, 0, 0.055));
+
 }
 
 
-.what_they_say_header {
-  width: 80%;
+.Item_name {
   font-family: "Signika", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: 500;
-  font-size: 25px;
+  font-size: 20px;
   color: rgba(0, 216, 133, 0.603);
-  padding-left: 3%;
+  padding-left: 25%;
   padding-top: 0;
   margin-top: 0;
+  margin-bottom: 0;
 }
+
+.item_price {
+  font-family: "Signika", sans-serif;
+  font-size: 15px;
+  color: rgba(249, 255, 200, 0.404);
+  padding-left: 25%;
+  margin-top: 0;
+}
+
+.Add_to_cart_1 {
+  background-color: rgba(0, 216, 54, 0.164);
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.76);
+  color: rgba(255, 255, 255, 0.74);
+  padding: 8px;
+  width: 200px;
+  border-radius: 30px;
+  font-size: 11px;
+  margin-left: 25%;
+  margin-top: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.Add_to_cart_1:hover {
+  background-color: rgba(0, 216, 54, 0.39);
+}
+
+
+
+.Cart_ico_2 {
+  margin-left: 7%;
+}
+
+
+
+.The_shoe_container {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+  padding-left: 15%;
+  padding-top: 12%;
+  background-image: linear-gradient(to bottom, rgba(255, 166, 0, 0), rgba(255, 166, 0, 0.055));
+}
+
+.Shoe_itself {
+    width: 30%; /* Adjust width as needed */
+    height: 100%; /* Maintain aspect ratio */
+    max-width: 35%; /* Ensure image doesn't exceed container width */
+    max-height: 60%; /* Ensure image doesn't exceed container height */
+    overflow: hidden;
+    filter: brightness(60%);
+    position: absolute;
+}
+
 
 
 
@@ -261,34 +337,97 @@ a {
   height: 100%;
   display: flex;
   flex-direction: column;
+  background-color: rgba(0, 255, 213, 0.034);
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(240, 248, 255, 0.192);
 }
 
-.Our_latest_container {
+.Try_our_new_container {
   width: 100%;
   height: 50%;
-  display: flex;
-  align-items: flex-end;
-  background-color: rgba(210, 105, 30, 0.096);
+  background-color: rgba(210, 105, 30, 0);
+  cursor: pointer;
 }
 
-.Our_latest_paragraph {
-  font-family: "Signika", sans-serif;
+.Choose_product_container {
+  background-color: rgba(255, 255, 0, 0.034);
+  height: 55%;
+  width: 97%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.try_our_new_paragraph {
+  font-family: sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  font-size: 30px;
-  padding-left: 7%;
+  font-size: 17px;
+  text-align: center;
+  color: rgba(255, 244, 223, 0.726);
+  width: 50%;
+  margin-top: 7%;
+  padding: 10px;
+  margin-left: 40%;
+  background-color: rgba(0, 128, 90, 0.151);
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.219);
+  border-radius: 20px;
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.363);
+  transition: box-shadow 0.2s ease;
 }
 
-.Shoe_size {
-  background-color: rgba(255, 123, 0, 0.048);
-  height: 50%;
-  width: 100%;
+
+.try_our_new_paragraph:hover {
+  box-shadow: 0 0 15px 5px rgba(19, 85, 44, 0.712);
 }
 
-.Photos_and_shoesize_container {
-  width: 100%;
-  height: 50%;
+
+
+
+
+.One, .Two, .Three, .Four {
+  height: 90%;
+  width: 22%;
+  background-color: rgba(165, 42, 42, 0.445);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-color: rgb(205, 239, 255);
+  border-width: 1px;
+  border-radius: 50%;
+  cursor: grab;
 }
+
+.img_1, .img_2, .img_3, .img_4 {
+  width: 100%; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Ensure image doesn't exceed container width */
+  max-height: 100%; /* Ensure image doesn't exceed container height */
+  overflow: hidden;
+  filter: brightness(90%);
+  transition: filter 0.1s ease;
+}
+
+.img_3 {
+  filter: brightness(130%);
+}
+
+.img_3:hover {
+  filter: brightness(150%);
+}
+
+
+.img_1:hover,
+.img_2:hover,
+.img_4:hover {
+  filter: brightness(110%);
+}
+
 
 
 
@@ -303,23 +442,6 @@ a {
 
 
 
-.The_shoe {
-  height: 85%;
-  width: 40%;
-  position: absolute;
-  margin-top: 15%;
-  margin-left: 30%;
-  background-color: rgba(0, 255, 221, 0);
-}
-
-.Shoe_itself {
-    width: 100%; /* Adjust width as needed */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Ensure image doesn't exceed container width */
-    max-height: 100%; /* Ensure image doesn't exceed container height */
-    overflow: hidden;
-    filter: brightness(70%);
-}
 
 /*------------------------------------------------------------------------------------------*/
 

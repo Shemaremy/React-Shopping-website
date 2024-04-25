@@ -1,6 +1,10 @@
 import React from "react";
 import '@fortawesome/fontawesome-free/css/all.css';
 import shoe from '../images/Jordan.png';
+import item1 from '../images/item1.png';
+import item2 from '../images/item2.png';
+import item3 from '../images/item3.png';
+import item4 from '../images/item4.png';
 
 
 
@@ -30,26 +34,33 @@ function A(){
                     <div className="Button_container_one"><button className="Button_one"><i className="Cart_ico fas fa-cart-plus"></i>Cart</button></div>                    
                 </div>
             </nav>
-            <div className="The_shoe">
-                <img src={shoe} className="Shoe_itself" alt="one" />
-            </div>
             <div className="Two_parts_1">
                 <div className="Upper_part_1">
                     <div className="Left_part_2">
                         <div className="Shop_with_container">
-                            <h1 className="shop_with_header">Nike Jordan One Retro</h1>
+                            <h1 className="shop_with_header">Shop With Verve.</h1>
                         </div>
-                        <div className="Clients_container">
-                            <div className="What_they_say_container">
-                                <h3 className="what_they_say_header">35,000Frw</h3>
+                        <div className="Products_container">
+                            <div className="Item_and_price_container">
+                                <h3 className="Item_name">Nike air Jordan 1 retro</h3>
+                                <p className="item_price">35,000 Frw</p>
+                                <button className="Add_to_cart_1">Add to cart<i className="Cart_ico_2 fas fa-cart-plus"></i></button>
                             </div>
+                            <div className="The_shoe_container">
+                                <img src={shoe} className="Shoe_itself" alt="one" />
+                            </div>                            
                         </div>
                     </div>
                     <div className="Right_part_2">
-                        <div className="Our_latest_container">
-                            <p className="Our_latest_paragraph">Our latest products</p>
+                        <div className="Try_our_new_container">
+                            <p className="try_our_new_paragraph">Check out our new products</p>
+                            <div className="Choose_product_container">
+                                <div className="One"><img className="img_1" src={item1} alt="1" /></div>
+                                <div className="Two"><img className="img_2" src={item2} alt="2" /></div>
+                                <div className="Three"><img className="img_3" src={item3} alt="3" /></div>
+                                <div className="Four"><img className="img_4" src={item4} alt="4" /></div>
+                            </div>
                         </div>
-                        <div className="Shoe_size"></div>
                     </div>
                 </div>
                 <div className="Lower_part_1"></div>
