@@ -63,7 +63,6 @@ function A(){
                         </div>
                     </div>
                 </div>
-                <div className="Lower_part_1"></div>
             </div>
         </div>
     )
