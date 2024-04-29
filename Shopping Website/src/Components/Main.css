@@ -1,5 +1,6 @@
 .B {
-  height: 65%;
+  height: 69%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -15,12 +16,15 @@
     justify-content: center;
     align-items: center;
 }
+
+
   
 .Lower_part_main {
     width: 100%;
     height: 90%;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
 }
 
 
@@ -32,12 +36,11 @@
 
 .All_products_container {
     width: 100%;
-    height: 35%;
+    height: 30%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 5%;
 }
 
 .chevron_ico_2 {
@@ -124,7 +127,7 @@
 
 .Our_picks_container {
     max-width: 100%;
-    height: 40%;
+    height: 32%;
     background-color: rgba(90, 119, 9, 0.068);
     border-style: solid;
     border-width: 0px;
@@ -402,8 +405,95 @@
 
 .Customer_preferences {
     width: 95%;
-    height: 25%;
+    height: 26%;
     background-color: rgb(51, 185, 174);
     margin-top: 4%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
 }
+
+
+.Upper_part_customers {
+    width: 100%;
+    height: 15%;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.Trending_items_header {
+    width: 100%;
+    font-family: "Pacifico", cursive;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    text-align: right;
+    overflow-x: hidden;
+}
+
+
+
+.Lower_part_customers {
+    width: 100%;
+    height: 85%;
+    background-color: rgb(196, 196, 196);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.Trending_Section {
+    height: 98%;
+    width: 90%;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 10px;
+}
+
+.Upper_trending_part {
+    height: 40%;
+    width: 98%;
+}
+
+.Lower_trending_part {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.sld_L_C {
+    color: rgb(0, 97, 5);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.Trending_items_library {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 97%;
+}
+
+
+.trend_card {
+    height: 98%;
+    width: 32%;
+    background-color: gray;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+    border-radius: 5px;
+}
+

@@ -67,7 +67,25 @@ function B(){
                         </div>
                     </div>
                 </div>
-                <div className="Customer_preferences"></div>
+                <div className="Customer_preferences">
+                    <div className="Upper_part_customers">
+                        <h4 className="Trending_items_header">Trending Items</h4>
+                    </div>
+                    <div className="Lower_part_customers">                        
+                        <div className="Trending_Section">
+                            <div className="Upper_trending_part"></div>
+                            <div className="Lower_trending_part">
+                                <p className="Slide_left_customers"><i className="sld_L_C fas fa-chevron-left"></i></p>
+                                <div className="Trending_items_library">
+                                    <div className="Trend_1 trend_card"></div>
+                                    <div className="Trend_2 trend_card"></div>
+                                    <div className="Trend_3 trend_card"></div>
+                                </div>
+                                <p className="Slide_right_customers"><i className="sld_L_C fas fa-chevron-right"></i></p>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
             </div>
         </div>
     )
