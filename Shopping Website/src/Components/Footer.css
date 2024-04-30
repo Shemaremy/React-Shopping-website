@@ -1,5 +1,5 @@
 .C {
-    height: 11%;
+    height: 8%;
     background-color: rgb(26, 26, 26);
     display: flex;
     flex-direction: column;
@@ -8,7 +8,7 @@
 }
 
 .Upper_part_footer {
-    height: 90%;
+    height: 85%;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -16,7 +16,6 @@
 }
 
 .Left_part_footer {
-    background-color: gray;
     height: 100%;
     width: 33%;
     display: flex;
@@ -26,7 +25,6 @@
 .Tell_us_container {
     height: 40%;
     width: 100%;
-    background-color: rgb(99, 42, 146);
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -37,7 +35,7 @@
     width: 100%;
     font-family: sans-serif;
     color: white;
-    font-size: 13px;
+    font-size: 15px;
     padding-top: 10%;
     padding-left: 10%;
 }
@@ -45,7 +43,6 @@
 .Form_container {
     height: 60%;
     width: 100%;
-    background-color: rgb(42, 146, 146);
 }
 
 form {
@@ -56,17 +53,33 @@ form {
 
 input {
     width: 90%;
-    margin-top: 2%;
+    margin-top: 3%;
+    border-style: solid;
+    border-width: 1px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: rgba(255, 255, 255, 0);
 }
 
-textarea {
-    width: 90%;
-    margin-top: 2%;
-}
 
-button {
+.Send_footer_button {
     width: 40%;
-    margin-top: 2%;
+    margin-top: 5%;
+    background-color: rgba(128, 128, 128, 0.219);
+    color: white;
+    border-style: solid;
+    padding: 1%;
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.486);
+    border-radius: 10px;
+    color: rgb(233, 233, 233);
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.Send_footer_button:hover {
+    background-color: rgba(68, 180, 255, 0.281);
 }
 
 
@@ -83,7 +96,6 @@ button {
 
 
 .Middle_part_footer {
-    background-color: rgb(51, 56, 73);
     height: 100%;
     width: 33%;
     display: flex;
@@ -94,7 +106,6 @@ button {
 .About_us_container {
     height: 40%;
     width: 100%;
-    background-color: rgb(99, 42, 146);
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -108,28 +119,30 @@ button {
     color: white;
     font-size: 20px;
     padding-top: 10%;
-    padding-left: 10%;
+    text-align: center;
+    text-decoration: underline rgb(168, 168, 168);
+
 }
 
 
 .About_us_par_container {
     height: 60%;
     width: 100%;
-    background-color: rgb(42, 146, 146);
     overflow: hidden;
     padding: 0;
+    padding-left: 7%;
 }
 
 
 .about_us_p {
     width: 95%;
     margin: 0 auto;
-    color: white;
-    background-color: red;
+    color: rgb(153, 153, 153);
     font-family: sans-serif;
     overflow: hidden;
-    font-size: 12px;
+    font-size: 11px;
     overflow-wrap: break-word;
+    margin-top: 2%;
 }
 
 
@@ -150,16 +163,14 @@ button {
 
 
 .Right_part_footer {
-    background-color: rgb(121, 76, 76);
     height: 100%;
     width: 33%;
 }
 
 
 .Contact_container {
-    height: 30%;
+    height: 40%;
     width: 100%;
-    background-color: rgb(99, 42, 146);
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -173,29 +184,69 @@ button {
     color: white;
     font-size: 20px;
     padding-top: 10%;
-    padding-left: 10%;
+    padding-left: 60%;
 }
 
 
 .Phone_and_email_container {
-    height: 70%;
+    height: 60%;
     width: 100%;
-    background-color: rgb(42, 146, 146);
     overflow: hidden;
     padding: 0;
+    padding-top: 2%;
 }
 
 
 .phone, .email {
-    width: 95%;
+    width: 60%;
     margin: 0 auto;
     color: white;
-    background-color: red;
     font-family: sans-serif;
+    font-size: 12px;
+    margin-top: 1%;
+    text-align: right;
+    color: rgb(190, 190, 190);
+}
+
+.tel_ico, .mail_ico {
+    padding-right: 3%;
     font-size: 12px;
 }
 
 
+
+.Icons_container {
+    display: flex;
+    flex-direction: row;
+    padding-left: 50%;
+    margin-top: 3%;
+}
+
+.Social_media_border {
+    margin-right: 5%;
+    padding: 1%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(190, 190, 190);
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.Social_media_border:hover {
+    background-color: rgba(210, 105, 30, 0.151);
+}
+
+
+.Instagram, .Twitter, .Whatsapp, .Linkedin {
+    color: rgb(190, 190, 190);
+    font-size: 13px;
+}
 
 
 
@@ -226,7 +277,21 @@ button {
 
 
 .Lower_part_footer {
-    background-color: rgb(0, 87, 72);
-    height: 10%;
+    height: 15%;
     width: 100%;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.185);
+    border-width: 1px;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Copyright_par {
+    font-family: sans-serif;
+    color: rgb(165, 165, 165);
+    font-size: 10px;
 }

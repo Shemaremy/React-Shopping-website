@@ -6,7 +6,7 @@ import '@fortawesome/fontawesome-free/css/all.css';
 
 
 function B(){
-    return(
+    return( 
         <div className="B">
             <div className="Upper_part_main">
                 <h2 className="Our_products_header">Our Products</h2>

@@ -154,6 +154,7 @@ a:hover {
   background-color: rgba(255, 255, 255, 0.055);
   cursor: pointer;
   color: white;
+  margin: 0 auto;
 }
 
 .Search_ico {
@@ -375,8 +376,7 @@ a:hover {
   flex-direction: column;
   background-color: rgba(0, 255, 213, 0.034);
   border-style: solid;
-  border-width: 1px;
-  border-color: rgba(240, 248, 255, 0.192);
+  border-width: 0px;
 }
 
 .Try_our_new_container {

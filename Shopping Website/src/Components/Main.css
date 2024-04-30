@@ -177,6 +177,8 @@
     border-width: 1px;
     border-color: rgba(112, 84, 84, 0.397);
     border-radius: 20px;
+    overflow: hidden;
+    padding: 0;
 }
 
 .In_navbar_divisor {
@@ -195,6 +197,7 @@
     border-style: solid;
     border-width: 0px;
     cursor: pointer;
+    margin-top: 0;
 }
 
 .Summer {

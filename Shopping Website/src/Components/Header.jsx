@@ -8,7 +8,6 @@ import item4 from '../images/item4.png';
 
 
 
-
 function A(){
     return(
         <div className="A">
