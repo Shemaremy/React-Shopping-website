@@ -3,20 +3,100 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   background-color: rgb(221, 221, 221);
   overflow-x: hidden;
 }
-
+ 
 .Upper_part_main {
     width: 100%;
-    height: 5%;
+    height: 10%;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.Our_products_header {
+    font-family: sans-serif;
+    font-size: 35px;
+    text-align: center;
+}
+
+
+.Browse_by_category {
+    background-color: rgba(68, 68, 68, 0.171);
+    width: 93%;
+    height: 60%;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.upper_part_category {
+    height: 50%;
+    width: 96%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 0 auto;
+}
+
+.browse_header {
+    font-family: sans-serif;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.browse_par {
+    font-family: sans-serif;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.lower_part_category {
+    height: 45%;
+    width: 97%;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 10px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.055);
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
+
+.browse_button {
+    background-color: rgb(211, 214, 209);
+    margin-right: 2%;
+    padding: 8px;
+    width: 10%;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 6px;
+    border-color: rgba(100, 100, 100, 0.664);
+    font-size: 11px;
+    color: rgb(75, 75, 75);
+    cursor: pointer;
+    transition: background-color 0.9s ease-in-out;
+}
+
+
+.browse_button:hover {
+    background: linear-gradient(45deg, #226b1342, #5c6b9680);
+    background-color: rgba(0, 102, 128, 0.37);
+    color: white;
+    border-color: rgb(255, 255, 255);
+}
 
   
 .Lower_part_main {
@@ -27,12 +107,6 @@
     justify-content: space-around;
 }
 
-
-.Our_products_header {
-    font-family: sans-serif;
-    font-size: 30px;
-    text-align: center;
-}
 
 .All_products_container {
     width: 100%;
@@ -66,7 +140,123 @@
     height: 90%;
     border: solid saddlebrown 1px;
     border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    background-color: rgba(141, 78, 78, 0);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(0, 11, 41, 0.384) 280%, rgba(170, 61, 61, 0.336)100%);
 }
+
+.card_upper_part {
+    width: 100%;
+    height: 70%;
+    margin: 0 auto;
+    border-style: solid;
+    border-width: 0px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: rgba(160, 160, 160, 0.089);
+    
+}
+
+.card_lower_part {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 30%;
+    background-color: rgb(221, 221, 221);
+}
+
+.item_name_container {
+    width: 95%;
+    height: 40%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.item_p {
+    font-family: sans-serif;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 600;
+    color: rgb(31, 31, 31);
+    font-size: 14px;
+}
+
+
+.stars_and_prices_container {
+    width: 95%;
+    height: 60%;
+    margin: 0 auto;
+}
+
+
+.stars_container {
+    height: 20%;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 10px;
+    border-color: rgb(184, 184, 184);
+}
+
+.star {
+    font-size: 6px;
+}
+
+
+
+.price_and_cart_container {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Price {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+.cart {
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: rgb(0, 119, 255);
+    padding: 3%;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    margin-right: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cart:hover {
+    background-color: rgb(0, 119, 255);
+}
+
+.cart_icon {
+    font-size: 10px;
+    color: rgb(241, 241, 241);
+}
+
+
+
+
 
 
 

@@ -6,11 +6,14 @@ body {
   background-color: rgb(255, 255, 255);
   overflow-x: hidden;
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   background-color: rgb(221, 221, 221);
+  background-color: black;
 }
+
+
 
 .A, .C {
   width: 100%;
@@ -37,7 +40,7 @@ B : Footer
 .A {
   background-color: rgb(247, 247, 247);
   background-color: rgba(172, 255, 47, 0.966);
-  height: 18%;
+  height: 23%;
 }
 
 
@@ -238,7 +241,8 @@ a:hover {
 
 
 .Two_parts_1 {
-  background-color: yellow;
+  background-color: rgb(34, 34, 34);
+  background-image: linear-gradient(to right, rgb(24, 24, 24), rgba(0, 255, 213, 0.062));
   height: 100%;
   width: 100%;
   display: flex;
@@ -247,9 +251,8 @@ a:hover {
 }
 
 .Upper_part_1 {
-  background-color: rgb(34, 34, 34);
   width: 100%;
-  height: 100%;
+  height: 75%;
   display: flex;
   flex-direction: row;
 }
@@ -263,9 +266,7 @@ a:hover {
 
 .Shop_with_container {
   width: 100%;
-  height: 70%;
-  display: flex;
-  align-items: flex-end;
+  height: 60%;
 }
 
 .shop_with_header {
@@ -273,25 +274,37 @@ a:hover {
   font-size: 85px;
   color: rgba(255, 255, 255, 0.719);
   width: 70%;
-  margin-left: 14%;
-  margin-bottom: 7%;
+  margin-left: 12%;
+  margin-top: 17%;
   font-family: "Signika", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
 
+
+.Verve_colored {
+  color:  rgb(97, 151, 142);
+  font-size: 75px;
+}
+
+
 .Products_container {
   width: 100%;
-  height: 30%;
+  height: 50%;
   display: flex;
   flex-direction: row;
+  overflow: hidden;
 }
 
 .Item_and_price_container {
-  width: 130%;
-  height: 100%;
+  width: 45%;
+  height: 85%;
   padding-top: 0;
-  background-image: linear-gradient(to bottom, rgba(255, 166, 0, 0), rgba(255, 166, 0, 0.055));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 3%;
+  padding-left: 3%;
 }
 
 
@@ -302,7 +315,7 @@ a:hover {
   font-weight: 500;
   font-size: 20px;
   color: rgba(0, 216, 133, 0.603);
-  padding-left: 25%;
+  padding-left: 27%;
   padding-top: 0;
   margin-top: 0;
   margin-bottom: 0;
@@ -312,7 +325,7 @@ a:hover {
   font-family: "Signika", sans-serif;
   font-size: 15px;
   color: rgba(249, 255, 200, 0.404);
-  padding-left: 25%;
+  padding-left: 27%;
   margin-top: 0;
 }
 
@@ -322,11 +335,11 @@ a:hover {
   border-width: 1px;
   border-color: rgba(255, 255, 255, 0.76);
   color: rgba(255, 255, 255, 0.74);
-  padding: 8px;
-  width: 200px;
+  padding: 6px;
+  width: 190px;
   border-radius: 30px;
   font-size: 11px;
-  margin-left: 25%;
+  margin-left: 27%;
   margin-top: 5px;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -345,24 +358,23 @@ a:hover {
 
 
 .The_shoe_container {
-  height: 100%;
+  height: 85%;
   width: 50%;
+  overflow: hidden;
   display: flex;
-  justify-content: flex-end;
-  align-items: end;
-  padding-left: 15%;
-  padding-top: 5%;
-  background-image: linear-gradient(to bottom, rgba(255, 166, 0, 0), rgba(255, 166, 0, 0.055));
+  justify-content: center;
+  align-items: center;
 }
 
 .Shoe_itself {
-    width: 30%; /* Adjust width as needed */
-    height: 100%; /* Maintain aspect ratio */
-    max-width: 35%; /* Ensure image doesn't exceed container width */
-    max-height: 60%; /* Ensure image doesn't exceed container height */
+    overflow: hidden;
+    width: 100%; /* Adjust width as needed */
+    height: 200%; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure image doesn't exceed container width */
+    max-height: 200%; /* Ensure image doesn't exceed container height */
     overflow: hidden;
     filter: brightness(60%);
-    position: absolute;
+    padding-bottom: 6%;
 }
 
 
@@ -374,7 +386,6 @@ a:hover {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: rgba(0, 255, 213, 0.034);
   border-style: solid;
   border-width: 0px;
 }
@@ -389,11 +400,15 @@ a:hover {
 .Choose_product_container {
   background-color: rgba(255, 255, 0, 0.034);
   height: 55%;
-  width: 97%;
+  width: 95%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  border-style: solid;
+  border-width: 0px;
+  border-radius: 70px;
+  margin-top: 5%;
 }
 
 .try_our_new_paragraph {
@@ -471,7 +486,39 @@ a:hover {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 /*------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+.Lower_part_1 {
+  height: 16%;
+  width: 90%;
+  background-color: rgba(0, 128, 90, 0.151);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(0, 253, 106, 0.151) 50%, rgba(255, 255, 255, 0)100%);
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(255, 255, 255, 0.164);
+  border-radius: 60px;
+  margin: 0 auto;
+}
+
+
+
 
 
 /*------------------------------------------------------------------------------------------*/

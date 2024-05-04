@@ -5,30 +5,90 @@ import '@fortawesome/fontawesome-free/css/all.css';
 
 
 
+
+// CARD CONTENT FOR OUR PRODUCTS CARDS
+//-------------------------------------
+
+const names = ["Jordan", "Air Force", "Airmax", "Puma", "All Stars", "Congo", "Jordan", "Air Force", "Airmax", "Puma"];
+
+
+
+const cardContentOne = (
+    <>
+      <div className="card_upper_part"></div>
+      <div className="card_lower_part">
+         <div className="item_name_container"><p className="item_p">Air Jordan 1 Retro</p></div>
+         <div className="stars_and_prices_container">
+            <div className="stars_container">
+                <i class="star fa fa-star" aria-hidden="true"></i>
+                <i class="star fa fa-star" aria-hidden="true"></i>
+                <i class="star fa fa-star" aria-hidden="true"></i>
+                <i class="star fa fa-star" aria-hidden="true"></i>
+                <i class="star fa fa-star" aria-hidden="true"></i>
+            </div>
+            <div className="price_and_cart_container">
+                <p className="Price">40,000 Frw</p>
+                <p className="cart"><i class="cart_icon fa fa-cart-plus" aria-hidden="true"></i></p>
+            </div>
+         </div>
+      </div>
+    </>
+); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function B(){
+    
     return( 
         <div className="B">
             <div className="Upper_part_main">
                 <h2 className="Our_products_header">Our Products</h2>
+                <div className="Browse_by_category">
+                    <div className="upper_part_category">
+                        <h3 className="browse_header">Browse by category</h3>
+                        <p className="browse_par">I'm looking for:</p>
+                    </div>
+                    <div className="lower_part_category">
+                        <button className="browse_button">Men Shoes</button>
+                        <button className="browse_button">Women Shoes</button>
+                        <button className="browse_button">Pants</button>
+                        <button className="browse_button">T-Shirts</button>
+                        <button className="browse_button">Hoodies</button>
+                        <button className="browse_button">Jackets</button>
+                        <button className="browse_button">Caps</button>
+                    </div>
+                </div>
             </div>
             <div className="Lower_part_main">
                 <div className="All_products_container">
                     <div className="products_section_one">
                         <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left"></i></p>
-                        <div className="card one"></div>
-                        <div className="card two"></div>
-                        <div className="card three"></div>
-                        <div className="card four"></div>
-                        <div className="card five"></div>
+                        <div className="card one">{cardContentOne}</div>
+                        <div className="card two">{cardContentOne}</div>
+                        <div className="card three">{cardContentOne}</div>
+                        <div className="card four">{cardContentOne}</div>
+                        <div className="card five">{cardContentOne}</div>
                         <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right"></i></p>
                     </div>
+
                     <div className="products_section_two">
                         <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left"></i></p>
-                        <div className="card one"></div>
-                        <div className="card two"></div>
-                        <div className="card three"></div>
-                        <div className="card four"></div>
-                        <div className="card five"></div>
+                        <div className="card one">{cardContentOne}</div>
+                        <div className="card two">{cardContentOne}</div>
+                        <div className="card three">{cardContentOne}</div>
+                        <div className="card four">{cardContentOne}</div>
+                        <div className="card five">{cardContentOne}</div>
                         <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right"></i></p>
                     </div>
                 </div>
