@@ -9,8 +9,6 @@ import '@fortawesome/fontawesome-free/css/all.css';
 // CARD CONTENT FOR OUR PRODUCTS CARDS
 //-------------------------------------
 
-const names = ["Jordan", "Air Force", "Airmax", "Puma", "All Stars", "Congo", "Jordan", "Air Force", "Airmax", "Puma"];
-
 
 
 const cardContentOne = (
@@ -26,7 +24,7 @@ const cardContentOne = (
                 <i class="star fa fa-star" aria-hidden="true"></i>
                 <i class="star fa fa-star" aria-hidden="true"></i>
             </div>
-            <div className="price_and_cart_container">
+            <div className="price_and_cart_container">  
                 <p className="Price">40,000 Frw</p>
                 <p className="cart"><i class="cart_icon fa fa-cart-plus" aria-hidden="true"></i></p>
             </div>

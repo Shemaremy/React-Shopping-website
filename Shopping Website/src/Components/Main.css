@@ -424,8 +424,9 @@
     height: 92%;
     border-style: solid;
     border-width: 1px;
-    border-radius: 0px;
+    border-radius: 50px;
     border-color: rgba(0, 0, 0, 0.096);
+    border-bottom: none;
     overflow: hidden;
     display: flex;
     flex-direction: column;
