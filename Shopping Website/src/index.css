@@ -367,11 +367,7 @@ a:hover {
 }
 
 .Shoe_itself {
-    overflow: hidden;
-    width: 100%; /* Adjust width as needed */
-    height: 200%; /* Maintain aspect ratio */
-    max-width: 100%; /* Ensure image doesn't exceed container width */
-    max-height: 200%; /* Ensure image doesn't exceed container height */
+ /* Ensure image doesn't exceed container height */
     overflow: hidden;
     filter: brightness(60%);
     padding-bottom: 6%;

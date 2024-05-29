@@ -1,52 +1,74 @@
 import React from "react";
 import './Main.css';
 import '@fortawesome/fontawesome-free/css/all.css';
+import { useState } from "react";
 
-
-
-
-
-// CARD CONTENT FOR OUR PRODUCTS CARDS
-//-------------------------------------
-
-
-
-const cardContentOne = (
-    <>
-      <div className="card_upper_part"></div>
-      <div className="card_lower_part">
-         <div className="item_name_container"><p className="item_p">Air Jordan 1 Retro</p></div>
-         <div className="stars_and_prices_container">
-            <div className="stars_container">
-                <i class="star fa fa-star" aria-hidden="true"></i>
-                <i class="star fa fa-star" aria-hidden="true"></i>
-                <i class="star fa fa-star" aria-hidden="true"></i>
-                <i class="star fa fa-star" aria-hidden="true"></i>
-                <i class="star fa fa-star" aria-hidden="true"></i>
-            </div>
-            <div className="price_and_cart_container">  
-                <p className="Price">40,000 Frw</p>
-                <p className="cart"><i class="cart_icon fa fa-cart-plus" aria-hidden="true"></i></p>
-            </div>
-         </div>
-      </div>
-    </>
-); 
-
-
-
-
-
-
-
-
-
-
-
-
+import Jordan1orange from '../images/Shoes products/Jordan 1 orange.png'; 
+import Jordan4black from '../images/Shoes products/Jordan 4 black.png'; 
+import Jordan1red from '../images/Shoes products/Jordan 1 red.png'; 
+import Jordan4white from '../images/Shoes products/Jordan 4 white.png'; 
+import Jordan5white from '../images/Shoes products/Jordan 5 white.png'; 
+import Jordan12white from '../images/Shoes products/Jordan 12 white.png'; 
+import Jordan11black from '../images/Shoes products/Jordan 11 black.png'; 
+import Jordan13black from '../images/Shoes products/Jordan 13 black.png'; 
+import Jordan14gray from '../images/Shoes products/Jordan 14 gray.png'; 
+import Jordan13white from '../images/Shoes products/Jordan 13 white.png'; 
 
 
 function B(){
+
+
+    // LOOPING CARD CONTENT FOR OUR PRODUCTS CARDS
+    //--------------------------------------------
+
+    const [Employees, setEmployees] = useState (
+        [
+            { name: "Jordan 1 orange", price: "28,000 Frw", stars: 2, image: Jordan1orange },
+            { name: "Jordan 4 black", price: "25,000 Frw", stars: 3, image: Jordan4black },
+            { name: "Jordan 1 red", price: "28,000 Frw", stars: 2, image: Jordan1red },
+            { name: "Jordan 4 white", price: "25,000 Frw", stars: 4, image: Jordan4white },
+            { name: "Jordan 5 white", price: "32,000 Frw", stars: 3, image: Jordan5white },
+            { name: "Jordan 12 white", price: "30,000 Frw", stars: 5, image: Jordan12white },
+            { name: "Jordan 11 black", price: "26,000 Frw", stars: 3, image: Jordan11black },
+            { name: "Jordan 13 black", price: "33,000 Frw", stars: 4, image: Jordan13black },
+            { name: "Jordan 14 gray", price: "35,000 Frw", stars: 2, image: Jordan14gray },
+            { name: "Jordan 13 white", price: "33,000 Frw", stars: 5, image: Jordan13white }
+        ]
+    );
+
+
+
+    // CARD CONTENT FOR OUR PRODUCTS CARDS
+    //-------------------------------------
+
+    const cardContentOne = (product) => (
+        <>
+        <div className="card_upper_part">
+            <div className="product_images_first_section">
+              <img src={product.image} className="Shoes" alt="one" />
+            </div>
+        </div>
+        <div className="card_lower_part">
+            <div className="item_name_container"><p className="item_p">{product.name}</p></div>
+            <div className="stars_and_prices_container">
+                <div className="stars_container">
+
+                {Array.from({ length: product.stars }, (_, i) => (
+                    <i key={i} className="star fa fa-star" aria-hidden="true"></i>
+                ))}
+
+                </div>
+                <div className="price_and_cart_container">  
+                    <p className="Price">{product.price}</p>
+                    <p className="cart"><i class="cart_icon fa fa-cart-plus" aria-hidden="true"></i></p>
+                </div>
+            </div>
+        </div>
+        </>
+    ); 
+
+
+
     
     return( 
         <div className="B">
@@ -72,21 +94,25 @@ function B(){
                 <div className="All_products_container">
                     <div className="products_section_one">
                         <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left"></i></p>
-                        <div className="card one">{cardContentOne}</div>
-                        <div className="card two">{cardContentOne}</div>
-                        <div className="card three">{cardContentOne}</div>
-                        <div className="card four">{cardContentOne}</div>
-                        <div className="card five">{cardContentOne}</div>
+
+                        {Employees.slice(0, 5).map((product, index) => (
+                            <div key={index} className={`card ${index + 1}`}>
+                                {cardContentOne(product)}
+                            </div>
+                        ))}
+                        
                         <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right"></i></p>
                     </div>
 
                     <div className="products_section_two">
                         <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left"></i></p>
-                        <div className="card one">{cardContentOne}</div>
-                        <div className="card two">{cardContentOne}</div>
-                        <div className="card three">{cardContentOne}</div>
-                        <div className="card four">{cardContentOne}</div>
-                        <div className="card five">{cardContentOne}</div>
+                        
+                        {Employees.slice(5).map((product, index) => (
+                            <div key={index} className={`card ${index + 1}`}>
+                                {cardContentOne(product)}
+                            </div>
+                        ))}
+                        
                         <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right"></i></p>
                     </div>
                 </div>
