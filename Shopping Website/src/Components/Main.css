@@ -439,6 +439,20 @@
     background-color: rgba(0, 102, 128, 0.37);
 }
 
+.summer-btn {
+    color: white;
+    background: linear-gradient(45deg, #967b5c80, #00000000);
+    background-color: rgba(128, 83, 0, 0.336);
+}
+
+.winter-btn {
+    color: white;
+    background: linear-gradient(45deg, #00000000, #5c6b9680);
+    background-color: rgba(0, 102, 128, 0.37);
+}
+
+
+
 
 
 .the_rest_2 {
