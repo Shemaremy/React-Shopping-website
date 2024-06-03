@@ -97,7 +97,6 @@ function B(){
                     </div>
                     <div className="lower_part_category">
                         <button className="browse_button">Men Shoes</button>
-                        <button className="browse_button">Women Shoes</button>
                         <button className="browse_button">Pants</button>
                         <button className="browse_button">T-Shirts</button>
                         <button className="browse_button">Hoodies</button>
