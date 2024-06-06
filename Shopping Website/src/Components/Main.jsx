@@ -3,6 +3,7 @@ import './Main.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 import { useState } from "react";
 import OurPicks from "./Ourpicks";
+import TrendCards from "./TrendCards";
 
 import Jordan1orange from '../images/Shoes products/Jordan 1 orange.png'; 
 import Jordan4black from '../images/Shoes products/Jordan 4 black.png'; 
@@ -145,20 +146,7 @@ function B(){
                     </div>
                     <div className="Lower_part_customers">                        
                         <div className="Trending_Section">
-                            <div className="Upper_trending_part"></div>
-                            <div className="Lower_trending_part">
-                                <p className="Slide_left_customers">
-                                    <i className="sld_L_C fas fa-chevron-left"></i>
-                                </p>
-                                <div className="Trending_items_library">
-                                    <div className="Trend_1 trend_card"></div>
-                                    <div className="Trend_2 trend_card"></div>
-                                    <div className="Trend_3 trend_card"></div>
-                                </div>
-                                <p className="Slide_right_customers">
-                                    <i className="sld_L_C fas fa-chevron-right"></i>
-                                </p>
-                            </div>
+                            <TrendCards/>
                         </div>                        
                     </div>
                 </div>
