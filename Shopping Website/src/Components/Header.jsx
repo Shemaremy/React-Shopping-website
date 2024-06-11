@@ -3,7 +3,6 @@ import '@fortawesome/fontawesome-free/css/all.css';
 import Itemsautoslide from './Itemsautoslide';
 
 import shoe from '../images/Jordan.png';
-import Paint from '../images/Paint.png';
 
 import item1 from '../images/item1.png';
 import item2 from '../images/item2.png';

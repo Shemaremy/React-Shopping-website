@@ -18,30 +18,8 @@ import Jordan13white from '../images/Shoes products/Jordan 13 white.png';
 
 
 
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-
-
-
-
-
 
 function B(){
-
-
-    const settings = {
-        dots: false,
-        className: "center",
-        centerMode: true,
-        infinite: true,
-        centerPadding: "0px",
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        speed: 500
-      };
-
 
 
 
@@ -101,6 +79,34 @@ function B(){
     ); 
 
 
+    // This is the final rendering in cards
+    //-------------------------------------
+
+    const renderProductsOne = (
+        <>
+            <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left"></i></p>
+            {Employees.slice(0, 5).map((product, index) => (                                
+                <div key={index} className={`card ${index + 1}`}>                                    
+                    {cardContentOne(product)}
+                </div>
+            ))}
+            <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right"></i></p>
+        </>
+    );
+
+    const renderProductsTwo = (
+        <>
+            <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left"></i></p>                   
+            {Employees.slice(5).map((product, index) => (
+                <div key={index} className={`card ${index + 1}`}>
+                    {cardContentOne(product)}
+                </div>
+            ))}                    
+            <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right"></i></p>
+        </>
+    );
+
+
 
     
     return( 
@@ -124,26 +130,12 @@ function B(){
             </div>
             <div className="Lower_part_main">
                 <div className="All_products_container">
-                    <div className="products_section_one">
-
-                        {Employees.slice(0, 5).map((product, index) => (                                
-                            <div key={index} className={`card ${index + 1}`}>                                    
-                                {cardContentOne(product)}
-                            </div>
-                        ))}
-
+                    <div className="products_section_one">   
+                        {renderProductsOne} 
                     </div>
 
                     <div className="products_section_two">
-                        <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left"></i></p>
-                        
-                        {Employees.slice(5).map((product, index) => (
-                            <div key={index} className={`card ${index + 1}`}>
-                                {cardContentOne(product)}
-                            </div>
-                        ))}
-                        
-                        <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right"></i></p>
+                        {renderProductsTwo}                    
                     </div>
                 </div>
                 <div className="Our_picks_container">
