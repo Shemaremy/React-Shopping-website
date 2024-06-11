@@ -23,7 +23,7 @@ function C(){
                         <p className="About_us_header">About Us</p>
                     </div>
                     <div className="About_us_par_container">
-                        <p className="about_us_p">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz. Hi ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz. Hi </p>
+                        <p className="about_us_p">Verve is an independent company dedicated to revolutionizing the e-commerce landscape. Here, we curate a diverse selection of products, each chosen for its exceptional quality, style, and innovation. Our commitment to providing unparalleled shopping experiences drives us to constantly evolve and adapt to meet the ever-changing needs of our customers. With a focus on individuality and customer satisfaction, we invite you to explore our platform and embark on a journey of discovery, where every purchase tells a unique story. Join us at Verve and experience the true essence of online shopping.</p>
                     </div>
                 </div>
                 <div className="Right_part_footer">
