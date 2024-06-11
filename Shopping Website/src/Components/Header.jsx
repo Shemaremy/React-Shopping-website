@@ -1,5 +1,6 @@
 import React from "react";
 import '@fortawesome/fontawesome-free/css/all.css';
+import Itemsautoslide from './Itemsautoslide';
 
 import shoe from '../images/Jordan.png';
 import Paint from '../images/Paint.png';
@@ -71,7 +72,7 @@ function A(){
                         </div>
                     </div>
                 </div>
-                <div className="Lower_part_1"></div>
+                <div className="Lower_part_1"><Itemsautoslide/></div>
             </div>
         </div>
     )

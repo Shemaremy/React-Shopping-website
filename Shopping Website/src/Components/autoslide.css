@@ -1,0 +1,29 @@
+.slide-items-container {
+    width: 90%;
+    height: 90%;
+    border-radius: 5px;
+}
+
+
+
+
+.Trend {
+    height: 105px;
+    width: 100%;
+}
+
+
+
+.card-3 {
+    background-color: rgba(199, 191, 174, 0.274);
+    height: 100%;
+    width: 95%;
+    border-radius: 5px;
+    cursor: grab;
+    border-color: rgb(255, 255, 255);
+    border-width: 1px;
+}
+
+.card-3:hover {
+    background-color: rgba(154, 218, 146, 0.274);
+}

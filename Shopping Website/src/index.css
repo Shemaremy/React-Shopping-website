@@ -511,6 +511,9 @@ a:hover {
   border-width: 1px;
   border-color: rgba(255, 255, 255, 0.164);
   border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
 }
 
