@@ -19,10 +19,25 @@ import Jordan13white from '../images/Shoes products/Jordan 13 white.png';
 
 
 
+
+import Slider from "react-slick";
+
+
+
 function B(){
 
 
 
+
+    const settings = {
+        dots: false,
+        className: "center",
+        centerMode: false,
+        infinite: true,
+        centerPadding: "0px",
+        slidesToShow: 5,
+        speed: 500
+      };
 
 
 
@@ -49,17 +64,22 @@ function B(){
 
 
 
-    // CARD CONTENT FOR OUR PRODUCTS CARDS
+
+
+
+
+
+     // CARD CONTENT FOR OUR PRODUCTS CARDS
     //-------------------------------------
 
-    const cardContentOne = (product) => (
+    const cardDraftOne = (product) => (
         <>
-            <div className="card_upper_part">
+            <div className="draftUp">
                 <div className="product_images_first_section">
-                <img src={product.image} className="Shoes" alt="one" />
+                    <img src={product.image} className="Shoes" alt="one" />
                 </div>
             </div>
-            <div className="card_lower_part">
+            <div className="draftDown">
                 <div className="item_name_container"><p className="item_p">{product.name}</p></div>
                 <div className="stars_and_prices_container">
                     <div className="stars_container">
@@ -76,35 +96,30 @@ function B(){
                 </div>
             </div>
         </>
-    ); 
+    );
+
 
 
     // This is the final rendering in cards
     //-------------------------------------
 
-    const renderProductsOne = (
-        <>
-            <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left"></i></p>
-            {Employees.slice(0, 5).map((product, index) => (                                
-                <div key={index} className={`card ${index + 1}`}>                                    
-                    {cardContentOne(product)}
-                </div>
-            ))}
-            <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right"></i></p>
-        </>
-    );
+    const TrendDraftOne = Employees.slice(0, 5).map((product, index) => (
+        <div className="Trend-draft" key={index + 1}>
+            <div className="card-draft">{cardDraftOne(product)}</div>
+        </div>
+    ));
 
-    const renderProductsTwo = (
-        <>
-            <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left"></i></p>                   
-            {Employees.slice(5).map((product, index) => (
-                <div key={index} className={`card ${index + 1}`}>
-                    {cardContentOne(product)}
-                </div>
-            ))}                    
-            <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right"></i></p>
-        </>
-    );
+    const TrendDraftTwo = Employees.slice(5).map((product, index) => (
+        <div className="Trend-draft" key={index + 1}>
+            <div className="card-draft">{cardDraftOne(product)}</div>
+        </div>
+    ));
+    
+
+
+
+
+
 
 
 
@@ -131,11 +146,23 @@ function B(){
             <div className="Lower_part_main">
                 <div className="All_products_container">
                     <div className="products_section_one">   
-                        {renderProductsOne} 
+                        <div className="section-draft">
+                            <div className="slider-container-draft">
+                                <Slider {...settings}>
+                                    {TrendDraftOne}
+                                </Slider>
+                            </div>
+                        </div>
                     </div>
 
                     <div className="products_section_two">
-                        {renderProductsTwo}                    
+                        <div className="section-draft">
+                            <div className="slider-container-draft">
+                                <Slider {...settings}>
+                                    {TrendDraftTwo}
+                                </Slider>
+                            </div>
+                        </div>                 
                     </div>
                 </div>
                 <div className="Our_picks_container">

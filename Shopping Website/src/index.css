@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  width: 100vw; /* Use viewport width */
+  width: 99vw; /* Use viewport width */
   height: 500vh; /* Use viewport height */
   background-color: rgb(255, 255, 255);
   overflow-x: hidden;

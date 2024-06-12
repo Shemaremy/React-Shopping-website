@@ -1,8 +1,47 @@
 import React, { useState }  from "react";
-import "./Main.css";
+import "./Ourpicks.css";
+
+
+/*-------------------------------------------- SUMMER CLOTHES -----------------------------------------------------------------------*/
+
+import shortArmedTshirt from '../images/Tops/Tshirt1.png'; 
+import sweatshort from '../images/pantsandshorts/sweatshorts.png';
+import sandals1 from '../images/bottoms/blue sandals.png';
 
 
 
+import shortArmedcollarTshirt from '../images/Tops/Tshirt2.png'; 
+import fitshort from '../images/pantsandshorts/dadshorts.png';
+import coolsandals1 from '../images/bottoms/coolsandals1.png';
+
+
+import hawaishirt from '../images/Tops/hawaii shirt.png'; 
+import dadshort from '../images/pantsandshorts/otherdadshort.png';
+import coolsandals2 from '../images/bottoms/coolsandals2.png';
+
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+/*---------------------------------------------------------- WINTER CLOTHES ----------------------------------------------------------------*/
+
+import sweater1 from '../images/Tops/sweater1.png'; 
+import cargokhaki1 from '../images/pantsandshorts/cargokhaki1.png';
+import jordan4 from '../images/bottoms/Jordan 4 white.png';
+
+
+
+import sweater2 from '../images/Tops/sweater2.png'; 
+import blackjogging from '../images/pantsandshorts/blackjogging.png';
+import jordan12 from '../images/bottoms/Jordan 12 gray.png';
+
+
+import hoodie1 from '../images/Tops/hoodie1.png'; 
+import cargokhaki3 from '../images/pantsandshorts/cargokhaki1.png';
+import jordan1 from '../images/bottoms/Jordan 1 red.png';
+
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
 
 
 
@@ -161,9 +200,15 @@ const OurPicks = () => {
     const OurpicksCards1 = (
         <>
             <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left" onClick={showOurpicksCards3}></i></p>
-            <div className="card_2">1</div>
-            <div className="card_2">2</div>
-            <div className="card_2">3</div>
+            <div className="card_2">
+                <div className="top_item"><img className="top" src={shortArmedTshirt} alt="" /></div>
+            </div>
+            <div className="card_2">
+                <div className="leg_item"><img className="leg" src={sweatshort} alt="" /></div>
+            </div>
+            <div className="card_2">
+                <div className="bottom_item"><img className="bottom" src={sandals1} alt="" /></div>
+            </div>
             <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right" onClick={showOurpicksCards2}></i></p>
         </>
     );
@@ -171,9 +216,15 @@ const OurPicks = () => {
     const OurpicksCards2 = (
         <>  
             <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left" onClick={showOurpicksCards1}></i></p>
-            <div className="card_2">4</div>
-            <div className="card_2">5</div>
-            <div className="card_2">6</div>
+            <div className="card_2">
+            <div className="top_item"><img className="top" src={shortArmedcollarTshirt} alt="" /></div>
+            </div>
+            <div className="card_2">
+            <div className="leg_item"><img className="leg fitshort" src={fitshort} alt="" /></div>
+            </div>
+            <div className="card_2">
+            <div className="bottom_item"><img className="bottom coolsandals1" src={coolsandals1} alt="" /></div>
+            </div>
             <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right" onClick={showOurpicksCards3}></i></p>
         </>
     );
@@ -181,9 +232,15 @@ const OurPicks = () => {
     const OurpicksCards3 = (
         <>  
             <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left" onClick={showOurpicksCards2}></i></p>
-            <div className="card_2">7</div>
-            <div className="card_2">8</div>
-            <div className="card_2">9</div>
+            <div className="card_2">
+            <div className="top_item"><img className="top hawaii" src={hawaishirt} alt="" /></div>
+            </div>
+            <div className="card_2">
+            <div className="leg_item"><img className="leg otherdadshort" src={dadshort} alt="" /></div>
+            </div>
+            <div className="card_2">
+            <div className="bottom_item"><img className="bottom coolsandals2" src={coolsandals2} alt="" /></div>
+            </div>
             <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right" onClick={showOurpicksCards1}></i></p>
         </>
     );
@@ -273,19 +330,31 @@ const SummerVacation = (
     const OurpicksCards4 = (
         <>
             <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left" onClick={showOurpicksCards6}></i></p>
-            <div className="card_2">1</div>
-            <div className="card_2">2</div>
-            <div className="card_2">3</div>
+            <div className="card_2">
+                <div className="top_item"><img className="top" src={shortArmedTshirt} alt="" /></div>
+            </div>
+            <div className="card_2">
+                <div className="leg_item"><img className="leg" src={sweatshort} alt="" /></div>
+            </div>
+            <div className="card_2">
+                <div className="bottom_item"><img className="bottom" src={sandals1} alt="" /></div>
+            </div>
             <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right" onClick={showOurpicksCards5}></i></p>
         </>
     );
 
     const OurpicksCards5 = (
         <>  
-            <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left" onClick={showOurpicksCards4}></i></p>
-            <div className="card_2">4</div>
-            <div className="card_2">5</div>
-            <div className="card_2">6</div>
+            <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left" onClick={showOurpicksCards4}></i></p> 
+            <div className="card_2">
+                <div className="top_item"><img className="top" src={shortArmedcollarTshirt} alt="" /></div>
+            </div>
+            <div className="card_2">
+                <div className="leg_item"><img className="leg fitshort" src={fitshort} alt="" /></div>
+            </div>
+            <div className="card_2">
+                <div className="bottom_item"><img className="bottom coolsandals1" src={coolsandals1} alt="" /></div>
+            </div>
             <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right" onClick={showOurpicksCards6}></i></p>
         </>
     );
@@ -293,9 +362,15 @@ const SummerVacation = (
     const OurpicksCards6 = (
         <>  
             <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left" onClick={showOurpicksCards5}></i></p>
-            <div className="card_2">7</div>
-            <div className="card_2">8</div>
-            <div className="card_2">9</div>
+            <div className="card_2">
+                <div className="top_item"><img className="top hawaii" src={hawaishirt} alt="" /></div>
+            </div>
+            <div className="card_2">
+                <div className="leg_item"><img className="leg otherdadshort" src={dadshort} alt="" /></div>
+            </div>
+            <div className="card_2">
+                <div className="bottom_item"><img className="bottom coolsandals2" src={coolsandals2} alt="" /></div>
+            </div>
             <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right" onClick={showOurpicksCards4}></i></p>
         </>
     );
@@ -376,9 +451,15 @@ const SummerVacation = (
     const OurpicksCards7 = (
         <>
             <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left" onClick={showOurpicksCards9}></i></p>
-            <div className="card_2">1</div>
-            <div className="card_2">2</div>
-            <div className="card_2">3</div>
+            <div className="card_2">
+                <div className="top_item"><img className="top" src={shortArmedTshirt} alt="" /></div>
+            </div>
+            <div className="card_2">
+                <div className="leg_item"><img className="leg" src={sweatshort} alt="" /></div>
+            </div>
+            <div className="card_2">
+                <div className="bottom_item"><img className="bottom" src={sandals1} alt="" /></div>
+            </div>
             <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right" onClick={showOurpicksCards8}></i></p>
         </>
     );
@@ -386,9 +467,15 @@ const SummerVacation = (
     const OurpicksCards8 = (
         <>  
             <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left" onClick={showOurpicksCards7}></i></p>
-            <div className="card_2">4</div>
-            <div className="card_2">5</div>
-            <div className="card_2">6</div>
+            <div className="card_2">
+            <div className="top_item"><img className="top" src={shortArmedcollarTshirt} alt="" /></div>
+            </div>
+            <div className="card_2">
+            <div className="leg_item"><img className="leg fitshort" src={fitshort} alt="" /></div>
+            </div>
+            <div className="card_2">
+            <div className="bottom_item"><img className="bottom coolsandals1" src={coolsandals1} alt="" /></div>
+            </div>
             <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right" onClick={showOurpicksCards9}></i></p>
         </>
     );
@@ -396,9 +483,15 @@ const SummerVacation = (
     const OurpicksCards9 = (
         <>  
             <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left" onClick={showOurpicksCards8}></i></p>
-            <div className="card_2">7</div>
-            <div className="card_2">8</div>
-            <div className="card_2">9</div>
+            <div className="card_2">
+            <div className="top_item"><img className="top hawaii" src={hawaishirt} alt="" /></div>
+            </div>
+            <div className="card_2">
+            <div className="leg_item"><img className="leg otherdadshort" src={dadshort} alt="" /></div>
+            </div>
+            <div className="card_2">
+            <div className="bottom_item"><img className="bottom coolsandals2" src={coolsandals2} alt="" /></div>
+            </div>
             <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right" onClick={showOurpicksCards7}></i></p>
         </>
     );
@@ -632,9 +725,15 @@ const SummerVacation = (
   const OurpicksCardsA = (
     <>
         <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left" onClick={showOurpicksCardsC}></i></p>
-        <div className="card_2">1</div>
-        <div className="card_2">2</div>
-        <div className="card_2">3</div>
+        <div className="card_2">
+            <div className="top_item_2"><img className="top-2" src={sweater1} alt="" /></div>
+        </div>
+        <div className="card_2">
+            <div className="leg_item_2"><img className="leg-2" src={cargokhaki1} alt="" /></div>
+        </div>
+        <div className="card_2">
+            <div className="bottom_item_2"><img className="bottom-2 jordan4" src={jordan4} alt="" /></div>
+        </div>
         <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right" onClick={showOurpicksCardsB}></i></p>
     </>
   );
@@ -642,9 +741,15 @@ const SummerVacation = (
   const OurpicksCardsB = (
     <>
         <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left" onClick={showOurpicksCardsA}></i></p>
-        <div className="card_2">100</div>
-        <div className="card_2">200</div>
-        <div className="card_2">300</div>
+        <div className="card_2">
+            <div className="top_item_2"><img className="top-2 sweater2" src={sweater2} alt="" /></div>
+        </div>
+        <div className="card_2">
+            <div className="leg_item_2"><img className="leg-2 blackjogging" src={blackjogging} alt="" /></div>
+        </div>
+        <div className="card_2">
+            <div className="bottom_item_2"><img className="bottom-2 jordan12" src={jordan12} alt="" /></div>
+        </div>
         <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right" onClick={showOurpicksCardsC}></i></p>
     </>
   );
@@ -652,9 +757,15 @@ const SummerVacation = (
   const OurpicksCardsC = (
     <>
         <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left" onClick={showOurpicksCardsB}></i></p>
-        <div className="card_2">1000</div>
-        <div className="card_2">2000</div>
-        <div className="card_2">3000</div>
+        <div className="card_2">
+            <div className="top_item_2"><img className="top-2 hoodie1" src={hoodie1} alt="" /></div>
+        </div>
+        <div className="card_2">
+            <div className="leg_item_2"><img className="leg-2 cargokhaki3" src={cargokhaki3} alt="" /></div>
+        </div>
+        <div className="card_2">
+            <div className="bottom_item_2"><img className="bottom-2 jordan1" src={jordan1} alt="" /></div>
+        </div>
         <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right" onClick={showOurpicksCardsA}></i></p>
     </>
   );
@@ -736,9 +847,15 @@ const SummerVacation = (
     const OurpicksCardsD = (
         <>
             <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left" onClick={showOurpicksCardsF}></i></p>
-            <div className="card_2">100</div>
-            <div className="card_2">200</div>
-            <div className="card_2">300</div>
+            <div className="card_2">
+                <div className="top_item_2"><img className="top-2" src={sweater1} alt="" /></div>
+            </div>
+            <div className="card_2">
+                <div className="leg_item_2"><img className="leg-2" src={cargokhaki1} alt="" /></div>
+            </div>
+            <div className="card_2">
+                <div className="bottom_item_2"><img className="bottom-2 jordan4" src={jordan4} alt="" /></div>
+            </div>
             <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right" onClick={showOurpicksCardsE}></i></p>
         </>
     );
@@ -746,9 +863,15 @@ const SummerVacation = (
     const OurpicksCardsE = (
         <>  
             <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left" onClick={showOurpicksCardsD}></i></p>
-            <div className="card_2">400</div>
-            <div className="card_2">500</div>
-            <div className="card_2">600</div>
+            <div className="card_2">
+                <div className="top_item_2"><img className="top-2 sweater2" src={sweater2} alt="" /></div>
+            </div>
+            <div className="card_2">
+                <div className="leg_item_2"><img className="leg-2 blackjogging" src={blackjogging} alt="" /></div>
+            </div>
+            <div className="card_2">
+                <div className="bottom_item_2"><img className="bottom-2 jordan12" src={jordan12} alt="" /></div>
+            </div>
             <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right" onClick={showOurpicksCardsF}></i></p>
         </>
     );
@@ -756,9 +879,16 @@ const SummerVacation = (
     const OurpicksCardsF = (
         <>  
             <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left" onClick={showOurpicksCardsE}></i></p>
-            <div className="card_2">7000</div>
-            <div className="card_2">8000</div>
-            <div className="card_2">9000</div>
+            
+            <div className="card_2">
+                <div className="top_item_2"><img className="top-2 hoodie1" src={hoodie1} alt="" /></div>
+            </div>
+            <div className="card_2">
+                <div className="leg_item_2"><img className="leg-2 cargokhaki3" src={cargokhaki3} alt="" /></div>
+            </div>
+            <div className="card_2">
+                <div className="bottom_item_2"><img className="bottom-2 jordan1" src={jordan1} alt="" /></div>
+            </div>
             <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right" onClick={showOurpicksCardsD}></i></p>
         </>
     );
@@ -838,9 +968,15 @@ const SummerVacation = (
     const OurpicksCardsG = (
         <>
             <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left" onClick={showOurpicksCardsI}></i></p>
-            <div className="card_2">100</div>
-            <div className="card_2">200</div>
-            <div className="card_2">300</div>
+            <div className="card_2">
+                <div className="top_item_2"><img className="top-2" src={sweater1} alt="" /></div>
+            </div>
+            <div className="card_2">
+                <div className="leg_item_2"><img className="leg-2" src={cargokhaki1} alt="" /></div>
+            </div>
+            <div className="card_2">
+                <div className="bottom_item_2"><img className="bottom-2 jordan4" src={jordan4} alt="" /></div>
+            </div>
             <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right" onClick={showOurpicksCardsH}></i></p>
         </>
     );
@@ -848,9 +984,16 @@ const SummerVacation = (
     const OurpicksCardsH = (
         <>  
             <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left" onClick={showOurpicksCardsG}></i></p>
-            <div className="card_2">400</div>
-            <div className="card_2">500</div>
-            <div className="card_2">600</div>
+            
+            <div className="card_2">
+                <div className="top_item_2"><img className="top-2 sweater2" src={sweater2} alt="" /></div>
+            </div>
+            <div className="card_2">
+                <div className="leg_item_2"><img className="leg-2 blackjogging" src={blackjogging} alt="" /></div>
+            </div>
+            <div className="card_2">
+                <div className="bottom_item_2"><img className="bottom-2 jordan12" src={jordan12} alt="" /></div>
+            </div>
             <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right" onClick={showOurpicksCardsI}></i></p>
         </>
     );
@@ -858,9 +1001,15 @@ const SummerVacation = (
     const OurpicksCardsI = (
         <>  
             <p className="Chevron_left_2"><i className="chevron_ico_2 fas fa-chevron-left" onClick={showOurpicksCardsH}></i></p>
-            <div className="card_2">7000</div>
-            <div className="card_2">8000</div>
-            <div className="card_2">9000</div>
+            <div className="card_2">
+                <div className="top_item_2"><img className="top-2 hoodie1" src={hoodie1} alt="" /></div>
+            </div>
+            <div className="card_2">
+                <div className="leg_item_2"><img className="leg-2 cargokhaki3" src={cargokhaki3} alt="" /></div>
+            </div>
+            <div className="card_2">
+                <div className="bottom_item_2"><img className="bottom-2 jordan1" src={jordan1} alt="" /></div>
+            </div>
             <p className="Chevron_right_2"><i className="chevron_ico_2 fas fa-chevron-right" onClick={showOurpicksCardsG}></i></p>
         </>
     );
@@ -1077,4 +1226,4 @@ const SummerVacation = (
 
 
 
-export default OurPicks;
+export default OurPicks; 
