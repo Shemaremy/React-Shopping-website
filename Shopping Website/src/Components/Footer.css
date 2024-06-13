@@ -60,7 +60,20 @@ input {
     border-left: none;
     border-right: none;
     background-color: rgba(255, 255, 255, 0);
+    color: rgb(177, 177, 177);
+    outline: none;
+    transition: width 0.6s ease-in-out;
 }
+
+input:hover {
+    width: 85%;
+    border-color: rgb(87, 140, 175);
+}  
+
+input:focus {
+    width: 85%;
+    border-color: rgb(87, 140, 175);
+}  
 
 
 .Send_footer_button {

@@ -32,7 +32,7 @@ function C(){
                     </div>
                     <div className="Phone_and_email_container">
                         <p className="phone">
-                            <i class="tel_ico fa fa-phone" aria-hidden="true"></i>07830674289
+                            <i class="tel_ico fa fa-phone" aria-hidden="true"></i>0783674289
                         </p>
                         <p className="email">
                             <i class="mail_ico fa fa-envelope" aria-hidden="true"></i>remyshema20@gmail.com                            
