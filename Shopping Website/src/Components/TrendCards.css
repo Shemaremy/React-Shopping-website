@@ -15,14 +15,9 @@
 }
 
 
-.nbr {
-    animation: fade 0.5s ease-in-out; /* Smooth fade animation */
-}
 
-@keyframes fade {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
+
+
 
 
 

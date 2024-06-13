@@ -10,6 +10,11 @@ const TrendCards = () => {
     const [activeIndex, setActiveIndex] = useState(0);
 
 
+    const numbers = ['100', '200', '300', '400', '500', '600'];
+
+
+
+
     const settings = {
         dots: false,
         className: "center",
@@ -20,14 +25,14 @@ const TrendCards = () => {
         speed: 500,
         beforeChange: (current, next) => setActiveIndex(next)
       };
-
+      
 
 
     return(
         <>
             <div className="Upper_trending_part">
                 <div className="trend-item">
-                    <h1 className="nbr">{activeIndex + 1}</h1>
+                    <h1>{numbers[activeIndex]}</h1>
                 </div>
                 <div className="trend-item-info"></div>
             </div>
