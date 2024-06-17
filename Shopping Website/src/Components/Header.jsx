@@ -73,7 +73,7 @@ function A(){
                 </div>
                 <div className="Lower_part_1"><Itemsautoslide/></div>
             </div>
-        </div>
+        </div> 
     )
 }
 

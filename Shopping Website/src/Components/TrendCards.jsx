@@ -86,32 +86,12 @@ const TrendCards = () => {
       );
 
 
-/*
-
-
-      // This one is called initially. It also loops cards
-      //--------------------------------------------------
-      const slider = (
-        <>
-            <Slider {...settings}>
-                {[...Array(6)].map((_, index) => (
-                    <div className="Trend-2" key={index}>
-                        <div className="card-2">
-                            {card2Content}
-                        </div>
-                    </div>
-                ))}            
-            </Slider>
-        </>
-      );
-
-
-*/
 
 
 
 
-
+    // Final rendering and looping 
+    //-----------------------------
     const slider = item.slice(0, 6).map((product, index) => (
         <div className="Trend-2" key={index + 1}>
             <div className="card-2">{card2Content(product)}</div>
