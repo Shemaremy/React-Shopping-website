@@ -1,8 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import '@fortawesome/fontawesome-free/css/all.css';
 import Itemsautoslide from './Itemsautoslide';
 
-import shoe from '../images/Jordan.png';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+
+
+import shoe from '../images/Shoes products/Jordan 1 red.png';
+import shoe2 from '../images/Shoes products/Jordan 4 white.png';
+import shoe3 from '../images/Shoes products/Jordan 4 black.png';
 
 import item1 from '../images/item1.png';
 import item2 from '../images/item2.png';
@@ -12,6 +20,63 @@ import item4 from '../images/item4.png';
 
  
 function A(){
+
+    const settings = {
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        speed: 1000,
+        autoplaySpeed: 5000,
+        cssEase: "linear"
+      };
+
+
+
+    const [Highlight, setHighlight] = useState( 
+        [
+            { name: "Nike air Jordan 1 retro", price: "35,000 Frw", image: shoe },
+            { name: "Jordan 4 white", price: "30,000 Frw", image: shoe2 },
+            { name: "Jordan 12 gray", price: "45,000 Frw", image: shoe3 }      
+        ]
+    );
+
+
+
+
+
+
+
+    // This is card content wraps
+    //---------------------------
+    const card4Content = (product) =>(
+        <>
+            <div className="Item_and_price_container">
+                <h3 className="Item_name">{product.name}</h3>
+                <p className="item_price">{product.price}</p>
+                <button className="Add_to_cart_1">Add to cart<i className="Cart_ico_2 fas fa-cart-plus"></i></button>
+            </div>
+            <div className="The_shoe_container">
+                <img src={product.image} className="Shoe_itself" alt={product.name} />
+            </div>
+        </>
+    );
+
+
+    // Final render Highlight item
+    //-----------------------------
+    const highlightItem = Highlight.slice(0, 3).map((product, index) => (
+        <div className="contain" key={index + 1}>
+            <div className="Trend">
+                <div className="card-4">{card4Content(product)}</div>
+            </div>
+        </div>
+    )); 
+
+
+
+
     return(
         <div className="A">
             <nav>
@@ -42,15 +107,10 @@ function A(){
                         <div className="Shop_with_container">
                             <h1 className="shop_with_header">Shop With <span className="Verve_colored">Verve.</span></h1>
                         </div>
-                        <div className="Products_container">
-                            <div className="Item_and_price_container">
-                                <h3 className="Item_name">Nike air Jordan 1 retro</h3>
-                                <p className="item_price">35,000 Frw</p>
-                                <button className="Add_to_cart_1">Add to cart<i className="Cart_ico_2 fas fa-cart-plus"></i></button>
-                            </div>
-                            <div className="The_shoe_container">
-                                <img src={shoe} className="Shoe_itself" alt="one" />
-                            </div>                            
+                        <div className="Products_container">  
+                            <Slider {...settings}>
+                                {highlightItem}
+                            </Slider>       
                         </div>
                     </div>
                     <div className="Right_part_2">

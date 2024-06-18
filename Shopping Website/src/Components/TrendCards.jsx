@@ -122,35 +122,35 @@ const TrendCards = () => {
                 </div>
                 <div className="service-container">
                     <div className="svg-container">
-                        <div className="contain">
+                        <div className="contain2">
                             <div className="svg-real"><img className="svg" src={greatValue} alt="" /></div>
                             <div className="svg_words">
                                 <h5 className="svg_title">Great Value</h5>
                                 <p className="svg_paragraph">Verve offers various of items to select, promotions, and personalized products.</p>
                             </div>
                         </div>
-                        <div className="contain">
+                        <div className="contain2">
                             <div className="svg-real"><img className="svg" src={world} alt="" /></div>
                             <div className="svg_words">
                                 <h5 className="svg_title">Worldwide Delivery</h5>
                                 <p className="svg_paragraph">Supported in more than 10 countries. Register to get 10,000Frw coupons.</p>
                             </div>
                         </div>
-                        <div className="contain">
+                        <div className="contain2">
                             <div className="svg-real"><img className="svg" src={pay} alt="" /></div>
                             <div className="svg_words">
                                 <h5 className="svg_title">Safe Payment</h5>
                                 <p className="svg_paragraph">Pay with popular and secure payment methods.</p>
                             </div>
                         </div>
-                        <div className="contain">
+                        <div className="contain2">
                             <div className="svg-real"><img className="svg" src={confidence} alt="" /></div>
                             <div className="svg_words">
                                 <h5 className="svg_title">Shop with Confidence:</h5>
                                 <p className="svg_paragraph">Buy high quality and popular products with verve that you won't regret.</p>
                             </div>
                         </div>
-                        <div className="contain">
+                        <div className="contain2">
                             <div className="svg-real"><img className="svg" src={chat} alt="" /></div>
                             <div className="svg_words">
                                 <h5 className="svg_title">Live Chat</h5>

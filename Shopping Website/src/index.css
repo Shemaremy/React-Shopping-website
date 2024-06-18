@@ -292,10 +292,28 @@ a:hover {
 .Products_container {
   width: 100%;
   height: 50%;
-  display: flex;
-  flex-direction: row;
   overflow: hidden;
 }
+
+.contain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 210px;
+}
+
+.card-4 {
+  margin: 0 auto;
+  height: 210px;
+  width: 98%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.7s ease-in-out, height 0.4s ease-in-out, width 0.4s ease-in-out;
+}
+
 
 .Item_and_price_container {
   width: 45%;
@@ -370,7 +388,7 @@ a:hover {
 .Shoe_itself {
  /* Ensure image doesn't exceed container height */
     overflow: hidden;
-    filter: brightness(60%);
+    filter: brightness(70%);
     padding-bottom: 6%;
 }
 

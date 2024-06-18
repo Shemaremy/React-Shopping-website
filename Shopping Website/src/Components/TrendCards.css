@@ -39,6 +39,8 @@
     cursor: not-allowed;
 }
 
+
+
 .card_upper {
     height: 60%;
     width: 100%;
@@ -66,7 +68,7 @@
 }
 
 
-.name, .price, .cart {
+.name, .price{
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -189,9 +191,9 @@
     color: rgb(77, 77, 77);
 }
 
-.service-container {
-    width: 90%;
+.service-container {    
     height: 60%;
+    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -204,10 +206,11 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+
 }
 
-.contain {
-    height: 100%;
+.contain2 {
+    height: 80%;
     width: 17%;
     display: flex;
     flex-direction: column;
@@ -216,7 +219,7 @@
 }
 
 .svg-real {
-    height: 60%;
+    height: 50%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -224,9 +227,9 @@
 }
 
 .svg {
-    min-height: 50%;
+    min-height: 70%;
     min-width: 30%;
-    height: 50%;
+    height: 70%;
     width: 30%;
     border-radius: 50%;
 
