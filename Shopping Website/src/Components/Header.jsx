@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import './Header.css';
+
 import '@fortawesome/fontawesome-free/css/all.css';
 import Itemsautoslide from './Itemsautoslide';
 
@@ -45,9 +47,6 @@ function A(){
 
 
 
-
-
-
     // This is card content wraps
     //---------------------------
     const card4Content = (product) =>(
@@ -76,6 +75,25 @@ function A(){
 
 
 
+    const [itemsCountThree, setItemsCount] = useState(0);
+    const handleButtonClick = () => {
+        if (itemsCountThree < 20) {
+            setItemsCount(itemsCountThree + 1);
+        } else {
+            alert("You've reached maximum items! (20)")
+        }
+    }
+
+
+    // Handles everything in add to cart top icon
+    const cartButtonhandle = (
+        <button className="cart_button_one" onClick={handleButtonClick}>
+            <p className="Cart_ico"><i className="cart_ico fas fa-cart-plus"></i></p>
+            <p className="cart_word">Cart</p>
+            <p className="items_counter">{itemsCountThree}</p>
+        </button>
+    );
+
 
     return(
         <div className="A">
@@ -95,10 +113,12 @@ function A(){
 
                 <div className="Right_part1">
                     <div className="Input_container_one">
-                        <input className="Input_one" type="text" placeholder="Search..."/><button className="Search_icon"><i className="Search_ico fas fa-search"></i></button>
+                        <input className="search_items_one" type="text" placeholder="Search..."/><button className="Search_icon"><i className="Search_ico fas fa-search"></i></button>
                     </div>
                     <div className="Icon_one"><p className="User_contain"><i className="User_ico fas fa-user"></i></p></div>
-                    <div className="Button_container_one"><button className="Button_one"><i className="Cart_ico fas fa-cart-plus"></i>Cart</button></div>                    
+                    <div className="cart_button_container">
+                        {cartButtonhandle}
+                    </div>                    
                 </div>
             </nav>
             <div className="Two_parts_1">

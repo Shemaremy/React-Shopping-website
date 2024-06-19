@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import './autoslide.css';
+import './Itemautoslide.css';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
