@@ -1,6 +1,6 @@
 import React from "react";
 import './Footer.css';
-import '@fortawesome/fontawesome-free/css/all.css';
+
 
 function C(){ 
     return(

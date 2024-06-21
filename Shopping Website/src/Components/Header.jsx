@@ -1,6 +1,7 @@
 import React, {useState} from "react";
+import { useCounter } from "./counterbutton/CounterContext";
+import MyModal from "./cartPanel/MyModal";
 import './Header.css';
-import CounterButton from "./counterbutton/counterbutton";
 
 import '@fortawesome/fontawesome-free/css/all.css';
 import Itemsautoslide from './Itemsautoslide';
@@ -24,11 +25,9 @@ import item4 from '../images/item4.png';
  
 function A(){
 
-    const handleButtonClick = () => {
-        // Define what should happen when the CounterButton is clicked
-        alert('Button clicked!'); // Example action
-    };
+    const [showModal, setShowModal] = useState(false);
 
+    const { counter, handleClick } = useCounter();
 
 
     const settings = {
@@ -62,7 +61,7 @@ function A(){
             <div className="Item_and_price_container">
                 <h3 className="Item_name">{product.name}</h3>
                 <p className="item_price">{product.price}</p>
-                <button className="Add_to_cart_1" onClick={handleButtonClick}>Add to cart<i className="Cart_ico_2 fas fa-cart-plus"></i></button>
+                <button className="Add_to_cart_1" onClick={handleClick}>Add to cart<i className="Cart_ico_2 fas fa-cart-plus"></i></button>
             </div>
             <div className="The_shoe_container">
                 <img src={product.image} className="Shoe_itself" alt={product.name} />
@@ -82,16 +81,26 @@ function A(){
     )); 
 
 
-
+    
+    const modelClick = () => {
+        setShowModal(!showModal);
+        document.body.style.overflow = 'hidden';
+        document.body.style.width = '100vw';
+    };
+    
 
 
     // Cart Button on top of the page
+    //-------------------------------
     const cartButtonhandle = (
-        <button className="cart_button_one">
+        <>
+        <button className="cart_button_one"  onClick={modelClick}>
             <p className="Cart_ico"><i className="cart_ico fas fa-cart-plus"></i></p>
             <p className="cart_word">Cart</p>
-            <p className="items_counter">{itemsCountThree}</p>
+            <p className="items_counter">{counter}</p>
         </button>
+        <MyModal showModal={showModal} setShowModal={setShowModal} />
+        </>
     );
 
 

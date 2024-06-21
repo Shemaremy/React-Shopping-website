@@ -1,7 +1,9 @@
 import React from "react";
+import { useState } from "react";
+import { useCounter } from "./counterbutton/CounterContext";
+
 import './Main.css';
 import '@fortawesome/fontawesome-free/css/all.css';
-import { useState } from "react";
 import OurPicks from "./Ourpicks";
 import TrendCards from "./TrendCards";
 
@@ -25,6 +27,7 @@ import Slider from "react-slick";
 
 
 function B(){
+    const { handleClick } = useCounter();
 
 
 
@@ -91,7 +94,7 @@ function B(){
                     </div>
                     <div className="price_and_cart_container">  
                         <p className="Price">{product.price}</p>
-                        <p className="cart"><i class="cart_icon fa fa-cart-plus" aria-hidden="true"></i></p>
+                        <p className="cart" onClick={handleClick}><i class="cart_icon fa fa-cart-plus" aria-hidden="true"></i></p>
                     </div>
                 </div>
             </div>

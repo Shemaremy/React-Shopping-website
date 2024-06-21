@@ -407,10 +407,15 @@ a:hover {
   margin-top: 5px;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  transition: transform 0.1s ease;
 }
 
 .Add_to_cart_1:hover {
   background-color: rgba(0, 216, 54, 0.39);
+}
+
+.Add_to_cart_1:active {
+  transform: scale(0.95);
 }
 
 

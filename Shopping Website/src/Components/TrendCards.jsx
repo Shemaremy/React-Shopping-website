@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { useCounter } from "./counterbutton/CounterContext";
 import './TrendCards.css';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -38,6 +39,8 @@ import chat from '../images/verveofferspngs/chat.png';
 
 
 const TrendCards = () => {
+
+    const { handleClick } = useCounter();
 
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -80,7 +83,7 @@ const TrendCards = () => {
             <div className="card_lower">
                 <h2 className="name">{product.name}</h2>
                 <p className="price">{product.price}</p>
-                <button className="cart-trend">Add to cart</button>
+                <button className="cart-trend" onClick={handleClick}>Add to cart</button>
             </div>
         </>
       );

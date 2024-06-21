@@ -1,0 +1,139 @@
+.modal-dialog {
+    position: fixed;
+    display: block;
+    top: 0;
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s linear, right 0.3s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.modal-dialog.show {
+    right: 0px;
+    -webkit-transition: opacity 0.3s linear, right 0.5s ease-out;
+    -moz-transition: opacity 0.3s linear, right 0.5s ease-out;
+    -o-transition: opacity 0.3s linear, right 0.5s ease-out;
+    transition: opacity 0.3s linear, right 0.5s ease-out;
+}
+
+
+.panel_container {
+    height: 95%;
+    width: 95%;
+    background-color: rgb(182, 182, 182);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(202, 202, 202);
+    border-radius: 30px;
+    box-shadow: 0px 0px 35px 5px #3f3f3fd3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+  
+
+
+.top-nav {
+    height: 14%;
+    width: 98%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cart_word_panel {
+    width: 80%;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: sans-serif;
+    font-size: 30px;
+    font-weight: 100;
+    color: rgb(49, 49, 49);
+}
+
+.close_container {
+    width: 5%;
+    height: 50%;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.close {
+    border-style: solid;
+    border-radius: 50%;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.185);
+    background-color: rgba(129, 129, 129, 0.288);
+    padding: 10px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.1s ease, height 0.3s ease, width 0.3s ease;
+}
+
+.close:hover {
+    width: 20px;
+    height: 20px;
+}
+
+.close:active {
+    transform: scale(0.95);
+}
+
+.close_ico {
+    font-size: 8px;
+}
+
+
+
+
+
+
+
+/*--------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+.bottom-content {
+    height: 85%;
+    width: 98%;
+    background-color: rgba(255, 166, 0, 0.342);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.emptyCart {
+    width: 90%;
+    height: 80%;
+    background-color: chocolate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartItems {
+    width: 95%;
+    height: 80%;
+    background-color: rgb(0, 66, 28);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
