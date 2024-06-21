@@ -99,7 +99,7 @@ function A(){
             <p className="cart_word">Cart</p>
             <p className="items_counter">{counter}</p>
         </button>
-        <MyModal showModal={showModal} setShowModal={setShowModal} />
+        <MyModal showModal={showModal} setShowModal={setShowModal} counter={counter} />
         </>
     );
 
