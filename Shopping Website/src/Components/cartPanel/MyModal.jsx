@@ -4,9 +4,7 @@ import cartSvg from './cartSVGs/cartSvg.png'
 
 
 function MyModal(props) {
-  const { showModal, setShowModal, content, counter } = props;
-
-
+  const { showModal, setShowModal, content, counter, product } = props;
 
 
 
@@ -43,45 +41,6 @@ function MyModal(props) {
 
 
 
-  // Item added to cart
-  //-------------------
-  const ItemAdded = (
-    <div className='item_added_container'>
-        <div className='image_container_panel'></div>
-        <div className='main_details_panel'>
-            <div className='Item_name_panel'>
-                <h2 className='itm_nm'>Jordan 1 Retro red</h2>
-                <h4 className='dollar-price'>$35</h4>
-            </div>
-            <div className='price_and_rate'>
-                <p className='price_pan'>35,000 Frw</p>
-                <p className='ratings'>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                </p>
-            </div>
-            <div className='quantity_size_pan'>
-                <div className='size_container'>
-                    <select className='size_values' name="" id="">
-                        <option value="">40</option>
-                        <option value="">41</option>
-                        <option value="">42</option>
-                    </select>
-                </div>
-                <div className='quantity_container'>
-                    <p className='reduce'><i class="fa fa-minus" aria-hidden="true"></i></p>
-                    <p className='qnty'>1</p>
-                    <p className='add'><i class="fa fa-plus" aria-hidden="true"></i></p>
-                </div>
-                <div className='proceed_delete_panel'></div>
-            </div>
-        </div>
-    </div>
-  );
-
 
 
 
@@ -91,7 +50,49 @@ function MyModal(props) {
   //----------------------------------------------
   const CartItems = (
     <div className="cartItems">
-        {ItemAdded}
+        {product.map((product, index) => (
+        <div key={index} className='item_added_container'>
+            <div className='image_container_panel'>
+                <img className='img_readyTogo' src={product.image} alt="flacko" />
+            </div>
+            <div className='main_details_panel'>
+                <div className='Item_name_panel'>
+                    <h2 className='itm_nm'>{product.name}</h2>
+                    <h4 className='dollar-price'>$35</h4>
+                </div>
+                <div className='price_and_rate'>
+                    <p className='price_pan'>{product.price}</p>
+                    <p className='ratings'>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </p>
+                </div>
+                <div className='quantity_size_pan'>
+                    <div className='size_container'>
+                        <select className='size_values' name="" id="">
+                            <option value="">40</option>
+                            <option value="">41</option>
+                            <option value="">42</option>
+                        </select>
+                    </div>
+                    <div className='quantity_container'>
+                        <p className='reduce'><i class="fa fa-minus" aria-hidden="true"></i></p>
+                        <p className='qnty'>1</p>
+                        <p className='add'><i class="fa fa-plus" aria-hidden="true"></i></p>
+                    </div>
+                    <div className='proceed_delete_panel'>
+                        <div className='proceed_payment_pan'>
+                            <button className='Proceed_button_incart'>Proceed payment</button>
+                        </div>
+                        <p className='delete_item'><i class="fa fa-trash" aria-hidden="true"></i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        ))}
     </div>
   );
 

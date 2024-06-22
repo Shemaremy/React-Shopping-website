@@ -27,7 +27,7 @@ function A(){
 
     const [showModal, setShowModal] = useState(false);
 
-    const { counter, handleClick } = useCounter();
+    const { counter, handleClick, currentProduct, addToCart } = useCounter();
 
 
     const settings = {
@@ -61,7 +61,7 @@ function A(){
             <div className="Item_and_price_container">
                 <h3 className="Item_name">{product.name}</h3>
                 <p className="item_price">{product.price}</p>
-                <button className="Add_to_cart_1" onClick={handleClick}>Add to cart<i className="Cart_ico_2 fas fa-cart-plus"></i></button>
+                <button className="Add_to_cart_1" onClick={() => {handleClick(product); setShowModal(false);}}>Add to cart<i className="Cart_ico_2 fas fa-cart-plus"></i></button>
             </div>
             <div className="The_shoe_container">
                 <img src={product.image} className="Shoe_itself" alt={product.name} />
@@ -69,7 +69,7 @@ function A(){
         </>
     );
 
-
+ 
     // Final render Highlight item
     //-----------------------------
     const highlightItem = Highlight.slice(0, 3).map((product, index) => (
@@ -99,7 +99,7 @@ function A(){
             <p className="cart_word">Cart</p>
             <p className="items_counter">{counter}</p>
         </button>
-        <MyModal showModal={showModal} setShowModal={setShowModal} counter={counter} />
+        <MyModal showModal={showModal} setShowModal={setShowModal} counter={counter}  product={currentProduct} />
         </>
     );
 
