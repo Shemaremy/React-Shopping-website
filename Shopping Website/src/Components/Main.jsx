@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useCounter } from "./counterbutton/CounterContext";
+import MyModal from "./cartPanel/MyModal";
 
 import './Main.css';
 import '@fortawesome/fontawesome-free/css/all.css';
@@ -27,7 +28,7 @@ import Slider from "react-slick";
 
 
 function B(){
-    const { handleClick } = useCounter();
+    const { handleClick, currentProduct } = useCounter();
 
 
 
@@ -94,7 +95,8 @@ function B(){
                     </div>
                     <div className="price_and_cart_container">  
                         <p className="Price">{product.price}</p>
-                        <p className="cart" onClick={handleClick}><i class="cart_icon fa fa-cart-plus" aria-hidden="true"></i></p>
+                        <p className="cart" onClick={() => {handleClick(product);}}><i class="cart_icon fa fa-cart-plus" aria-hidden="true"></i></p>
+                        <MyModal product={currentProduct} />
                     </div>
                 </div>
             </div>

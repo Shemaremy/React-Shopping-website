@@ -43,7 +43,9 @@ function MyModal(props) {
 
 
 
-
+  let x = parseInt(product.price); // Assuming product.price is in cents
+  let conversion = x / 100; // Convert cents to dollars
+  
 
 
     // This is the content for items cart library
@@ -58,7 +60,7 @@ function MyModal(props) {
             <div className='main_details_panel'>
                 <div className='Item_name_panel'>
                     <h2 className='itm_nm'>{product.name}</h2>
-                    <h4 className='dollar-price'>$35</h4>
+                    <h4 className='dollar-price'>{conversion}</h4>
                 </div>
                 <div className='price_and_rate'>
                     <p className='price_pan'>{product.price}</p>

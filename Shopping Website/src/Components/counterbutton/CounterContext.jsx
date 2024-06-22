@@ -7,13 +7,20 @@ export const CounterProvider = ({ children }) => {
     const [currentProduct, setCurrentProduct] = useState([]);
 
     const handleClick = (product) => {
-        if (counter < 15) {
+        
+        const isAlreadyInCart = currentProduct.some((item) => item.name === product.name);
+    
+        if (isAlreadyInCart) {
+            alert("You're adding an item twice, sir. Check your cart, and choose the quantity of the same product you want.");
+        } else if (counter >= 15) {
+            alert("You've reached the maximum items, sir! Please check your cart above.");
+        } else {
+            // Proceed to add the item to the cart and update the counter
             setCounter(prevCounter => prevCounter + 1);
             setCurrentProduct(prevItems => [...prevItems, product]);
-        } else if (counter >= 15) {
-            alert("You've reached maximum items sir! First check your cart above");
         }
     };
+    
     
 
     return (
