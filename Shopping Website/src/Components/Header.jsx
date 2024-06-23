@@ -45,25 +45,13 @@ function A(){
 
     const [Highlight, setHighlight] = useState( 
         [
-            { name: "Jordan 1 red", price: "35000", image: shoe, quantity: 1},
-            { name: "Jordan 4 white", price: "30000", image: shoe2, quantity: 1 },
-            { name: "Jordan 4 black", price: "45000", image: shoe3, quantity: 1 }      
+            { name: "Jordan 1 red", price: "35000", image: shoe, quantity: 1, stars: 2},
+            { name: "Jordan 4 white", price: "30000", image: shoe2, quantity: 1, stars: 4 },
+            { name: "Jordan 4 black", price: "45000", image: shoe3, quantity: 1, stars: 3 }      
         ]
     );
 
 
-    const updateQuantity = (index, action) => {
-        const updatedProducts = [...Highlight];
-        const currentQuantity = updatedProducts[index].quantity;
-
-        if (action === 'increment') {
-            updatedProducts[index].quantity = Math.min(currentQuantity + 1, 10);
-        } else if (action === 'decrement') {
-            updatedProducts[index].quantity = Math.max(currentQuantity - 1, 1);
-        }
-
-        setHighlight(updatedProducts);
-    };
 
 
 
@@ -108,12 +96,12 @@ function A(){
     //-------------------------------
     const cartButtonhandle = (
         <>
-        <button className="cart_button_one"  onClick={modelClick}>
-            <p className="Cart_ico"><i className="cart_ico fas fa-cart-plus"></i></p>
-            <p className="cart_word">Cart</p>
-            <p className="items_counter">{counter}</p>
-        </button>
-        <MyModal showModal={showModal} setShowModal={setShowModal} counter={counter}  product={currentProduct} updateQuantity={updateQuantity} />
+            <button className="cart_button_one"  onClick={modelClick}>
+                <p className="Cart_ico"><i className="cart_ico fas fa-cart-plus"></i></p>
+                <p className="cart_word">Cart</p>
+                <p className="items_counter">{counter}</p>
+            </button>
+            <MyModal showModal={showModal} setShowModal={setShowModal} counter={counter}  product={currentProduct}/>
         </>
     );
 

@@ -1,11 +1,13 @@
 import './MyModal.css';
 import { useState } from 'react';
+import { useCounter } from '../counterbutton/CounterContext';
 import '@fortawesome/fontawesome-free/css/all.css';
 import cartSvg from './cartSVGs/cartSvg.png'
 
 
 function MyModal(props) {
-  const { showModal, setShowModal, content, counter, product, updateQuantity } = props;
+  const { showModal, setShowModal, content, product } = props;
+  const { counter, currentProduct, updateQuantity, removeItem } = useCounter();
 
 
 
@@ -37,8 +39,6 @@ function MyModal(props) {
   );
 
 
-
-
   
 
 
@@ -59,11 +59,10 @@ function MyModal(props) {
                 <div className='price_and_rate'>
                     <p className='price_pan'>{(product.price/1000)},000 Frw</p>
                     <p className='ratings'>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
+                        {Array.from({ length: product.stars }, (_, i) => (
+                                <i key={i} className="star fa fa-star" aria-hidden="true"></i>
+                            ))
+                        }
                     </p>
                 </div>
                 <div className='quantity_size_pan'>
@@ -83,7 +82,7 @@ function MyModal(props) {
                         <div className='proceed_payment_pan'>
                             <button className='Proceed_button_incart'>Proceed payment</button>
                         </div>
-                        <p className='delete_item'><i class="fa fa-trash" aria-hidden="true"></i></p>
+                        <p className='delete_item'><i onClick={() => removeItem(index)} class="fa fa-trash trash_ico_1" aria-hidden="true"></i></p>
                     </div>
                 </div>
             </div>
@@ -95,19 +94,15 @@ function MyModal(props) {
 
 
 
-
-    // This calculates the summation of the products in cart
     const calculateTotalPrice = () => {
         let totalPrice = 0;
-        product.forEach((item) => {
-        const theP = parseInt(item.price);
-        totalPrice += theP;
+        currentProduct.forEach((item) => {
+            totalPrice += item.price * item.quantity;
         });
         return totalPrice;
     };
-    // Sum of prices of items in cart
-    const totalPrice = calculateTotalPrice();
 
+    const totalPrice = calculateTotalPrice();
 
 
   
@@ -120,7 +115,7 @@ function MyModal(props) {
         </div>
         <div className='total_price_panel'>
             <h3 className='Total-price-header'>Summation ($)</h3>
-            <p className='total-price-par'>{(totalPrice)/1000},000Frw</p>
+            <p className='total-price-par'>{(totalPrice)/1000},000Frw <span> &nbsp; &nbsp; (${(totalPrice)/1000})</span></p>
         </div>
         <div className='proceed_total_payment_panel'>
             <button className='Proceed_total_payment_button'>Proceed total payment</button>

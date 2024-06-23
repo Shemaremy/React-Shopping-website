@@ -436,12 +436,16 @@ a:hover {
 }
 
 .Shoe_itself {
-  /* Ensure image doesn't exceed container height */
     overflow: hidden;
     filter: brightness(70%);
     padding-bottom: 6%;
+    filter: contrast(95%) brightness(70%);
+    transition: filter 0.3s ease-in-out;
 }
 
+.Shoe_itself:hover {
+  filter: contrast(100%) brightness(90%);
+}
 
 
 

@@ -61,12 +61,12 @@ const TrendCards = () => {
 
       const [item, setItem] = useState (
         [
-            { name: "Leather Sandals", price: "20000", image: bluesandals },
-            { name: "Gray Sweater", price: "25000", image: sweater1 },
-            { name: "Jordan 1 red", price: "28000", image: jordan1red },
-            { name: "Jordan 4 white", price: "25000", image: jordan4white },
-            { name: "White Tshirt", price: "17000", image: tshirt2 },
-            { name: "Jordan 13 white", price: "30000", image: jordan13white }
+            { name: "Leather Sandals", price: "20000", image: bluesandals, stars: 5 },
+            { name: "Gray Sweater", price: "25000", image: sweater1, stars: 5 },
+            { name: "Jordan 1 red", price: "28000", image: jordan1red, stars: 2 },
+            { name: "Jordan 4 white", price: "25000", image: jordan4white, stars: 4 },
+            { name: "White Tshirt", price: "17000", image: tshirt2, stars: 4 },
+            { name: "Jordan 13 white", price: "30000", image: jordan13white, stars: 5 }
         ]
       );
 

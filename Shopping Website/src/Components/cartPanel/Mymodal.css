@@ -578,6 +578,15 @@
 }
 
 
+.trash_ico_1 {
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.trash_ico_1:hover {
+    color: rgb(0, 104, 165);
+}
+
 
 
 
