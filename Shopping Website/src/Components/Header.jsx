@@ -45,11 +45,25 @@ function A(){
 
     const [Highlight, setHighlight] = useState( 
         [
-            { name: "Nike air Jordan 1 retro", price: "35,000 Frw", image: shoe },
-            { name: "Jordan 4 white", price: "30,000 Frw", image: shoe2 },
-            { name: "Jordan 12 gray", price: "45,000 Frw", image: shoe3 }      
+            { name: "Jordan 1 red", price: "35000", image: shoe, quantity: 1},
+            { name: "Jordan 4 white", price: "30000", image: shoe2, quantity: 1 },
+            { name: "Jordan 4 black", price: "45000", image: shoe3, quantity: 1 }      
         ]
     );
+
+
+    const updateQuantity = (index, action) => {
+        const updatedProducts = [...Highlight];
+        const currentQuantity = updatedProducts[index].quantity;
+
+        if (action === 'increment') {
+            updatedProducts[index].quantity = Math.min(currentQuantity + 1, 10);
+        } else if (action === 'decrement') {
+            updatedProducts[index].quantity = Math.max(currentQuantity - 1, 1);
+        }
+
+        setHighlight(updatedProducts);
+    };
 
 
 
@@ -60,7 +74,7 @@ function A(){
         <>
             <div className="Item_and_price_container">
                 <h3 className="Item_name">{product.name}</h3>
-                <p className="item_price">{product.price}</p>
+                <p className="item_price">{(product.price/1000)},000 Frw</p>
                 <button className="Add_to_cart_1" onClick={() => {handleClick(product); setShowModal(false);}}>Add to cart<i className="Cart_ico_2 fas fa-cart-plus"></i></button>
             </div>
             <div className="The_shoe_container">
@@ -99,7 +113,7 @@ function A(){
             <p className="cart_word">Cart</p>
             <p className="items_counter">{counter}</p>
         </button>
-        <MyModal showModal={showModal} setShowModal={setShowModal} counter={counter}  product={currentProduct} />
+        <MyModal showModal={showModal} setShowModal={setShowModal} counter={counter}  product={currentProduct} updateQuantity={updateQuantity} />
         </>
     );
 

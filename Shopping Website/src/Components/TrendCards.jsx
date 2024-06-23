@@ -61,12 +61,12 @@ const TrendCards = () => {
 
       const [item, setItem] = useState (
         [
-            { name: "Leather Sandals", price: "20,000 Frw", image: bluesandals },
-            { name: "Gray Sweater", price: "25,000 Frw", image: sweater1 },
-            { name: "Jordan 1 red", price: "28,000 Frw", image: jordan1red },
-            { name: "Jordan 4 white", price: "25,000 Frw", image: jordan4white },
-            { name: "White Tshirt", price: "17,000 Frw", image: tshirt2 },
-            { name: "Jordan 13 white", price: "30,000 Frw", image: jordan13white }
+            { name: "Leather Sandals", price: "20000", image: bluesandals },
+            { name: "Gray Sweater", price: "25000", image: sweater1 },
+            { name: "Jordan 1 red", price: "28000", image: jordan1red },
+            { name: "Jordan 4 white", price: "25000", image: jordan4white },
+            { name: "White Tshirt", price: "17000", image: tshirt2 },
+            { name: "Jordan 13 white", price: "30000", image: jordan13white }
         ]
       );
 
@@ -83,7 +83,7 @@ const TrendCards = () => {
             <div className="card_upper"><img className="jordan1red" src={product.image} alt="" /></div>
             <div className="card_lower">
                 <h2 className="name">{product.name}</h2>
-                <p className="price">{product.price}</p>
+                <p className="price">{(product.price/1000)},000 Frw</p>
                 <button className="cart-trend" onClick={() => {handleClick(product);}}>Add to cart</button>
                 <MyModal product={currentProduct} />
             </div>

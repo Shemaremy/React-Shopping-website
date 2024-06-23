@@ -7,7 +7,7 @@ export const CounterProvider = ({ children }) => {
     const [currentProduct, setCurrentProduct] = useState([]);
 
     const handleClick = (product) => {
-        
+         
         const isAlreadyInCart = currentProduct.some((item) => item.name === product.name);
     
         if (isAlreadyInCart) {

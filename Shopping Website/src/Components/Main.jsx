@@ -53,16 +53,16 @@ function B(){
 
     const [Employees, setEmployees] = useState (
         [
-            { name: "Jordan 1 orange", price: "28,000 Frw", stars: 2, image: Jordan1orange },
-            { name: "Jordan 4 black", price: "25,000 Frw", stars: 3, image: Jordan4black },
-            { name: "Jordan 1 red", price: "28,000 Frw", stars: 2, image: Jordan1red },
-            { name: "Jordan 4 white", price: "25,000 Frw", stars: 4, image: Jordan4white },
-            { name: "Jordan 5 white", price: "32,000 Frw", stars: 3, image: Jordan5white },
-            { name: "Jordan 12 white", price: "30,000 Frw", stars: 5, image: Jordan12white },
-            { name: "Jordan 11 black", price: "26,000 Frw", stars: 3, image: Jordan11black },
-            { name: "Jordan 13 black", price: "33,000 Frw", stars: 4, image: Jordan13black },
-            { name: "Jordan 14 gray", price: "35,000 Frw", stars: 2, image: Jordan14gray },
-            { name: "Jordan 13 white", price: "33,000 Frw", stars: 5, image: Jordan13white }
+            { name: "Jordan 1 orange", price: "28000", stars: 2, image: Jordan1orange },
+            { name: "Jordan 4 black", price: "25000", stars: 3, image: Jordan4black },
+            { name: "Jordan 1 red", price: "28000", stars: 2, image: Jordan1red },
+            { name: "Jordan 4 white", price: "25000", stars: 4, image: Jordan4white },
+            { name: "Jordan 5 white", price: "32000", stars: 3, image: Jordan5white },
+            { name: "Jordan 12 white", price: "30000", stars: 5, image: Jordan12white },
+            { name: "Jordan 11 black", price: "26000", stars: 3, image: Jordan11black },
+            { name: "Jordan 13 black", price: "33000", stars: 4, image: Jordan13black },
+            { name: "Jordan 14 gray", price: "35000", stars: 2, image: Jordan14gray },
+            { name: "Jordan 13 white", price: "33000", stars: 5, image: Jordan13white }
         ]
     );
 
@@ -94,7 +94,7 @@ function B(){
 
                     </div>
                     <div className="price_and_cart_container">  
-                        <p className="Price">{product.price}</p>
+                        <p className="Price">{(product.price/1000)},000 Frw</p>
                         <p className="cart" onClick={() => {handleClick(product);}}><i class="cart_icon fa fa-cart-plus" aria-hidden="true"></i></p>
                         <MyModal product={currentProduct} />
                     </div>
