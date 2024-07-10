@@ -210,10 +210,6 @@
   }
   
   .Shoes {
-      width: 100%; /* Adjust width as needed */
-      height: 75%; /* Maintain aspect ratio */
-      max-width: 100%; /* Ensure image doesn't exceed container width */
-      max-height: 75%;
       overflow: hidden;
   }
   

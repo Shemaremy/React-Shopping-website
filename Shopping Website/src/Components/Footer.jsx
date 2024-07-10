@@ -32,16 +32,16 @@ function C(){
                     </div>
                     <div className="Phone_and_email_container">
                         <p className="phone">
-                            <i class="tel_ico fa fa-phone" aria-hidden="true"></i>+250783674289
+                            <i className="tel_ico fa fa-phone" aria-hidden="true"></i>+250783674289
                         </p>
                         <p className="email">
-                            <i class="mail_ico fa fa-envelope" aria-hidden="true"></i>remyshema20@gmail.com                            
+                            <i className="mail_ico fa fa-envelope" aria-hidden="true"></i>remyshema20@gmail.com                            
                         </p>
                         <div className="Icons_container">
-                            <p className="Social_media_border"><i class="Instagram fab fa-instagram" aria-hidden="true"></i></p>
-                            <p className="Social_media_border"><i class="Twitter fab fa-twitter" aria-hidden="true"></i></p>
-                            <p className="Social_media_border"><i class="Whatsapp fab fa-whatsapp" aria-hidden="true"></i></p>
-                            <p className="Social_media_border"><i class="Linkedin fab fa-linkedin" aria-hidden="true"></i></p>
+                            <p className="Social_media_border"><i className="Instagram fab fa-instagram" aria-hidden="true"></i></p>
+                            <p className="Social_media_border"><i className="Twitter fab fa-twitter" aria-hidden="true"></i></p>
+                            <p className="Social_media_border"><i className="Whatsapp fab fa-whatsapp" aria-hidden="true"></i></p>
+                            <p className="Social_media_border"><i className="Linkedin fab fa-linkedin" aria-hidden="true"></i></p>
                         </div>
                     </div>
                 </div>

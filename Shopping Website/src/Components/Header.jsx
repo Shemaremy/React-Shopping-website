@@ -136,7 +136,7 @@ function A(){
                 <div className="Upper_part_1">
                     <div className="Left_part_2">
                         <div className="Shop_with_container">
-                            <h1 className="shop_with_header">Shop With <span className="Verve_colored">Verve.</span></h1>
+                            <h1 className="shop_with_header">Shop With <br/> <span className="Verve_colored">Verve.</span></h1>
                         </div>
                         <div className="Products_container">  
                             <Slider {...settings}>

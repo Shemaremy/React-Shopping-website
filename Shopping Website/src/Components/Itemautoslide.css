@@ -8,7 +8,7 @@
 
 
 .Trend {
-    height: 105px;
+    height: auto;
     width: 100%;
 }
 
@@ -22,6 +22,9 @@
     cursor: grab;
     border-color: rgb(255, 255, 255);
     border-width: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .card-3:hover {
@@ -29,10 +32,7 @@
 }
 
 .item_auto {
-    min-width: 100%;
-    min-height: 100%;
     width: 100%;
-    height: 100%;
     filter: contrast(100%) brightness(60%) grayscale(70%);
     transition: filter 0.3s ease-in-out;
 }
