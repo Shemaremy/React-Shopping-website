@@ -511,7 +511,7 @@ a:hover {
 
 .One, .Two, .Three, .Four {
   height: auto;
-  width: 90%;
+  width: 23%;
   background-color: rgba(165, 42, 42, 0.445);
   display: flex;
   justify-content: center;
@@ -521,13 +521,13 @@ a:hover {
   border-width: 1px;
   border-radius: 50%;
   cursor: grab;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 
 .img_1, .img_2, .img_3, .img_4 {
-  width: 100%; /* Adjust width as needed */
-  height: auto; /* Maintain aspect ratio */
-  max-width: 100%; /* Ensure image doesn't exceed container width */
-  max-height: 100%; /* Ensure image doesn't exceed container height */
+  width: 80%;
+  height: auto; 
   overflow: hidden;
   filter: brightness(90%);
   transition: filter 0.1s ease;
