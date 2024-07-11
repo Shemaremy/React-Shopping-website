@@ -304,7 +304,7 @@
 
 .item_added_container {
     width: 90%;
-    height: 20vh;
+    height: 30vh;
     border-radius: 20px;
     border-style: solid;
     border-width: 1px;
@@ -336,14 +336,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 
 .img_readyTogo {
-    min-height: 80%;
-    min-width: 80%;
-    height: 80%;
-    width: 80%;
+    width: 65%;
+    height: auto;
 }
 
 
