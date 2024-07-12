@@ -52,22 +52,28 @@ function A(){
 
 // Scroll to the item based on search term
 const { searchTerm, setSearchTerm } = useCounter();
+const [suggestions, setSuggestions] = useState([]);
+
+
+// Combine Highlight and items arrays
+const combinedItems = [
+    { name: "Jordan 1 red", price: "35000", image: shoe, quantity: 1, stars: 2 },
+    { name: "Jordan 4 white", price: "30000", image: shoe2, quantity: 1, stars: 4 },
+    { name: "Jordan 4 black", price: "45000", image: shoe3, quantity: 1, stars: 3 },
+    ...items, ...Employees
+];
+
+
+
+
+
+
 
 const handleSearchClick = (event) => {
     event.preventDefault();
-
-    const combinedItems = [...Highlight, ...items, ...Employees];
-    
-    if (!combinedItems || !searchTerm) {
-        alert('Highlight array or searchTerm is not defined.');
-        return;
-    } 
-    
     const item = combinedItems.find(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
-    
     if (item) {
         const element = document.querySelector(`[data-name="${item.name}"]`);
-        
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
         } else {
@@ -80,6 +86,38 @@ const handleSearchClick = (event) => {
 
 
 
+
+
+
+
+const handleSearchChange = (e) => {
+    const value = e.target.value.toLowerCase();
+    setSearchTerm(value);
+
+    if (value.length > 0) {
+        const filteredSuggestions = combinedItems.filter(item =>
+            item.name.toLowerCase().includes(value)
+        );
+        setSuggestions(filteredSuggestions);
+    } else {
+        setSuggestions([]);
+    }
+};
+
+
+
+
+const handleSuggestionClick = (name) => {
+    setSearchTerm(name);
+    setSuggestions([]);
+    // Scroll to the item
+    const element = document.querySelector(`[data-name="${name}"]`);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        console.warn(`Element with data-name="${name}" not found.`);
+    }
+};
 
 
 
@@ -400,12 +438,11 @@ const handleSearchClick = (event) => {
 
                 <div className="Right_part1">
                     <div className="Input_container_one">
-                        <input className="search_items_one" type="text" placeholder="Search..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} />
+                        <input className="search_items_one" type="text" placeholder="Search..." value={searchTerm} onChange={handleSearchChange} />
                         <button className="Search_icon" onClick={handleSearchClick}>
                             <i className="Search_ico fas fa-search"></i>
                         </button>
                     </div>
-
                     <div className="Icon_one"><p className="User_contain"><i className="User_ico fas fa-user"></i></p></div>
                     <div className="cart_button_container">
                         {cartButtonhandle}
@@ -439,6 +476,17 @@ const handleSearchClick = (event) => {
                                 <div className="Three"><img className="img_3" src={item3} alt="3" /></div>
                                 <div className="Four"><img className="img_4" src={item4} alt="4" /></div>
                             </div>
+                        </div>
+                        <div className="in_the_sugg">
+                            {suggestions.length > 0 && (
+                                <div className="suggestions-container">
+                                    {suggestions.map((suggestion, index) => (
+                                        <div key={index} className="suggestion-item" onClick={() => handleSuggestionClick(suggestion.name)}>
+                                            <p className="suggestion_name">{suggestion.name}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}                            
                         </div>
                     </div>
                 </div>

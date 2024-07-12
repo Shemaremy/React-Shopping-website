@@ -162,6 +162,24 @@ a:hover {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .User_ico {
   border-style: solid;
   border-width: 1px;
@@ -306,9 +324,9 @@ a:hover {
   background-image: linear-gradient(to right, rgb(24, 24, 24), rgba(0, 255, 213, 0.062));
   height: 100%;
   width: 100%;
+  padding-top: 4% !important;
   display: flex;
   flex-direction: column;
-  padding-top: 4%;
 }
 
 .Upper_part_1 {
@@ -467,6 +485,7 @@ a:hover {
 
 
 .Right_part_2 {
+  position: relative;
   width: 45%;
   height: 100%;
   display: flex;
@@ -474,6 +493,58 @@ a:hover {
   border-style: solid;
   border-width: 0px;
 }
+
+.in_the_sugg {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+
+.suggestions-container {
+  background: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  width: 60%;
+  margin-top: 3%;
+  z-index: 999;
+  max-height: 100px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.suggestion-item {
+  cursor: pointer;
+  width: 100% !important;
+}
+
+.suggestion_name {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: sans-serif;
+  font-size: 15px;
+  width: 50%;
+  margin-left: 4%;
+  padding: 2%;
+}
+
+
+.suggestion-item:hover {
+  background-color: #f0f0f0;
+}
+
+
+
+
+
+
+
+
+
 
 .Try_our_new_container {
   width: 100%;
