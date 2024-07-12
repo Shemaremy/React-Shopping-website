@@ -5,7 +5,18 @@ const CounterContext = createContext();
 export const CounterProvider = ({ children }) => {
     const [counter, setCounter] = useState(0);
     const [currentProduct, setCurrentProduct] = useState([]);
+    
+    const [searchTerm, setSearchTerm] = useState('');
 
+
+
+
+
+
+
+
+
+    // Handle trying to add one item twice
     const handleClick = (product) => {
          
         const isAlreadyInCart = currentProduct.some((item) => item.name === product.name);
@@ -21,6 +32,10 @@ export const CounterProvider = ({ children }) => {
         }
     };
 
+
+
+
+    // Incresing the quantity of items dded from 0 to 1 and so on
     const updateQuantity = (index, action) => {
         setCurrentProduct(prevItems => 
             prevItems.map((item, idx) => {
@@ -38,18 +53,36 @@ export const CounterProvider = ({ children }) => {
         );
     };
     
+
+
+
+
+    // Removing an item from cart
     const removeItem = (index) => {
         alert("Are you sure you want to remove this item ?");
         setCurrentProduct(prevItems => prevItems.filter((_, idx) => idx !== index));
         setCounter(prevCounter => prevCounter - 1);
     };
     
+
+
+
+    // Calculate total items in the cart
     const calculateTotalItems = () => {
         return currentProduct.reduce((acc, item) => acc + item.quantity, 0);
     };
 
+
+
+
+
+
+
+
+
+
     return (
-        <CounterContext.Provider value={{ counter: calculateTotalItems(), handleClick, currentProduct, updateQuantity, removeItem }}>
+        <CounterContext.Provider value={{ counter: calculateTotalItems(), handleClick, currentProduct, updateQuantity, removeItem, searchTerm, setSearchTerm  }}>
             {children}
         </CounterContext.Provider>
     );

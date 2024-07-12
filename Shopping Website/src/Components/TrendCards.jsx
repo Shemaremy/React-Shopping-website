@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { useCounter } from "./counterbutton/CounterContext";
 import MyModal from "./cartPanel/MyModal";
 import './TrendCards.css';
@@ -6,29 +6,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
-
-// These are the trending items
-//-----------------------------
-
 import bluesandals from '../images/Trends/coolsandals1.png';
 import sweater1 from '../images/Trends/sweater1.png';
 import jordan1red from '../images/Trends/Jordan 1 red.png';
 import jordan4white from '../images/Trends/Jordan 4 white.png';
 import tshirt2 from '../images/Trends/Tshirt2.png';
 import jordan13white from '../images/Trends/Jordan 13 white.png';
-
-
-
-
-
-
-
-
-
-// These are the svg pngs I used on the botttom of the page
-//----------------------------------------------------------
-
 
 import greatValue from '../images/verveofferspngs/value.png';
 import world from '../images/verveofferspngs/world.png';
@@ -39,13 +22,51 @@ import chat from '../images/verveofferspngs/chat.png';
 
 
 
+
+
+
+
+
+
+// Array of trending items
+export const items = [
+    { name: "Leather Sandals", price: "20000", image: bluesandals, stars: 5 },
+    { name: "Gray sweater", price: "25000", image: sweater1, stars: 5 },
+    { name: "Jordan 1 red", price: "28000", image: jordan1red, stars: 2 },
+    { name: "Jordan 4 white", price: "25000", image: jordan4white, stars: 4 },
+    { name: "White Polo T-shirt", price: "17000", image: tshirt2, stars: 4 },
+    { name: "Jordan 13 white", price: "30000", image: jordan13white, stars: 5 }
+];
+
+
+
+
+
+
+
+
+
+
+
+
 const TrendCards = () => {
-
-    const { handleClick, currentProduct } = useCounter();
-
+    
     const [activeIndex, setActiveIndex] = useState(0);
+    const { handleClick, currentProduct} = useCounter();
+    
 
 
+    
+
+
+
+
+
+
+
+
+
+    // Settings for the slides
     const settings = {
         dots: true,
         className: "center",
@@ -55,61 +76,49 @@ const TrendCards = () => {
         slidesToShow: 3,
         speed: 500,
         beforeChange: (current, next) => setActiveIndex(next)
-      };
-
-
-
-      const [item, setItem] = useState (
-        [
-            { name: "Leather Sandals", price: "20000", image: bluesandals, stars: 5 },
-            { name: "Gray Sweater", price: "25000", image: sweater1, stars: 5 },
-            { name: "Jordan 1 red", price: "28000", image: jordan1red, stars: 2 },
-            { name: "Jordan 4 white", price: "25000", image: jordan4white, stars: 4 },
-            { name: "White Tshirt", price: "17000", image: tshirt2, stars: 4 },
-            { name: "Jordan 13 white", price: "30000", image: jordan13white, stars: 5 }
-        ]
-      );
+    };
 
 
 
 
-
-
-      // The html content for the card
-      //------------------------------
-
-      const card2Content = (product) => (
+    
+    // The html content for the card
+    const card2Content = (product) => (
         <>
             <div className="card_upper"><img className="jordan1red" src={product.image} alt="" /></div>
             <div className="card_lower">
                 <h2 className="name">{product.name}</h2>
-                <p className="price">{(product.price/1000)},000 Frw</p>
-                <button className="cart-trend" onClick={() => {handleClick(product);}}>Add to cart</button>
+                <p className="price">{(product.price / 1000)},000 Frw</p>
+                <button className="cart-trend" onClick={() => { handleClick(product); }}>Add to cart</button>
                 <MyModal product={currentProduct} />
             </div>
         </>
-      );
+    );
 
 
 
 
-
-
-    // Final rendering and looping 
-    //-----------------------------
-    const slider = item.slice(0, 6).map((product, index) => (
-        <div className="Trend-2" key={index + 1}>
+    // Final rendering and looping
+    const slider = items.slice(0, 6).map((product, index) => (
+        <div className="Trend-2" key={index + 1} data-name={product.name}>
             <div className="card-2">{card2Content(product)}</div>
         </div>
     ));
 
-    
 
 
-      
 
 
-    return(
+
+
+
+
+
+
+
+
+
+    return (
         <>
             <div className="Upper_trending_part">
                 <div className="slider-container-2">

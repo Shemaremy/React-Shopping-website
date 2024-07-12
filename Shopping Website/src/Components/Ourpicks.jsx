@@ -175,7 +175,6 @@ function OurPicks () {
     );
 
 
-
     // Summer slider
     const slidingSummer = (
         <Slider {...mainsettings}>
