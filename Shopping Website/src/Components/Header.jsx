@@ -22,7 +22,19 @@ import shoe3 from '../images/Shoes products/Jordan 4 black.png';
 import item1 from '../images/item1.png';
 import item2 from '../images/item2.png';
 import item3 from '../images/item3.png';
-import item4 from '../images/item4.png'; 
+import item4 from '../images/item4.png';
+
+
+
+
+
+
+
+
+
+
+
+
 
 
  
@@ -31,6 +43,8 @@ function A(){
 
     const [showModal, setShowModal] = useState(false);
     const { counter, handleClick, currentProduct, addToCart } = useCounter();
+    const { searchTerm, setSearchTerm } = useCounter();
+    const [suggestions, setSuggestions] = useState([]);
 
 
 
@@ -48,11 +62,6 @@ function A(){
 // ------------------------------------------------ SEARCHING AN ITEM -------------------------------------------------------------------
 // ------------------------------------------------ SEARCHING AN ITEM -------------------------------------------------------------------
 
-
-
-// Scroll to the item based on search term
-const { searchTerm, setSearchTerm } = useCounter();
-const [suggestions, setSuggestions] = useState([]);
 
 
 // Combine Highlight and items arrays
@@ -69,6 +78,12 @@ const combinedItems = [
 
 
 
+
+
+
+
+
+// When the search button is clicked after entering an element
 const handleSearchClick = (event) => {
     event.preventDefault();
     const item = combinedItems.find(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
@@ -90,6 +105,17 @@ const handleSearchClick = (event) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+// When I'm entering some item name, the suggestion box changes based on what we entering
 const handleSearchChange = (e) => {
     const value = e.target.value.toLowerCase();
     setSearchTerm(value);
@@ -107,10 +133,14 @@ const handleSearchChange = (e) => {
 
 
 
+
+
+
+
+// When clicking to a suggested item, this happens
 const handleSuggestionClick = (name) => {
     setSearchTerm(name);
     setSuggestions([]);
-    // Scroll to the item
     const element = document.querySelector(`[data-name="${name}"]`);
     if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
@@ -118,11 +148,6 @@ const handleSuggestionClick = (name) => {
         console.warn(`Element with data-name="${name}" not found.`);
     }
 };
-
-
-
-
-
 
 
 
@@ -277,53 +302,58 @@ const handleSuggestionClick = (name) => {
 
 
 
-    const settings = {
-        infinite: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        speed: 1000,
-        autoplaySpeed: 5000,
-        cssEase: "linear"
-      };
+const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 1000,
+    autoplaySpeed: 5000,
+    cssEase: "linear"
+};
 
 
-    // State for highlighted items on the first page
-    const [Highlight, setHighlight] = useState( 
-        [
-            { name: "Jordan 1 red", price: "35000", image: shoe, quantity: 1, stars: 2},
-            { name: "Jordan 4 white", price: "30000", image: shoe2, quantity: 1, stars: 4},
-            { name: "Jordan 4 black", price: "45000", image: shoe3, quantity: 1, stars: 3}      
-        ]
-    );
 
 
-    // This is card content wraps
-    const card4Content = (product) =>(
-        <>
-            <div className="Item_and_price_container">
-                <h3 className="Item_name">{product.name}</h3>
-                <p className="item_price">{(product.price/1000)},000 Frw</p>
-                <button className="Add_to_cart_1" onClick={() => {handleClick(product); setShowModal(false);}}>Add to cart<i className="Cart_ico_2 fas fa-cart-plus"></i></button>
-            </div>
-            <div className="The_shoe_container">
-                <img src={product.image} className="Shoe_itself" alt={product.name} />
-            </div>
-        </>
-    );
+// State for highlighted items on the first page
+const [Highlight, setHighlight] = useState( 
+    [
+        { name: "Jordan 1 red", price: "35000", image: shoe, quantity: 1, stars: 2},
+        { name: "Jordan 4 white", price: "30000", image: shoe2, quantity: 1, stars: 4},
+        { name: "Jordan 4 black", price: "45000", image: shoe3, quantity: 1, stars: 3}      
+    ]
+);
 
 
- 
-    // Final render Highlight item    
-    //----------------------------
-    const highlightItem = Highlight.slice(0, 3).map((product, index) => (
-        <div className="contain" key={index + 1} data-name={product.name}>
-            <div className="Trend">
-                <div className="card-4">{card4Content(product)}</div>
-            </div>
+
+
+
+// This is card content wraps
+const card4Content = (product) =>(
+    <>
+        <div className="Item_and_price_container">
+            <h3 className="Item_name">{product.name}</h3>
+            <p className="item_price">{(product.price/1000)},000 Frw</p>
+            <button className="Add_to_cart_1" onClick={() => {handleClick(product); setShowModal(false);}}>Add to cart<i className="Cart_ico_2 fas fa-cart-plus"></i></button>
         </div>
-    ));
+        <div className="The_shoe_container">
+            <img src={product.image} className="Shoe_itself" alt={product.name} />
+        </div>
+    </>
+);
+
+
+
+// Final render Highlight item    
+//----------------------------
+const highlightItem = Highlight.slice(0, 3).map((product, index) => (
+    <div className="contain" key={index + 1} data-name={product.name}>
+        <div className="Trend">
+            <div className="card-4">{card4Content(product)}</div>
+        </div>
+    </div>
+));
 
 
 
