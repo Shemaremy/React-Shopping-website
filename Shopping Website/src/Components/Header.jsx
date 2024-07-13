@@ -111,12 +111,7 @@ function A(){
 
 
 // Combine Highlight and items arrays
-const combinedItems = [
-    { name: "Jordan 1 red", price: "35000", image: shoe, quantity: 1, stars: 2 },
-    { name: "Jordan 4 white", price: "30000", image: shoe2, quantity: 1, stars: 4 },
-    { name: "Jordan 4 black", price: "45000", image: shoe3, quantity: 1, stars: 3 },
-    ...items, ...Employees
-];
+const combinedItems = [ ...Employees  ];
 
 
 
@@ -175,7 +170,9 @@ const handleSearchChange = (e) => {
 const handleSuggestionClick = (name) => {
     handleSearchTermChange(name);
     setSuggestions([]);
-    const element = document.querySelector(`[data-name="${name}"]`);
+    
+    const mainer = document.querySelector('.B');
+    const element = mainer.querySelector(`[data-name="${name}"]`);
     if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
     } else {
@@ -353,13 +350,11 @@ const settings = {
 
 
 // State for highlighted items on the first page
-const [Highlight, setHighlight] = useState( 
-    [
-        { name: "Jordan 1 red", price: "35000", image: shoe, quantity: 1, stars: 2},
-        { name: "Jordan 4 white", price: "30000", image: shoe2, quantity: 1, stars: 4},
-        { name: "Jordan 4 black", price: "45000", image: shoe3, quantity: 1, stars: 3}      
-    ]
-);
+const [Highlight, setHighlight] = useState([
+    { name: "Jordan 1 red", price: "35000", image: shoe, quantity: 1, stars: 2 },
+    { name: "Jordan 4 white", price: "30000", image: shoe2, quantity: 1, stars: 4 },
+    { name: "Jordan 4 black", price: "45000", image: shoe3, quantity: 1, stars: 3 }
+]);
 
 
 
@@ -433,30 +428,6 @@ const highlightItem = Highlight.slice(0, 3).map((product, index) => (
 // ----------------------------- HANDLING THE CART PANNEL VISIBILITY ON CLICK -------------------------------------------------
 // ----------------------------- HANDLING THE CART PANNEL VISIBILITY ON CLICK -------------------------------------------------
 // ----------------------------- HANDLING THE CART PANNEL VISIBILITY ON CLICK -------------------------------------------------
-
-/** 
-
-    // When the cart is clicked
-    const modelClick = () => {
-        setShowModal(!showModal);
-        document.body.style.overflow = 'hidden';
-        document.body.style.width = '100vw';
-    };
-
-    // Cart Button on top of the page
-    const cartButtonhandle = (
-        <>
-            <button className="cart_button_one"  onClick={modelClick}>
-                <p className="Cart_ico"><i className="cart_ico fas fa-cart-plus"></i></p>
-                <p className="cart_word">Cart</p>
-                <p className="items_counter">{counter}</p>
-            </button>
-            <MyModal showModal={showModal} setShowModal={setShowModal} counter={counter}  product={currentProduct}/>
-        </>
-    );
-
-
-*/
 
 
 
