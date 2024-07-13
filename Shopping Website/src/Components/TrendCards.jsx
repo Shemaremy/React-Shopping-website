@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useCounter } from "./counterbutton/CounterContext";
+import { useCounter } from "./Redux store/Counter";
 import MyModal from "./cartPanel/MyModal";
 import './TrendCards.css';
 import Slider from "react-slick";

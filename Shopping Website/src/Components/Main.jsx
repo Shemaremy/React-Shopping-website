@@ -1,13 +1,15 @@
 import React from "react";
-import { useState } from "react";
-import { useCounter } from "./counterbutton/CounterContext";
+import { useCounter } from "./Redux store/Counter";
 import MyModal from "./cartPanel/MyModal";
 
-import './Main.css';
-import '@fortawesome/fontawesome-free/css/all.css';
 import OurPicks from "./Ourpicks";
 import TrendCards from "./TrendCards";
 import Slider from "react-slick";
+import './Main.css';
+
+
+import '@fortawesome/fontawesome-free/css/all.css';
+
 
 import Jordan1orange from '../images/Shoes products/Jordan 1 orange.png'; 
 import Jordan4black from '../images/Shoes products/Jordan 4 black.png'; 
@@ -19,6 +21,14 @@ import Jordan11black from '../images/Shoes products/Jordan 11 black.png';
 import Jordan13black from '../images/Shoes products/Jordan 13 black.png'; 
 import Jordan14gray from '../images/Shoes products/Jordan 14 gray.png'; 
 import Jordan13white from '../images/Shoes products/Jordan 13 white.png'; 
+
+
+
+
+
+
+
+
 
 
 
@@ -44,12 +54,44 @@ export const Employees = ([
 
 
 
-function B(){
-    const { handleClick, currentProduct } = useCounter();
+function B() {
+
+
+    const { handleClick } = useCounter(); // Destructure handleClick from useCounter
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ------------------------------------------------------------ OUR PRODUCTS CARDS -------------------------------------------------
+// ------------------------------------------------------------ OUR PRODUCTS CARDS -------------------------------------------------
+// ------------------------------------------------------------ OUR PRODUCTS CARDS -------------------------------------------------
+// ------------------------------------------------------------ OUR PRODUCTS CARDS -------------------------------------------------
+
+
+
+
+
+    // Slick slider settings
     const settings = {
         dots: false,
         className: "center",
@@ -58,25 +100,11 @@ function B(){
         centerPadding: "0px",
         slidesToShow: 5,
         speed: 500
-      };
+    };
 
 
 
-//-----------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-    
-
-
-
-
-
-
-
-     // CARD CONTENT FOR OUR PRODUCTS CARDS
+    // CARD CONTENT FOR OUR PRODUCTS CARDS
     const cardDraftOne = (product) => (
         <>
             <div className="draftUp">
@@ -88,16 +116,14 @@ function B(){
                 <div className="item_name_container"><p className="item_p">{product.name}</p></div>
                 <div className="stars_and_prices_container">
                     <div className="stars_container">
-
                         {Array.from({ length: product.stars }, (_, i) => (
                             <i key={i} className="star fa fa-star" aria-hidden="true"></i>
                         ))}
-
                     </div>
                     <div className="price_and_cart_container">  
                         <p className="Price">{(product.price/1000)},000 Frw</p>
-                        <p className="cart" onClick={() => {handleClick(product);}}><i class="cart_icon fa fa-cart-plus" aria-hidden="true"></i></p>
-                        <MyModal product={currentProduct} />
+                        <p className="cart" onClick={() => {handleClick(product);}}><i className="cart_icon fa fa-cart-plus" aria-hidden="true"></i></p>
+                        <MyModal product={Employees} />
                     </div>
                 </div>
             </div>
@@ -106,20 +132,21 @@ function B(){
 
 
 
-
-    // This is the final rendering in cards
+    // This is the final rendering in cards but this is upper section
     const TrendDraftOne = Employees.slice(0, 5).map((product, index) => (
         <div className="Trend-draft" key={index + 1} data-name={product.name}>
             <div className="card-draft">{cardDraftOne(product)}</div>
         </div>
     ));
 
+
+
+    // Lower section for cards
     const TrendDraftTwo = Employees.slice(5).map((product, index) => (
         <div className="Trend-draft" key={index + 1} data-name={product.name}>
             <div className="card-draft">{cardDraftOne(product)}</div>
         </div>
     ));
-    
 
 
 
@@ -128,7 +155,45 @@ function B(){
 
 
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     return( 
         <div className="B">
             <div className="Upper_part_main">

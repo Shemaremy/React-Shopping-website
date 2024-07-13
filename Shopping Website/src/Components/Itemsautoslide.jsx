@@ -29,7 +29,7 @@ function Itemsautoslide () {
         autoplaySpeed: 2000,
         cssEase: "linear",
         arrows: false
-      };
+    };
 
 
       const [item, setItem] = useState (
@@ -46,12 +46,10 @@ function Itemsautoslide () {
         ]
       );
 
-
     
 
 
-    // Rendering card images and looping 
-    //----------------------------------
+    // Rendering card images and looping
     const slider = item.slice(0, 9).map((product, index) => (
         <div className="Trend" key={index + 1}>
             <div className="card-3"><img className="item_auto" src={product.image} alt="" /></div>

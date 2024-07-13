@@ -1,5 +1,11 @@
 import React, {useState, useEffect} from "react";
-import { useCounter } from "./counterbutton/CounterContext";
+
+import { useCounter } from "./Redux store/Counter";
+import { useSelector, useDispatch } from 'react-redux';
+import { setSearchTerm } from './Redux store/actions';
+
+
+
 import { items } from "./TrendCards";
 import { Employees } from "./Main";
 
@@ -40,11 +46,51 @@ import item4 from '../images/item4.png';
  
 function A(){
 
-
+    const dispatch = useDispatch();
     const [showModal, setShowModal] = useState(false);
-    const { counter, handleClick, currentProduct, addToCart } = useCounter();
-    const { searchTerm, setSearchTerm } = useCounter();
+    const currentProduct = useSelector(state => state.currentProduct);
+    const searchTerm = useSelector(state => state.searchTerm);
     const [suggestions, setSuggestions] = useState([]);
+    const { handleClick} = useCounter();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -77,12 +123,6 @@ const combinedItems = [
 
 
 
-
-
-
-
-
-
 // When the search button is clicked after entering an element
 const handleSearchClick = (event) => {
     event.preventDefault();
@@ -104,12 +144,9 @@ const handleSearchClick = (event) => {
 
 
 
-
-
-
-
-
-
+const handleSearchTermChange = (term) => {
+    dispatch(setSearchTerm(term));
+};
 
 
 
@@ -118,7 +155,7 @@ const handleSearchClick = (event) => {
 // When I'm entering some item name, the suggestion box changes based on what we entering
 const handleSearchChange = (e) => {
     const value = e.target.value.toLowerCase();
-    setSearchTerm(value);
+    handleSearchTermChange(value);
 
     if (value.length > 0) {
         const filteredSuggestions = combinedItems.filter(item =>
@@ -134,12 +171,9 @@ const handleSearchChange = (e) => {
 
 
 
-
-
-
-// When clicking to a suggested item, this happens
+// When suggested item is clicked
 const handleSuggestionClick = (name) => {
-    setSearchTerm(name);
+    handleSearchTermChange(name);
     setSuggestions([]);
     const element = document.querySelector(`[data-name="${name}"]`);
     if (element) {
@@ -148,6 +182,8 @@ const handleSuggestionClick = (name) => {
         console.warn(`Element with data-name="${name}" not found.`);
     }
 };
+
+
 
 
 
@@ -398,6 +434,7 @@ const highlightItem = Highlight.slice(0, 3).map((product, index) => (
 // ----------------------------- HANDLING THE CART PANNEL VISIBILITY ON CLICK -------------------------------------------------
 // ----------------------------- HANDLING THE CART PANNEL VISIBILITY ON CLICK -------------------------------------------------
 
+/** 
 
     // When the cart is clicked
     const modelClick = () => {
@@ -419,10 +456,30 @@ const highlightItem = Highlight.slice(0, 3).map((product, index) => (
     );
 
 
+*/
 
 
 
+// When the cart is clicked, show cart panel
+const modelClick = () => {
+    setShowModal(!showModal);
+    document.body.style.overflow = 'hidden';
+    document.body.style.width = '100vw';
+};
 
+
+
+// Cart Button on top of the page
+const cartButtonhandle = (
+    <>
+        <button className="cart_button_one" onClick={modelClick}>
+            <p className="Cart_ico"><i className="cart_ico fas fa-cart-plus"></i></p>
+            <p className="cart_word">Cart</p>
+            <p className="items_counter">{currentProduct.reduce((acc, item) => acc + item.quantity, 0)}</p>
+        </button>
+        <MyModal showModal={showModal} setShowModal={setShowModal} counter={currentProduct.reduce((acc, item) => acc + item.quantity, 0)} product={currentProduct}/>
+    </>
+);
 
 
 
