@@ -303,7 +303,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
 
 .item_added_container {
     width: 90%;
-    height: 30vh;
+    height: 25vh;
     border-radius: 20px;
     border-style: solid;
     border-width: 1px;
@@ -316,13 +316,12 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    cursor: grab;
-    transition: background-color 0.3s ease-in-out;
+    transition: background-color 0.1s ease-in-out;
 }
 
 
 .item_added_container:hover {
-    background-color: rgba(182, 212, 175, 0.849);
+    background-color: rgba(175, 212, 204, 0.849);
 }
 
 
@@ -419,7 +418,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
     font-family: sans-serif;
     display: flex;
     align-items: center;
-    font-size: 11px;
+    font-size: 13px;
     padding: 0;
     margin-left: 0;
     margin-right: 0;
@@ -484,7 +483,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
 
 .quantity_container:hover {
     border-color: green;
-    background-color: rgb(138, 175, 138);
+    background-color: rgba(138, 175, 138, 0.253);
 }
 
 
@@ -558,7 +557,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
 }
 
 .Proceed_button_incart:active {
-    transform: scale(0.5);    
+    transform: scale(0.8);    
 }
 
 
@@ -683,7 +682,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
 }
 
 .Proceed_total_payment_button:active {
-    transform: scale(0.3); 
+    transform: scale(0.8); 
 }
 
 

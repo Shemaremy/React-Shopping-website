@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { updateQuantity, removeItem } from '../Redux store/actions'; // Adjust path as needed
+import { updateQuantity, removeItem } from '../Redux store/actions'; 
+import { useHistory } from 'react-router-dom';
 
 
 
@@ -26,7 +27,7 @@ function MyModal(props) {
   // Extracting specific functions and data from props
   const { showModal, setShowModal, content, product, counter, currentProduct, updateQuantity, removeItem } = props;
 
-
+  const history = useHistory();
 
 
 

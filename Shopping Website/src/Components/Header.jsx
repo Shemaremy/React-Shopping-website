@@ -123,7 +123,8 @@ const handleSearchClick = (event) => {
     event.preventDefault();
     const item = combinedItems.find(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
     if (item) {
-        const element = document.querySelector(`[data-name="${item.name}"]`);
+        const mainer = document.querySelector('.B');
+        const element = mainer.querySelector(`[data-name="${item.name}"]`);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
         } else {
@@ -174,7 +175,9 @@ const handleSuggestionClick = (name) => {
     const mainer = document.querySelector('.B');
     const element = mainer.querySelector(`[data-name="${name}"]`);
     if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+
+        element.scrollIntoView({ behavior: 'smooth' });  
+        
     } else {
         console.warn(`Element with data-name="${name}" not found.`);
     }
