@@ -4,7 +4,7 @@ body {
   width: 100vw; /* Use viewport width */
   height: 500vh; /* Use viewport height */
   background-color: rgb(255, 255, 255);
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   display: flex;
   justify-content: space-between;
   flex-direction: column;

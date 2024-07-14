@@ -1,10 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { updateQuantity, removeItem } from '../Redux store/actions'; 
-import { useHistory } from 'react-router-dom';
-
-
-
+import { useNavigate } from 'react-router-dom';
 
 import '@fortawesome/fontawesome-free/css/all.css';
 import cartSvg from './cartSVGs/cartSvg.png';
@@ -21,13 +18,33 @@ import './MyModal.css';
 
 function MyModal(props) {
 
-
-
-
   // Extracting specific functions and data from props
   const { showModal, setShowModal, content, product, counter, currentProduct, updateQuantity, removeItem } = props;
 
-  const history = useHistory();
+
+
+  const navigate = useNavigate();
+  const handleProceedPayment = () => {
+    navigate('/payment');
+  };
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
 
 
 
@@ -101,7 +118,7 @@ function MyModal(props) {
               </div>
               <div className='proceed_delete_panel'>
                 <div className='proceed_payment_pan'>
-                  <button className='Proceed_button_incart'>Proceed payment</button>
+                    <button className='Proceed_button_incart' onClick={handleProceedPayment}>Proceed payment</button>                  
                 </div>
                 <p className='delete_item'><i onClick={() => removeItem(index)} className="fa fa-trash trash_ico_1" aria-hidden="true"></i></p>
               </div>

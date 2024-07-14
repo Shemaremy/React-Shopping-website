@@ -529,6 +529,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
     align-items: center;
 }
 
+
 .proceed_payment_pan {
     height: 98%;
     width: 80%;
@@ -536,6 +537,14 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
     justify-content: flex-end;
     align-items: center;
 }
+
+
+
+
+.Link {
+    width: auto;
+}
+
 
 .Proceed_button_incart {
     height: 60%;
@@ -559,6 +568,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
 .Proceed_button_incart:active {
     transform: scale(0.8);    
 }
+
 
 
 
