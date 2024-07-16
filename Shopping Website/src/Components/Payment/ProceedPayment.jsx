@@ -1,12 +1,47 @@
 import React from 'react';
 import 'react-phone-number-input/style.css'
+import { useState} from 'react';
+
 import PhoneInput from 'react-phone-number-input'
 import './ProceedPayment.css'
-import { useState } from 'react';
+
+import {CitySelect, CountrySelect, StateSelect, LanguageSelect } from "react-country-state-city";
+import "react-country-state-city/dist/react-country-state-city.css";
+
 
 function ProceedPayment() {
 
-    const [value, setValue] = useState()
+    const [value, setValue] = useState('');
+    
+    const [phoneNumberError, setPhoneNumberError] = useState('');
+
+    const handlePhoneChange = (phoneNumber) => {
+        if (!phoneNumber) {
+            setValue(''); 
+            setPhoneNumberError('This field cannot be empty!');
+        } else {
+            setValue(phoneNumber);
+            if (phoneNumber.length < 13) {
+                setPhoneNumberError('Enter a valid 10 digit phone number.');
+            } else {
+                setPhoneNumberError('');
+            }
+        }
+    };
+    
+
+
+
+
+
+    const [countryId, setCountryId] = useState('');
+    const handleCountryChange = (selectedCountry) => {
+        setCountryId(selectedCountry.isoCode);
+    };
+
+    let currentCountry = 'RW'
+    
+
 
 
 
@@ -43,7 +78,11 @@ function ProceedPayment() {
                             <div className='city_zipcode_container'>
                                 <div className='first_name'>
                                     <p className='indicator'>COUNTRY</p>
-                                    <input type="text" placeholder='ex: Rwanda'/>
+                                    <CountrySelect 
+                                        onChange={handleCountryChange} 
+                                        placeHolder="Select Country" 
+                                        className='country_select'
+                                    />
                                 </div>
                                 <div className='last_name'>
                                     <p className='indicator'>CITY</p>
@@ -59,8 +98,12 @@ function ProceedPayment() {
                             </div>
                             <div className='phone_container'>
                                 <div className='first_name'>
-                                    <p className='indicator'>PHONE NUMBER</p>
-                                    <input type="text" placeholder='ex: (+250) 783 674 289'/>
+                                    <PhoneInput placeholder="Enter phone number" 
+                                    value={value} 
+                                    onChange={handlePhoneChange} 
+                                    defaultCountry={currentCountry}  
+                                    className='phone_input'/>
+                                    {phoneNumberError && <p className='error-text'>{phoneNumberError}</p>}
                                 </div>
                             </div>
                         </form>

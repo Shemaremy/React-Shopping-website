@@ -144,7 +144,18 @@
 }
 
 
-input {
+
+
+
+
+
+
+/*------------------------------Package modifications-------------------------------------------*/
+
+
+
+
+input, .phone_input {
     background-color: rgba(170, 170, 170, 0.11);
     border-style: solid;
     border-width: 1px;
@@ -155,6 +166,78 @@ input {
     outline: none;
     padding-left: 2%;
 }
+
+
+
+.phone_container > .first_name > .phone_input {
+    border-width: 0px;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+
+.city_zipcode_container > .first_name > div {
+    width: 100%;
+}
+
+.stdropdown-container {
+    background-color: rgba(170, 170, 170, 0.11);
+}
+
+.stsearch-box input {
+    border-width: 0px !important;
+    height: 100% !important;
+}
+
+.stdropdown-tools {
+    cursor: pointer;
+}
+
+
+.stdropdown-container:hover {
+    border-color: rgb(42, 112, 158);
+}
+
+.stdropdown-container:active {
+    border-color: rgb(42, 112, 158);
+}
+
+
+
+.stsearch-box input {
+    background-color: rgba(0, 0, 255, 0);
+}
+
+
+
+
+.phone_input {
+    height: 100%;
+}
+
+.phone_container > .first_name {
+    position: relative;
+}
+
+
+.error-text {
+    color: red;
+    font-size: 11px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: sans-serif;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding-left: 35%;
+    text-align: left;
+}
+
+
+
+/*------------------------------------------------------------------------------------------------------*/
+
+
+
 
 
 input:hover {
