@@ -12,8 +12,8 @@ function C(){
                     </div>
                     <div className="Form_container">
                         <form action="">
-                            <input type="text" />
-                            <input type="text" />
+                            <input className="footer_input" type="text" />
+                            <input className="footer_input" type="text" />
                             <button className="Send_footer_button">Send</button> 
                         </form>
                     </div>

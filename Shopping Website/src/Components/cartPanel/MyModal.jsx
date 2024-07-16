@@ -163,7 +163,7 @@ function MyModal(props) {
         <p className='total-price-par'>{(totalPrice) / 1000},000Frw <span> &nbsp; &nbsp; (${(totalPrice) / 1000})</span></p>
       </div>
       <div className='proceed_total_payment_panel'>
-        <button className='Proceed_total_payment_button'>Proceed total payment</button>
+        <button className='Proceed_total_payment_button' onClick={handleProceedPayment}>Proceed total payment</button>
       </div>
     </div>
   );

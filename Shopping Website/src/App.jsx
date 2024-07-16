@@ -3,7 +3,6 @@ import A from './Components/Header'
 import B from './Components/Main'
 import C from './Components/Footer'
 import { BrowserRouter as Router, Route, Routes, useLocation} from 'react-router-dom';
-import MyModal from './Components/cartPanel/MyModal';
 import ProceedPayment from './Components/Payment/ProceedPayment';
 
 import { Provider } from 'react-redux';
@@ -32,9 +31,10 @@ function AppRoutes() {
 
   useEffect(() => {
     if (location.pathname === '/payment') {
-      document.body.style.overflow = 'hidden';
+      document.body.style.height = '100vh';
     } else {
       document.body.style.overflowY = 'auto';
+      document.body.style.height = ''
     }
 
   }, [location.pathname]);

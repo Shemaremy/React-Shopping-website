@@ -1,8 +1,300 @@
-
-.paying {
-    overflow: hidden !important;
-    height: 100vh;
-    width: 100vw;
-    background-color: orange;
+.paying-wrapper {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(226, 226, 226);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
+
+
+
+
+
+
+.left_part_pay {
+    background-color: rgb(241, 241, 241);
+    height: 95%;
+    width: 50%;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.082);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.address_details, .header_description, .upper_form_title {
+    font-family: sans-serif;
+    font-weight: 100;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.upper_left_pay {
+    height: 20%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.address_details {
+    width: 90%;
+    font-size: 30px;
+}
+
+.header_description {
+    width: 90%;
+    margin-top: 1%;
+    font-size: 11px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Form_section {
+    height: 78%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.upper_form_title {
+    width: 90%;
+    height: 8%;
+    font-size: 20px;
+}
+
+.address_form_container {
+    height: 90%;
+    width: 93%;
+}
+
+.address_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+
+
+
+.names_container, 
+.street_container,
+.city_zipcode_container,
+.country_container,
+.phone_container {
+    height: 18%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+.first_name, .last_name {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+input {
+    background-color: rgba(170, 170, 170, 0.11);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(167, 167, 167, 0.884);
+    width: 95%;
+    height: 45%;
+    border-radius: 4px;
+    outline: none;
+    padding-left: 2%;
+}
+
+
+input:hover {
+    border-color: rgb(42, 112, 158);
+}
+
+input:focus {
+    border-color: rgb(42, 112, 158);
+}
+
+
+
+
+
+
+.indicator {
+    width: 95%;
+    height: 25%;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: sans-serif;
+    font-size: 10px;
+    color: rgb(53, 53, 53);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.names_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.city_zipcode_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.right_part_pay {
+    background-color: rgb(241, 241, 241);
+    height: 95%;
+    width: 40%;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.082);
+
+}

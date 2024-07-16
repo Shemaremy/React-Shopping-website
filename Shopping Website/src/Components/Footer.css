@@ -53,7 +53,8 @@ form {
     flex-direction: column;
 }
 
-input {
+
+.footer_input {
     width: 90%;
     margin-top: 3%;
     border-style: solid;
@@ -67,12 +68,12 @@ input {
     transition: width 0.6s ease-in-out;
 }
 
-input:hover {
+.footer_input:hover {
     width: 85%;
     border-color: rgb(87, 140, 175);
 }  
 
-input:focus {
+.footer_input:focus {
     width: 85%;
     border-color: rgb(87, 140, 175);
 }  
