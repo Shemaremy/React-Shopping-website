@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { useLocation } from 'react-router-dom';
 import './ProceedPayment.css'
 import mastercard from './cardImages/mastercard.jpg'
 import visacard from './cardImages/visacard.jpg'
@@ -54,6 +55,8 @@ function ProceedPayment() {
     const [phoneNumberError, setPhoneNumberError] = useState('');
     const [countryId, setCountryId] = useState('');
     let currentCountry = 'RW'
+    const { state } = useLocation();
+    const { currentProduct } = state || {};
 
     const [content, setContent] = useState('orderSummary');
     const handleOrderSummaryClick = () => {
@@ -182,20 +185,24 @@ function ProceedPayment() {
         <div className='order_summary_container'>
             <div className='lower_summary'>
                 <div className='items_container_summary'>
-                    <div className='item_summary_row'>
-                        <div className='img_and_name'>
-                            <div className='img_summary'></div>
-                            <div className='img_description_summary'>
-                                <h3 className='item_name_summary'>Jordan 1 red</h3>
-                                <p className='size_summary'>Size: 42</p>
-                                <h5 className='quantity_number'>Quantity: 1</h5>
+                    {currentProduct && currentProduct.map((item, index) => (
+                        <div key={index} className='item_summary_row'>
+                            <div className='img_and_name'>
+                                <div className='img_summary'>
+                                    <img src={item.image} alt={item.name} />
+                                </div>
+                                <div className='img_description_summary'>
+                                    <h3 className='item_name_summary'>{item.name}</h3>
+                                    <p className='size_summary'>Size: 42</p>
+                                    <h5 className='quantity_number'>Quantity: {item.quantity}</h5>
+                                </div>
+                            </div>
+                            <div className='summary_price'>
+                                <p className='dollar_price_summary'>${(item.price / 1000)}</p>
+                                <p className='price_in_rwf'>{(item.price / 1000)},000 Frw</p>
                             </div>
                         </div>
-                        <div className='summary_price'>
-                            <p className='dollar_price_summary'>$30</p>
-                            <p className='price_in_rwf'>30,000 Frw</p>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </div>
             <div className='small_calculations'>

@@ -1027,14 +1027,13 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
 .items_container_summary {
     height: auto;
     width: 100%;
-    margin-bottom: 2%;
     overflow: hidden;
-    background-color: chocolate;
 }
 
 .item_summary_row {
     width: 100%;
     height: 100px;
+    margin-bottom: 2%;
     background-color: green;
     display: flex;
     flex-direction: row;
@@ -1053,6 +1052,13 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
     height: 100%;
     width: 30%;
     background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_summary > img {
+    width: 70%;
 }
 
 .img_description_summary {
