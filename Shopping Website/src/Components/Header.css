@@ -7,7 +7,7 @@
 }
 
 
-nav {
+.desktop_nav {
   position: fixed;
   display: flex;
   flex-direction: row;
@@ -43,7 +43,6 @@ h4 {
   color: white;
   font-family: sans-serif;
   font-size: 25px;
-  padding-right: 15%;
   margin: 0 auto;
 }
 
@@ -130,50 +129,48 @@ a:hover {
   height: 80%;
   display: flex;
   align-items: center;
-  background-color: greenyellow;
+  justify-content: center;
 }
 
-.search_items_one {
+
+.top_search_container {
   height: 90%;
-  width: 80%;
-  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.055);
+  border-radius: 18px;
   border-style: solid;
   border-width: 1px;
   border-color: rgba(255, 255, 255, 0.534);
-  border-right: none;
-  background-color: rgba(255, 255, 255, 0.055);
-  border-radius: 18px 0px 0px 18px;
+
+}
+
+.search_items_input {
+  height: 90%;
+  width: 70%;
+  border-style: solid;
+  border-width: 0px;
   color: rgba(255, 255, 255, 0.747);
-  padding-left: 7%;
   outline: none;
-  background-color: brown;
+  background-color: #cccccc00;
 }
 
-.search_items_one:hover {
-  border-color: rgba(255, 255, 255, 0.534);
-}
 
-.search_items_one:focus {
-  border-color: rgba(255, 255, 255, 0.534);
-}
-
-.Search_icon {
-  width: 20%;
+.Search-icon-container {
   height: 100%;
-  border-style: solid;
-  border-width: 1px;
-  border-color: rgba(255, 255, 255, 0.534);
-  border-left: none;
-  border-radius: 0px 18px 18px 0px;
-  background-color: rgba(255, 255, 255, 0.055);
+  width: 5%;
+  border-width: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   color: white;
-  margin: 0 auto;
+  background-color: rgba(245, 245, 220, 0);
 }
 
-.Search_icon:hover .Search_ico {
-  color: rgb(0, 255, 0);
-}
 
 .Search_ico {
   font-size: 12px;
@@ -200,7 +197,7 @@ a:hover {
   border-width: 1px;
   border-color: white;
   color: white;
-  font-size: 9px;
+  font-size: 8px;
   border-radius: 50%;
   padding: 9px;
   background-color: rgba(255, 255, 255, 0.329);
@@ -226,7 +223,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  
+  margin-left: 5px;
 }
 
 .cart_button_one {
@@ -289,6 +286,186 @@ a:hover {
 
 
 
+
+
+
+
+
+
+.mobile_nav {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  height: 10%;
+  width: 100%;
+  background-color: rgb(44, 44, 44);
+  z-index: 999;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.363);
+  background-color: rgb(37, 37, 37);
+  background-image: linear-gradient(to right, rgb(24, 24, 24), rgba(0, 255, 213, 0.062));
+
+}
+
+.left_part_mobile {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.burger_container {
+  width: 40px;
+}
+
+.hamburger {
+	position: relative;
+	display: block;
+	width: 28px;
+	cursor: pointer;
+	appearance: none;
+	background: none;
+	outline: none;
+	border: none;
+  margin: 0;
+	padding: 0;
+}
+
+
+.hamburger .bar, 
+.hamburger:after, 
+.hamburger:before {
+	content: '';
+	display: block;
+	width: 100%;
+	height: 1.5px;
+	background-color:rgba(255, 255, 255, 0.767);
+	margin: 5px 0px;
+	transition: 0.4s;
+  z-index: 999;
+  overflow-x: hidden;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #00000000;
+  border-radius: 5px;
+}
+
+
+.hamburger.is-active:before {
+	transform: rotate(-45deg) translate(-8px, 4px);
+}
+
+.hamburger.is-active:after {
+	transform: rotate(45deg) translate(-8px, -4px);
+}
+
+
+
+.hamburger.is-active .bar {
+	opacity: 0;
+}
+
+
+
+
+
+
+.mobile_verve_nav {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+  font-family: "Signika", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.767);
+  font-weight: 600;
+}
+
+
+
+
+
+
+
+
+.right_part_mobile {
+  height: 100%;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.Cart_ico_container_mobile {
+  display: flex;
+  height: auto;
+  width: auto;
+  justify-content: center;
+  align-items: center;
+  padding: 10%;
+}
+
+.cart_ico_mobile {
+  position: relative;
+  font-size: 23px;
+  color: rgb(201, 201, 201);
+  padding: 7px;
+}
+
+
+.items_counter_mobile {
+  height: auto;
+  width: auto;
+  background-color: rgba(0, 140, 145, 0.986);
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 3px;
+  padding-left: 4px;
+  padding-right: 4px;
+  color: white;
+  font-weight: 100;
+  font-family: serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 9px;
+  position: absolute;
+  left: 100;
+  right: 0;
+  bottom: 100;
+  top: 0;
+}
+
+
+/*----- The panel when the burger is clicked ---*/
+
+.big-nav-panel-mobile {
+  display: none;
+  height: 100%;
+  width: 100%;
+  z-index: 998;
+  overflow: hidden;
+  background-color: rgba(0, 128, 0, 0.295);
+  position: absolute;
+  top: 100;
+  bottom: 0;
+}
+
+.big-nav-panel-mobile.is-active {
+  display: block;
+}
 
 
 
@@ -359,6 +536,7 @@ a:hover {
 
 
 /*----------------------------------------------------------------------------------------------------*/
+
 
 
 
@@ -610,8 +788,8 @@ a:hover {
   position: fixed;
   z-index: 0;
   width: 100%;
-  width: 30%;
-  margin-left: 8%;
+  width: 25%;
+  margin-left: 15%;
   height: auto;
   z-index: 1000;
   display: flex;
@@ -871,11 +1049,350 @@ a:hover {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*------------------------------------------------ RESPONSIVENESS -----------------------------------------------------------------------*/
 /*------------------------------------------------ RESPONSIVENESS -----------------------------------------------------------------------*/
 /*------------------------------------------------ RESPONSIVENESS -----------------------------------------------------------------------*/
 /*------------------------------------------------ RESPONSIVENESS -----------------------------------------------------------------------*/
 /*------------------------------------------------ RESPONSIVENESS -----------------------------------------------------------------------*/
+/*------------------------------------------------ RESPONSIVENESS -----------------------------------------------------------------------*/
+/*------------------------------------------------ RESPONSIVENESS -----------------------------------------------------------------------*/
+/*------------------------------------------------ RESPONSIVENESS -----------------------------------------------------------------------*/
+/*------------------------------------------------ RESPONSIVENESS -----------------------------------------------------------------------*/
+/*------------------------------------------------ RESPONSIVENESS -----------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------- NAVIGATION SECTION ---------------------------------*/
+/*---------------------------------- NAVIGATION SECTION ---------------------------------*/
+
+
+
+/*--------------Only enabling the mobile nav -----------------*/
+
+@media (max-width: 767px){
+  .desktop_nav {
+    display: none;
+  }
+
+  .mobile_nav {
+    display: flex;
+  }
+}
+
+
+@media (min-width: 768px){
+  .desktop_nav{
+    display: flex;
+  }
+
+  .mobile_nav {
+    display: none;
+  }
+}
+
+/*------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+@media (min-width: 768px) and (max-width: 980px) {
+  .Left_part1 {
+    width: 50%;
+  }
+
+  .Name_of_company {
+    width: 40%;
+  }
+
+  .desk_links {
+    width: 70%;
+  }
+
+  a {
+    font-size: 11px;
+    padding: 0;
+  }
+
+  .Right_part1 {
+    width: 33%;
+  }
+
+  .top_search_container {
+    height: 80%;
+    width: 90%;
+  }
+
+  .search_items_input {
+    font-size: 10px;
+  }
+
+  .Search_ico {
+    font-size: 10px;
+    color: rgb(173, 173, 173);
+  }
+
+  .User_ico {
+    font-size: 7px;
+    padding: 6px;
+  }
+
+  .cart_ico {
+    font-size: 17px;
+  }
+  
+  .items_counter {
+    font-size: 7px;
+  }
+
+}
+
+
+
+@media (min-width: 560px) and (max-width: 767px){
+  .left_part_mobile {
+    width: 30%;
+  }
+}
+
+
+@media (max-width: 450px){
+  .mobile_verve_nav {
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+  .burger_container {
+    width: 35px;
+  }
+
+  .hamburger{
+    width: 25px;
+  }
+
+  .hamburger .bar, 
+  .hamburger:after, 
+  .hamburger:before {
+    height: 1px;
+    margin: 4px 0px;
+  }
+
+
+
+  
+.hamburger.is-active:before {
+	transform: rotate(-45deg) translate(-8px, 2px);
+}
+
+.hamburger.is-active:after {
+	transform: rotate(45deg) translate(-8px, -2px);
+}
+
+
+
+  .cart_ico_mobile {
+    font-size: 20px;
+  }
+
+  .items_counter_mobile {
+    font-size: 7px;
+  }
+  
+}
+
+
+
+@media (max-width: 280px){
+  .burger_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mobile_verve_nav {
+    font-size: 20px;
+  }
+
+  .burger_container {
+    width: 35px;
+  }
+
+  .hamburger {
+    width: 20px;
+  }
+
+  .hamburger .bar, 
+  .hamburger:after, 
+  .hamburger:before {
+    height: 0.5px;
+    margin: 3px 0px;
+  }
+
+  .cart_ico_mobile {
+    font-size: 16px;
+  }
+
+}
+
+
+
+/*------------------------------------ END OF NAVIGATION SECTION ---------------------------------*/
+/*------------------------------------ END OF NAVIGATION SECTION ---------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

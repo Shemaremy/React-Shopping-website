@@ -1,12 +1,10 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 
 import { useCounter } from "./Redux store/Counter";
 import { useSelector, useDispatch } from 'react-redux';
 import { setSearchTerm } from './Redux store/actions';
 
 
-
-import { items } from "./TrendCards";
 import { Employees } from "./Main";
 
 import MyModal from "./cartPanel/MyModal";
@@ -257,23 +255,6 @@ const handleSuggestionClick = (name) => {
 
 
 
-    // Effect for smoothness in scrolling transitions
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.pageYOffset > 100) {
-                document.querySelector("body").classList.add('is-scrolling');
-            } else {
-                document.querySelector("body").classList.remove('is-scrolling');
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
 
 
     // This handles when the desktop nav buttons are clicked, scroll to a certain section
@@ -443,7 +424,7 @@ const modelClick = () => {
 
 
 
-// Cart Button on top of the page
+// Desktop Cart Button on top of the page
 const cartButtonhandle = (
     <>
         <button className="cart_button_one" onClick={modelClick}>
@@ -457,10 +438,52 @@ const cartButtonhandle = (
 );
 
 
+// Mobile Cart Button on top of the page
+const cartButtonhandleMobile = (
+    <>
+        <div className="Cart_ico_container_mobile" onClick={modelClick}>
+            <i className="cart_ico_mobile fas fa-cart-plus">
+                <p className="items_counter_mobile">{currentProduct.reduce((acc, item) => acc + item.quantity, 0)}</p>
+            </i>
+        </div>
+        <MyModal showModal={showModal} setShowModal={setShowModal} counter={currentProduct.reduce((acc, item) => acc + item.quantity, 0)} product={currentProduct}/>
+    </>
+);
 
 
 
 
+
+
+
+
+
+
+// When the burger is clicked, this is called
+const toggleMobileMenu = () => {
+    const menu_btn = document.querySelector('.hamburger');
+    const mobile_menu = document.querySelector('.mobile_nav');
+    const test_panel = document.querySelector('.big-nav-panel-mobile');
+    const body_fixed = document.querySelector('body');
+
+    if (menu_btn) {
+        menu_btn.classList.toggle('is-active');
+    }
+
+    if (mobile_menu) {
+        mobile_menu.classList.toggle('is-active');
+    }
+
+    if (test_panel) {
+        test_panel.classList.toggle('is-active');
+        if (test_panel.classList.contains('is-active')) {
+            body_fixed.style.overflowY = 'hidden';
+        } else {
+            body_fixed.style.overflowY = 'auto';
+        }
+    }
+
+};
 
 
 
@@ -485,30 +508,47 @@ const cartButtonhandle = (
     return(
         <div className="A">
             <nav>
-                <div className="Left_part1">
-                    <div className="Name_of_company">
-                        <h4 className="verve_nav">Verve.</h4>
-                    </div>                    
-                    <div className="desk_links">
-                        <a onClick={(e) => handleLinkClickDesk('A', e)} className="Home">Home</a>
-                        <a onClick={(e) => handleLinkClickDesk('B', e)} className="Products">Products</a>
-                        <a onClick={(e) => handleLinkClickDesk('Our_picks_container', e)} className="Arrivals">Picks</a>
-                        <a onClick={(e) => handleLinkClickDesk('Trending_Section', e)} className="Trends">Trends</a>
-                        <a onClick={(e) => handleLinkClickDesk('C', e)} className="Contact">Contact</a>   
+                <div className="desktop_nav">
+                    <div className="Left_part1">
+                        <div className="Name_of_company">
+                            <h4 className="verve_nav">Verve.</h4>
+                        </div>                    
+                        <div className="desk_links">
+                            <a onClick={(e) => handleLinkClickDesk('A', e)} className="Home">Home</a>
+                            <a onClick={(e) => handleLinkClickDesk('B', e)} className="Products">Products</a>
+                            <a onClick={(e) => handleLinkClickDesk('Our_picks_container', e)} className="Arrivals">Picks</a>
+                            <a onClick={(e) => handleLinkClickDesk('Trending_Section', e)} className="Trends">Trends</a>
+                            <a onClick={(e) => handleLinkClickDesk('C', e)} className="Contact">Contact</a>   
+                        </div>
+                    </div>
+
+                    <div className="Right_part1">
+                        <div className="Input_container_one">
+                            <div className="top_search_container">
+                                <input className="search_items_input" type="text" placeholder="Search..." value={searchTerm} onChange={handleSearchChange} />
+                                <div className="Search-icon-container" onClick={handleSearchClick}>
+                                    <i className="Search_ico fas fa-search"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="Icon_one"><p className="User_contain"><i className="User_ico fas fa-user"></i></p></div>
+                        <div className="cart_button_container">
+                            {cartButtonhandle}
+                        </div>                    
                     </div>
                 </div>
-
-                <div className="Right_part1">
-                    <div className="Input_container_one">
-                        <input className="search_items_one" type="text" placeholder="Search..." value={searchTerm} onChange={handleSearchChange} />
-                        <button className="Search_icon" onClick={handleSearchClick}>
-                            <i className="Search_ico fas fa-search"></i>
-                        </button>
+                <div className="mobile_nav">
+                    <div className="left_part_mobile">
+                        <div class="burger_container">
+                            <button class="hamburger" onClick={toggleMobileMenu}>
+                                <div class="bar"></div>
+                            </button>
+                        </div>
+                        <h4 className="mobile_verve_nav">Verve.</h4>
                     </div>
-                    <div className="Icon_one"><p className="User_contain"><i className="User_ico fas fa-user"></i></p></div>
-                    <div className="cart_button_container">
-                        {cartButtonhandle}
-                    </div>                    
+                    <div className="right_part_mobile">
+                        {cartButtonhandleMobile}
+                    </div>
                 </div>
             </nav>
             <div className="Two_parts_1">

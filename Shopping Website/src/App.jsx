@@ -41,7 +41,13 @@ function AppRoutes() {
 
   return (
     <Routes>
-      <Route path="/" element={<><A /><B /><C /></>}></Route>
+      <Route path="/" element={
+        <>
+        <A />
+        <B />
+        <C />
+        <div className="big-nav-panel-mobile"></div>
+        </>}></Route>
       <Route path="/payment" element={<ProceedPayment />}></Route>
     </Routes>
   );
