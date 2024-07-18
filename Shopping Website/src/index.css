@@ -11,6 +11,7 @@ body {
   align-items: center;
   background-color: rgb(221, 221, 221);
   background-color: black;
+  background-color: rgb(226, 226, 226);
 }
 
 
@@ -28,4 +29,10 @@ B : Footer
 
 
 
+
+/* Scrollbar container */
+::-webkit-scrollbar {
+  width: normal !important; 
+  height: normal !important;
+}
 

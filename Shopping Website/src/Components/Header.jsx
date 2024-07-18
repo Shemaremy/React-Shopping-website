@@ -447,9 +447,10 @@ const modelClick = () => {
 const cartButtonhandle = (
     <>
         <button className="cart_button_one" onClick={modelClick}>
-            <p className="Cart_ico"><i className="cart_ico fas fa-cart-plus"></i></p>
-            <p className="cart_word">Cart</p>
-            <p className="items_counter">{currentProduct.reduce((acc, item) => acc + item.quantity, 0)}</p>
+            <div className="Cart_icon_container">
+                <i className="cart_ico fas fa-cart-plus"></i>
+                <p className="items_counter">{currentProduct.reduce((acc, item) => acc + item.quantity, 0)}</p>
+            </div>
         </button>
         <MyModal showModal={showModal} setShowModal={setShowModal} counter={currentProduct.reduce((acc, item) => acc + item.quantity, 0)} product={currentProduct}/>
     </>

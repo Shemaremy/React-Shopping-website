@@ -14,6 +14,46 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------- LEFT PART PANEL --------------------------------------------------*/
+
+
 .left_part_pay {
     background-color: rgb(241, 241, 241);
     height: 95%;
@@ -84,6 +124,65 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------- ADDRESS FORM SECTION --------------------------------------------------*/
+/*------------------------------------- ADDRESS FORM SECTION --------------------------------------------------*/
+/*------------------------------------- ADDRESS FORM SECTION --------------------------------------------------*/
+
+
+
 .Form_section {
     height: 78%;
     width: 100%;
@@ -134,6 +233,104 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-------------------------------- FORM GENERAL SETTINGS SECTION ------------------------------------------*/
+/*-------------------------------- FORM GENERAL SETTINGS SECTION ------------------------------------------*/
+/*-------------------------------- FORM GENERAL SETTINGS SECTION ------------------------------------------*/
+
+
+
+
 .first_name, .last_name {
     width: 50%;
     height: 100%;
@@ -146,11 +343,18 @@
 
 
 
-
-
-
-
-/*------------------------------Package modifications-------------------------------------------*/
+.indicator {
+    width: 95%;
+    height: 25%;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: sans-serif;
+    font-size: 10px;
+    color: rgb(53, 53, 53);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
 
 
 
@@ -167,6 +371,193 @@ input, .phone_input {
     padding-left: 2%;
 }
 
+
+
+
+
+
+
+
+input:hover {
+    border-color: rgb(42, 112, 158);
+}
+
+input:focus {
+    border-color: rgb(42, 112, 158);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------ OTHER CUSTOM FORM STYLES ---------------------------------------------*/
+/*------------------------------ OTHER CUSTOM FORM STYLES ---------------------------------------------*/
+/*------------------------------ OTHER CUSTOM FORM STYLES ---------------------------------------------*/
+
+
+
+
+/*-------------First & last name container, and country and city container -------*/
+.names_container, 
+.city_zipcode_container {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------Package modifications-------------------------------------------*/
 
 
 .phone_container > .first_name > .phone_input {
@@ -234,37 +625,18 @@ input, .phone_input {
 
 
 
-/*------------------------------------------------------------------------------------------------------*/
 
 
 
 
 
-input:hover {
-    border-color: rgb(42, 112, 158);
-}
 
-input:focus {
-    border-color: rgb(42, 112, 158);
-}
 
 
 
 
 
 
-.indicator {
-    width: 95%;
-    height: 25%;
-    margin-top: 0;
-    margin-bottom: 0;
-    font-family: sans-serif;
-    font-size: 10px;
-    color: rgb(53, 53, 53);
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-}
 
 
 
@@ -294,12 +666,6 @@ input:focus {
 
 
 
-.names_container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-}
 
 
 
@@ -328,12 +694,6 @@ input:focus {
 
 
 
-.city_zipcode_container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-}
 
 
 
@@ -367,17 +727,752 @@ input:focus {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------ RIGHT PART PANEL -------------------------------------------------------*/
 
 
 
 .right_part_pay {
-    background-color: rgb(241, 241, 241);
     height: 95%;
     width: 40%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+.upper_right_pay {
+    height: 5%;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 30px;    
+    border-color: rgba(0, 0, 0, 0);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.103);
+    border-color: rgba(29, 29, 29, 0.123);
+}
+
+.order_summary_button, 
+.check_out_button {
+
+    width: 50%;
+    height: 100%;
+    cursor: pointer;
+    border-style: solid;
+    border-width: 0px;
+    border-color: gray;
+    font-size: 11px;
+    color: rgb(90, 90, 90);
+    transition: background-color 0.2s ease-in-out;
+}
+
+
+.order_summary_button:hover, 
+.check_out_button:hover {
+    background-color: rgba(18, 139, 18, 0.397);
+    background-color: rgba(104, 171, 216, 0.473);
+    color: white;
+}
+
+
+.order_summary_button.active,
+.check_out_button.active {
+  background-color: rgb(104, 171, 216);
+  color: white;
+}
+
+
+
+.lower_right_pay {
+    height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------ ORDER SUMMARY SECTION-------------------------------------------------------*/
+/*------------------------------------ ORDER SUMMARY SECTION-------------------------------------------------------*/
+/*------------------------------------ ORDER SUMMARY SECTION-------------------------------------------------------*/
+
+
+.order_summary_container {
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+
+.small_calculations {
+    position: absolute;
+    height: 20%;
+    width: 100%;
+    top: 100;
+    bottom: 0;
+    border-style: dashed;
+    border-color: rgb(75, 75, 75);
+    border-width: 1px;
+    border-radius: 2px;
+    background-color: rgb(194, 194, 194);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.733);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.items_word_summary,
+.discount_word_summary,
+.shipping_word_summary,
+.Total_word_summary {
+    width: 95%;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.small_calculations > p {
+    font-size: 12px;
+}
+
+.Total_word_summary {
+    font-size: 17px;
+    color: rgb(29, 29, 29);
+}
+
+.Total_word_summary > span {
+    font-size: 13px;
+}
+
+
+.lower_summary {
+    height: 80%;
+    width: 100%;
+    overflow: auto;
+}
+
+
+
+/*----Modifying how the scrollbar must look-----*/
+
+div.lower_summary::-webkit-scrollbar {
+    width: 6px;
+}
+
+
+
+div.lower_summary::-webkit-scrollbar-thumb {
+    background-color: rgb(131, 131, 131);
+    border-radius: 55px;
+    cursor: pointer;
+    height: 10px;
+    width: 10px;
+}
+
+div.lower_summary::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(56, 56, 56);
+    width: 10px !important;
+}
+
+
+/*----Modifying how the scrollbar must look-----*/
+
+
+
+
+
+
+
+.items_container_summary {
+    height: auto;
+    width: 100%;
+    margin-bottom: 2%;
+    overflow: hidden;
+    background-color: chocolate;
+}
+
+.item_summary_row {
+    width: 100%;
+    height: 100px;
+    background-color: green;
+    display: flex;
+    flex-direction: row;
+}
+
+.img_and_name {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.img_summary {
+    height: 100%;
+    width: 30%;
+    background-color: gray;
+}
+
+.img_description_summary {
+    height: 100%;
+    width: 70%;
+    background-color: darkgoldenrod;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.item_name_summary, 
+.size_summary,
+.quantity_number {
+    width: 95%;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-weight: 100;
+    height: 30%;
+    display: flex;
+    align-items: center;
+}
+
+.item_name_summary {
+    height: 30%;
+    font-size: 20px;
+}
+
+.size_summary {
+    height: 25%;
+    font-size: 12px;
+}
+
+
+.quantity_number {
+    height: 25%;
+    font-size: 13px;
+}
+
+.summary_price {
+    height: 100%;
+    width: 20%;
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.dollar_price_summary, .price_in_rwf {
+    width: 95%;
+    height: 40%;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: sans-serif;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------ CHECK OUT SECTION-------------------------------------------------------*/
+/*------------------------------------ CHECK OUT SECTION-------------------------------------------------------*/
+/*------------------------------------ CHECK OUT SECTION-------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+.check_out_panel {
+    background-color: rgb(238, 238, 238);
+    height: 80%;
+    width: 100%;
     border-radius: 5px;
     border-style: solid;
     border-width: 1px;
-    border-color: rgba(0, 0, 0, 0);
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.082);
-
+    border-color: rgba(29, 29, 29, 0.123);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
+.upper_check_out {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.check_out_header {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 85%;
+    display: flex;
+    align-items: center;
+    height: 30%;
+    font-size: 20px;
+    color: rgba(75, 0, 196, 0.644);
+    font-family: sans-serif;
+    text-decoration: underline;
+}
+
+.card_images {
+    height: 50%;
+    width: 85%;
+    display: flex;
+    align-items: center;
+}
+
+.mastercard, .visa, .paypal {
+    height: 70%;
+    width: 20%;
+    overflow: hidden;
+    margin-right: 3%;
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.404);
+}
+
+.mastercard > img,
+.visa > img,
+.paypal > img {
+    width: 100%;
+}
+
+
+
+
+
+.lower_check_out_container {
+    width: 100%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+
+.cardholder_name, 
+.card_number, 
+.exp_and_cvc,
+.pay_now {
+    width: 90%;
+    height: 25%;
+}
+
+
+
+
+
+
+
+
+
+
+.cardholder_name {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.cardholder_name > .first_name {
+    width: 95%;
+    padding: 0;
+}
+
+.cardholder_name > .first_name > p {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.cardholder_name > .first_name > input {
+    width: 93%;
+    padding: 0;
+    padding-left: 2%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card_number {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.card_number > .first_name {
+    width: 95%;
+    padding: 0;
+}
+
+.card_number > .first_name > p {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.card_number > .first_name > input {
+    width: 93%;
+    padding-left: 2%;
+}
+
+
+
+
+
+
+
+
+
+
+
+.exp_and_cvc {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+
+.exp_and_cvc > .first_name,
+.exp_and_cvc > .last_name {
+    width: 95%;
+    padding: 0;
+}
+
+.exp_and_cvc > .first_name > p,
+.exp_and_cvc > .last_name > p {
+    background-color: rgba(255, 255, 255, 0);
+    width: 85%;
+}
+
+.exp_and_cvc > .first_name > input,
+.exp_and_cvc > .last_name > input {
+    width: 83%;
+    padding-left: 2%;
+}
+
+
+
+
+
+
+.pay_now {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pay_now_button {
+    width: 95%;
+    height: 45%;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 5px;
+    color: rgb(235, 234, 234);
+    cursor: pointer;
+    background-color: rgba(0, 128, 0, 0.671);
+}
+
+.pay_now_button:hover {
+    background-color: green;
+}
+
+
+
+
+

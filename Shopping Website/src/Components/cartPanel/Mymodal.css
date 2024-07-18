@@ -89,14 +89,9 @@
 
 .close:hover {
     background-color: rgba(133, 0, 0, 0.5);
-    width: 20px;
-    height: 20px;
     color: antiquewhite;
 }
 
-.close:active {
-    transform: scale(0.95);
-}
 
 .close_ico {
     font-size: 8px;
@@ -288,7 +283,7 @@ div.cartItems::-webkit-scrollbar {
     height: 10px;
 }
 
-/* Red scrollbar thumb */
+
 div.cartItems::-webkit-scrollbar-thumb {
     background-color: rgb(131, 131, 131);
     border-radius: 55px;
@@ -299,6 +294,14 @@ div.cartItems::-webkit-scrollbar-thumb {
 div.cartItems::-webkit-scrollbar-thumb:hover {
     background-color: rgb(56, 56, 56);
 }
+
+/*------------------------------------------------------*/
+
+
+
+
+
+
 
 
 .item_added_container {
@@ -565,9 +568,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
     border-width: 0;
 }
 
-.Proceed_button_incart:active {
-    transform: scale(0.8);    
-}
+
 
 
 
@@ -691,9 +692,6 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
     transition: transform 0.2s ease-in-out;
 }
 
-.Proceed_total_payment_button:active {
-    transform: scale(0.8); 
-}
 
 
 
