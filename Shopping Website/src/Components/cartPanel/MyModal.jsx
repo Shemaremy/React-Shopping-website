@@ -25,7 +25,7 @@ function MyModal(props) {
 
   const navigate = useNavigate();
   const handleProceedPayment = () => {
-    navigate('/payment', { state: { currentProduct } });
+    navigate('/payment', { state: { currentProduct, totalPrice } });
   };
 
 

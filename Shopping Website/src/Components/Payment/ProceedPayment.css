@@ -941,7 +941,7 @@ input:focus {
 
 .small_calculations {
     position: absolute;
-    height: 20%;
+    height: 23%;
     width: 100%;
     top: 100;
     bottom: 0;
@@ -950,7 +950,7 @@ input:focus {
     border-width: 1px;
     border-radius: 2px;
     background-color: rgb(194, 194, 194);
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.733);
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.295);
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -959,6 +959,7 @@ input:focus {
 }
 
 .items_word_summary,
+.sub_total_summary,
 .discount_word_summary,
 .shipping_word_summary,
 .Total_word_summary {
@@ -975,6 +976,18 @@ input:focus {
 .small_calculations > p {
     font-size: 12px;
 }
+
+.sub_total_summary {
+    font-weight: 600;
+    margin-bottom: 2%;
+}
+
+
+.sub_total_summary > span {
+    font-size: 11px;
+    font-weight: 100;
+}
+
 
 .Total_word_summary {
     font-size: 17px;
@@ -1016,7 +1029,7 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
 }
 
 
-/*----Modifying how the scrollbar must look-----*/
+/*----End of modifying how the scrollbar must look-----*/
 
 
 
@@ -1031,12 +1044,14 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
 }
 
 .item_summary_row {
-    width: 100%;
+    width: 99%;
     height: 100px;
-    margin-bottom: 2%;
-    background-color: green;
+    background-color: rgba(0, 0, 0, 0.068);
     display: flex;
     flex-direction: row;
+    margin-bottom: 1%;
+    border-radius: 2px;
+    overflow: hidden;
 }
 
 .img_and_name {
@@ -1051,20 +1066,19 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
 .img_summary {
     height: 100%;
     width: 30%;
-    background-color: gray;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba(128, 128, 128, 0.459);
 }
 
 .img_summary > img {
-    width: 70%;
+    width: 75%;
 }
 
 .img_description_summary {
     height: 100%;
     width: 70%;
-    background-color: darkgoldenrod;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1088,24 +1102,23 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
 
 .item_name_summary {
     height: 30%;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .size_summary {
     height: 25%;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 
 .quantity_number {
     height: 25%;
-    font-size: 13px;
+    font-size: 11px;
 }
 
 .summary_price {
     height: 100%;
     width: 20%;
-    background-color: blueviolet;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -1118,7 +1131,7 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
     margin-top: 0;
     margin-bottom: 0;
     font-family: sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     display: flex;
     align-items: center;
     justify-content: flex-end;

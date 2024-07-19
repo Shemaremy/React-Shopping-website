@@ -55,8 +55,11 @@ function ProceedPayment() {
     const [phoneNumberError, setPhoneNumberError] = useState('');
     const [countryId, setCountryId] = useState('');
     let currentCountry = 'RW'
-    const { state } = useLocation();
-    const { currentProduct } = state || {};
+
+    const location = useLocation();
+    const { currentProduct, totalPrice } = location.state || { currentProduct: [], totalPrice: 0 };
+
+    
 
     const [content, setContent] = useState('orderSummary');
     const handleOrderSummaryClick = () => {
@@ -83,6 +86,40 @@ function ProceedPayment() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
 
 
 
@@ -172,6 +209,165 @@ function ProceedPayment() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//-------------------------------------------------- SUMMATIONS SECTION ------------------------------------------------------------
+//-------------------------------------------------- SUMMATIONS SECTION ------------------------------------------------------------
+//-------------------------------------------------- SUMMATIONS SECTION ------------------------------------------------------------
+
+
+
+
+// Calculating total number of items to be purchased
+const calculateTotalQuantity = () => {
+    let totalQuantity = 0;
+    currentProduct.forEach((item) => {
+      totalQuantity += item.quantity;
+    });
+    return totalQuantity;
+  };
+  const totalQuantity = calculateTotalQuantity();
+  
+
+
+
+
+  // Calculating the discount
+  const calculateDiscount = (totalPrice) => {
+    let theDiscount = 0;
+    if (totalPrice > 100000 && totalPrice <= 200000) {
+      theDiscount = 10000;
+    }
+
+    else if (totalPrice > 200000) {
+        theDiscount = 20000;
+    }
+
+    return theDiscount;
+  };
+  const discount = calculateDiscount(totalPrice);
+  const formattedDiscount = discount === 0 ? '0 Frw ($0)' : `-${discount / 1000},000Frw ($${discount/1000})`;
+  
+
+
+
+  // Calculating the shipping fee
+  const calculateShippingFee = (totalPrice) => {
+    let theShipping = 0;
+    if (totalPrice > 200000) {
+        theShipping = 0;
+    }
+
+    else if (totalPrice <= 200000 && totalPrice > 70000) {
+        theShipping = 10000;
+    }
+
+    else if (totalPrice <= 70000) {
+        theShipping = 5000;
+    }
+
+    return theShipping;
+  };
+
+  const shippingFee = calculateShippingFee (totalPrice);
+  const formattedShippingFee = shippingFee === 0 ? '0 Frw ($0)' : `+ ${shippingFee / 1000},000 Frw ($${shippingFee/1000})`;
+  
+
+
+
+
+  // Final price where I deducted the discount and add the shipping fee
+  const finalPrice = (totalPrice - discount) + shippingFee;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //------------------------------------------ CHECK OUT AND ORDER SUMMARY SECTION-------------------------------------------------------
 //------------------------------------------ CHECK OUT AND ORDER SUMMARY SECTION-------------------------------------------------------
 //------------------------------------------ CHECK OUT AND ORDER SUMMARY SECTION-------------------------------------------------------
@@ -206,10 +402,11 @@ function ProceedPayment() {
                 </div>
             </div>
             <div className='small_calculations'>
-                <p className='items_word_summary'>Items: <span>5 item(s)</span></p>
-                <p className='discount_word_summary'>Discount ($): <span>-30,000Frw (30)</span></p>
-                <p className='shipping_word_summary'>Shipping fee ($): <span>10,000Frw (10)</span></p>
-                <h3 className='Total_word_summary'>Total Price ($): <span>200,000Frw (200)</span></h3>
+                <p className='items_word_summary'>Items: <span>{totalQuantity} item(s)</span></p>
+                <p className='sub_total_summary'>SubTotal ($): <span>{totalPrice / 1000},000Frw (${totalPrice/1000})</span></p>
+                <p className='discount_word_summary'>Discount ($): <span>{formattedDiscount}</span></p>
+                <p className='shipping_word_summary'>Shipping fee ($): <span>{formattedShippingFee}</span></p>
+                <h3 className='Total_word_summary'>Total Price ($): <span>{(finalPrice) / 1000},000Frw (${(finalPrice) / 1000})</span></h3>
             </div>
         </div>
     );

@@ -22,7 +22,7 @@
 
 
 .panel_container {
-    height: 95%;
+    height: 98%;
     width: 98%;
     background-color: rgb(182, 182, 182);
     border-style: solid;
@@ -307,7 +307,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
 .item_added_container {
     width: 90%;
     height: 25vh;
-    border-radius: 20px;
+    border-radius: 10px;
     border-style: solid;
     border-width: 1px;
     border-color: rgba(255, 255, 255, 0.377);
