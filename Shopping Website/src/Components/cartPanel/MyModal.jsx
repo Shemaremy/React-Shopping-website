@@ -104,23 +104,28 @@ function MyModal(props) {
               </p>
             </div>
             <div className='quantity_size_pan'>
-              <div className='size_container'>
-                <select className='size_values' name="" id="">
-                  <option value="">40</option>
-                  <option value="">41</option>
-                  <option value="">42</option>
-                </select>
-              </div>
-              <div className='quantity_container'>
-                <p className='reduce' onClick={() => updateQuantity(index, 'decrement')}><i className="fa fa-minus" aria-hidden="true"></i></p>
-                <p className='qnty'>{product.quantity}</p>
-                <p className='add' onClick={() => updateQuantity(index, 'increment')}><i className="fa fa-plus" aria-hidden="true"></i></p>
-              </div>
-              <div className='proceed_delete_panel'>
-                <div className='proceed_payment_pan'>
-                    <button className='Proceed_button_incart' onClick={handleProceedPayment}>Proceed payment</button>                  
+              <div className='left_quantity_size_panel'>
+                <div className='size_container'>
+                  <p>Size: </p>
+                  <select className='size_values' name="" id="">
+                    <option value="">40</option>
+                    <option value="">41</option>
+                    <option value="">42</option>
+                  </select>
                 </div>
-                <p className='delete_item'><i onClick={() => removeItem(index)} className="fa fa-trash trash_ico_1" aria-hidden="true"></i></p>
+                <div className='quantity_container'>
+                  <p>Quantity: </p>
+                  <div className='quantity'>
+                    <p className='reduce' onClick={() => updateQuantity(index, 'decrement')}><i className="fa fa-minus" aria-hidden="true"></i></p>
+                    <p className='qnty'>{product.quantity}</p>
+                    <p className='add' onClick={() => updateQuantity(index, 'increment')}><i className="fa fa-plus" aria-hidden="true"></i></p>
+                  </div>
+                </div>
+              </div>
+              <div className='right_quantity_size_panel'>
+                <div className='proceed_delete_panel'>
+                  <p className='delete_item'><i onClick={() => removeItem(index)} className="fa fa-trash trash_ico_1" aria-hidden="true"></i></p>
+                </div>
               </div>
             </div>
           </div>
@@ -156,7 +161,7 @@ function MyModal(props) {
     <div className='summation-pannel'>
       <div className='total_items_panel'>
         <h3 className='Total-items-header'>Total items</h3>
-        <p className='total-items-par'>{counter} item(s)</p>
+        <p className='total-items-par'>{currentProduct.reduce((acc, item) => acc + item.quantity, 0)} item(s)</p>
       </div>
       <div className='total_price_panel'>
         <h3 className='Total-price-header'>Summation ($)</h3>
@@ -217,7 +222,7 @@ function MyModal(props) {
     <div className={showModal ? "modal-dialog show" : "modal-dialog"} role="document">
       <div className="panel_container">
         <div className="top-nav">
-          <h2 className="cart_word_panel">Cart <span className='counts_pan'>({counter})</span></h2>
+          <h2 className="cart_word_panel">Cart <span className='counts_pan'>({currentProduct.reduce((acc, item) => acc + item.quantity, 0)})</span></h2>
           <div className="close_container">
             <button className="close" onClick={modelClick2}><i className="fa fa-times close_ico" aria-hidden="true"></i></button>
           </div>
