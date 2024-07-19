@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { updateQuantity, removeItem } from '../Redux store/actions'; 
 import { useNavigate } from 'react-router-dom';
@@ -29,7 +29,12 @@ function MyModal(props) {
   };
 
 
-
+    const [selectedSize, setSelectedSize] = useState('');
+  
+    const handleSizeChange = (event) => {
+      setSelectedSize(event.target.value);
+    };
+  
 
 
 
@@ -107,10 +112,11 @@ function MyModal(props) {
               <div className='left_quantity_size_panel'>
                 <div className='size_container'>
                   <p>Size: </p>
-                  <select className='size_values' name="" id="">
-                    <option value="">40</option>
-                    <option value="">41</option>
-                    <option value="">42</option>
+                  <select id="size-dropdown" className="size-values" value={selectedSize} onChange={handleSizeChange}>
+                    <option value="">Select size</option>
+                    <option value="40">40</option>
+                    <option value="41">41</option>
+                    <option value="42">42</option>
                   </select>
                 </div>
                 <div className='quantity_container'>

@@ -545,18 +545,42 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
     font-size: 12px;
 }
 
-.size_values {
+
+
+/*----------------Size dropdown menu------------------*/
+
+.size-values {
     width: 110px;
     height: 80%;
+    font-size: 11px;
     border-radius: 20px;
     border-style: solid;
     border-width: 1px;
     cursor: pointer;
+    color: rgb(65, 65, 65);
     background-color: rgb(206, 206, 206);
+    border: 1px solid #a1a1a1;
+    appearance: none;
+    transition: border-color 0.2s ease;
+    padding-left: 5px;
+    display: flex;
 }
 
 
 
+  
+.size-values:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(38, 143, 255, 0.25);
+}
+
+.size-values option {
+    padding: 10px;
+}
+  
+
+/*----------------End of dropdown menu------------------*/
 
 
 
