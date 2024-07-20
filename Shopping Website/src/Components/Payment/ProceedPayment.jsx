@@ -581,13 +581,13 @@ const calculateTotalQuantity = () => {
                     <button 
                         className={`order_summary_button ${content === 'orderSummary' ? 'active' : ''}`}
                         onClick={handleOrderSummaryClick}>
-                        Order summary &nbsp; <i class="fa fa-list-alt" aria-hidden="true"></i>
+                        Order summary &nbsp; <i className="fa fa-list-alt" aria-hidden="true"></i>
                     </button>
 
                     <button 
                         className={`check_out_button ${content === 'checkOut' ? 'active' : ''}`} 
                         onClick={handleCheckOutClick}>
-                        Check out &nbsp; <i class="fa fa-credit-card" aria-hidden="true"></i>
+                        Check out &nbsp; <i className="fa fa-credit-card" aria-hidden="true"></i>
                     </button>
                 </div>
                 <div className='lower_right_pay'>

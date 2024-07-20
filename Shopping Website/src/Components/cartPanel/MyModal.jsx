@@ -23,12 +23,55 @@ function MyModal(props) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// --------------------------------------------- GOING TO PAYMENT PAGE SECTION ----------------------------------------------------
+// --------------------------------------------- GOING TO PAYMENT PAGE SECTION ----------------------------------------------------
+// --------------------------------------------- GOING TO PAYMENT PAGE SECTION ----------------------------------------------------
+
   const navigate = useNavigate();
 
-  // Update handleProceedPayment function to include selectedSizes
+  // checking if all products have selected sizes
+  const allSizesSelected = () => {
+    return currentProduct.every((item, index) => selectedSizes[index]);
+  };
+
+  // Handle the proceed payment action
   const handleProceedPayment = () => {
-    if (Object.keys(selectedSizes).length === 0) {
-      alert("Check if all your products have a size please!");
+    if (!allSizesSelected()) {
+      alert("Please select a size for all products before proceeding");
     } else {
       navigate('/payment', { state: { currentProduct, totalPrice, selectedSizes } });
     }
@@ -38,7 +81,54 @@ function MyModal(props) {
 
 
 
+
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// --------------------------------------------- SIZE CHANGE SECTION ----------------------------------------------------
+// --------------------------------------------- SIZE CHANGE SECTION ----------------------------------------------------
+// --------------------------------------------- SIZE CHANGE SECTION ----------------------------------------------------
+
+
+  // Handling that when I select the size, it goes in the box
   const [selectedSizes, setSelectedSizes] = useState({});
   const handleSizeChange = (event, index) => {
     setSelectedSizes({ ...selectedSizes, [index]: event.target.value });
@@ -65,6 +155,8 @@ function MyModal(props) {
 
 
 
+// --------------------------------------------- PANEL CLOSING SECTION ----------------------------------------------------
+// --------------------------------------------- PANEL CLOSING SECTION ----------------------------------------------------
 
   // When the panel is being closed
   const modelClick2 = () => {
@@ -72,6 +164,52 @@ function MyModal(props) {
     document.body.style.overflowY = 'auto';
     document.body.style.width = '100vw';
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// --------------------------------------------- EMPTY CART SECTION ----------------------------------------------------
+// --------------------------------------------- EMPTY CART SECTION ----------------------------------------------------
+// --------------------------------------------- EMPTY CART SECTION ----------------------------------------------------
 
 
 
@@ -96,6 +234,64 @@ function MyModal(props) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// --------------------------------------------- CART ITEMS SECTION ----------------------------------------------------
+// --------------------------------------------- CART ITEMS SECTION ----------------------------------------------------
+// --------------------------------------------- CART ITEMS SECTION ----------------------------------------------------
 
 
 
@@ -201,6 +397,82 @@ function MyModal(props) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// --------------------------------------------- FINAL RENDER SECTION ----------------------------------------------------
+// --------------------------------------------- FINAL RENDER SECTION ----------------------------------------------------
+// --------------------------------------------- FINAL RENDER SECTION ----------------------------------------------------
+
+
   // Render content based on whether the cart is empty or not
   const finalRender = () => {
     let finalContent;
@@ -240,6 +512,47 @@ function MyModal(props) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
   return (
     <div className={showModal ? "modal-dialog show" : "modal-dialog"} role="document">

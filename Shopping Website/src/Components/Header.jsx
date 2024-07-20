@@ -668,9 +668,9 @@ const toggleMobileMenu = () => {
                 </div>
                 <div className="mobile_nav">
                     <div className="left_part_mobile">
-                        <div class="burger_container">
-                            <button class="hamburger" onClick={toggleMobileMenu}>
-                                <div class="bar"></div>
+                        <div className="burger_container">
+                            <button className="hamburger" onClick={toggleMobileMenu}>
+                                <div className="bar"></div>
                             </button>
                         </div>
                         <h4 className="mobile_verve_nav">Verve.</h4>

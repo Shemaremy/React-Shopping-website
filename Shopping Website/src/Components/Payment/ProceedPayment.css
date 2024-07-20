@@ -1069,7 +1069,7 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(128, 128, 128, 0.459);
+    background-color: rgba(128, 128, 128, 0.158);
 }
 
 .img_summary > img {
