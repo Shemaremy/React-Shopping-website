@@ -1,12 +1,46 @@
 .Our_picks_container {
+    position: relative;
     width: 100%;
     height: 28%;
     border-style: solid;
     border-width: 0px;
     overflow: hidden;
-    box-sizing: border-box;
     background-color: rgba(136, 136, 136, 0.144);
 }
+
+
+.background-graphic-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;  
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.background-graphic-container > img {
+    width: 100%;
+    opacity: 0;
+}
+
+
+
+.The_rest, 
+.our_picks_heading_container {
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
   
 
 .our_picks_heading_container {
@@ -40,40 +74,38 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     margin-left: 1.7%;
 }
 
+
+
+
 .Small_navbar {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    width: 60%;
+    width: 25%;
     height: 5%;
     border-style: solid;
-    border-width: 1px;
+    border-width: 0px;
     border-color: rgba(112, 84, 84, 0.397);
     border-radius: 20px;
     overflow: hidden;
     padding: 0;
 }
 
-.In_navbar_divisor {
-    height: 12px;
-    width: 1px;
-    background-color: rgba(255, 255, 255, 0);
-}
 
 
 
-.Summer, .Winter {
-    width: 50%;
+.Summer, 
+.Winter {
+    width: 45%;
     height: 100%;
     font-family: sans-serif;
-    font-size: 13px;
-    color: white;
+    font-size: 15px;
     background-color: rgba(0, 0, 0, 0);
     border-style: solid;
     border-width: 0px;
@@ -86,8 +118,7 @@
 
 .Summer {
     color: rgba(0, 0, 0, 0.644);
-    border-radius: 20px 0px 0px 20px;
-    background: linear-gradient(45deg, #0b10311e, #79b4cb00);
+    border-radius: 20px;
     transition: background-color 0.9s ease-in-out;
 }
 
@@ -99,8 +130,7 @@
 
 .Winter {
     color: rgba(0, 0, 0, 0.644);
-    border-radius: 0px 20px 20px 0px;
-    background: linear-gradient(45deg, #79b4cb00, #0b10311e);
+    border-radius: 20px;
     transition: background-color 0.9s ease-in-out;
 }
 
@@ -129,7 +159,7 @@
 
 .the_rest_2 {
     width: 100%;
-    height: 92%;
+    height: 85%;
     border-style: solid;
     border-width: 0px;
     border-color: rgba(0, 0, 0, 0.096);
@@ -169,6 +199,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    display: none;
 }
 
 .question_header {
@@ -194,7 +225,7 @@
 
 
 .the_rest_4 {
-    height: 100%;
+    height: 95%;
     width: 95%;
     align-content: center;
     margin: 0 auto;
@@ -287,6 +318,7 @@
 .wardrobe_slider > .slick-next:before {
     color: green !important;
     font-size: 30px !important;
+    display: none;
 }
 
 

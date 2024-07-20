@@ -11,6 +11,27 @@ import './Main.css';
 import '@fortawesome/fontawesome-free/css/all.css';
 
 
+//-------------------- IMPORTING BACKGROUNDS: --------------------------
+
+import Test from '../images/backgrounds/rimwe.png'; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import Jordan1orange from '../images/Shoes products/Jordan 1 orange.png'; 
 import Jordan4black from '../images/Shoes products/Jordan 4 black.png'; 
 import Jordan1red from '../images/Shoes products/Jordan 1 red.png'; 
@@ -255,10 +276,14 @@ function B() {
                     </div>
                 </div>
                 <div className="Our_picks_container">
+                    <div className="background-graphic-container">
+                        <img src={Test} alt="" />
+                    </div>
                     <div className="our_picks_heading_container">
                         <h4 className="our_picks_header">Our Picks:</h4>
                     </div>
                     <div className="The_rest">
+                        
                         <OurPicks/>
                     </div>
                 </div>

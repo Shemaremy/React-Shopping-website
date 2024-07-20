@@ -647,6 +647,7 @@
       margin: 0 auto;
       display: flex;
       flex-direction: column;
+      background-color: rgba(90, 90, 90, 0.158);
     
   }
   
@@ -656,21 +657,25 @@
       height: 15%;
       overflow: hidden;
       display: flex;
-      justify-content: flex-end;
       align-items: center;
-      background-image: linear-gradient(to right, rgb(196, 196, 196) 0%, rgba(53, 66, 53, 0.226) 100%);
   }
   
   
   .Trending_items_header {
-      width: 100%;
+      width: 40%;
       font-family: "Pacifico", cursive;
+      font-family: sans-serif;
       font-weight: 100;
       font-style: normal;
-      font-size: 25px;
+      font-size: 20px;
       color: rgb(0, 0, 0);
-      text-align: right;
+      text-align: center;
       overflow-x: hidden;
+      margin-left: 0;
+      margin-right: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0;
   }
   
   
@@ -678,8 +683,6 @@
   .Lower_part_customers {
       width: 100%;
       height: 85%;
-      background-color: rgb(196, 196, 196);
-      background: linear-gradient(to bottom, rgb(196, 196, 196), rgba(255, 255, 0, 0));
       display: flex;
       flex-direction: row;
       justify-content: center;
