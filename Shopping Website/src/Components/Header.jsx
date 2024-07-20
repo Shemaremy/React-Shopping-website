@@ -420,9 +420,9 @@ const settings = {
 
 // State for highlighted items on the first page
 const [Highlight, setHighlight] = useState([
-    { name: "Jordan 1 red", price: "35000", image: shoe, quantity: 1, stars: 2 },
-    { name: "Jordan 4 white", price: "30000", image: shoe2, quantity: 1, stars: 4 },
-    { name: "Jordan 4 black", price: "45000", image: shoe3, quantity: 1, stars: 3 }
+    { name: "Jordan 1 red", price: "35000", image: shoe, quantity: 1, stars: 2, sizes: ["40", "41", "42", "43"] },
+    { name: "Jordan 4 white", price: "30000", image: shoe2, quantity: 1, stars: 4, sizes: ["40", "41", "42", "43"]  },
+    { name: "Jordan 4 black", price: "45000", image: shoe3, quantity: 1, stars: 3, sizes: ["40", "41", "42", "43"]  }
 ]);
 
 

@@ -127,11 +127,16 @@ function MyModal(props) {
               <div className='left_quantity_size_panel'>
                 <div className='size_container'>
                   <p>Size: </p>
-                  <select id="size-dropdown" className="size-values" value={selectedSizes[index] || ''} onChange={(event) => handleSizeChange(event, index)}>
-                    <option value="">Select size</option>
-                    <option value="40">40</option>
-                    <option value="41">41</option>
-                    <option value="42">42</option>
+                  <select
+                    id="size-dropdown"
+                    className="size-values"
+                    value={selectedSizes[index] || ''}
+                    onChange={(event) => handleSizeChange(event, index)}
+                    >
+                      <option value="">Select size</option>
+                      {(product.sizes || []).map((size, idx) => (
+                        <option key={idx} value={size}>{size}</option>
+                      ))}
                   </select>
                 </div>
                 <div className='quantity_container'>

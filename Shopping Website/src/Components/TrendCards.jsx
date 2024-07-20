@@ -30,12 +30,12 @@ import chat from '../images/verveofferspngs/chat.png';
 
 // Array of trending items
 export const items = [
-    { name: "Leather Sandals", price: "20000", image: bluesandals, stars: 5 },
-    { name: "Gray sweater", price: "25000", image: sweater1, stars: 5 },
-    { name: "Jordan 1 red", price: "28000", image: jordan1red, stars: 2 },
-    { name: "Jordan 4 white", price: "25000", image: jordan4white, stars: 4 },
-    { name: "White Polo T-shirt", price: "17000", image: tshirt2, stars: 4 },
-    { name: "Jordan 13 white", price: "30000", image: jordan13white, stars: 5 }
+    { name: "Leather Sandals", price: "20000", image: bluesandals, stars: 5, sizes: ["M", "L", "XL", "XXL"] },
+    { name: "Gray sweater", price: "25000", image: sweater1, stars: 5, sizes: ["M", "L", "XL", "XXL"] },
+    { name: "Jordan 1 red", price: "28000", image: jordan1red, stars: 2, sizes: ["40", "41", "42", "43"] },
+    { name: "Jordan 4 white", price: "25000", image: jordan4white, stars: 4, sizes: ["40", "41", "42", "43"] },
+    { name: "White Polo T-shirt", price: "17000", image: tshirt2, stars: 4, sizes: ["M", "L", "XL", "XXL"] },
+    { name: "Jordan 13 white", price: "30000", image: jordan13white, stars: 5, sizes: ["40", "41", "42", "43"] }
 ];
 
 

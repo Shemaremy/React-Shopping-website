@@ -143,15 +143,15 @@ function OurPicks () {
 
     // Array containing summer items
     const summerWardrobeItems = [
-        { name: 'White T-shirt', image: shortArmedTshirt, price: "16000" },
-        { name: 'Gray Sweatshort', image: sweatshort, price: "25000" },
-        { name: 'Dark blue sandals', image: sandals1, price: "20000" },
-        { name: 'White Polo T-shirt', image: shortArmedcollarTshirt, price: "17000" },
-        { name: 'Gray short', image: fitshort, price: "20000" },
-        { name: 'Leather Sandals', image: coolsandals1, price: "20000" },
-        { name: 'Hawaiian Shirt', image: hawaishirt, price: "16000" },
-        { name: 'Dad Shorts', image: dadshort, price: "20000" },
-        { name: 'Leather Sandals 2', image: coolsandals2, price: "20000" }
+        { name: 'White T-shirt', image: shortArmedTshirt, price: "16000", sizes: ["M", "L", "XL", "XXL"] },
+        { name: 'Gray Sweatshort', image: sweatshort, price: "25000", sizes: ["M", "L", "XL", "XXL"] },
+        { name: 'Dark blue sandals', image: sandals1, price: "20000", sizes: ["M", "L", "XL", "XXL"] },
+        { name: 'White Polo T-shirt', image: shortArmedcollarTshirt, price: "17000", sizes: ["M", "L", "XL", "XXL"] },
+        { name: 'Gray short', image: fitshort, price: "20000", sizes: ["M", "L", "XL", "XXL"] },
+        { name: 'Leather Sandals', image: coolsandals1, price: "20000", sizes: ["M", "L", "XL", "XXL"] },
+        { name: 'Hawaiian Shirt', image: hawaishirt, price: "16000", sizes: ["M", "L", "XL", "XXL"] },
+        { name: 'Dad Shorts', image: dadshort, price: "20000", sizes: ["M", "L", "XL", "XXL"] },
+        { name: 'Leather Sandals 2', image: coolsandals2, price: "20000", sizes: ["M", "L", "XL", "XXL"] }
     ];
 
 
@@ -269,6 +269,26 @@ function OurPicks () {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // -------------------------- WINTER SECTION -----------------------------------------------
 // -------------------------- WINTER SECTION -----------------------------------------------
 // -------------------------- WINTER SECTION -----------------------------------------------
@@ -278,15 +298,15 @@ function OurPicks () {
 
     // Array that contains items for the winter season
     const winterWardrobeItems = [
-        { image: sweater1, name: 'Gray sweater', price: "20000" },
-        { image: cargokhaki1, name: 'Cargo pants', price: "18000" },
-        { image: jordan4, name: 'White Jordan4', price: "25000" },
-        { image: sweater2, name: 'Gray sweater 2', price: "18000" },
-        { image: blackjogging, name: 'Black joggings', price: "21000" },
-        { image: jordan12, name: 'Gray Jordan12', price: "28000" },
-        { image: hoodie1, name: 'Black hoodie', price: "20000" },
-        { image: cargokhaki3, name: 'Cargo pants', price: "18000" },
-        { image: jordan1, name: 'Jordan 1', price: "28000" }
+        { image: sweater1, name: 'Gray sweater', price: "20000", sizes: ["M", "L", "XL", "XXL"] },
+        { image: cargokhaki1, name: 'Cargo pants', price: "18000", sizes: ["M", "L", "XL", "XXL"] },
+        { image: jordan4, name: 'White Jordan4', price: "25000", sizes: ["40", "41", "42", "43"] },
+        { image: sweater2, name: 'Gray sweater 2', price: "18000", sizes: ["M", "L", "XL", "XXL"] },
+        { image: blackjogging, name: 'Black joggings', price: "21000", sizes: ["M", "L", "XL", "XXL"] },
+        { image: jordan12, name: 'Gray Jordan12', price: "28000", sizes: ["40", "41", "42", "43"] },
+        { image: hoodie1, name: 'Black hoodie', price: "20000", sizes: ["M", "L", "XL", "XXL"] },
+        { image: cargokhaki3, name: 'Cargo pants', price: "18000", sizes: ["M", "L", "XL", "XXL"] },
+        { image: jordan1, name: 'Jordan 1', price: "28000", sizes: ["40", "41", "42", "43"] }
     ];
 
 

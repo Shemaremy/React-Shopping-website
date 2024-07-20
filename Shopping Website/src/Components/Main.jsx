@@ -37,16 +37,16 @@ import Jordan13white from '../images/Shoes products/Jordan 13 white.png';
 
 // CARD CONTENT FOR OUR PRODUCTS CARDS
 export const Employees = [
-    { name: "Jordan 1 orange", price: "28000", stars: 2, image: Jordan1orange, quantity: 1 },
-    { name: "Jordan 4 black", price: "25000", stars: 3, image: Jordan4black, quantity: 1 },
-    { name: "Jordan 1 red", price: "28000", stars: 2, image: Jordan1red, quantity: 1 },
-    { name: "Jordan 4 white", price: "25000", stars: 4, image: Jordan4white, quantity: 1 },
-    { name: "Jordan 5 white", price: "32000", stars: 3, image: Jordan5white, quantity: 1 },
-    { name: "Jordan 12 white", price: "30000", stars: 5, image: Jordan12white, quantity: 1 },
-    { name: "Jordan 11 black", price: "26000", stars: 3, image: Jordan11black, quantity: 1 },
-    { name: "Jordan 13 black", price: "33000", stars: 4, image: Jordan13black, quantity: 1 },
-    { name: "Jordan 14 gray", price: "35000", stars: 2, image: Jordan14gray, quantity: 1 },
-    { name: "Jordan 13 white", price: "33000", stars: 5, image: Jordan13white, quantity: 1 }
+    { name: "Jordan 1 orange", price: "28000", stars: 2, image: Jordan1orange, quantity: 1, sizes: ["40", "41", "42", "43"] },
+    { name: "Jordan 4 black", price: "25000", stars: 3, image: Jordan4black, quantity: 1, sizes: ["40", "41", "42", "43"]  },
+    { name: "Jordan 1 red", price: "28000", stars: 2, image: Jordan1red, quantity: 1, sizes: ["40", "41", "42", "43"]  },
+    { name: "Jordan 4 white", price: "25000", stars: 4, image: Jordan4white, quantity: 1, sizes: ["40", "41", "42", "43"]  },
+    { name: "Jordan 5 white", price: "32000", stars: 3, image: Jordan5white, quantity: 1, sizes: ["40", "41", "42", "43"]  },
+    { name: "Jordan 12 white", price: "30000", stars: 5, image: Jordan12white, quantity: 1, sizes: ["40", "41", "42", "43"]  },
+    { name: "Jordan 11 black", price: "26000", stars: 3, image: Jordan11black, quantity: 1, sizes: ["40", "41", "42", "43"]  },
+    { name: "Jordan 13 black", price: "33000", stars: 4, image: Jordan13black, quantity: 1, sizes: ["40", "41", "42", "43"]  },
+    { name: "Jordan 14 gray", price: "35000", stars: 2, image: Jordan14gray, quantity: 1, sizes: ["40", "41", "42", "43"]  },
+    { name: "Jordan 13 white", price: "33000", stars: 5, image: Jordan13white, quantity: 1, sizes: ["40", "41", "42", "43"]  }
 ];
 
 
