@@ -57,7 +57,7 @@ function ProceedPayment() {
     let currentCountry = 'RW'
 
     const location = useLocation();
-    const { currentProduct, totalPrice } = location.state || { currentProduct: [], totalPrice: 0 };
+    const { currentProduct, totalPrice, selectedSizes } = location.state || { currentProduct: [], totalPrice: 0, selectedSizes: {} };
 
     
 
@@ -389,7 +389,7 @@ const calculateTotalQuantity = () => {
                                 </div>
                                 <div className='img_description_summary'>
                                     <h3 className='item_name_summary'>{item.name}</h3>
-                                    <p className='size_summary'>Size: {item.size}</p>
+                                    <p className='size_summary'>Size: {selectedSizes[index] || 'Not selected'}</p>
                                     <h5 className='quantity_number'>Quantity: {item.quantity}</h5>
                                 </div>
                             </div>

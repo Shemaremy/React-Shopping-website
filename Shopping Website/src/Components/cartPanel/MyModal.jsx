@@ -24,19 +24,17 @@ function MyModal(props) {
 
 
   const navigate = useNavigate();
-  const handleProceedPayment = (selectedSizes) => {
-    const sizePassing = (selectedSizes) => {
-      if (selectedSizes === "") {
-        alert("Check if all your products have a size please !")
-      }
-      else {
-        alert (selectedSizes)
-        //navigate('/payment', { state: { currentProduct, totalPrice } });
-      }
+
+  // Update handleProceedPayment function to include selectedSizes
+  const handleProceedPayment = () => {
+    if (Object.keys(selectedSizes).length === 0) {
+      alert("Check if all your products have a size please!");
+    } else {
+      navigate('/payment', { state: { currentProduct, totalPrice, selectedSizes } });
     }
-    sizePassing(selectedSizes)
-  
   };
+
+
 
 
 
@@ -44,7 +42,6 @@ function MyModal(props) {
   const [selectedSizes, setSelectedSizes] = useState({});
   const handleSizeChange = (event, index) => {
     setSelectedSizes({ ...selectedSizes, [index]: event.target.value });
-    const theSize = selectedSizes[index]; 
   };
     
 
