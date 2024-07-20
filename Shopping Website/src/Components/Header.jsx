@@ -249,6 +249,33 @@ const handleSuggestionClick = (name) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // ------------------------- SCROLL TO CERTAIN SECTION FROM NAV LINKS ------------------------------------------
 // ------------------------- SCROLL TO CERTAIN SECTION FROM NAV LINKS ------------------------------------------
 // ------------------------- SCROLL TO CERTAIN SECTION FROM NAV LINKS ------------------------------------------
@@ -266,6 +293,64 @@ const handleSuggestionClick = (name) => {
             section.scrollIntoView({ behavior: 'smooth' });
         }
     };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -369,6 +454,50 @@ const highlightItem = Highlight.slice(0, 3).map((product, index) => (
         </div>
     </div>
 ));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
