@@ -203,36 +203,55 @@ function B() {
                         <h3 className="browse_header">Browse by category</h3>
                         <p className="browse_par">I'm looking for:</p>
                     </div>
-                    <div className="lower_part_category">
-                        <button className="browse_button">Men Shoes</button>
-                        <button className="browse_button">Pants</button>
-                        <button className="browse_button">T-Shirts</button>
-                        <button className="browse_button">Hoodies</button>
-                        <button className="browse_button">Jackets</button>
-                        <button className="browse_button">Caps</button>
-                    </div>
                 </div>
             </div>
             <div className="Lower_part_main">
                 <div className="All_products_container">
-                    <div className="products_section_one">   
-                        <div className="section-draft">
-                            <div className="slider-container-draft">
-                                <Slider {...settings}>
-                                    {TrendDraftOne}
-                                </Slider>
+                    <div className="Our_products_upper_part">
+                        <h1 className="our-products-header">Our products</h1>
+                        <p className="our-products-description">Explore our curated clothing collections, blending style and quality to elevate your wardrobe with the latest trends and timeless classics.</p>
+                        <div className="our-products-nav">
+                            <div className="popular-container">
+                                <div className="popular-chooser">
+                                    <p>Popular</p>
+                                    <i className="fa fa-angle-down" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div className="buttons-container">
+                                <button className="browse_button">Men Shoes</button>
+                                <button className="browse_button">Pants</button>
+                                <button className="browse_button">T-Shirts</button>
+                                <button className="browse_button">Hoodies</button>
+                                <button className="browse_button">Jackets</button>
+                                <button className="browse_button">Caps</button>
+                            </div>
+                            <div className="filter-container">
+                                <div className="filter-chooser">
+                                    <i className="fa fa-filter" aria-hidden="true"></i>
+                                    <p>Filters</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-
-                    <div className="products_section_two">
-                        <div className="section-draft">
-                            <div className="slider-container-draft">
-                                <Slider {...settings}>
-                                    {TrendDraftTwo}
-                                </Slider>
+                    <div className="Our_products_lower_part">
+                        <div className="products_section_one">   
+                            <div className="section-draft">
+                                <div className="slider-container-draft">
+                                    <Slider {...settings}>
+                                        {TrendDraftOne}
+                                    </Slider>
+                                </div>
                             </div>
-                        </div>                 
+                        </div>
+                        <div className="products_section_two">
+                            <div className="section-draft">
+                                <div className="slider-container-draft">
+                                    <Slider {...settings}>
+                                        {TrendDraftTwo}
+                                    </Slider>
+                                </div>
+                            </div>                 
+                        </div>
                     </div>
                 </div>
                 <div className="Our_picks_container">

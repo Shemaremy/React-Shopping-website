@@ -425,15 +425,11 @@ function OurPicks () {
     const contentWrapper = (
         <>
             <div className="Small_navbar">
-                <button className={isSummer ? "Summer summer-btn" : 'Summer'} onClick={() => setIsSummer(true)}>Summer</button>
+                <div className={isSummer ? "Summer summer-btn" : 'Summer'} onClick={() => setIsSummer(true)}>Summer</div>
                 <div className="In_navbar_divisor"></div>
-                <button className={!isSummer ? "Winter winter-btn" : 'Winter'} onClick={() => setIsSummer(false)}>Winter</button>
+                <div className={!isSummer ? "Winter winter-btn" : 'Winter'} onClick={() => setIsSummer(false)}>Winter</div>
             </div>
             <div className="the_rest_2">
-                <div className="Summer_picks_header_container">
-                    <h3 className="summer_picks_header">{isSummer ? "Summer Picks" : "Winter Picks"}</h3>
-                </div>
-
                 <div className="the_rest_3">
                     <div className="Question_header_container">
                         <p className="question_header">{isSummer ? "Summer vacation ?" : "Facing winter chills ?"}</p>
