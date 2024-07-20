@@ -24,16 +24,31 @@ function MyModal(props) {
 
 
   const navigate = useNavigate();
-  const handleProceedPayment = () => {
-    navigate('/payment', { state: { currentProduct, totalPrice } });
+  const handleProceedPayment = (selectedSizes) => {
+    const sizePassing = (selectedSizes) => {
+      if (selectedSizes === "") {
+        alert("Check if all your products have a size please !")
+      }
+      else {
+        alert (selectedSizes)
+        //navigate('/payment', { state: { currentProduct, totalPrice } });
+      }
+    }
+    sizePassing(selectedSizes)
+  
   };
 
 
-    const [selectedSize, setSelectedSize] = useState('');
-  
-    const handleSizeChange = (event) => {
-      setSelectedSize(event.target.value);
-    };
+
+    
+  const [selectedSizes, setSelectedSizes] = useState({});
+  const handleSizeChange = (event, index) => {
+    setSelectedSizes({ ...selectedSizes, [index]: event.target.value });
+    const theSize = selectedSizes[index]; 
+  };
+    
+
+    
   
 
 
@@ -112,7 +127,7 @@ function MyModal(props) {
               <div className='left_quantity_size_panel'>
                 <div className='size_container'>
                   <p>Size: </p>
-                  <select id="size-dropdown" className="size-values" value={selectedSize} onChange={handleSizeChange}>
+                  <select id="size-dropdown" className="size-values" value={selectedSizes[index] || ''} onChange={(event) => handleSizeChange(event, index)}>
                     <option value="">Select size</option>
                     <option value="40">40</option>
                     <option value="41">41</option>
