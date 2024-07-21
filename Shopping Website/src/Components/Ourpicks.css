@@ -45,11 +45,12 @@
 
 .our_picks_heading_container {
     width: 100%;
-    height: 15%;
+    height: 20%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(45deg, #4b4b4b1e,  rgba(255, 253, 253, 0.103));
+    background: linear-gradient(45deg, #4b4b4b15,  rgba(255, 253, 253, 0.103));
 }
 
 .our_picks_header {
@@ -59,18 +60,38 @@
     font-style: normal;
     font-size: 25px;
     font-weight: 100;
-    color: rgb(34, 34, 34);
-    height: 100%;
-    width: 90%;
+    color: rgb(0, 0, 0);
+    height: auto;
+    width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-top: 0;
     margin-bottom: 0;
 }
 
+
+.our_picks_heading_container > p {
+    font-family: sans-serif;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 0;
+    width: 60%;
+    font-size: 11px;
+    margin-left: 5%;
+}
+
+
+
+
+
+
+
+
+
 .The_rest {
     width: 95%;
-    height: 85%;
+    height: 80%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -318,7 +339,6 @@
 .wardrobe_slider > .slick-next:before {
     color: green !important;
     font-size: 30px !important;
-    display: none;
 }
 
 

@@ -280,19 +280,24 @@ function B() {
                         <img src={Test} alt="" />
                     </div>
                     <div className="our_picks_heading_container">
-                        <h4 className="our_picks_header">Our Picks:</h4>
+                        <h4 className="our_picks_header">Our Picks</h4>
+                        <p>
+                            Explore our curated selections of must-have items for the season, whether you're gearing up for summer or winter, you can find the perfect outfits tailored to each season. Don't miss out on these picks 
+                            &nbsp; <i className="fa-solid fa-fire"></i>
+                        </p>
                     </div>
                     <div className="The_rest">
                         
                         <OurPicks/>
                     </div>
                 </div>
-                <div className="Customer_preferences">
-                    <div className="Upper_part_customers">
-                        <h4 className="Trending_items_header">Trending Items</h4>
+                <div className="Trend-section">
+                    <div className="Upper-part-trend">
+                        <h4 className="Trending_items_header">Discover What's Trending</h4>
+                        <p className="Trend-description">Stay ahead of the fashion curve with our handpicked trending items! From the latest sneaker drops to classic wardrobe staples, explore the top picks that everyone is talking about.</p>
                     </div>
-                    <div className="Lower_part_customers">                        
-                        <div className="Trending_Section">
+                    <div className="Lower-part-trend">                        
+                        <div className="TrendCards-panel">
                             <TrendCards/>
                         </div>                        
                     </div>

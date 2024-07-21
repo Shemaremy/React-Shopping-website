@@ -425,9 +425,9 @@ function OurPicks () {
     const contentWrapper = (
         <>
             <div className="Small_navbar">
-                <div className={isSummer ? "Summer summer-btn" : 'Summer'} onClick={() => setIsSummer(true)}><i class="fa-solid fa-sun"></i></div>
+                <div className={isSummer ? "Summer summer-btn" : 'Summer'} onClick={() => setIsSummer(true)}><i className="fa-solid fa-sun"></i></div>
                 <div className="In_navbar_divisor"></div>
-                <div className={!isSummer ? "Winter winter-btn" : 'Winter'} onClick={() => setIsSummer(false)}><i class="fa-solid fa-cloud"></i></div>
+                <div className={!isSummer ? "Winter winter-btn" : 'Winter'} onClick={() => setIsSummer(false)}><i className="fa-solid fa-cloud"></i></div>
             </div>
             <div className="the_rest_2">
                 <div className="the_rest_3">

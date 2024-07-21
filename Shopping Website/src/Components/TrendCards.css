@@ -1,7 +1,7 @@
 
-.Upper_trending_part {
-    height: 55%;
-    width: 80%;
+.main_trending_part {
+    height: 50%;
+    width: 85%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -44,15 +44,15 @@
 .card_upper {
     height: 60%;
     width: 100%;
-    background-color: chocolate;
+    background-color: rgba(131, 65, 17, 0.274);
     display: flex;
     justify-content: center;
     align-items: center;
     transition: background-color 0.4s ease-in-out;
 }
 
-.jordan1red {
-    width: 60%;
+.Trend-img {
+    width: 50%;
 }
 
 .card_lower {
@@ -77,7 +77,7 @@
 
 .price {
     font-family: sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     margin-top: 5px;
 }
 
@@ -165,16 +165,15 @@
 
 
 
-.Lower_trending_part {
-    height: 43%;
+.why_verve_part {
+    height: 40%;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    background-color: rgba(128, 128, 128, 0.404);
-    background: linear-gradient(to bottom, rgb(196, 196, 196), rgba(255, 255, 0, 0));
+    background-color: rgba(128, 128, 128, 0.24);
 }
 
 
@@ -189,7 +188,8 @@
 .offers_you_header {
     font-family: sans-serif;
     font-size: 17px;
-    color: rgb(77, 77, 77);
+    color: rgb(53, 53, 53);
+    text-decoration: underline;
 }
 
 .service-container {    
@@ -228,7 +228,7 @@
 }
 
 .svg {
-    width: 30%;
+    width: 25%;
     border-radius: 50%;
 
 }

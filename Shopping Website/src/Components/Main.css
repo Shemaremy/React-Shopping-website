@@ -234,6 +234,7 @@
     align-items: center;
 }
 
+
 .popular-chooser {
     width: 50%;
     height: 40%;
@@ -335,6 +336,10 @@
 
 
 
+.popular-chooser:hover,
+.filter-chooser:hover {
+    background-color: rgba(214, 214, 214, 0.5);
+}
 
 
 
@@ -492,10 +497,10 @@
 .cart {
     margin-top: 0;
     margin-bottom: 0;
-    background-color: rgb(0, 119, 255);
+    background-color: rgba(0, 140, 145, 0.986);
     padding: 3%;
     border-style: solid;
-    border-width: 1px;
+    border-width: 0px;
     border-color: rgb(255, 255, 255);
     border-radius: 5px;
     margin-right: 2%;
@@ -511,7 +516,7 @@
 }
 
 .cart:hover {
-    background-color: rgba(0, 119, 255, 0.616);
+    background-color: rgba(50, 182, 187, 0.986);
 }
 
 .cart_icon {
@@ -525,14 +530,14 @@
   
   
   
-  .products_section_two {
-        height: 50%;
-        width: 100%;
-        border-style: solid;
-        border-width: 0px;
-        border-radius: 10px;
-        align-content: center;
-  }
+.products_section_two {
+    height: 50%;
+    width: 100%;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 10px;
+    align-content: center;
+}
   
   
   
@@ -641,66 +646,82 @@
 /*------------------------------------------ TRENDING ITEMS SECTION ---------------------------------------*/
 
 
-  .Customer_preferences {
-      width: 100%;
-      height: 32%;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      background-color: rgba(90, 90, 90, 0.158);
-    
-  }
-  
-  
-  .Upper_part_customers {
-      width: 100%;
-      height: 15%;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-  }
-  
-  
-  .Trending_items_header {
-      width: 40%;
-      font-family: "Pacifico", cursive;
-      font-family: sans-serif;
-      font-weight: 100;
-      font-style: normal;
-      font-size: 20px;
-      color: rgb(0, 0, 0);
-      text-align: center;
-      overflow-x: hidden;
-      margin-left: 0;
-      margin-right: 0;
-      margin-top: 0;
-      margin-bottom: 0;
-      padding: 0;
-  }
-  
-  
-  
-  .Lower_part_customers {
-      width: 100%;
-      height: 85%;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-  }
-  
-  
-  .Trending_Section {
-      height: 100%;
-      width: 100%;
-      border-style: solid;
-      border-width: 0px;
-      border-radius: 10px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-  }
+.Trend-section {
+    width: 100%;
+    height: 32%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(90, 90, 90, 0.158);
+}
+
+
+
+
+.Upper-part-trend {
+    width: 100%;
+    height: 20%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(216, 216, 216, 0.274);
+}
+
+
+.Trending_items_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Pacifico", cursive;
+    font-family: sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    overflow-x: hidden;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+
+.Trend-description {
+    width: 60%;
+    font-family: sans-serif;
+    font-size: 11px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+
+
+
+.Lower-part-trend {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.TrendCards-panel {
+    height: 100%;
+    width: 100%;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
   
   
     

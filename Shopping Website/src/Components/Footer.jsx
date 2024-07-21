@@ -12,8 +12,8 @@ function C(){
                     </div>
                     <div className="Form_container">
                         <form action="">
-                            <input className="footer_input" type="text" />
-                            <input className="footer_input" type="text" />
+                            <input className="footer_input" type="text" placeholder="Name"/>
+                            <input className="footer_input" type="text" placeholder="Your message"/>
                             <button className="Send_footer_button">Send</button> 
                         </form>
                     </div>
@@ -30,18 +30,20 @@ function C(){
                     <div className="Contact_container">
                         <p className="contact_header">Contact:</p>
                     </div>
-                    <div className="Phone_and_email_container">
-                        <p className="phone">
-                            <i className="tel_ico fa fa-phone" aria-hidden="true"></i>+250783674289
-                        </p>
-                        <p className="email">
-                            <i className="mail_ico fa fa-envelope" aria-hidden="true"></i>remyshema20@gmail.com                            
-                        </p>
+                    <div className="Phone_and_icons_container">
+                        <div className="phone_and_email_container">
+                            <p className="phone">
+                                <i className="tel_ico fa fa-phone" aria-hidden="true"></i>+250 783 674 289
+                            </p>
+                            <p className="email">
+                                <i className="mail_ico fa fa-envelope" aria-hidden="true"></i>remyshema20@gmail.com                            
+                            </p>
+                        </div>
                         <div className="Icons_container">
-                            <p className="Social_media_border"><i className="Instagram fab fa-instagram" aria-hidden="true"></i></p>
-                            <p className="Social_media_border"><i className="Twitter fab fa-twitter" aria-hidden="true"></i></p>
-                            <p className="Social_media_border"><i className="Whatsapp fab fa-whatsapp" aria-hidden="true"></i></p>
-                            <p className="Social_media_border"><i className="Linkedin fab fa-linkedin" aria-hidden="true"></i></p>
+                            <a href="https://www.instagram.com/shema.remy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="Social_media_border"><i className="Instagram fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="https://www.instagram.com/shema.remy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="Social_media_border"><i className="Twitter fab fa-twitter" aria-hidden="true"></i></a>
+                            <a href="https://discord.com/users/928425971936292874" className="Social_media_border"><i className="Discord fa-brands fa-discord"></i></a>
+                            <a href=" https://linkedin.com/in/shema-remy-ba3229288" className="Social_media_border"><i className="Linkedin fab fa-linkedin" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>

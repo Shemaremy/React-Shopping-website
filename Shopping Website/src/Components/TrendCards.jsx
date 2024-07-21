@@ -85,7 +85,7 @@ const TrendCards = () => {
     // The html content for the card
     const card2Content = (product) => (
         <>
-            <div className="card_upper"><img className="jordan1red" src={product.image} alt="" /></div>
+            <div className="card_upper"><img className="Trend-img" src={product.image} alt={product.name} /></div>
             <div className="card_lower">
                 <h2 className="name">{product.name}</h2>
                 <p className="price">{(product.price / 1000)},000 Frw</p>
@@ -120,7 +120,7 @@ const TrendCards = () => {
 
     return (
         <>
-            <div className="Upper_trending_part">
+            <div className="main_trending_part">
                 <div className="slider-container-2">
                     <Slider {...settings}>
                         {slider}
@@ -128,11 +128,9 @@ const TrendCards = () => {
                 </div>
             </div>
 
-            <div className="underline"></div>
-
-            <div className="Lower_trending_part">
+            <div className="why_verve_part">
                 <div className="verve-offers-you">
-                    <h1 className="offers_you_header">Why Verve?</h1>
+                    <h1 className="offers_you_header">Why Verve ?</h1>
                 </div>
                 <div className="service-container">
                     <div className="svg-container">
@@ -167,8 +165,8 @@ const TrendCards = () => {
                         <div className="contain2">
                             <div className="svg-real"><img className="svg" src={chat} alt="" /></div>
                             <div className="svg_words">
-                                <h5 className="svg_title">Live Chat</h5>
-                                <p className="svg_paragraph">Convenient online consultation and messaging to solve your problems.</p>
+                                <h5 className="svg_title">Contact Support</h5>
+                                <p className="svg_paragraph">Fast and convenient consultation and messaging to solve your problems.</p>
                             </div>
                         </div>
                     </div>
