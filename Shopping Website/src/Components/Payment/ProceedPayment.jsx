@@ -40,6 +40,91 @@ function ProceedPayment() {
 
 
 
+//-------------------------------------- TRYING FORM VALLIDATION-----------------------------------------------
+//-------------------------------------- TRYING FORM VALLIDATION-----------------------------------------------
+//-------------------------------------- TRYING FORM VALLIDATION-----------------------------------------------
+//-------------------------------------- TRYING FORM VALLIDATION-----------------------------------------------
+
+
+
+
+    const [cardholderName, setCardholderName] = useState('');
+    const [cardNumber, setCardNumber] = useState('');
+    const [expiryDate, setExpiryDate] = useState('');
+    const [cvc, setCvc] = useState('');
+    const [errors, setErrors] = useState({});
+    const [showCardNumber, setShowCardNumber] = useState(false);
+
+
+    const validateForm = () => {
+        const newErrors = {};
+
+        if (!cardholderName) newErrors.cardholderName = 'Cardholder name must be filled';
+        if (!cardNumber) newErrors.cardNumber = 'Card number must be filled';
+        else if (cardNumber.length !== 16) newErrors.cardNumber = 'Card number must be 16 digits';
+        if (!expiryDate) newErrors.expiryDate = 'Expiry date must be filled';
+        if (!cvc) newErrors.cvc = 'CVC must be filled';
+
+        return newErrors;
+    };
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const newErrors = validateForm();
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
+        } else {
+            // Process payment
+            console.log('Processing payment...');
+        }
+    };
+
+    const handleCardNumberChange = (e) => {
+        const value = e.target.value;
+        if (/^\d*$/.test(value)) {
+            setCardNumber(value);
+        }
+    };
+
+    const handleExpiryDateChange = (e) => {
+        let value = e.target.value;
+        value = value.replace(
+            /^(\d\d)(\d)$/g,
+            '$1/$2'
+        );
+        value = value.replace(
+            /^(\d\d\/\d\d)(\d+)$/g,
+            '$1/$2'
+        );
+        setExpiryDate(value.substring(0, 5));
+    };
+
+
+
+
+//---------------------------------------------------------- END-----------------------------------------------
+//---------------------------------------------------------- END-----------------------------------------------
+//---------------------------------------------------------- END-----------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -430,27 +515,53 @@ const calculateTotalQuantity = () => {
                 </div>
             </div>
             <div className='lower_check_out_container'>
-                <form action="" className='card_form'>
+                <form action="" className='card_form' onSubmit={handleSubmit}>
                     <div className='cardholder_name'>
                         <div className='first_name'>
                             <p className='indicator'>Cardholder name</p>
-                            <input type="text" placeholder='ex: Shema Remy'/>
+                            <input type="text" placeholder='ex: Shema Remy' 
+                                value={cardholderName} 
+                                onChange={(e) => setCardholderName(e.target.value)}
+                            />
+                            {errors.cardholderName && <p className='error'>{errors.cardholderName}</p>}
                         </div>
                     </div>
                     <div className='card_number'>
                         <div className='first_name'>
                             <p className='indicator'>Card number</p>
-                            <input type="text" placeholder='1234 5678 9012 3456'/>
+                            <input type={showCardNumber ? "text" : "password"} placeholder='1234-5678-9012-3456'
+                                value={cardNumber}
+                                onChange={handleCardNumberChange}
+                                maxLength="16"
+                            />
+                            <button type="button" onClick={() => setShowCardNumber(!showCardNumber)}>
+                                {showCardNumber ? 'Hide' : 'Show'}
+                            </button>
+                            {errors.cardNumber && <p className='error'>{errors.cardNumber}</p>}
                         </div>
                     </div>
                     <div className='exp_and_cvc'>
                         <div className='first_name'>
                             <p className='indicator'>Expiry date</p>
-                            <input type="text" placeholder='MM/YY'/>
+                            <input
+                                type="text"
+                                placeholder='MM/YY'
+                                value={expiryDate}
+                                onChange={handleExpiryDateChange}
+                                maxLength="5"
+                            />
+                            {errors.expiryDate && <p className='error'>{errors.expiryDate}</p>}
                         </div>
                         <div className='last_name'>
                             <p className='indicator'>CVC</p>
-                            <input type="text"/>
+                            <input
+                                type="text"
+                                placeholder='CVC'
+                                value={cvc}
+                                onChange={(e) => setCvc(e.target.value)}
+                                maxLength="4"
+                            />
+                            {errors.cvc && <p className='error'>{errors.cvc}</p>}
                         </div>
                     </div>
                     <div className='pay_now'>
