@@ -434,13 +434,13 @@ const calculateTotalQuantity = () => {
                     <div className='cardholder_name'>
                         <div className='first_name'>
                             <p className='indicator'>Cardholder name</p>
-                            <input type="text"/>
+                            <input type="text" placeholder='ex: Shema Remy'/>
                         </div>
                     </div>
                     <div className='card_number'>
                         <div className='first_name'>
                             <p className='indicator'>Card number</p>
-                            <input type="text"/>
+                            <input type="text" placeholder='1234 5678 9012 3456'/>
                         </div>
                     </div>
                     <div className='exp_and_cvc'>
