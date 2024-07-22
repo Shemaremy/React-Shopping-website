@@ -80,6 +80,16 @@ function ProceedPayment() {
         }
     };
 
+
+    // Handling accepting only letters and not numbers
+    const handleCardholderNameChange = (e) => {
+        const value = e.target.value;
+        if (/^[A-Za-z\s]*$/.test(value)) {
+            setCardholderName(value);
+        }
+    };
+
+    // Handling accepting only numbers
     const handleCardNumberChange = (e) => {
         const value = e.target.value;
         if (/^\d*$/.test(value)) {
@@ -87,18 +97,23 @@ function ProceedPayment() {
         }
     };
 
+
+    // Handle expiry year by where I must only accept digits, no 5 numbers accepted,...
     const handleExpiryDateChange = (e) => {
-        let value = e.target.value;
-        value = value.replace(
-            /^(\d\d)(\d)$/g,
-            '$1/$2'
-        );
-        value = value.replace(
-            /^(\d\d\/\d\d)(\d+)$/g,
-            '$1/$2'
-        );
-        setExpiryDate(value.substring(0, 5));
+        let value = e.target.value.replace(/\D/g, ''); // Remove non-digit characters
+        if (value.length > 2) {
+            let month = parseInt(value.substring(0, 2), 10);
+
+            if (month < 1 || month > 12) {
+                value = '12'; // Restrict month to be between 1 and 12
+            }
+            
+            let year = value.substring(2, 4);
+            value = `${value.substring(0, 2)}/${year}`;
+        }
+        setExpiryDate(value);
     };
+    
 
 
 
@@ -521,7 +536,7 @@ const calculateTotalQuantity = () => {
                             <p className='indicator'>Cardholder name</p>
                             <input type="text" placeholder='ex: Shema Remy' 
                                 value={cardholderName} 
-                                onChange={(e) => setCardholderName(e.target.value)}
+                                onChange={handleCardholderNameChange}
                             />
                             {errors.cardholderName && <p className='error'>{errors.cardholderName}</p>}
                         </div>
