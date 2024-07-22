@@ -270,6 +270,48 @@
 }
 
 
+.dropdown-parent-panel {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: 90%;
+    height: 20%;
+}
+
+.dropdown-panel {
+    border: 1px solid #ffffff7a;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    background-color: rgb(202, 202, 202);
+}
+  
+.dropdown-item {
+    padding: 10px;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-size: 12px;
+    width: 85%;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.dropdown-item.selected {
+    background-color: #f0f0f07c;
+    font-weight: bold;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f033;
+}
+
+
+
+
+
+
+
+
 
 .buttons-container {
     width: 65%;
@@ -359,6 +401,7 @@
 
 
 .Our_products_lower_part {
+    position: relative;
     height: 75%;
     width: 100%;
     display: flex;
@@ -521,9 +564,7 @@
     transition: transform 0.1s ease;
 }
 
-.cart:active {
-    transform: scale(0.9);
-}
+
 
 .cart:hover {
     background-color: rgba(50, 182, 187, 0.986);

@@ -739,13 +739,13 @@ a:hover {
 }
 
 .Add_to_cart_1:active {
-  transform: scale(0.95);
+  transform: scale(1);
 }
 
 
 
 .Cart_ico_2 {
-  margin-left: 7%;
+  margin-left: 8px;
 }
 
 
@@ -798,9 +798,28 @@ a:hover {
   align-content: center;
 }
 
+/* Hide scrollbar container */
+.suggestions-container::-webkit-scrollbar {
+  width: 6px; 
+  height: 10px;
+}
+
+
+.suggestions-container::-webkit-scrollbar-thumb {
+  background-color: rgb(173, 173, 173);
+  border-radius: 55px;
+  cursor: pointer;
+}
+
+.suggestions-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(56, 56, 56);
+}
+
+/*------------------------------------------------------*/
+
 
 .suggestions-container {
-  background: white;
+  background-color: rgb(235, 235, 235);
   border: 1px solid #ccc;
   border-top: none;
   width: 100%;
@@ -809,8 +828,10 @@ a:hover {
   max-height: 100px;
   overflow-y: auto;
   overflow-x: hidden;
-  border-radius: 0px 0px 10px 10px;
-  box-shadow: 0px 0px 20px black;
+
+  border: 1px solid #ffffff7a;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .suggestion-item {
@@ -830,7 +851,7 @@ a:hover {
 
 
 .suggestion-item:hover {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
 }
 
 

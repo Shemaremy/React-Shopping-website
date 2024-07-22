@@ -468,13 +468,33 @@ const [showCardNumber, setShowCardNumber] = useState(false);
 
 
 const validateForm = () => {
+
+    // Initializing newErrors object
     const newErrors = {};
 
-    if (!cardholderName) newErrors.cardholderName = 'Cardholder name must be filled';
-    if (!cardNumber) newErrors.cardNumber = 'Card number must be filled';
-    else if (cardNumber.length !== 16) newErrors.cardNumber = 'Card number must be 16 digits';
-    if (!expiryDate) newErrors.expiryDate = 'Expiry date must be filled';
-    if (!cvc) newErrors.cvc = 'CVC must be filled';
+
+    if (!cardholderName) {
+        newErrors.cardholderName = 'Cardholder name must be filled';
+    }
+
+
+    
+    if (!cardNumber) {
+        newErrors.cardNumber = 'Card number must be filled';
+    }
+    else if (cardNumber.length !== 16) {
+        newErrors.cardNumber = 'Card number must be 16 digits';
+    }
+
+
+    if (!expiryDate) {
+        newErrors.expiryDate = 'Expiry date must be filled';
+    }
+
+
+    if (!cvc) {
+        newErrors.cvc = 'CVC must be filled';
+    }
 
     return newErrors;
 };
@@ -573,9 +593,9 @@ const handleExpiryDateChange = (e) => {
                                 onChange={handleCardNumberChange}
                                 maxLength="16"
                             />
-                            <button type="button" onClick={() => setShowCardNumber(!showCardNumber)}>
-                                {showCardNumber ? 'Hide' : 'Show'}
-                            </button>
+                            <div className='see-container' type="button" onClick={() => setShowCardNumber(!showCardNumber)}>
+                                {showCardNumber ? <i className="fa-regular fa-eye-slash"></i> : <i className="fa-regular fa-eye"></i>}
+                            </div>
                             {errors.cardNumber && <p className='error'>{errors.cardNumber}</p>}
                         </div>
                     </div>

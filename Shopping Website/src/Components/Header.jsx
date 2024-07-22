@@ -64,6 +64,64 @@ function A(){
 
 
 
+//--------------------------------- LOADERS SECTION -----------------------------------------------
+//--------------------------------- LOADERS SECTION -----------------------------------------------
+//--------------------------------- LOADERS SECTION -----------------------------------------------
+
+
+
+const [buttonText, setButtonText] = useState('Add to cart');
+const [loading, setLoading] = useState(false);
+
+
+const handleAddToCartClick = async (product) => {
+    setLoading(true);
+    setButtonText('Loading ...');
+    
+    // Simulate a delay (e.g., API call duration)
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    
+    try {
+        handleClick(product); // Simulate the asynchronous operation
+    } catch (error) {
+        console.error('Error adding item to cart:', error);
+        setButtonText('Error');
+    } finally {
+        setLoading(false);
+        setTimeout(() => setButtonText('Add to cart'), 100); // Reset after 2 seconds
+    }
+};
+
+
+
+
+
+
+
+//--------------------------------- END -----------------------------------------------
+//--------------------------------- END -----------------------------------------------
+//--------------------------------- END -----------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     
 
@@ -435,7 +493,13 @@ const card4Content = (product) =>(
         <div className="Item_and_price_container">
             <h3 className="Item_name">{product.name}</h3>
             <p className="item_price">{(product.price/1000)},000 Frw</p>
-            <button className="Add_to_cart_1" onClick={() => {handleClick(product); setShowModal(false);}}>Add to cart<i className="Cart_ico_2 fas fa-cart-plus"></i></button>
+            <button 
+                className="Add_to_cart_1" 
+                onClick={() => { handleAddToCartClick(product); setShowModal(false); }}
+                disabled={loading} // Disable button while loading
+            >
+                {buttonText} <i className="Cart_ico_2 fas fa-cart-plus"></i>
+            </button>
         </div>
         <div className="The_shoe_container">
             <img src={product.image} className="Shoe_itself" alt={product.name} />

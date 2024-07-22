@@ -117,10 +117,51 @@ const handleCategoryClick = (event) => {
 
 
 
+// ------------------------------ END -------------------------------------
+// ------------------------------ END -------------------------------------
+// ------------------------------ END -------------------------------------
 
-// ------------------------------ END -------------------------------------
-// ------------------------------ END -------------------------------------
-// ------------------------------ END -------------------------------------
+
+
+
+
+
+
+
+
+
+// ------------------------------- HANDLE ADD TO CART LOADER -----------------------------------------
+// ------------------------------- HANDLE ADD TO CART LOADER -----------------------------------------
+// ------------------------------- HANDLE ADD TO CART LOADER -----------------------------------------
+
+
+const [buttonText, setButtonText] = useState('A');
+const [loading, setLoading] = useState(false);
+
+
+
+const handleAddToCartClick = async (product) => {
+    setLoading(true);
+    setButtonText('...');
+    
+    // Simulate a delay (e.g., API call duration)
+    await new Promise((resolve) => setTimeout(resolve, 500));
+    
+    try {
+        handleClick(product); // Simulate the asynchronous operation
+    } catch (error) {
+        console.error('Error adding item to cart:', error);
+        setButtonText('Error');
+    } finally {
+        setLoading(false);
+        setTimeout(() => setButtonText('A'), 100); // Reset after 2 seconds
+    }
+};
+
+
+
+
+
 
 
 
@@ -173,7 +214,13 @@ const handleCategoryClick = (event) => {
                     </div>
                     <div className="price_and_cart_container">  
                         <p className="Price">{(product.price/1000)},000 Frw</p>
-                        <p className="cart" onClick={() => {handleClick(product);}}><i className="cart_icon fa fa-cart-plus" aria-hidden="true"></i></p>
+                        <p className="cart" 
+                            onClick={() => { handleAddToCartClick(product); }}
+                            disabled={loading}
+                            >
+                            {buttonText === 'A' && <i className="cart_icon fa fa-cart-plus" aria-hidden="true"></i>}
+                            {buttonText === '...' && <i className="cart_icon fa-solid fa-spinner"></i>}
+                        </p>
                         <MyModal product={Employees} />
                     </div>
                 </div>
@@ -321,6 +368,15 @@ const handleCategoryClick = (event) => {
                         </div>
                     </div>
                     <div className="Our_products_lower_part">
+                        {isToggled && (
+                            <div className="dropdown-parent-panel">
+                                <div className="dropdown-panel">
+                                    <div className="dropdown-item">Highly rated</div>
+                                    <div className="dropdown-item selected">Popular</div>
+                                    <div className="dropdown-item">New & Noteworthy</div>
+                                </div>
+                            </div>
+                        )}
                         <div className="products_section_one">   
                             <div className="section-draft">
                                 <div className="slider-container-draft">
