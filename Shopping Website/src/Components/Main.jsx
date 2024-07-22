@@ -103,9 +103,11 @@ const toggleHandler = () => {
 
 
 // Product category onclicks
-const handleCategoryClick = (buttonName) => {
+const handleCategoryClick = (event) => {
+    const buttonName = event.target.getAttribute('data-category');
     setActiveButton(buttonName);
 };
+
 
 
 
@@ -267,42 +269,48 @@ const handleCategoryClick = (buttonName) => {
                                 </div>
                             </div>
                             <div className="buttons-container">
-                            <button
-                                className={`browse_button ${activeButton === 'Men Shoes' ? 'active' : ''}`}
-                                onClick={() => handleCategoryClick('Men Shoes')}
-                            >
-                                Men Shoes
-                            </button>
-                            <button
-                                className={`browse_button ${activeButton === 'Pants' ? 'active' : ''}`}
-                                onClick={() => handleCategoryClick('Pants')}
-                            >
-                                Pants
-                            </button>
-                            <button
-                                className={`browse_button ${activeButton === 'T-Shirts' ? 'active' : ''}`}
-                                onClick={() => handleCategoryClick('T-Shirts')}
-                            >
-                                T-Shirts
-                            </button>
-                            <button
-                                className={`browse_button ${activeButton === 'Hoodies' ? 'active' : ''}`}
-                                onClick={() => handleCategoryClick('Hoodies')}
-                            >
-                                Hoodies
-                            </button>
-                            <button
-                                className={`browse_button ${activeButton === 'Jackets' ? 'active' : ''}`}
-                                onClick={() => handleCategoryClick('Jackets')}
-                            >
-                                Jackets
-                            </button>
-                            <button
-                                className={`browse_button ${activeButton === 'Caps' ? 'active' : ''}`}
-                                onClick={() => handleCategoryClick('Caps')}
-                            >
-                                Caps
-                            </button>
+                                <button
+                                    className={`browse_button ${activeButton === 'Men Shoes' ? 'active' : ''}`}
+                                    data-category="Men Shoes"
+                                    onClick={handleCategoryClick}
+                                >
+                                    Men Shoes
+                                </button>
+                                <button
+                                    className={`browse_button ${activeButton === 'Pants' ? 'active' : ''}`}
+                                    data-category="Pants"
+                                    onClick={handleCategoryClick}
+                                >
+                                    Pants
+                                </button>
+                                <button
+                                    className={`browse_button ${activeButton === 'T-Shirts' ? 'active' : ''}`}
+                                    data-category="T-Shirts"
+                                    onClick={handleCategoryClick}
+                                >
+                                    T-Shirts
+                                </button>
+                                <button
+                                    className={`browse_button ${activeButton === 'Hoodies' ? 'active' : ''}`}
+                                    data-category="Hoodies"
+                                    onClick={handleCategoryClick}
+                                >
+                                    Hoodies
+                                </button>
+                                <button
+                                    className={`browse_button ${activeButton === 'Jackets' ? 'active' : ''}`}
+                                    data-category="Jackets"
+                                    onClick={handleCategoryClick}
+                                >
+                                    Jackets
+                                </button>
+                                <button
+                                    className={`browse_button ${activeButton === 'Caps' ? 'active' : ''}`}
+                                    data-category="Caps"
+                                    onClick={handleCategoryClick}
+                                >
+                                    Caps
+                                </button>
                             </div>
                             <div className="filter-container">
                                 <div className="filter-chooser">
