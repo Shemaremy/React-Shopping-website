@@ -205,6 +205,7 @@
 .our-products-header {
     font-size: 30px;
     margin-bottom: 15px;
+    color: rgb(0, 0, 0);
 }
 
 .our-products-description {
@@ -237,8 +238,8 @@
 
 .popular-chooser {
     width: 50%;
-    height: 40%;
-    border-radius: 5px;
+    height: 50%;
+    border-radius: 8px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -260,6 +261,12 @@
 
 .popular-chooser > i {
     font-size: 13px;
+    transition: transform 0.2s ease;
+}
+
+
+.popular-chooser.toggled i{
+    transform: rotate(180deg); /* Rotate the entire chooser when toggled */
 }
 
 
@@ -292,12 +299,15 @@
 
 
 .browse_button:hover {
-    background-color: rgba(0, 153, 255, 0.76);
-    background-color: rgba(85, 85, 85, 0.432);
+    background-color: rgba(85, 85, 85, 0.171);
     color: white;
     border-color: rgba(255, 255, 255, 0);
 }
 
+.browse_button.active {
+    background-color: rgba(85, 85, 85, 0.432);
+    color: white;
+}
 
 
 

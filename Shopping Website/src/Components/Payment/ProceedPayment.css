@@ -946,7 +946,7 @@ input:focus {
     top: 100;
     bottom: 0;
     border-style: dashed;
-    border-color: rgb(75, 75, 75);
+    border-color: rgba(75, 75, 75, 0.521);
     border-width: 1px;
     border-radius: 2px;
     background-color: rgb(194, 194, 194);

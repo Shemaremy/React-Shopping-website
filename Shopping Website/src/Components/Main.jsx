@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useCounter } from "./Redux store/Counter";
 import MyModal from "./cartPanel/MyModal";
 
@@ -9,15 +9,6 @@ import './Main.css';
 
 
 import '@fortawesome/fontawesome-free/css/all.css';
-
-
-//-------------------- IMPORTING BACKGROUNDS: --------------------------
-
-import Test from '../images/backgrounds/rimwe.png'; 
-
-
-
-
 
 
 
@@ -91,6 +82,43 @@ function B() {
 
 
 
+
+
+
+// ------------------------------ TOGGLING NAV BUTTONS -------------------------------------
+// ------------------------------ TOGGLING NAV BUTTONS -------------------------------------
+// ------------------------------ TOGGLING NAV BUTTONS -------------------------------------
+
+
+
+const [isToggled, setIsToggled] = useState(false);
+const [activeButton, setActiveButton] = useState('Men Shoes');
+
+
+
+// Popular button
+const toggleHandler = () => {
+    setIsToggled(!isToggled);
+};
+
+
+// Product category onclicks
+const handleCategoryClick = (buttonName) => {
+    setActiveButton(buttonName);
+};
+
+
+
+
+
+
+
+
+
+
+// ------------------------------ END -------------------------------------
+// ------------------------------ END -------------------------------------
+// ------------------------------ END -------------------------------------
 
 
 
@@ -233,18 +261,48 @@ function B() {
                         <p className="our-products-description">Explore our curated clothing collections, blending style and quality to elevate your wardrobe with the latest trends and timeless classics.</p>
                         <div className="our-products-nav">
                             <div className="popular-container">
-                                <div className="popular-chooser">
+                                <div className={`popular-chooser ${isToggled ? 'toggled' : ''}`}  onClick={toggleHandler}>
                                     <p>Popular</p>
                                     <i className="fa fa-angle-down" aria-hidden="true"></i>
                                 </div>
                             </div>
                             <div className="buttons-container">
-                                <button className="browse_button">Men Shoes</button>
-                                <button className="browse_button">Pants</button>
-                                <button className="browse_button">T-Shirts</button>
-                                <button className="browse_button">Hoodies</button>
-                                <button className="browse_button">Jackets</button>
-                                <button className="browse_button">Caps</button>
+                            <button
+                                className={`browse_button ${activeButton === 'Men Shoes' ? 'active' : ''}`}
+                                onClick={() => handleCategoryClick('Men Shoes')}
+                            >
+                                Men Shoes
+                            </button>
+                            <button
+                                className={`browse_button ${activeButton === 'Pants' ? 'active' : ''}`}
+                                onClick={() => handleCategoryClick('Pants')}
+                            >
+                                Pants
+                            </button>
+                            <button
+                                className={`browse_button ${activeButton === 'T-Shirts' ? 'active' : ''}`}
+                                onClick={() => handleCategoryClick('T-Shirts')}
+                            >
+                                T-Shirts
+                            </button>
+                            <button
+                                className={`browse_button ${activeButton === 'Hoodies' ? 'active' : ''}`}
+                                onClick={() => handleCategoryClick('Hoodies')}
+                            >
+                                Hoodies
+                            </button>
+                            <button
+                                className={`browse_button ${activeButton === 'Jackets' ? 'active' : ''}`}
+                                onClick={() => handleCategoryClick('Jackets')}
+                            >
+                                Jackets
+                            </button>
+                            <button
+                                className={`browse_button ${activeButton === 'Caps' ? 'active' : ''}`}
+                                onClick={() => handleCategoryClick('Caps')}
+                            >
+                                Caps
+                            </button>
                             </div>
                             <div className="filter-container">
                                 <div className="filter-chooser">
@@ -276,9 +334,6 @@ function B() {
                     </div>
                 </div>
                 <div className="Our_picks_container">
-                    <div className="background-graphic-container">
-                        <img src={Test} alt="" />
-                    </div>
                     <div className="our_picks_heading_container">
                         <h4 className="our_picks_header">Our Picks</h4>
                         <p>

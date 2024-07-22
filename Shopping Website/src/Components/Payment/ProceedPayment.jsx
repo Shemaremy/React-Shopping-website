@@ -40,116 +40,6 @@ function ProceedPayment() {
 
 
 
-//-------------------------------------- TRYING FORM VALLIDATION-----------------------------------------------
-//-------------------------------------- TRYING FORM VALLIDATION-----------------------------------------------
-//-------------------------------------- TRYING FORM VALLIDATION-----------------------------------------------
-//-------------------------------------- TRYING FORM VALLIDATION-----------------------------------------------
-
-
-
-
-    const [cardholderName, setCardholderName] = useState('');
-    const [cardNumber, setCardNumber] = useState('');
-    const [expiryDate, setExpiryDate] = useState('');
-    const [cvc, setCvc] = useState('');
-    const [errors, setErrors] = useState({});
-    const [showCardNumber, setShowCardNumber] = useState(false);
-
-
-    const validateForm = () => {
-        const newErrors = {};
-
-        if (!cardholderName) newErrors.cardholderName = 'Cardholder name must be filled';
-        if (!cardNumber) newErrors.cardNumber = 'Card number must be filled';
-        else if (cardNumber.length !== 16) newErrors.cardNumber = 'Card number must be 16 digits';
-        if (!expiryDate) newErrors.expiryDate = 'Expiry date must be filled';
-        if (!cvc) newErrors.cvc = 'CVC must be filled';
-
-        return newErrors;
-    };
-
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const newErrors = validateForm();
-        if (Object.keys(newErrors).length > 0) {
-            setErrors(newErrors);
-        } else {
-            // Process payment
-            console.log('Processing payment...');
-        }
-    };
-
-
-    // Handling accepting only letters and not numbers
-    const handleCardholderNameChange = (e) => {
-        const value = e.target.value;
-        if (/^[A-Za-z\s]*$/.test(value)) {
-            setCardholderName(value);
-        }
-    };
-
-    // Handling accepting only numbers
-    const handleCardNumberChange = (e) => {
-        const value = e.target.value;
-        if (/^\d*$/.test(value)) {
-            setCardNumber(value);
-        }
-    };
-
-
-    // Handle expiry year by where I must only accept digits, no 5 numbers accepted,...
-    const handleExpiryDateChange = (e) => {
-        let value = e.target.value.replace(/\D/g, ''); // Remove non-digit characters
-        if (value.length > 2) {
-            let month = parseInt(value.substring(0, 2), 10);
-
-            if (month < 1 || month > 12) {
-                value = '12'; // Restrict month to be between 1 and 12
-            }
-            
-            let year = value.substring(2, 4);
-            value = `${value.substring(0, 2)}/${year}`;
-        }
-        setExpiryDate(value);
-    };
-    
-
-
-
-
-//---------------------------------------------------------- END-----------------------------------------------
-//---------------------------------------------------------- END-----------------------------------------------
-//---------------------------------------------------------- END-----------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     const [code, setCode] = useState('');
     const [phoneNumberError, setPhoneNumberError] = useState('');
@@ -468,11 +358,9 @@ const calculateTotalQuantity = () => {
 
 
 
-//------------------------------------------ CHECK OUT AND ORDER SUMMARY SECTION-------------------------------------------------------
-//------------------------------------------ CHECK OUT AND ORDER SUMMARY SECTION-------------------------------------------------------
-//------------------------------------------ CHECK OUT AND ORDER SUMMARY SECTION-------------------------------------------------------
-
-
+//---------------------------------------------- ORDER SUMMARY SECTION ----------------------------------------------------------------
+//---------------------------------------------- ORDER SUMMARY SECTION ----------------------------------------------------------------
+//---------------------------------------------- ORDER SUMMARY SECTION ----------------------------------------------------------------
 
 
 
@@ -512,7 +400,143 @@ const calculateTotalQuantity = () => {
     );
     
 
-    // Check out content
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//---------------------------------------------- CHECK OUT SECTION ----------------------------------------------------------------
+//---------------------------------------------- CHECK OUT SECTION ----------------------------------------------------------------
+//---------------------------------------------- CHECK OUT SECTION ----------------------------------------------------------------
+
+
+
+
+
+
+//-------------------------------------- CHECK OUT FORM VALLIDATION-----------------------------------------------
+
+
+
+const [cardholderName, setCardholderName] = useState('');
+const [cardNumber, setCardNumber] = useState('');
+const [expiryDate, setExpiryDate] = useState('');
+const [cvc, setCvc] = useState('');
+const [errors, setErrors] = useState({});
+const [showCardNumber, setShowCardNumber] = useState(false);
+
+
+const validateForm = () => {
+    const newErrors = {};
+
+    if (!cardholderName) newErrors.cardholderName = 'Cardholder name must be filled';
+    if (!cardNumber) newErrors.cardNumber = 'Card number must be filled';
+    else if (cardNumber.length !== 16) newErrors.cardNumber = 'Card number must be 16 digits';
+    if (!expiryDate) newErrors.expiryDate = 'Expiry date must be filled';
+    if (!cvc) newErrors.cvc = 'CVC must be filled';
+
+    return newErrors;
+};
+
+
+// When submitting
+const handleSubmit = (e) => {
+    e.preventDefault();
+    const newErrors = validateForm();
+    if (Object.keys(newErrors).length > 0) {
+        setErrors(newErrors);
+    } else {
+        // Process payment
+        console.log('Processing payment...');
+    }
+};
+
+
+// Handling accepting only letters and not numbers
+const handleCardholderNameChange = (e) => {
+    const value = e.target.value;
+    if (/^[A-Za-z\s]*$/.test(value)) {
+        setCardholderName(value);
+    }
+};
+
+
+// Handling accepting only numbers
+const handleCardNumberChange = (e) => {
+    const value = e.target.value;
+    if (/^\d*$/.test(value)) {
+        setCardNumber(value);
+    }
+};
+
+
+// Handle expiry year by where I must only accept digits, no 5 numbers accepted,...
+const handleExpiryDateChange = (e) => {
+    let value = e.target.value.replace(/\D/g, ''); // Remove non-digit characters
+    if (value.length > 2) {
+        let month = parseInt(value.substring(0, 2), 10);
+
+        if (month < 1 || month > 12) {
+            value = '12'; // Restrict month to be between 1 and 12
+        }
+        
+        let year = value.substring(2, 4);
+        value = `${value.substring(0, 2)}/${year}`;
+    }
+    setExpiryDate(value);
+};
+
+
+
+
+
+
+
+
+
+//------------------------------------- Check out content ------------------------------------------------
+
     const checkOut = (
         <div className='check_out_panel'>
             <div className='upper_check_out'>
@@ -586,6 +610,7 @@ const calculateTotalQuantity = () => {
             </div>
         </div>
     );
+
 
 
 
