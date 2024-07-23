@@ -81,6 +81,56 @@ function OurPicks () {
 
 
 
+// ------------------------------- HANDLE ADD TO CART LOADER -----------------------------------------
+// ------------------------------- HANDLE ADD TO CART LOADER -----------------------------------------
+// ------------------------------- HANDLE ADD TO CART LOADER -----------------------------------------
+
+
+const [buttonText, setButtonText] = useState('A');
+const [loading, setLoading] = useState({});
+
+
+
+
+const handleAddToCartClick = async (product) => {
+    setLoading((prevLoading) => ({ ...prevLoading, [product.name]: true }));
+    setButtonText('...');
+
+    // Simulate a delay (e.g., API call duration)
+    await new Promise((resolve) => setTimeout(resolve, 500));
+
+    try {
+        handleClick(product); // Simulate the asynchronous operation
+    } catch (error) {
+        console.error('Error adding item to cart:', error);
+        setButtonText('Error');
+    } finally {
+        setLoading((prevLoading) => ({ ...prevLoading, [product.name]: false }));
+        setTimeout(() => setButtonText('A'), 100); // Reset after 2 seconds
+    }
+};
+
+
+
+
+// ------------------------------------------------------------ OUR PRODUCTS CARDS -------------------------------------------------
+// ------------------------------------------------------------ OUR PRODUCTS CARDS -------------------------------------------------
+// ------------------------------------------------------------ OUR PRODUCTS CARDS -------------------------------------------------
+// ------------------------------------------------------------ OUR PRODUCTS CARDS -------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -167,7 +217,12 @@ function OurPicks () {
                             <h3 className="name_pick">{product.name}</h3>
                             <p className="price_pick">{(product.price/1000)},000 Frw</p>
                         </div>
-                        <button className="purchase_pick" onClick={() => handleClick(product)}>Add to cart</button>
+                        <button className="purchase_pick" 
+                            onClick={() => handleAddToCartClick(product)}
+                            disabled={loading[product.name]}
+                        >
+                            {loading[product.name] ? <i className="cart_icon fa-solid fa-spinner"></i> : 'Add to cart'}
+                        </button>
                     </div>
                 </div>
             ))}
@@ -322,8 +377,12 @@ function OurPicks () {
                             <h3 className="name_pick">{product.name}</h3>
                             <p className="price_pick">{(product.price/1000)},000 Frw</p>
                         </div>
-                        <button className="purchase_pick" onClick={() => handleClick(product)}>Add to cart</button>
-                        
+                        <button className="purchase_pick" 
+                            onClick={() => handleAddToCartClick(product)}
+                            disabled={loading[product.name]}
+                        >
+                            {loading[product.name] ? <i className="cart_icon fa-solid fa-spinner"></i> : 'Add to cart'}
+                        </button>
                     </div>
                 </div>
             ))}

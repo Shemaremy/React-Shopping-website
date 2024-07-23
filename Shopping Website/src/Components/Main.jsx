@@ -136,27 +136,29 @@ const handleCategoryClick = (event) => {
 
 
 const [buttonText, setButtonText] = useState('A');
-const [loading, setLoading] = useState(false);
+const [loading, setLoading] = useState({});
+
 
 
 
 const handleAddToCartClick = async (product) => {
-    setLoading(true);
+    setLoading((prevLoading) => ({ ...prevLoading, [product.name]: true }));
     setButtonText('...');
-    
+
     // Simulate a delay (e.g., API call duration)
     await new Promise((resolve) => setTimeout(resolve, 500));
-    
+
     try {
         handleClick(product); // Simulate the asynchronous operation
     } catch (error) {
         console.error('Error adding item to cart:', error);
         setButtonText('Error');
     } finally {
-        setLoading(false);
+        setLoading((prevLoading) => ({ ...prevLoading, [product.name]: false }));
         setTimeout(() => setButtonText('A'), 100); // Reset after 2 seconds
     }
 };
+
 
 
 
@@ -215,11 +217,10 @@ const handleAddToCartClick = async (product) => {
                     <div className="price_and_cart_container">  
                         <p className="Price">{(product.price/1000)},000 Frw</p>
                         <p className="cart" 
-                            onClick={() => { handleAddToCartClick(product); }}
-                            disabled={loading}
-                            >
-                            {buttonText === 'A' && <i className="cart_icon fa fa-cart-plus" aria-hidden="true"></i>}
-                            {buttonText === '...' && <i className="cart_icon fa-solid fa-spinner"></i>}
+                            onClick={() => handleAddToCartClick(product)}
+                            disabled={loading[product.name]}
+                        >
+                            {loading[product.name] ? <i className="cart_icon fa-solid fa-spinner"></i> : <i className="cart_icon fa fa-cart-plus" aria-hidden="true"></i>}
                         </p>
                         <MyModal product={Employees} />
                     </div>

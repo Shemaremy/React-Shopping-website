@@ -53,6 +53,61 @@ const TrendCards = () => {
     
     const [activeIndex, setActiveIndex] = useState(0);
     const { handleClick, currentProduct} = useCounter();
+
+
+
+// ------------------------------- HANDLE ADD TO CART LOADER -----------------------------------------
+// ------------------------------- HANDLE ADD TO CART LOADER -----------------------------------------
+// ------------------------------- HANDLE ADD TO CART LOADER -----------------------------------------
+
+
+const [buttonText, setButtonText] = useState('A');
+const [loading, setLoading] = useState({});
+
+
+
+
+const handleAddToCartClick = async (product) => {
+    setLoading((prevLoading) => ({ ...prevLoading, [product.name]: true }));
+    setButtonText('...');
+
+    // Simulate a delay (e.g., API call duration)
+    await new Promise((resolve) => setTimeout(resolve, 500));
+
+    try {
+        handleClick(product); // Simulate the asynchronous operation
+    } catch (error) {
+        console.error('Error adding item to cart:', error);
+        setButtonText('Error');
+    } finally {
+        setLoading((prevLoading) => ({ ...prevLoading, [product.name]: false }));
+        setTimeout(() => setButtonText('A'), 100); // Reset after 2 seconds
+    }
+};
+
+
+
+
+// ------------------------------------------------------------ OUR PRODUCTS CARDS -------------------------------------------------
+// ------------------------------------------------------------ OUR PRODUCTS CARDS -------------------------------------------------
+// ------------------------------------------------------------ OUR PRODUCTS CARDS -------------------------------------------------
+// ------------------------------------------------------------ OUR PRODUCTS CARDS -------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 
 
@@ -89,7 +144,12 @@ const TrendCards = () => {
             <div className="card_lower">
                 <h2 className="name">{product.name}</h2>
                 <p className="price">{(product.price / 1000)},000 Frw</p>
-                <button className="cart-trend" onClick={() => { handleClick(product); }}>Add to cart</button>
+                <button className="cart-trend" 
+                    onClick={() => handleAddToCartClick(product)}
+                    disabled={loading[product.name]}
+                >
+                    {loading[product.name] ? <i className="cart_icon fa-solid fa-spinner"></i> : 'Add to cart'}
+                </button>
                 <MyModal product={currentProduct} />
             </div>
         </>

@@ -102,9 +102,6 @@
     color: rgb(255, 255, 255);
 }
 
-.cart-trend:active {
-    transform: scale(0.85);
-}
   
 
 .slick-current .card-2 {
