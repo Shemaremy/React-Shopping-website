@@ -668,7 +668,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
 
 .reduce:hover, 
 .add:hover {
-    background-color: rgba(0, 0, 0, 0.123);
+    background-color: rgba(29, 29, 29, 0.068);
 }
 
 

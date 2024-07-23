@@ -613,16 +613,17 @@ a:hover {
   background-image: linear-gradient(to right, rgb(24, 24, 24), rgba(0, 255, 213, 0.062));
   height: 100%;
   width: 100%;
-  padding-top: 4% !important;
+  padding-top: 50px;
   display: flex;
   flex-direction: column;
 }
 
 .Upper_part_1 {
-  width: 100%;
+  width: 95%;
   height: 75%;
   display: flex;
   flex-direction: row;
+  margin: 0 auto;
 }
 
 .Left_part_2 {
@@ -630,10 +631,11 @@ a:hover {
   height: 95%;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
 }
 
 .Shop_with_container {
-  width: 100%;
+  width: 98%;
   height: 65%;
   display: flex;
   justify-content: center;
@@ -641,10 +643,10 @@ a:hover {
 }
 
 .shop_with_header {
-  width: 75%;
+  width: 90%;
   height: auto;
   font-family: sans-serif;
-  font-size: 85px;
+  font-size: 90px;
   color: rgba(255, 255, 255, 0.719);
   margin-top: 0;
   margin-bottom: 0;
@@ -656,7 +658,7 @@ a:hover {
 
 .Verve_colored {
   color:  rgb(97, 151, 142);
-  font-size: 75px;
+  font-size: 78px;
 }
 
 
@@ -668,18 +670,13 @@ a:hover {
 }
 
 .contain {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
   width: 100%;
   height: 210px;
 }
 
 .card-4 {
-  margin: 0 auto;
   height: 210px;
-  width: 98%;
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -699,12 +696,12 @@ a:hover {
 
 
 .Item_name {
-  width: 65%;
+  width: 200px;
   font-family: "Signika", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 23px;
   color: rgba(0, 216, 133, 0.603);
   padding-top: 0;
   margin-top: 0;
@@ -712,21 +709,21 @@ a:hover {
 }
 
 .item_price {
-  width: 65%;
+  width: 200px;
   font-family: "Signika", sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   color: rgba(249, 255, 200, 0.404);
   margin-top: 0;
 }
 
 .Add_to_cart_1 {
+  width: 200px;
   background-color: rgba(0, 216, 54, 0.164);
   border-style: solid;
   border-width: 1px;
   border-color: rgba(255, 255, 255, 0.76);
   color: rgba(255, 255, 255, 0.74);
   padding: 6px;
-  width: 65%;
   border-radius: 30px;
   font-size: 11px;
   cursor: pointer;
@@ -752,7 +749,7 @@ a:hover {
 
 .The_shoe_container {
   height: auto;
-  width: 50%;
+  width: 55%;
   overflow: hidden;
   display: flex;
   justify-content: center;

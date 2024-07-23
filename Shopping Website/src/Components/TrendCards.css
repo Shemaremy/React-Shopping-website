@@ -92,15 +92,10 @@
     border-radius: 30px;
     font-size: 10px;
     margin-top: 5px;
-    cursor: pointer;
+    cursor: not-allowed;
     transition: background-color 0.2s ease, transform 0.05s ease;
 }
 
-.cart-trend:hover {
-    background-color: rgba(0, 110, 28, 0.842);
-    border-color: rgba(255, 255, 255, 0.76);
-    color: rgb(255, 255, 255);
-}
 
   
 
@@ -113,6 +108,16 @@
     cursor: grab;
 }
 
+.slick-current .cart-trend {
+    cursor: pointer;
+}
+
+
+.slick-current .cart-trend:hover {
+    background-color: rgba(0, 110, 28, 0.842);
+    border-color: rgba(255, 255, 255, 0.76);
+    color: rgb(255, 255, 255);
+}
 
 
   
