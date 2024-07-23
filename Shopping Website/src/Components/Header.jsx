@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 import { useCounter } from "./Redux store/Counter";
 import { useSelector, useDispatch } from 'react-redux';
@@ -105,6 +105,55 @@ const handleAddToCartClick = async (product) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//------------------------------- BLARING THE CHECK OUT NEW PRODUCTS --------------------------------------
+//------------------------------- BLARING THE CHECK OUT NEW PRODUCTS --------------------------------------
+//------------------------------- BLARING THE CHECK OUT NEW PRODUCTS --------------------------------------
+
+const [boxShadow, setBoxShadow] = useState('0 0 15px 5px rgba(0, 0, 0, 0.363)');
+
+useEffect(() => {
+    const interval = setInterval(() => {
+    setBoxShadow(prevBoxShadow =>
+        prevBoxShadow === '0 0 15px 5px rgba(0, 0, 0, 0.363)'
+        ? '0 0 15px 5px rgba(19, 85, 44, 0.712)'
+        : '0 0 15px 5px rgba(0, 0, 0, 0.363)'
+    );
+    }, 2000);
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(interval);
+}, []);
 
 
 
@@ -758,7 +807,7 @@ const toggleMobileMenu = () => {
                     </div>
                     <div className="Right_part_2">
                         <div className="Try_our_new_container">
-                            <p className="try_our_new_paragraph">Check out our new products</p>
+                            <p className="try_our_new_paragraph" style={{ boxShadow }}>Check out our new products</p>
                             <div className="Choose_product_container">
                                 <div className="One"><img className="img_1" src={item1} alt="1" /></div>
                                 <div className="Two"><img className="img_2" src={item2} alt="2" /></div>
