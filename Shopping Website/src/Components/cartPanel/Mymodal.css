@@ -347,7 +347,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
     background-color: rgba(201, 201, 201, 0.849);
     background: linear-gradient(to right, rgba(201, 201, 201, 0.849), rgba(209, 209, 209, 0.514));
     margin: 0 auto;
-    margin-top: 1%;
+    margin-top: 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
