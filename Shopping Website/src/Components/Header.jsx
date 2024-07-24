@@ -807,7 +807,7 @@ const toggleMobileMenu = () => {
                     </div>
                     <div className="Right_part_2">
                         <div className="Try_our_new_container">
-                            <p className="try_our_new_paragraph" style={{ boxShadow }}>Check out our new products</p>
+                            <p className="try_our_new_paragraph" >Check out our new products</p>
                             <div className="Choose_product_container">
                                 <div className="One"><img className="img_1" src={item1} alt="1" /></div>
                                 <div className="Two"><img className="img_2" src={item2} alt="2" /></div>
@@ -820,6 +820,7 @@ const toggleMobileMenu = () => {
                                 <div className="Three"><img className="img_3" src={item3} alt="3" /></div>
                                 <div className="Four"><img className="img_4" src={item4} alt="4" /></div>
                             </div>
+                            <p className="see-more-mobile">View more <i class="fa-solid fa-angles-right"></i></p>
                         </div>
                         <div className="in_the_sugg">
                             {suggestions.length > 0 && (
