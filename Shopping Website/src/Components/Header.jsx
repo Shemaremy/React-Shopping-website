@@ -671,8 +671,9 @@ const cartButtonhandle = (
     <>
         <button className="cart_button_one" onClick={modelClick}>
             <div className="Cart_icon_container">
-                <i className="cart_ico fas fa-cart-plus"></i>
-                <p className="items_counter">{currentProduct.reduce((acc, item) => acc + item.quantity, 0)}</p>
+                <i className="cart_ico fas fa-cart-plus">
+                    <p className="items_counter">{currentProduct.reduce((acc, item) => acc + item.quantity, 0)}</p>
+                </i>
             </div>
         </button>
         <MyModal showModal={showModal} setShowModal={setShowModal} counter={currentProduct.reduce((acc, item) => acc + item.quantity, 0)} product={currentProduct}/>
