@@ -1514,7 +1514,7 @@ a:hover {
 
 
 
-
+/*------------------ MY PHONE ----------------------*/
 @media (min-width: 0px) and (max-width: 768px) {
 
   body {
@@ -1698,16 +1698,15 @@ a:hover {
 
 /*----------------------------------- ABOVE MY PHONE----------------------------------*/
 
-@media (min-width: 600px) {
-  .shop_with_header {
-    font-size: 90px;
+@media (min-width: 450px) {
+  .img_1, .img_2, .img_3, .img_4 {
+    width: 70%;
   }
 
-  .Verve_colored {
-    font-size: 85px;
+  .try_our_new_paragraph {
+    font-size: 13px;
   }
 }
-
 
 @media (min-width: 560px) {
 
@@ -1763,10 +1762,24 @@ a:hover {
     font-size: 11px;
     width: 90%;
   }
+
+  .img_1, .img_2, .img_3, .img_4 {
+    width: 70%;
+  }
+
+  .Choose_product_container {
+    width: 70%;
+  }
 }
 
 
 @media (min-width: 600px) {
+
+  .Shop_with_container {
+    width: 95%;
+    margin: 0 auto;
+  }
+
   .shop_with_header {
     font-size: 90px;
   }
@@ -1774,12 +1787,36 @@ a:hover {
   .Verve_colored {
     font-size: 85px;
   }
+
+
+  .Left_part_2 {
+    align-items: flex-start;
+  }
+
+  .Products_container {
+    width: 80%;
+    margin: 0;
+  }
+
+  .Item_name, .item_price {
+    width: 90%;
+  }
+
+  .Add_to_cart_1 {
+    font-size: 8px;
+    padding: 5px;
+    width: 90%;
+  }
 }
+
+
+
+/*---------------- Big Tablets ---------------*/
 
 @media (min-width: 769px) and (max-width: 1024px) {
 
   .A {
-    height: 13%;
+    height: 15%;
   }
 
   .desktop_nav {
@@ -1803,18 +1840,21 @@ a:hover {
     font-size: 70px;
   }
 
+  .Products_container {
+    width: 400px;
+  }
   .Item_name {
-    width: 80%;
+    width: 130px;
     font-size: 18px;
   }
 
   .item_price {
-    width: 80%;
+    width: 130px;
     font-size: 12px;
   }
 
   .Add_to_cart_1 {
-    width: 80%;
+    width: 130px;
     font-size: 8px;
     padding: 4px;
   }
@@ -1824,10 +1864,19 @@ a:hover {
   }
 
   .try_our_new_paragraph {
-    width: 60%;
+    width: 50%;
     font-size: 10px;
     margin: 0 auto;
+    margin-left: 110px;
     margin-bottom: 20px;
+  }
+
+  .Choose_product_container {
+    width: 100%;
+  }
+
+  .img_1, .img_2, .img_3, .img_4 {
+    width: 90%;
   }
 }
 
@@ -1866,6 +1915,14 @@ a:hover {
 
   .Right_part_2 {
     height: 90%;
+  }
+
+  .Choose_product_container {
+    width: 100%;
+  }
+
+  .img_1, .img_2, .img_3, .img_4 {
+    width: 90%;
   }
 }
 
@@ -1941,6 +1998,14 @@ a:hover {
 
   .Right_part_2 {
     height: 95%;
+  }
+
+  .Choose_product_container {
+    width: 100%;
+  }
+
+  .img_1, .img_2, .img_3, .img_4 {
+    width: 80%;
   }
 
 }
