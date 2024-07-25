@@ -70,15 +70,15 @@ B : Footer
 @media (max-width: 768px) {
 
   body {
-    height: 600vh;
+    height: 700vh;
   }
 
   .A {
-    height: 20%;
+    height: 18%;
   }
 
   .B {
-    height: 72%;
+    height: 74%;
   }
 }
 

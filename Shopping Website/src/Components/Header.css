@@ -1515,6 +1515,8 @@ a:hover {
 
 
 /*------------------ MY PHONE ----------------------*/
+
+
 @media (min-width: 0px) and (max-width: 768px) {
 
   .Two_parts_1 {
@@ -1542,13 +1544,13 @@ a:hover {
 
 
   .shop_with_header {
-    font-size: 80px;
+    font-size: 75px;
     width: 95%;
     margin: 0 auto;
   }
 
   .Verve_colored {
-    font-size: 75px;
+    font-size: 70px;
   }
 
   .Products_container {

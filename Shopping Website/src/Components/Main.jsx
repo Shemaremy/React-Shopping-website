@@ -66,10 +66,60 @@ export const Employees = [
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function B() {
 
 
     const { handleClick } = useCounter(); // Destructure handleClick from useCounter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -130,6 +180,57 @@ const handleCategoryClick = (event) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // ------------------------------- HANDLE ADD TO CART LOADER -----------------------------------------
 // ------------------------------- HANDLE ADD TO CART LOADER -----------------------------------------
 // ------------------------------- HANDLE ADD TO CART LOADER -----------------------------------------
@@ -176,6 +277,52 @@ const handleAddToCartClick = async (product) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // ------------------------------------------------------------ OUR PRODUCTS CARDS -------------------------------------------------
 // ------------------------------------------------------------ OUR PRODUCTS CARDS -------------------------------------------------
 // ------------------------------------------------------------ OUR PRODUCTS CARDS -------------------------------------------------
@@ -185,16 +332,34 @@ const handleAddToCartClick = async (product) => {
 
 
 
-    // Slick slider settings
-    const settings = {
-        dots: false,
-        className: "center",
-        centerMode: false,
-        infinite: true,
-        centerPadding: "0px",
-        slidesToShow: 5,
-        speed: 500
-    };
+// Slick slider settings
+const settings = {
+    dots: false,
+    className: "center",
+    centerMode: false,
+    infinite: true,
+    centerPadding: "0px",
+    slidesToShow: 5,
+    speed: 500,
+
+    responsive: [
+
+        {
+            breakpoint: 1200,
+            settings: {
+                slidesToShow: 4
+            }
+        },
+
+        {
+            breakpoint: 1025,
+            settings: {
+                slidesToShow: 3
+            }
+        }        
+    ]
+};
+
 
 
 
@@ -246,6 +411,92 @@ const handleAddToCartClick = async (product) => {
             <div className="card-draft">{cardDraftOne(product)}</div>
         </div>
     ));
+
+
+
+
+
+
+
+
+    const mobileProductsDraft = (product) => (
+        <>
+            <div className="draftUp">
+                <div className="product_images_first_section">
+                    <img src={product.image} className="Shoes" alt="one" />
+                </div>
+            </div>
+            <div className="draftDown">
+                <div className="item_name_container"><p className="item_p">{product.name}</p></div>
+                <div className="stars_and_prices_container">
+                    <div className="stars_container">
+                        {Array.from({ length: product.stars }, (_, i) => (
+                            <i key={i} className="star fa fa-star" aria-hidden="true"></i>
+                        ))}
+                    </div>
+                    <div className="price_and_cart_container">  
+                        <p className="Price">{(product.price/1000)},000 Frw</p>
+                        <p className="cart" 
+                            onClick={() => handleAddToCartClick(product)}
+                            disabled={loading[product.name]}
+                        >
+                            {loading[product.name] ? <i className="cart_icon fa-solid fa-spinner"></i> : <i className="cart_icon fa fa-cart-plus" aria-hidden="true"></i>}
+                        </p>
+                        <MyModal product={Employees} />
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+
+
+
+    const mobileProductsOne = Employees.slice(0, 4).map((product, index) => (
+        <div className="Trend-draft" key={index + 1} data-name={product.name}>
+            <div className="card-draft">{mobileProductsDraft(product)}</div>
+        </div>
+    ));
+
+
+
+    const mobileProductsTwo = Employees.slice(4).map((product, index) => (
+        <div className="Trend-draft" key={index + 1} data-name={product.name}>
+            <div className="card-draft">{cardDraftOne(product)}</div>
+        </div>
+    ));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -386,6 +637,9 @@ const handleAddToCartClick = async (product) => {
                                     </Slider>
                                 </div>
                             </div>
+                            <div className="mobile-products-div">
+                                {mobileProductsOne}
+                            </div>
                         </div>
                         <div className="products_section_two">
                             <div className="section-draft">
@@ -394,7 +648,13 @@ const handleAddToCartClick = async (product) => {
                                         {TrendDraftTwo}
                                     </Slider>
                                 </div>
-                            </div>                 
+                            </div>   
+                            <div className="mobile-products-div">
+                                {mobileProductsTwo}
+                            </div>              
+                        </div>
+                        <div className="mobile-view-more">
+                            <p>View more &nbsp; <i className="fa-solid fa-arrow-right"></i></p>
                         </div>
                     </div>
                 </div>
