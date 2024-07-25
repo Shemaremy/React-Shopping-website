@@ -1517,15 +1517,6 @@ a:hover {
 /*------------------ MY PHONE ----------------------*/
 @media (min-width: 0px) and (max-width: 768px) {
 
-  body {
-    height: 600vh !important;
-  }
-
-  .A {
-    height: 20%;
-  }
-
-
   .Two_parts_1 {
     justify-content: space-evenly;
     align-items: center;
@@ -1814,10 +1805,6 @@ a:hover {
 /*---------------- Big Tablets ---------------*/
 
 @media (min-width: 769px) and (max-width: 1024px) {
-
-  .A {
-    height: 15%;
-  }
 
   .desktop_nav {
     height: 70px;
