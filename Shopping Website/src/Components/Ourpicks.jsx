@@ -54,7 +54,21 @@ function OurPicks () {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        draggable: false
+        draggable: false,
+
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    infinite: true,
+                    dots: true,
+                    autoplay: true,
+                    speed: 1000,
+                    autoplaySpeed: 8000,
+                    cssEase: "linear"
+                }
+            }
+        ]
     };
 
     // Settings for the child sliders of the wardrobe
@@ -208,25 +222,27 @@ const handleAddToCartClick = async (product) => {
 
     // Wardrobe summer slider
     const wardrobeSummerSlider = (
-        <Slider {...innersettings} className="wardrobe_slider">
-            {summerWardrobeItems.map((product, index) => (
-                <div className="card_2" key={index}>
-                    <img src={product.image} alt={product.name} />
-                    <div className="item_purchase_container">
-                        <div className="name_price_pick">
-                            <h3 className="name_pick">{product.name}</h3>
-                            <p className="price_pick">{(product.price/1000)},000 Frw</p>
+        <>
+            <Slider {...innersettings} className="wardrobe_slider">
+                {summerWardrobeItems.map((product, index) => (
+                    <div className="card_2" key={index}>
+                        <img src={product.image} alt={product.name} />
+                        <div className="item_purchase_container">
+                            <div className="name_price_pick">
+                                <h3 className="name_pick">{product.name}</h3>
+                                <p className="price_pick">{(product.price/1000)},000 Frw</p>
+                            </div>
+                            <button className="purchase_pick" 
+                                onClick={() => handleAddToCartClick(product)}
+                                disabled={loading[product.name]}
+                            >
+                                {loading[product.name] ? <i className="cart_icon fa-solid fa-spinner"></i> : 'Add to cart'}
+                            </button>
                         </div>
-                        <button className="purchase_pick" 
-                            onClick={() => handleAddToCartClick(product)}
-                            disabled={loading[product.name]}
-                        >
-                            {loading[product.name] ? <i className="cart_icon fa-solid fa-spinner"></i> : 'Add to cart'}
-                        </button>
                     </div>
-                </div>
-            ))}
-        </Slider>
+                ))}
+            </Slider>
+        </>
     );
 
 
@@ -240,6 +256,25 @@ const handleAddToCartClick = async (product) => {
                 </div>
                 <div className="Picks_wardrobe">
                     {wardrobeSummerSlider}
+                    <div className="mobile_picks">
+                        {summerWardrobeItems.slice(0, 3).map((product, index) => (
+                                <div className="card_2" key={index}>
+                                    <img src={product.image} alt={product.name} />
+                                    <div className="item_purchase_container">
+                                        <div className="name_price_pick">
+                                            <h3 className="name_pick">{product.name}</h3>
+                                            <p className="price_pick">{(product.price/1000)},000 Frw</p>
+                                        </div>
+                                        <button className="purchase_pick" 
+                                            onClick={() => handleAddToCartClick(product)}
+                                            disabled={loading[product.name]}
+                                        >
+                                            {loading[product.name] ? <i className="cart_icon fa-solid fa-spinner"></i> : 'Add to cart'}
+                                        </button>
+                                    </div>
+                                </div>
+                            ))}
+                    </div>
                 </div>
             </div>
             <div className="In_the_rest_4">
@@ -249,6 +284,25 @@ const handleAddToCartClick = async (product) => {
                 </div>
                 <div className="Picks_wardrobe">
                     {wardrobeSummerSlider}
+                    <div className="mobile_picks">
+                        {summerWardrobeItems.slice(3, 6).map((product, index) => (
+                                <div className="card_2" key={index}>
+                                    <img src={product.image} alt={product.name} />
+                                    <div className="item_purchase_container">
+                                        <div className="name_price_pick">
+                                            <h3 className="name_pick">{product.name}</h3>
+                                            <p className="price_pick">{(product.price/1000)},000 Frw</p>
+                                        </div>
+                                        <button className="purchase_pick" 
+                                            onClick={() => handleAddToCartClick(product)}
+                                            disabled={loading[product.name]}
+                                        >
+                                            {loading[product.name] ? <i className="cart_icon fa-solid fa-spinner"></i> : 'Add to cart'}
+                                        </button>
+                                    </div>
+                                </div>
+                            ))}
+                    </div>
                 </div>
             </div>
             <div className="In_the_rest_4">
@@ -258,6 +312,25 @@ const handleAddToCartClick = async (product) => {
                 </div>
                 <div className="Picks_wardrobe">
                     {wardrobeSummerSlider}
+                    <div className="mobile_picks">
+                        {summerWardrobeItems.slice(6, 9).map((product, index) => (
+                                <div className="card_2" key={index}>
+                                    <img src={product.image} alt={product.name} />
+                                    <div className="item_purchase_container">
+                                        <div className="name_price_pick">
+                                            <h3 className="name_pick">{product.name}</h3>
+                                            <p className="price_pick">{(product.price/1000)},000 Frw</p>
+                                        </div>
+                                        <button className="purchase_pick" 
+                                            onClick={() => handleAddToCartClick(product)}
+                                            disabled={loading[product.name]}
+                                        >
+                                            {loading[product.name] ? <i className="cart_icon fa-solid fa-spinner"></i> : 'Add to cart'}
+                                        </button>
+                                    </div>
+                                </div>
+                            ))}
+                    </div>
                 </div>
             </div>
         </Slider>
@@ -401,6 +474,25 @@ const handleAddToCartClick = async (product) => {
                 </div>
                 <div className="Picks_wardrobe">
                     {wardrobeWinterSlider}
+                    <div className="mobile_picks">
+                        {winterWardrobeItems.slice(0, 3).map((product, index) => (
+                                <div className="card_2" key={index}>
+                                    <img src={product.image} alt={product.name} />
+                                    <div className="item_purchase_container">
+                                        <div className="name_price_pick">
+                                            <h3 className="name_pick">{product.name}</h3>
+                                            <p className="price_pick">{(product.price/1000)},000 Frw</p>
+                                        </div>
+                                        <button className="purchase_pick" 
+                                            onClick={() => handleAddToCartClick(product)}
+                                            disabled={loading[product.name]}
+                                        >
+                                            {loading[product.name] ? <i className="cart_icon fa-solid fa-spinner"></i> : 'Add to cart'}
+                                        </button>
+                                    </div>
+                                </div>
+                            ))}
+                    </div>
                 </div>
             </div>
             <div className="In_the_rest_4">
@@ -410,6 +502,25 @@ const handleAddToCartClick = async (product) => {
                 </div>
                 <div className="Picks_wardrobe">
                     {wardrobeWinterSlider}
+                    <div className="mobile_picks">
+                        {winterWardrobeItems.slice(3, 6).map((product, index) => (
+                                <div className="card_2" key={index}>
+                                    <img src={product.image} alt={product.name} />
+                                    <div className="item_purchase_container">
+                                        <div className="name_price_pick">
+                                            <h3 className="name_pick">{product.name}</h3>
+                                            <p className="price_pick">{(product.price/1000)},000 Frw</p>
+                                        </div>
+                                        <button className="purchase_pick" 
+                                            onClick={() => handleAddToCartClick(product)}
+                                            disabled={loading[product.name]}
+                                        >
+                                            {loading[product.name] ? <i className="cart_icon fa-solid fa-spinner"></i> : 'Add to cart'}
+                                        </button>
+                                    </div>
+                                </div>
+                            ))}
+                    </div>
                 </div>
             </div>
             <div className="In_the_rest_4">
@@ -419,6 +530,25 @@ const handleAddToCartClick = async (product) => {
                 </div>
                 <div className="Picks_wardrobe">
                     {wardrobeWinterSlider}
+                    <div className="mobile_picks">
+                        {winterWardrobeItems.slice(6, 9).map((product, index) => (
+                                <div className="card_2" key={index}>
+                                    <img src={product.image} alt={product.name} />
+                                    <div className="item_purchase_container">
+                                        <div className="name_price_pick">
+                                            <h3 className="name_pick">{product.name}</h3>
+                                            <p className="price_pick">{(product.price/1000)},000 Frw</p>
+                                        </div>
+                                        <button className="purchase_pick" 
+                                            onClick={() => handleAddToCartClick(product)}
+                                            disabled={loading[product.name]}
+                                        >
+                                            {loading[product.name] ? <i className="cart_icon fa-solid fa-spinner"></i> : 'Add to cart'}
+                                        </button>
+                                    </div>
+                                </div>
+                            ))}
+                    </div>
                 </div>
             </div>
         </Slider>

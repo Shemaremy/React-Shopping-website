@@ -994,8 +994,13 @@
     }
 
     .Our_picks_container {
-        height: 33%;
+        height: 25%;
     }
+
+    .Trend-section {
+        height: 40%;
+    }
+
 
     .Our_products_upper_part {
         height: 16%;
@@ -1215,14 +1220,18 @@
     }
 
     .item_p {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .star {
-        font-size: 6px;
+        font-size: 5px;
     }
 
     .Price {
+        font-size: 11px;
+    }
+
+    .browse_button {
         font-size: 12px;
     }
 }
@@ -1252,3 +1261,20 @@
 } 
 
 
+@media (max-width: 320px) {
+    .item_p {
+        font-size: 12px;
+    }
+
+    .star {
+        font-size: 4px;
+    }
+
+    .Price {
+        font-size: 8px;
+    }
+
+    .mobile-view-more > p {
+        font-size: 9px;
+    }
+}
