@@ -1,3 +1,80 @@
+.Trend-section {
+    width: 100%;
+    height: 32%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(90, 90, 90, 0.158);
+}
+
+
+
+
+.Upper-part-trend {
+    width: 100%;
+    height: 20%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(216, 216, 216, 0.274);
+}
+
+
+.Trending_items_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Pacifico", cursive;
+    font-family: sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+    overflow-x: hidden;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+
+.Trend-description {
+    width: 60%;
+    font-family: sans-serif;
+    font-size: 11px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+
+
+
+.Lower-part-trend {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.TrendCards-panel {
+    height: 100%;
+    width: 100%;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
 .main_trending_part {
     height: 50%;
@@ -264,4 +341,248 @@
     color: rgba(0, 0, 0, 0.705);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------- RESPONSIVENESS ---------------------------------------------------*/
+/*------------------------------------------- RESPONSIVENESS ---------------------------------------------------*/
+/*------------------------------------------- RESPONSIVENESS ---------------------------------------------------*/
+/*------------------------------------------- RESPONSIVENESS ---------------------------------------------------*/
+/*------------------------------------------- RESPONSIVENESS ---------------------------------------------------*/
+
+
+
+
+
+
+
+/*------------------------------------------- My phone ---------------------------------------------------*/
+
+
+
+@media (min-width: 0px) and (max-width: 768px) {
+
+    .main_trending_part {
+        width: 95%;
+    }
+
+    .slider-container-2 > .slick-slider {
+        display: none;
+    }
+
+
+    .Upper-part-trend {
+        height: 8%;
+    }
+
+    .Trend-description {
+        width: 95%;
+        font-size: 10px;
+    }
+
+    .Lower-part-trend {
+        height: 92%;
+    }
+
+    .main_trending_part {
+        height: 65%;
+    }
+
+
+    .mobile-trends {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 128, 0, 0);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .card-2 {
+        width: 95%;
+        filter: none;
+        border-radius: 2px;
+        height: 240px;
+        border-width: 0;
+        background-color: rgba(255, 0, 0, 0);
+    }
+
+    .card_upper {
+        height: 68%;
+        background-color: rgba(19, 19, 19, 0.062);
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    .Trend-img {
+        width: 55%;
+    }
+
+    .card_lower {
+        height: 30%;
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+    .card_lower > .price {
+        font-size: 10px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .cart-trend {
+        width: 80%;
+        margin-top: 2px;
+        padding: 3px;
+        font-size: 8px;
+        border-radius: 2px;
+        background-color: gray;
+        color: white;
+        border-width: 0px;
+    }
+
+
+
+
+    .why_verve_part {
+        height: 34%;
+        align-items: center;
+    }
+
+    .verve-offers-you {
+        height: 10%;
+    }
+
+    .service-container {
+        height: 90%;
+    }
+
+    .offers_you_header {
+        font-size: 20px;
+        color: rgba(0, 0, 0, 0.445);
+        height: 70%;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .svg-container {
+        width: 95%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    .contain2 {
+        height: 19%;
+        width: 100%;
+    }
+
+    .svg-real {
+        width: 23%;
+        filter: grayscale(100%);
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .svg {
+        width: 50%;
+    }
+    
+
+    .svg_title {
+        font-size: 12px;
+        color: rgb(36, 36, 36);
+    }
+
+    .svg_paragraph {
+        font-size: 9px;
+        width: 50%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------- Above my phone ------------------------------------*/
+
+@media (min-width: 769px) {
+    .mobile-trends {
+        display: none;
+    }
+}
 

@@ -70,16 +70,21 @@ B : Footer
 @media (max-width: 768px) {
 
   body {
-    height: 700vh;
+    height: 850vh;
   }
 
   .A {
-    height: 18%;
+    height: 15%;
   }
 
   .B {
-    height: 74%;
+    height: 75%;
   }
+
+  .C {
+    height: 10%;
+  }
+
 }
 
 
@@ -102,3 +107,81 @@ B : Footer
 @media (min-width: 1025px){
   /*--- Defaults are above ---------------*/
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------- main.jsx scale responsives ------------------------------------------*/
+/*--------------------------------- main.jsx scale responsives ------------------------------------------*/
+/*--------------------------------- main.jsx scale responsives ------------------------------------------*/
+
+
+
+
+@media (max-width: 768px) {
+
+  .All_products_container {
+    height: 30%;
+  }
+
+  .Our_picks_container {
+      height: 20%;
+  }
+
+  .Trend-section {
+      height: 55%;
+  }
+
+}
+
+
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .A {
+    height: 15%;
+  }
+
+  .B {
+    height: 77%;
+  }
+}
+
+
+
+
+@media (min-width: 1025px){
+  /*--- Defaults are above ---------------*/
+}
+
+

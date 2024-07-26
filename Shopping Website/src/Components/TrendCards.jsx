@@ -185,6 +185,9 @@ const handleAddToCartClick = async (product) => {
                     <Slider {...settings}>
                         {slider}
                     </Slider>
+                    <div className="mobile-trends">
+                        {slider}
+                    </div>
                 </div>
             </div>
 

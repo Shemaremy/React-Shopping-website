@@ -401,15 +401,15 @@
     justify-content: center;
     align-items: center;
     border-style: solid;
-    border-width: 1px;
+    border-width: 0px;
     padding: 7px;
-    width: 70%;
+    width: 80%;
     height: 8%;
     font-size: 10px;
     color: #fff;
     border-color: #f0f8ffb0;
-    border-radius: 15px;
-    background-color: #3b8d3b4b;
+    border-radius: 3px;
+    background-color: #0000008f;
     opacity: 0;
     cursor: pointer;
     transition: opacity 0.8s ease, transform 0.9s ease;
@@ -417,8 +417,9 @@
 }
 
 .purchase_pick:hover {
-    background-color: #3b8d3bd2;
+    background-color: #00000065;
 }
+
 
 
 

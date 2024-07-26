@@ -693,86 +693,7 @@
 
 
 
-/*------------------------------------------ TRENDING ITEMS SECTION ---------------------------------------*/
-/*------------------------------------------ TRENDING ITEMS SECTION ---------------------------------------*/
 
-
-.Trend-section {
-    width: 100%;
-    height: 32%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(90, 90, 90, 0.158);
-}
-
-
-
-
-.Upper-part-trend {
-    width: 100%;
-    height: 20%;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(216, 216, 216, 0.274);
-}
-
-
-.Trending_items_header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Pacifico", cursive;
-    font-family: sans-serif;
-    font-weight: 100;
-    font-style: normal;
-    font-size: 25px;
-    color: rgb(0, 0, 0);
-    overflow-x: hidden;
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    padding: 0;
-}
-
-
-.Trend-description {
-    width: 60%;
-    font-family: sans-serif;
-    font-size: 11px;
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 0;
-}
-
-
-
-
-.Lower-part-trend {
-    width: 100%;
-    height: 80%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.TrendCards-panel {
-    height: 100%;
-    width: 100%;
-    border-style: solid;
-    border-width: 0px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
   
   
     
@@ -988,18 +909,7 @@
 
 
 
-    .All_products_container {
-        height: 35%;
-        background-color: rgba(210, 105, 30, 0);
-    }
-
-    .Our_picks_container {
-        height: 25%;
-    }
-
-    .Trend-section {
-        height: 40%;
-    }
+    
 
 
     .Our_products_upper_part {
