@@ -752,13 +752,13 @@ const handleExpiryDateChange = (e) => {
                     <button 
                         className={`order_summary_button ${content === 'orderSummary' ? 'active' : ''}`}
                         onClick={handleOrderSummaryClick}>
-                        Order summary &nbsp; <i className="fa fa-list-alt" aria-hidden="true"></i>
+                        Order summary &nbsp; <i className="fa-solid fa-list"></i>
                     </button>
 
                     <button 
                         className={`check_out_button ${content === 'checkOut' ? 'active' : ''}`} 
                         onClick={handleCheckOutClick}>
-                        Check out &nbsp; <i className="fa fa-credit-card" aria-hidden="true"></i>
+                        Check out &nbsp; <i class="fa-regular fa-money-bill-1"></i>
                     </button>
                 </div>
                 <div className='lower_right_pay'>

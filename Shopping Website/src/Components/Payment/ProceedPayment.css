@@ -55,14 +55,13 @@
 
 
 .left_part_pay {
-    background-color: rgb(241, 241, 241);
+    background-color: rgba(241, 241, 241, 0);
     height: 95%;
     width: 50%;
-    border-radius: 5px;
+    border-radius: 0px;
     border-style: solid;
     border-width: 1px;
     border-color: rgba(0, 0, 0, 0);
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.082);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -793,7 +792,7 @@ input:focus {
 
 
 .right_part_pay {
-    height: 95%;
+    height: 90%;
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -831,22 +830,21 @@ input:focus {
 
 .order_summary_button:hover, 
 .check_out_button:hover {
-    background-color: rgba(18, 139, 18, 0.397);
-    background-color: rgba(104, 171, 216, 0.473);
-    color: white;
+    background-color: rgba(0, 0, 0, 0.103);
+    color: rgb(0, 0, 0);
 }
 
 
 .order_summary_button.active,
 .check_out_button.active {
-  background-color: rgb(104, 171, 216);
+  background-color: rgba(0, 0, 0, 0.39);
   color: white;
 }
 
 
 
 .lower_right_pay {
-    height: 95%;
+    height: 85%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1275,10 +1273,10 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
 
 
 .check_out_panel {
-    background-color: rgb(238, 238, 238);
+    background-color: rgba(238, 238, 238, 0.473);
     height: 80%;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 0px;
     border-style: solid;
     border-width: 1px;
     border-color: rgba(29, 29, 29, 0.123);
@@ -1305,8 +1303,8 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
     display: flex;
     align-items: center;
     height: 30%;
-    font-size: 20px;
-    color: rgba(75, 0, 196, 0.644);
+    font-size: 18px;
+    color: rgba(21, 0, 54, 0.644);
     font-family: sans-serif;
     text-decoration: underline;
 }
@@ -1615,3 +1613,98 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
 .card_number > .first_name {
     height: 100%;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------- RESPONSIVENESS --------------------------------------*/
+/*--------------------------------------- RESPONSIVENESS --------------------------------------*/
+/*--------------------------------------- RESPONSIVENESS --------------------------------------*/
+/*--------------------------------------- RESPONSIVENESS --------------------------------------*/
+/*--------------------------------------- RESPONSIVENESS --------------------------------------*/
+/*--------------------------------------- RESPONSIVENESS --------------------------------------*/
+
+
+
+
+
+/*--------------------------------------- My phone ---------------------------------------------*/
+
+@media (min-width: 0px) and (max-width: 768px) {
+
+
+
+    .paying-wrapper {
+        flex-direction: column;
+    }
+
+    .left_part_pay {
+        width: 100%;
+        height: 60%;
+    }
+
+    .names_container {
+        background-color: green;
+        flex-direction: column;
+    }
+
+    .indicator {
+        display: none;
+    }
+
+    .right_part_pay {
+        width: 100%;
+        height: 40%;
+    }
+}
+
+
+
