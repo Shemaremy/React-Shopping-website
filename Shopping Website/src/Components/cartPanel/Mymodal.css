@@ -73,13 +73,11 @@
 
 .close {
     border-style: solid;
-    border-radius: 50%;
-    border-width: 1px;
+    border-width: 0px;
     border-color: rgba(0, 0, 0, 0.185);
-    background-color: rgba(129, 129, 129, 0.288);
-    padding: 10px;
-    width: 25px;
-    height: 25px;
+    background-color: rgba(129, 129, 129, 0);
+    width: auto;
+    height: auto;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -88,13 +86,14 @@
 }
 
 .close:hover {
-    background-color: rgba(133, 0, 0, 0.5);
-    color: antiquewhite;
+    color: rgb(46, 46, 46);
 }
 
 
 .close_ico {
-    font-size: 8px;
+    font-size: 15px;
+    font-weight: 1;
+    color: rgba(0, 0, 0, 0.582);
 }
 
 
@@ -833,7 +832,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
     border-style: solid;
     border-width: 1px;
     border-color: white;
-    background-color: rgba(0, 128, 0, 0.5);
+    background-color: rgba(0, 107, 0, 0.199);
     color: white;
     border-radius: 20px;
     padding: 7px;
@@ -841,7 +840,14 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
     font-size: 11px;
     width: 60%;
     cursor: pointer;
-    transition: transform 0.2s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
+}
+
+
+.Proceed_total_payment_button:hover {
+    border-width: 0;
+    background-color: rgba(255, 255, 255, 0.658);
+    color: black;
 }
 
 
@@ -850,3 +856,225 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------------- RESPONSIVENESS ------------------------------------------*/
+/*---------------------------------------- RESPONSIVENESS ------------------------------------------*/
+/*---------------------------------------- RESPONSIVENESS ------------------------------------------*/
+/*---------------------------------------- RESPONSIVENESS ------------------------------------------*/
+/*---------------------------------------- RESPONSIVENESS ------------------------------------------*/
+/*---------------------------------------- RESPONSIVENESS ------------------------------------------*/
+
+
+
+
+
+
+
+/*------------------------------------ My Phone -----------------------------------------*/
+
+
+@media (min-width: 0px) and (max-width: 768px) {
+
+    .emptyCart {
+        border-radius: 10px;
+    }
+
+    .svg_container_cart {
+        width: 80%;
+    }
+
+    .cartSvg {
+        width: 50%;
+    }
+
+
+    .panel_container {
+        border-radius: 0;
+        border-width: 0;
+        height: 100%;
+        width: 100%;
+    }
+
+    .top-nav {
+        height: 10%;
+        width: 95%;
+    }
+
+    .cart_word_panel {
+        font-size: 25px;
+    }
+
+    .counts_pan {
+        font-size: 12px;
+    }
+
+    .bottom-content {
+        height: 85%;
+    }
+
+    .cartItems {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .item_added_container {
+        width: 100%;
+        height: 17vh;
+        border-radius: 0;
+        border-width: 0;
+    }
+
+    .image_container_panel, 
+    .main_details_panel {
+        border-radius: 0;
+    }
+
+    .image_container_panel {
+        width: 30%;
+    }
+
+    .img_readyTogo {
+        width: 75%;
+    }
+
+    .main_details_panel {
+        width: 70%;
+    }
+
+    .itm_nm {
+        font-size: 15px;
+    }
+
+    .dollar-price {
+        font-size: 13px;
+    }
+
+    .price_pan {
+        font-size: 9px;
+    }
+
+    .left_quantity_size_panel {
+        width: 95%;
+    }
+
+
+    .size_container > p,
+    .quantity_container > p {
+        font-size: 11px;
+    }
+
+    .size_container, .quantity_container {
+        width: 60%;
+    }
+
+    .size-values, .quantity {
+        width: 60%;
+        height: 70%;
+    }
+
+    .size-values {
+        font-size: 8px;
+    }
+
+
+    .qnty {
+        font-size: 12px;
+    }
+
+    .trash_ico_1 {
+        font-size: 10px;
+    }
+
+    .summation-pannel {
+        width: 98%;
+        height: 15%;
+        border-radius: 0;
+    }
+
+    .Total-items-header,
+    .Total-price-header {
+        font-size: 13px;
+    }
+
+    .total-items-par,
+    .total-price-par {
+        font-size: 11px;
+    }
+
+    .proceed_total_payment_panel {
+        width: 30%;
+    }
+
+    .Proceed_total_payment_button {
+        width: 90%;
+        border-radius: 2px;
+        border-width: 0;
+        background-color: gray;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------ Above my Phone -----------------------------------------*/
+
+
+@media (min-width: 570px) and (max-width: 1200px) {
+    .cartSvg {
+        width: 200px;
+    }
+}
+
+
+
+
+
+
+/*------------------------------------ Below my Phone -----------------------------------------*/
+
+@media (max-width: 410px) {
+    .Empty_cart_header {
+        font-size: 17px;
+    }
+
+    .empty_cart_paragraph {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    .Empty_cart_header {
+        font-size: 15px;
+    }
+
+    .empty_cart_paragraph {
+        font-size: 8px;
+    }
+}

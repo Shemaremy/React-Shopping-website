@@ -387,7 +387,7 @@ function MyModal(props) {
         <p className='total-price-par'>{(totalPrice) / 1000},000Frw <span> &nbsp; &nbsp; (${(totalPrice) / 1000})</span></p>
       </div>
       <div className='proceed_total_payment_panel'>
-        <button className='Proceed_total_payment_button' onClick={handleProceedPayment}>Proceed total payment</button>
+        <button className='Proceed_total_payment_button' onClick={handleProceedPayment}>Proceed <i className="fa-solid fa-truck-fast"></i></button>
       </div>
     </div>
   );
@@ -560,7 +560,7 @@ function MyModal(props) {
         <div className="top-nav">
           <h2 className="cart_word_panel">Cart <span className='counts_pan'>({currentProduct.reduce((acc, item) => acc + item.quantity, 0)})</span></h2>
           <div className="close_container">
-            <button className="close" onClick={modelClick2}><i className="fa fa-times close_ico" aria-hidden="true"></i></button>
+            <button className="close" onClick={modelClick2}><i className="close_ico fa-solid fa-x"></i></button>
           </div>
         </div>
 

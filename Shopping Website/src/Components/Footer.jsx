@@ -42,7 +42,7 @@ function C(){
                         </div>
                         <div className="Icons_container">
                             <a href="https://www.instagram.com/shema.remy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="Social_media_border"><i className="Instagram fab fa-instagram" aria-hidden="true"></i></a>
-                            <a href="https://www.instagram.com/shema.remy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="Social_media_border"><i className="Twitter fab fa-twitter" aria-hidden="true"></i></a>
+                            <a href="https://www.instagram.com/shema.remy?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="Social_media_border"><i className="Twitter fa-brands fa-x-twitter"></i></a>
                             <a href="https://discord.com/users/928425971936292874" className="Social_media_border"><i className="Discord fa-brands fa-discord"></i></a>
                             <a href=" https://linkedin.com/in/shema-remy-ba3229288" className="Social_media_border"><i className="Linkedin fab fa-linkedin" aria-hidden="true"></i></a>
                         </div>

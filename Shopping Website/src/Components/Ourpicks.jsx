@@ -434,7 +434,7 @@ const handleAddToCartClick = async (product) => {
         { image: jordan12, name: 'Gray Jordan12', price: "28000", sizes: ["40", "41", "42", "43"] },
         { image: hoodie1, name: 'Black hoodie', price: "20000", sizes: ["M", "L", "XL", "XXL"] },
         { image: cargokhaki3, name: 'Cargo pants', price: "18000", sizes: ["M", "L", "XL", "XXL"] },
-        { image: jordan1, name: 'Jordan 1', price: "28000", sizes: ["40", "41", "42", "43"] }
+        { image: jordan1, name: 'Jordan 1 red', price: "28000", sizes: ["40", "41", "42", "43"] }
     ];
 
 
