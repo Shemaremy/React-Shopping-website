@@ -121,7 +121,7 @@
 .card_upper {
     height: 60%;
     width: 100%;
-    background-color: rgba(131, 65, 17, 0.274);
+    background-color: rgba(5, 36, 27, 0.274);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -159,15 +159,15 @@
 }
 
 .cart-trend {
-    background-color: rgba(0, 216, 54, 0.164);
     border-style: solid;
-    border-width: 1px;
-    border-color: rgba(0, 148, 12, 0.418);
+    border-width: 0px;
     color: rgb(0, 0, 0);
     padding: 6px;
-    width: 55%;
-    border-radius: 30px;
-    font-size: 10px;
+    width: 60%;
+    border-radius: 3px;
+    background-color: gray;
+    color: white;
+    font-size: 9px;
     margin-top: 5px;
     cursor: not-allowed;
     transition: background-color 0.2s ease, transform 0.05s ease;
@@ -191,8 +191,7 @@
 
 
 .slick-current .cart-trend:hover {
-    background-color: rgba(0, 110, 28, 0.842);
-    border-color: rgba(255, 255, 255, 0.76);
+    background-color: rgb(78, 78, 78);
     color: rgb(255, 255, 255);
 }
 
@@ -466,6 +465,7 @@
         filter: none;
         border-radius: 2px;
         height: 240px;
+        height: 16%;
         border-width: 0;
         background-color: rgba(255, 0, 0, 0);
     }
@@ -559,6 +559,7 @@
         font-size: 9px;
         width: 50%;
     }
+
 }
 
 
@@ -580,9 +581,135 @@
 
 /*---------------------------------- Above my phone ------------------------------------*/
 
+
+@media (min-width: 500px) {
+    .Trend-2 {
+        width: 50%;
+        height: 32%;
+    }
+
+    .card-2 {
+        height: 100%;
+        width: 97%;
+    }
+
+    .Trend-img {
+        width: 100%;
+    }
+
+    .card_lower {
+        height: 80px;
+    }
+
+    .svg-real {
+        width: 80px;
+    }
+}
+
+
+
 @media (min-width: 769px) {
     .mobile-trends {
         display: none;
     }
+
+    .card-2 {
+        height: 460px;
+        width: 700px;
+    }
+
+    .card_upper {
+        height: 70%;
+        background-color: rgba(128, 128, 128, 0.582);
+    }
+
+    .Trend-img {
+        width: 350px;
+    }
+
+    .card_lower {
+        height: 30%;
+    }
+
+    .svg-real {
+        width: 120px;
+    }
+
+    .service-container {
+        width: 100%;
+    }
+
+    .svg-container {
+        width: 90%;
+    }
+
 }
+
+
+
+@media (min-width: 1024px) {
+    .Trend-img {
+        width: 50%;
+    }
+
+    .card-2 {
+        height: 220px;
+        width: 95%;
+    }
+
+    .card_upper {
+        background-color: rgba(5, 36, 27, 0.274);
+        height: 60%;
+    }
+
+    .card_lower {
+        height: 40%;
+    }
+
+}
+
+
+@media (min-width: 1220px) {
+    .Trend-img {
+        width: 50%;
+    }
+
+    .card-2 {
+        height: 220px;
+        width: 90%;
+    }
+
+    .card_lower {
+        height: 40%;
+    }
+
+    .svg-real {
+        width: 120px;
+    }
+    
+    .service-container {
+        width: 85%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------- Below my phone ------------------------------------*/
+
+
+
 

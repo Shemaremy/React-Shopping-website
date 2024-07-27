@@ -130,7 +130,16 @@ const handleAddToCartClick = async (product) => {
         centerPadding: "0px",
         slidesToShow: 3,
         speed: 500,
-        beforeChange: (current, next) => setActiveIndex(next)
+        beforeChange: (current, next) => setActiveIndex(next),
+
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
     };
 
 

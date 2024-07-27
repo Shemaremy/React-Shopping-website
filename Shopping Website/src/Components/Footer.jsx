@@ -3,6 +3,7 @@ import './Footer.css';
 
 
 function C(){ 
+    
     return(
         <div className="C">
             <div className="Upper_part_footer">
