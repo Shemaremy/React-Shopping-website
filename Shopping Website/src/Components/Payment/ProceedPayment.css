@@ -1317,10 +1317,10 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
 }
 
 .mastercard, .visa, .paypal {
-    height: 70%;
-    width: 20%;
+    height: 60px;
+    width: 90px;
     overflow: hidden;
-    margin-right: 3%;
+    margin-right: 15px;
     border-radius: 4px;
     box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.404);
 }
@@ -1536,7 +1536,7 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
 
 .cardholder_name > .first_name > .error,
 .card_number > .first_name > .error {
-    width: 85%;
+    width: 90%;
     position: absolute;
     margin-top: 0;
     margin-bottom: 0;
@@ -1680,31 +1680,285 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
 
 @media (min-width: 0px) and (max-width: 768px) {
 
+    .Form_section {
+        display: none;
+    }
+
+
 
 
     .paying-wrapper {
         flex-direction: column;
+        height: auto;
     }
+
+
+
+
 
     .left_part_pay {
         width: 100%;
         height: 60%;
+        height: 100vh;
+        margin-top: 30px;
     }
 
-    .names_container {
-        background-color: green;
+    .mobile_form_section {
+        height: 100%;
+        width: 100%;
+    }
+
+    .mobile-form {
+        width: 100%;
+        height: 80%;
+        margin-top: 10px;
+        display: flex;
         flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    .indicator {
-        display: none;
+    .mobile-form > div {
+        width: 90%;
+        height: 11%;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 5px;
+        border-color: rgba(95, 95, 95, 0.521);
     }
+
+    .mobile-form > div > input,
+    .stsearch-box input  {
+        width: 98%;
+        height: 100%;
+        padding: 0;
+        padding-left: 2%;
+        left: 100;
+        right: 0;
+        font-size: 15px;
+        border-width: 0;
+    }
+
+    .mobile-form > div:has(> input:focus) {
+        border-color: rgb(42, 112, 158);
+    }
+    
+    
+
+    .four > div {
+        height: 100%;
+    }
+
+    .stdropdown-container {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .stsearch-box {
+        height: 100%;
+        width: 98%;
+        padding: 0 !important;
+        margin: 0 auto;
+    }
+
+
+    .stdropdown-tool > svg {
+        opacity: 0.3;
+    }
+
+
+    .seven {
+        border-color: rgba(255, 0, 0, 0) !important;
+    }
+
+    .seven > div {
+        width: 100%;
+        padding: 0;
+        background-color: rgba(255, 255, 255, 0);
+        border-color: rgba(255, 0, 0, 0) !important;
+    }
+
+    .phone_input > input {
+        height: 90%;
+        padding: 0;
+        padding-left: 2%;
+    }
+
+
+
+
 
     .right_part_pay {
         width: 100%;
-        height: 40%;
+        height: auto;
+        background-color: rgba(210, 105, 30, 0);
+        justify-content: space-around;
+        margin-top: 20px;
     }
+
+    .upper_right_pay {
+        height: 30px;
+        border-radius: 0;
+        border-width: 0;
+        box-shadow: none;
+        background-color: rgba(128, 0, 128, 0);
+    }
+
+    .lower_right_pay {
+        height: auto;
+    }
+
+    .order_summary_container {
+        justify-content: center;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .lower_summary {
+        height: auto;
+    }
+
+    .small_calculations {
+        height: 120px;
+        position: relative;
+        margin-top: 20px;
+        margin-bottom: 15px;
+        box-shadow: none;
+    }
+
+
+    .check_out_panel {
+        height: 550px;
+        margin-top: 0px;
+        border-width: 0;
+        background-color: rgba(128, 128, 128, 0.103);
+    }
+
+    .upper_check_out {
+        height: auto;
+    }
+
+    .lower_check_out_container {
+        background-color: rgba(0, 128, 0, 0);
+        margin-top: 20px;
+    }
+
+    .card_images {
+        height: auto;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .card_images, 
+    .check_out_header {
+        width: 90%;
+    }
+
+
+    .card_images > div {
+        box-shadow: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        width: 80px;
+        border-radius: 0;
+    }
+
+    .card_images > div > img {
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .card_form {
+        display: none;
+    }
+
+    .mobile_payment_section {
+        display: flex;
+        height: 100%;
+        width: 90%;
+    }
+
+    .mobile-payment-form {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .mobile-payment-form > div {
+        height: 14%;
+        width: 100%;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 5px;
+        border-color: rgba(95, 95, 95, 0.521);
+    }
+
+    .mobile-payment-form > div > input {
+        width: 98%;
+        height: 100%;
+        padding: 0;
+        padding-left: 2%;
+        font-size: 13px;
+    }
+
+
+    .one-2 {
+        display: flex;
+        flex-direction: row !important;
+        position: relative;
+    }
+
+
+    .see-container {
+        position: absolute;
+        left: 100;
+        right: 0;
+        height: 100%;
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .one-5 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-width: 0 !important;
+    }
+
+    .pay_now_button {
+        height: 90%;
+        width: 100%;
+        font-size: 15px;
+    }
+
+    
+
+
+
+
+
+
+
+
 }
 
 
 
+
+/*--------------------------------------- Above my phone ---------------------------------------------*/
+@media (min-width: 769px) {
+    .mobile-form,
+    .mobile_payment_section {
+        display: none;
+    }
+} 

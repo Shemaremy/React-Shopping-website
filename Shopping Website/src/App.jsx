@@ -32,7 +32,7 @@ function AppRoutes() {
   useEffect(() => {
     if (location.pathname === '/payment') {
       if (window.innerWidth <= 768) {
-        document.body.style.height = '190vh';
+        document.body.style.height = 'auto';
       } else {
         document.body.style.height = '110vh';
       }      

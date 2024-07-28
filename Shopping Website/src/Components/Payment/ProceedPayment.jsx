@@ -467,37 +467,63 @@ const [errors, setErrors] = useState({});
 const [showCardNumber, setShowCardNumber] = useState(false);
 
 
+
+
 const validateForm = () => {
 
-    // Initializing newErrors object
     const newErrors = {};
 
 
+    const cardholderNameInput = document.querySelector('input[name="cardholderName"]');
+    const cardholderNameInput1 = document.querySelector('input[name="cardholderName1"]');
+
+    const cardNumberInput = document.querySelector('input[name="cardNumber"]');
+    const cardNumberInput1 = document.querySelector('input[name="cardNumber1"]');
+
+    const expiryDateInput = document.querySelector('input[name="expiryDate"]');
+    const expiryDateInput1 = document.querySelector('input[name="expiryDate1"]');
+
+    const cvcInput = document.querySelector('input[name="cvc"]');
+    const cvcInput1 = document.querySelector('input[name="cvc1"]');
+
+
+    cardholderNameInput.style.borderColor = '';
+    cardNumberInput.style.borderColor = '';
+    expiryDateInput.style.borderColor = '';
+    cvcInput.style.borderColor = '';
+
     if (!cardholderName) {
         newErrors.cardholderName = 'Cardholder name must be filled';
+        cardholderNameInput.style.borderColor = 'red';
+        cardholderNameInput1.style.borderColor = 'red';
     }
 
-
-    
     if (!cardNumber) {
         newErrors.cardNumber = 'Card number must be filled';
-    }
-    else if (cardNumber.length !== 16) {
-        newErrors.cardNumber = 'Card number must be 16 digits';
-    }
+        cardNumberInput.style.borderColor = 'red';
+        cardNumberInput1.style.borderColor = 'red';
 
+    } else if (cardNumber.length !== 16) {
+        newErrors.cardNumber = 'Card number must be 16 digits';
+        cardNumberInput.style.borderColor = 'red';
+        cardNumberInput1.style.borderColor = 'red';
+    }
 
     if (!expiryDate) {
         newErrors.expiryDate = 'Expiry date must be filled';
+        expiryDateInput.style.borderColor = 'red';
+        expiryDateInput1.style.borderColor = 'red';
     }
-
 
     if (!cvc) {
         newErrors.cvc = 'CVC must be filled';
+        cvcInput.style.borderColor = 'red';
+        cvcInput1.style.borderColor = 'red';
     }
 
     return newErrors;
 };
+
 
 
 // When submitting
@@ -507,7 +533,6 @@ const handleSubmit = (e) => {
     if (Object.keys(newErrors).length > 0) {
         setErrors(newErrors);
     } else {
-        // Process payment
         console.log('Processing payment...');
     }
 };
@@ -540,7 +565,7 @@ const handleExpiryDateChange = (e) => {
         if (month < 1 || month > 12) {
             value = '12'; // Restrict month to be between 1 and 12
         }
-        
+    
         let year = value.substring(2, 4);
         value = `${value.substring(0, 2)}/${year}`;
     }
@@ -580,6 +605,7 @@ const handleExpiryDateChange = (e) => {
                             <p className='indicator'>Cardholder name</p>
                             <input type="text" placeholder='ex: Shema Remy' 
                                 value={cardholderName} 
+                                name="cardholderName"
                                 onChange={handleCardholderNameChange}
                             />
                             {errors.cardholderName && <p className='error'>{errors.cardholderName}</p>}
@@ -590,6 +616,7 @@ const handleExpiryDateChange = (e) => {
                             <p className='indicator'>Card number</p>
                             <input type={showCardNumber ? "text" : "password"} placeholder='1234-5678-9012-3456'
                                 value={cardNumber}
+                                name="cardNumber"
                                 onChange={handleCardNumberChange}
                                 maxLength="16"
                             />
@@ -606,6 +633,7 @@ const handleExpiryDateChange = (e) => {
                                 type="text"
                                 placeholder='MM/YY'
                                 value={expiryDate}
+                                name="expiryDate"
                                 onChange={handleExpiryDateChange}
                                 maxLength="5"
                             />
@@ -617,6 +645,7 @@ const handleExpiryDateChange = (e) => {
                                 type="text"
                                 placeholder='CVC'
                                 value={cvc}
+                                name="cvc"
                                 onChange={(e) => setCvc(e.target.value)}
                                 maxLength="4"
                             />
@@ -627,6 +656,56 @@ const handleExpiryDateChange = (e) => {
                         <button className='pay_now_button'>Pay now</button>
                     </div>
                 </form>
+
+                <div className='mobile_payment_section'>
+                    <form action="" className='mobile-payment-form' onSubmit={handleSubmit}>
+                        <div className='one-1'>
+                            <input type="text" placeholder='Cardholder name' 
+                                value={cardholderName} 
+                                name="cardholderName1"
+                                onChange={handleCardholderNameChange}
+                            />
+                            {errors.cardholderName && <p className='error'>{errors.cardholderName}</p>}
+                        </div>
+                        <div className='one-2'>
+                            <input type={showCardNumber ? "text" : "password"} placeholder='Card number'
+                                value={cardNumber}
+                                name="cardNumber1"
+                                onChange={handleCardNumberChange}
+                                maxLength="16"
+                            />
+                            <div className='see-container' type="button" onClick={() => setShowCardNumber(!showCardNumber)}>
+                                {showCardNumber ? <i className="fa-regular fa-eye-slash"></i> : <i className="fa-regular fa-eye"></i>}
+                            </div>
+                            {errors.cardNumber && <p className='error'>{errors.cardNumber}</p>}
+                        </div>
+                        <div className='one-3'>
+                            <input
+                                type="text"
+                                placeholder='Expiration period  ( MM/YY )'
+                                value={expiryDate}
+                                name="expiryDate1"
+                                onChange={handleExpiryDateChange}
+                                maxLength="5"
+                            />
+                            {errors.expiryDate && <p className='error'>{errors.expiryDate}</p>}
+                        </div>
+                        <div className='one-4'>
+                            <input
+                                type="text"
+                                placeholder='CVC'
+                                value={cvc}
+                                name="cvc1"
+                                onChange={(e) => setCvc(e.target.value)}
+                                maxLength="4"
+                            />
+                            {errors.cvc && <p className='error'>{errors.cvc}</p>}
+                        </div>
+                        <div className='one-5'>
+                            <button className='pay_now_button'>Pay now</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     );
@@ -745,6 +824,39 @@ const handleExpiryDateChange = (e) => {
                             </div>
                         </form>
                     </div>
+                </div>
+                <div className='mobile_form_section'>
+                    <form action="" className='mobile-form'>
+                        <div className='one'>
+                            <input type="text" name="" id="" placeholder='First name'/>
+                        </div>
+                        <div className='two'>
+                            <input type="text" name="" id="" placeholder='Last name'/>
+                        </div>
+                        <div className='three'>
+                            <input type="text" name="" id="" placeholder='Street Adress'/>
+                        </div>
+                        <div className='four'>
+                            <CountrySelect 
+                                onChange={handleCountryChange} 
+                                placeHolder="Select Country" 
+                                className='country_select'
+                            />
+                        </div>
+                        <div className='five'>
+                            <input type="text" name="" id="" placeholder='City'/>
+                        </div>
+                        <div className='six'>
+                            <input type="text" name="" id="" placeholder='Email Address'/>
+                        </div>
+                        <div className='seven'>
+                            <PhoneInput placeholder="Enter phone number" 
+                            value={code} 
+                            onChange={handlePhoneChange} 
+                            defaultCountry={currentCountry}  
+                            className='phone_input'/>
+                        </div>
+                    </form>
                 </div>
             </div>
             <div className='right_part_pay'>
