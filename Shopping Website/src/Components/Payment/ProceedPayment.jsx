@@ -779,11 +779,12 @@ const handleExpiryDateChange = (e) => {
                 <div className='Form_section'>
                     <h2 className='upper_form_title'>Delivery address</h2>
                     <div className='address_form_container'>
-                        <form action="" className='address_form'>
+                        <form action="" className='address_form' onSubmit={handleSubmit}>
                             <div className='names_container'>
                                 <div className='first_name'>
                                     <p className='indicator'>FIRST NAME</p>
                                     <input type="text" placeholder='ex: Shema'/>
+                                    {errors.cardholderName && <p className='error'>{errors.cardholderName}</p>}
                                 </div>
                                 <div className='last_name'>
                                     <p className='indicator'>LAST NAME</p>

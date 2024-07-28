@@ -1678,7 +1678,7 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
 
 /*--------------------------------------- My phone ---------------------------------------------*/
 
-@media (min-width: 0px) and (max-width: 768px) {
+@media (min-width: 0px) and (max-width: 1024px) {
 
     .Form_section {
         display: none;
@@ -1968,7 +1968,7 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
 
 
 /*--------------------------------------- Above my phone ---------------------------------------------*/
-@media (min-width: 769px) {
+@media (min-width: 1025px) {
     .mobile-form,
     .mobile_payment_section {
         display: none;
