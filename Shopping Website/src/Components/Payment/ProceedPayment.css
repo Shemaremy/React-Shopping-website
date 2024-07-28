@@ -1910,9 +1910,21 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
 
 
     .one-2 {
-        display: flex;
-        flex-direction: row !important;
         position: relative;
+        display: flex;
+    }
+
+
+    .one-2 > .error {
+        position: absolute;
+        height: 125%;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    .error {
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
 

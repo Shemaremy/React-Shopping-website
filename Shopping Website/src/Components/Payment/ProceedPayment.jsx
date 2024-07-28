@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 import './ProceedPayment.css'
 import mastercard from './cardImages/mastercard.jpg'
 import visacard from './cardImages/visacard.jpg'
@@ -527,6 +529,7 @@ const validateForm = () => {
 
 
 // When submitting
+const navigate = useNavigate();
 const handleSubmit = (e) => {
     e.preventDefault();
     const newErrors = validateForm();
@@ -534,6 +537,8 @@ const handleSubmit = (e) => {
         setErrors(newErrors);
     } else {
         console.log('Processing payment...');
+        navigate('/');
+        window.location.reload();
     }
 };
 
@@ -653,7 +658,7 @@ const handleExpiryDateChange = (e) => {
                         </div>
                     </div>
                     <div className='pay_now'>
-                        <button className='pay_now_button'>Pay now</button>
+                        <button className='pay_now_button' type='submit'>Pay now</button>
                     </div>
                 </form>
 
@@ -702,7 +707,7 @@ const handleExpiryDateChange = (e) => {
                             {errors.cvc && <p className='error'>{errors.cvc}</p>}
                         </div>
                         <div className='one-5'>
-                            <button className='pay_now_button'>Pay now</button>
+                            <button className='pay_now_button' type='submit'>Pay now</button>
                         </div>
                     </form>
                 </div>
@@ -828,13 +833,13 @@ const handleExpiryDateChange = (e) => {
                 <div className='mobile_form_section'>
                     <form action="" className='mobile-form'>
                         <div className='one'>
-                            <input type="text" name="" id="" placeholder='First name'/>
+                            <input type="text" name="FirstName" placeholder='First name'/>
                         </div>
                         <div className='two'>
-                            <input type="text" name="" id="" placeholder='Last name'/>
+                            <input type="text" name="LastName" placeholder='Last name'/>
                         </div>
                         <div className='three'>
-                            <input type="text" name="" id="" placeholder='Street Adress'/>
+                            <input type="text" name="StreetAdress" placeholder='Street Adress'/>
                         </div>
                         <div className='four'>
                             <CountrySelect 
@@ -844,10 +849,10 @@ const handleExpiryDateChange = (e) => {
                             />
                         </div>
                         <div className='five'>
-                            <input type="text" name="" id="" placeholder='City'/>
+                            <input type="text" name="City" placeholder='City'/>
                         </div>
                         <div className='six'>
-                            <input type="text" name="" id="" placeholder='Email Address'/>
+                            <input type="text" name="Email" placeholder='Email Address'/>
                         </div>
                         <div className='seven'>
                             <PhoneInput placeholder="Enter phone number" 

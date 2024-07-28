@@ -70,13 +70,12 @@ function A(){
 
 
 
-const [buttonText, setButtonText] = useState('Add to cart');
+const [buttonText, setButtonText] = useState();
 const [loading, setLoading] = useState(false);
 
 
 const handleAddToCartClick = async (product) => {
     setLoading(true);
-    setButtonText('Loading ...');
     
     // Simulate a delay (e.g., API call duration)
     await new Promise((resolve) => setTimeout(resolve, 500));
@@ -88,7 +87,6 @@ const handleAddToCartClick = async (product) => {
         setButtonText('Error');
     } finally {
         setLoading(false);
-        setTimeout(() => setButtonText('Add to cart'), 100); // Reset after 2 seconds
     }
 };
 
@@ -547,7 +545,8 @@ const card4Content = (product) =>(
                 onClick={() => { handleAddToCartClick(product); setShowModal(false); }}
                 disabled={loading} // Disable button while loading
             >
-                {buttonText} <i className="Cart_ico_2 fas fa-cart-plus"></i>
+                {loading ? <i className="cart_icon fa-solid fa-spinner"></i> : 'Add to cart'}
+                {!loading && <i className="Cart_ico_2 fas fa-cart-plus"></i>}
             </button>
         </div>
         <div className="The_shoe_container">
