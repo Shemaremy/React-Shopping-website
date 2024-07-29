@@ -38,13 +38,42 @@ import "react-country-state-city/dist/react-country-state-city.css";
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function ProceedPayment() {
 
 
 
 
-    const [code, setCode] = useState('');
-    const [phoneNumberError, setPhoneNumberError] = useState('');
     const [countryId, setCountryId] = useState('');
     let currentCountry = 'RW'
 
@@ -124,41 +153,49 @@ function ProceedPayment() {
 
 
 
-
-
-//------------------------------------------ PHONE AND COUNTRY CHOOSING SECTION-------------------------------------------------------
-//------------------------------------------ PHONE AND COUNTRY CHOOSING SECTION-------------------------------------------------------
-//------------------------------------------ PHONE AND COUNTRY CHOOSING SECTION-------------------------------------------------------
-
-
-
-
-
-
-    // Helps us handling entering less phone digits
-    const handlePhoneChange = (phoneNumber) => {
-        if (!phoneNumber) {
-            setCode(''); 
-            setPhoneNumberError('This field cannot be empty!');
-        } else {
-            setCode(phoneNumber);
-            if (phoneNumber.length < 13) {
-                setPhoneNumberError('Enter a valid 10 digit phone number.');
-            } else {
-                setPhoneNumberError('');
-            }
-        }
-    };
     
 
 
 
 
 
-    // When an invalid country, the form doesnt accept it
-    const handleCountryChange = (selectedCountry) => {
-        setCountryId(selectedCountry.isoCode);
-    };
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -360,6 +397,44 @@ const calculateTotalQuantity = () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //---------------------------------------------- ORDER SUMMARY SECTION ----------------------------------------------------------------
 //---------------------------------------------- ORDER SUMMARY SECTION ----------------------------------------------------------------
 //---------------------------------------------- ORDER SUMMARY SECTION ----------------------------------------------------------------
@@ -448,6 +523,84 @@ const calculateTotalQuantity = () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //---------------------------------------------- CHECK OUT SECTION ----------------------------------------------------------------
 //---------------------------------------------- CHECK OUT SECTION ----------------------------------------------------------------
 //---------------------------------------------- CHECK OUT SECTION ----------------------------------------------------------------
@@ -458,6 +611,11 @@ const calculateTotalQuantity = () => {
 
 
 //-------------------------------------- CHECK OUT FORM VALLIDATION-----------------------------------------------
+
+const [FirstName, setFirstName] = useState('');
+const [Email, setEmail] = useState('');
+const [PhoneNumber, setPhoneNumber] = useState('');
+
 
 
 
@@ -478,6 +636,7 @@ const validateForm = () => {
 
     const cardholderNameInput = document.querySelector('input[name="cardholderName"]');
     const cardholderNameInput1 = document.querySelector('input[name="cardholderName1"]');
+    const FirstNameInput = document.querySelector('input[name="FirstName"]');
 
     const cardNumberInput = document.querySelector('input[name="cardNumber"]');
     const cardNumberInput1 = document.querySelector('input[name="cardNumber1"]');
@@ -489,10 +648,33 @@ const validateForm = () => {
     const cvcInput1 = document.querySelector('input[name="cvc1"]');
 
 
-    cardholderNameInput.style.borderColor = '';
-    cardNumberInput.style.borderColor = '';
-    expiryDateInput.style.borderColor = '';
-    cvcInput.style.borderColor = '';
+
+
+
+
+    //------------------ Address form ---------------------------
+
+    if(!FirstName) {
+        newErrors.FirstName = 'Fist name must be filled sir!';
+        FirstNameInput.style.borderColor = 'red';
+    }
+
+    if(!Email) {
+        newErrors.Email = 'Email Address must be filled sir!';
+    }
+
+    if(!PhoneNumber) {
+        newErrors.PhoneNumber = 'Your phone number must be filled!';
+    }
+
+    
+
+    
+
+
+
+
+    //---------------------- Payment form ------------------------------
 
     if (!cardholderName) {
         newErrors.cardholderName = 'Cardholder name must be filled';
@@ -528,6 +710,17 @@ const validateForm = () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 // When submitting
 const navigate = useNavigate();
 const handleSubmit = (e) => {
@@ -537,10 +730,58 @@ const handleSubmit = (e) => {
         setErrors(newErrors);
     } else {
         console.log('Processing payment...');
-        navigate('/');
-        window.location.reload();
+        // navigate('/');
+        // window.location.reload();
+        setErrors({});        
+        alert('Success');
     }
 };
+
+
+
+
+
+//----------------------------- Address form -------------------------------
+
+const handleFirstNameChange = (e) => {
+    const value = e.target.value;
+    if (/^[A-Za-z\s]*$/.test(value)) {
+        setFirstName(value);
+    }
+};
+
+
+const handleEmailChange = (e) => {
+    const value = e.target.value;
+    if (/^[A-Za-z\s]*$/.test(value)) {
+        setEmail(value);
+    }  
+};
+
+
+
+const handlePhoneChange = (value) => {
+    if (/^\d*$/.test(value)) {
+        setPhoneNumber(value);
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// --------------------------------- Card Form -----------------------------------
 
 
 // Handling accepting only letters and not numbers
@@ -550,6 +791,7 @@ const handleCardholderNameChange = (e) => {
         setCardholderName(value);
     }
 };
+
 
 
 // Handling accepting only numbers
@@ -585,6 +827,122 @@ const handleExpiryDateChange = (e) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//------------------------------------- Check out content ------------------------------------------------
+//------------------------------------- Check out content ------------------------------------------------
 //------------------------------------- Check out content ------------------------------------------------
 
     const checkOut = (
@@ -768,6 +1126,40 @@ const handleExpiryDateChange = (e) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     // Payment content wrapper
     const Payment = (
         <div className='paying-wrapper'>
@@ -783,12 +1175,18 @@ const handleExpiryDateChange = (e) => {
                             <div className='names_container'>
                                 <div className='first_name'>
                                     <p className='indicator'>FIRST NAME</p>
-                                    <input type="text" placeholder='ex: Shema'/>
-                                    {errors.cardholderName && <p className='error'>{errors.cardholderName}</p>}
+                                    <input type="text" 
+                                        placeholder='ex: Shema'
+                                        value={FirstName}
+                                        name='FirstName'
+                                        onChange={handleFirstNameChange}
+                                        maxLength="20"
+                                    />
+                                    {errors.FirstName && <p className='error'>{errors.FirstName}</p>}
                                 </div>
                                 <div className='last_name'>
                                     <p className='indicator'>LAST NAME</p>
-                                    <input type="text" placeholder='ex: Remy'/>
+                                    <input type="text" placeholder='ex: Remy' maxLength="20"/>
                                 </div>
                             </div>
                             <div className='street_container'>
@@ -800,8 +1198,8 @@ const handleExpiryDateChange = (e) => {
                             <div className='city_zipcode_container'>
                                 <div className='first_name'>
                                     <p className='indicator'>COUNTRY</p>
-                                    <CountrySelect 
-                                        onChange={handleCountryChange} 
+                                    <CountrySelect
+                                        value={countryId}
                                         placeHolder="Select Country" 
                                         className='country_select'
                                     />
@@ -815,17 +1213,25 @@ const handleExpiryDateChange = (e) => {
                             <div className='country_container'>
                                 <div className='first_name'>
                                     <p className='indicator'>EMAIL ADDRESS</p>
-                                    <input type="text" placeholder='ex: remyshema20@gmail.com'/>
+                                    <input type="text" 
+                                        placeholder='ex: remyshema20@gmail.com'
+                                        value={Email}
+                                        name='EmailAddress'
+                                        onChange={handleEmailChange}
+                                    />
+                                    {errors.Email && <p className='error'>{errors.Email}</p>}
                                 </div>
                             </div>
                             <div className='phone_container'>
                                 <div className='first_name'>
                                     <PhoneInput placeholder="Enter phone number" 
-                                    value={code} 
-                                    onChange={handlePhoneChange} 
-                                    defaultCountry={currentCountry}  
-                                    className='phone_input'/>
-                                    {phoneNumberError && <p className='error-text'>{phoneNumberError}</p>}
+                                        value={PhoneNumber} 
+                                        onChange={handlePhoneChange} 
+                                        defaultCountry={currentCountry}  
+                                        className='phone_input'
+                                        maxLength="12"
+                                    />
+                                    {errors.PhoneNumber && <p className='error'>{errors.PhoneNumber}</p>}
                                 </div>
                             </div>
                         </form>
@@ -844,7 +1250,6 @@ const handleExpiryDateChange = (e) => {
                         </div>
                         <div className='four'>
                             <CountrySelect 
-                                onChange={handleCountryChange} 
                                 placeHolder="Select Country" 
                                 className='country_select'
                             />
@@ -857,7 +1262,6 @@ const handleExpiryDateChange = (e) => {
                         </div>
                         <div className='seven'>
                             <PhoneInput placeholder="Enter phone number" 
-                            value={code} 
                             onChange={handlePhoneChange} 
                             defaultCountry={currentCountry}  
                             className='phone_input'/>
