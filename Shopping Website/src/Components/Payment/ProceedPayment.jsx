@@ -821,6 +821,13 @@ const handleExpiryDateChange = (e) => {
 
 
 
+const handleCVCChange = (e) => {
+    const value = e.target.value;
+    if (/^\d*$/.test(value)) {
+        setCvc(value);
+    }
+};
+
 
 
 
@@ -1009,7 +1016,7 @@ const handleExpiryDateChange = (e) => {
                                 placeholder='CVC'
                                 value={cvc}
                                 name="cvc"
-                                onChange={(e) => setCvc(e.target.value)}
+                                onChange={handleCVCChange}
                                 maxLength="4"
                             />
                             {errors.cvc && <p className='error'>{errors.cvc}</p>}
