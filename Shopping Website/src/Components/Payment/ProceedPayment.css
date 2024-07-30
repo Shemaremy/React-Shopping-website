@@ -232,9 +232,44 @@
 
 
 
+.names_container > .first_name,
+.country_container > .first_name {
+    position: relative;
+}
 
 
 
+.names_container > .first_name > .error,
+.country_container > .first_name > .error {
+    position: absolute;
+    margin-top: 0;
+    margin-bottom: 0;
+    top: 100;
+    bottom: 0;
+    left: 100;
+    right: 0;
+    width: 97%;
+}
+
+
+
+
+.phone_container > .first_name {
+    position: relative;
+}
+
+
+.phone_container > .first_name > .error {
+    position: absolute;
+    margin-top: 0;
+    margin-bottom: 0;
+    left: 100;
+    right: 0;
+    width: 82%;
+    height: 75%;
+    display: flex;
+    align-items: flex-end;
+}
 
 
 
@@ -363,10 +398,11 @@ input, .phone_input {
     border-style: solid;
     border-width: 1px;
     border-color: rgba(167, 167, 167, 0.884);
-    width: 95%;
+    width: 93%;
     height: 45%;
     border-radius: 4px;
     outline: none;
+    padding: 0;
     padding-left: 2%;
 }
 
@@ -558,28 +594,43 @@ input:focus {
 
 /*------------------------------Package modifications-------------------------------------------*/
 
-
-.phone_container > .first_name > .phone_input {
-    border-width: 0px;
-    background-color: rgba(255, 255, 255, 0);
+.street_container {
+    display: flex;
+    align-items: center;
 }
+
+
+
+
+
+
+
 
 
 .city_zipcode_container > .first_name > div {
-    width: 100%;
+    width: 96%;
+    height: 45%;
 }
 
+
 .stdropdown-container {
-    background-color: rgba(170, 170, 170, 0.11);
+    height: 100% !important;
+    width: 100% !important;
+    border-color: rgba(167, 167, 167, 0.884) !important;
+    background-color: rgba(170, 170, 170, 0.11) !important;
+    align-content: center;
 }
 
 .stsearch-box input {
     border-width: 0px !important;
     height: 100% !important;
+    width: 100% !important;
 }
+
 
 .stdropdown-tools {
     cursor: pointer;
+    opacity: 0.3;
 }
 
 
@@ -595,6 +646,29 @@ input:focus {
 
 .stsearch-box input {
     background-color: rgba(0, 0, 255, 0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.phone_container > .first_name > .phone_input {
+    border-width: 0px;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 
@@ -1445,30 +1519,49 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
 
 
 .exp_and_cvc {
+    width: 85% !important;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
 }
 
 
 .exp_and_cvc > .first_name,
 .exp_and_cvc > .last_name {
-    width: 95%;
-    padding: 0;
+    width: 48%;
+    display: flex;
+    flex-direction: column;
 }
+
+.exp_and_cvc > .first_name {
+    align-items: flex-start;
+}
+
+
+.exp_and_cvc > .last_name {
+    align-items: flex-end;
+}
+
 
 .exp_and_cvc > .first_name > p,
 .exp_and_cvc > .last_name > p {
     background-color: rgba(255, 255, 255, 0);
-    width: 85%;
+    width: 100%;
+}
+
+.exp_and_cvc > .last_name > p {
+    width: 95%;
 }
 
 .exp_and_cvc > .first_name > input,
 .exp_and_cvc > .last_name > input {
-    width: 83%;
+    width: 95%;
+    padding: 0%;
     padding-left: 2%;
 }
 
+.exp_and_cvc > .last_name > .error {
+    width: 46% !important;
+}
 
 
 
@@ -1534,8 +1627,7 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
 
 
 
-.cardholder_name > .first_name > .error,
-.card_number > .first_name > .error {
+.cardholder_name > .first_name > .error {
     width: 90%;
     position: absolute;
     margin-top: 0;
@@ -1545,7 +1637,14 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
 }
 
 
-
+.card_number > .first_name > .error {
+    width: 95%;
+    position: absolute;
+    margin-top: 0;
+    margin-bottom: 0;
+    top: 100;
+    bottom: 0;
+}
 
 
 
