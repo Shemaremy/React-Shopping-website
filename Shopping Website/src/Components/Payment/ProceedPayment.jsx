@@ -634,62 +634,51 @@ const validateForm = () => {
     const newErrors = {};
 
 
-//----------- Address red border ----------------------
-const FirstNameInput = document.querySelector('input[name="FirstName"]');
-const EmailInput = document.querySelector('input[name="EmailAddress"]');
-const ContactInput = document.querySelector('input[name="PhoneNumber"]');
+//----------- Address Fields ----------------------
 
-FirstNameInput.style.borderColor = '';
-EmailInput.style.borderColor = '';
-ContactInput.style.borderColor = '';
-
+const addressFields = {
+    FirstName: document.querySelector('input[name="FirstName"]'),
+    Email: document.querySelector('input[name="EmailAddress"]'),
+    PhoneNumber: document.querySelector('input[name="PhoneNumber"]')
+};
 
 
 
-//----------- check out red border ----------------------
-const cardholderNameInput = document.querySelector('input[name="cardholderName"]');
-const cardholderNameInput1 = document.querySelector('input[name="cardholderName1"]');
 
-const cardNumberInput = document.querySelector('input[name="cardNumber"]');
-const cardNumberInput1 = document.querySelector('input[name="cardNumber1"]');
-
-const expiryDateInput = document.querySelector('input[name="expiryDate"]');
-const expiryDateInput1 = document.querySelector('input[name="expiryDate1"]');
-
-const cvcInput = document.querySelector('input[name="cvc"]');
-const cvcInput1 = document.querySelector('input[name="cvc1"]');
+//----------- Check out Fields ----------------------
 
 
-cardholderNameInput.style.borderColor = '';
-cardholderNameInput1.style.borderColor = '';
-
-cardNumberInput.style.borderColor = '';
-cardNumberInput1.style.borderColor = '';
-
-expiryDateInput.style.borderColor = '';
-expiryDateInput1.style.borderColor = '';
-
-cvcInput.style.borderColor = '';
-cvcInput1.style.borderColor = '';
+const checkoutFields = {
+    cardholderName: document.querySelector('input[name="cardholderName"]'),
+    cardNumber: document.querySelector('input[name="cardNumber"]'),
+    expiryDate: document.querySelector('input[name="expiryDate"]'),
+    cvc: document.querySelector('input[name="cvc"]')
+};
 
 
 
-    //------------------ Address form ---------------------------
 
-    if(!FirstName) {
-        newErrors.FirstName = 'Fist name must be filled sir!';
-        FirstNameInput.style.borderColor = 'red';
-    }
+Object.values(addressFields).forEach(field => field.style.borderColor = '');
+Object.values(checkoutFields).forEach(field => field.style.borderColor = '');
 
-    if(!Email) {
-        newErrors.Email = 'Email Address must be filled sir!';
-        EmailInput.style.borderColor = 'red';
-    }
 
-    if(!PhoneNumber) {
-        newErrors.PhoneNumber = 'Your phone number must be filled!';
-        ContactInput.style.borderColor = 'red';
-    }
+
+//------------------ Address form ---------------------------
+
+if(!FirstName) {
+    newErrors.FirstName = 'Fist name must be filled sir!';
+    addressFields.FirstName.style.borderColor = 'red';
+}
+
+if(!Email) {
+    newErrors.Email = 'Email Address must be filled sir!';
+    addressFields.Email.style.borderColor = 'red';
+}
+
+if(!PhoneNumber) {
+    newErrors.PhoneNumber = 'Your phone number must be filled!';
+    addressFields.PhoneNumber.style.borderColor = 'red';
+}
 
     
 
@@ -698,36 +687,30 @@ cvcInput1.style.borderColor = '';
 
 
 
-    //---------------------- Payment form ------------------------------
+//---------------------- Payment form ------------------------------
 
-    if (!cardholderName) {
-        newErrors.cardholderName = 'Cardholder name must be filled';
-        cardholderNameInput.style.borderColor = 'red';
-        cardholderNameInput1.style.borderColor = 'red';
-    }
+if (!cardholderName) {
+    newErrors.cardholderName = 'Cardholder name must be filled';
+    checkoutFields.cardholderName.style.borderColor = 'red';
+}
 
-    if (!cardNumber) {
-        newErrors.cardNumber = 'Card number must be filled';
-        cardNumberInput.style.borderColor = 'red';
-        cardNumberInput1.style.borderColor = 'red';
+if (!cardNumber) {
+    newErrors.cardNumber = 'Card number must be filled';
+    checkoutFields.cardNumber.style.borderColor = 'red';
+} else if (cardNumber.length !== 16) {
+    newErrors.cardNumber = 'Card number must be 16 digits';
+    checkoutFields.cardNumber.style.borderColor = 'red';
+}
 
-    } else if (cardNumber.length !== 16) {
-        newErrors.cardNumber = 'Card number must be 16 digits';
-        cardNumberInput.style.borderColor = 'red';
-        cardNumberInput1.style.borderColor = 'red';
-    }
+if (!expiryDate) {
+    newErrors.expiryDate = 'Expiry date must be filled';
+    checkoutFields.expiryDate.style.borderColor = 'red';
+}
 
-    if (!expiryDate) {
-        newErrors.expiryDate = 'Expiry date must be filled';
-        expiryDateInput.style.borderColor = 'red';
-        expiryDateInput1.style.borderColor = 'red';
-    }
-
-    if (!cvc) {
-        newErrors.cvc = 'CVC must be filled';
-        cvcInput.style.borderColor = 'red';
-        cvcInput1.style.borderColor = 'red';
-    }
+if (!cvc) {
+    newErrors.cvc = 'CVC must be filled';
+    checkoutFields.cvc.style.borderColor = 'red';
+}
 
     return newErrors;
 };
@@ -771,24 +754,67 @@ const handleFirstNameChange = (e) => {
     const value = e.target.value;
     if (/^[A-Za-z\s]*$/.test(value)) {
         setFirstName(value);
+
+        // Clear the error for FirstName and reset the border color
+        setErrors(prevErrors => {
+            const newErrors = { ...prevErrors };
+            delete newErrors.FirstName;
+            return newErrors;
+        });
+
+        // Reset the border color
+        const firstNameInput = document.querySelector('input[name="FirstName"]');
+        if (firstNameInput) {
+            firstNameInput.style.borderColor = '';
+        }
     }
 };
+
+
 
 
 const handleEmailChange = (e) => {
     const value = e.target.value;
     if (/^[A-Za-z\s]*$/.test(value)) {
         setEmail(value);
-    }  
+
+        // Clear the error for Email and reset the border color
+        setErrors(prevErrors => {
+            const newErrors = { ...prevErrors };
+            delete newErrors.Email;
+            return newErrors;
+        });
+
+        // Reset the border color
+        const emailInput = document.querySelector('input[name="EmailAddress"]');
+        if (emailInput) {
+            emailInput.style.borderColor = '';
+        }
+    }
 };
+
 
 
 
 const handlePhoneChange = (value) => {
     if (/^\d*$/.test(value)) {
         setPhoneNumber(value);
+
+        // Clear the error for PhoneNumber and reset the border color
+        setErrors(prevErrors => {
+            const newErrors = { ...prevErrors };
+            delete newErrors.PhoneNumber;
+            return newErrors;
+        });
+
+        // Reset the border color
+        const phoneInput = document.querySelector('input[name="PhoneNumber"]');
+        if (phoneInput) {
+            phoneInput.style.borderColor = '';
+        }
     }
 };
+
 
 
 
@@ -812,9 +838,23 @@ const handlePhoneChange = (value) => {
 const handleCardholderNameChange = (e) => {
     const value = e.target.value;
     if (/^[A-Za-z\s]*$/.test(value)) {
-        setCardholderName(value); 
+        setCardholderName(value);
+
+        // Clear the error for CardholderName and reset the border color
+        setErrors(prevErrors => {
+            const newErrors = { ...prevErrors };
+            delete newErrors.cardholderName;
+            return newErrors;
+        });
+
+        // Reset the border color
+        const cardholderNameInput = document.querySelector('input[name="cardholderName"]');
+        if (cardholderNameInput) {
+            cardholderNameInput.style.borderColor = '';
+        }
     }
 };
+
 
 
 
@@ -823,8 +863,22 @@ const handleCardNumberChange = (e) => {
     const value = e.target.value;
     if (/^\d*$/.test(value)) {
         setCardNumber(value);
+
+        // Clear the error for CardNumber and reset the border color
+        setErrors(prevErrors => {
+            const newErrors = { ...prevErrors };
+            delete newErrors.cardNumber;
+            return newErrors;
+        });
+
+        // Reset the border color
+        const cardNumberInput = document.querySelector('input[name="cardNumber"]');
+        if (cardNumberInput) {
+            cardNumberInput.style.borderColor = '';
+        }
     }
 };
+
 
 
 // Handle expiry year by where I must only accept digits, no 5 numbers accepted,...
@@ -840,15 +894,41 @@ const handleExpiryDateChange = (e) => {
         let year = value.substring(2, 4);
         value = `${value.substring(0, 2)}/${year}`;
     }
+
+    
+    setErrors(prevErrors => {
+        const newErrors = { ...prevErrors };
+        delete newErrors.expiryDate;
+        return newErrors;
+    });
+
+    const expiryDateInput = document.querySelector('input[name="expiryDate"]');
+    if (expiryDateInput) {
+        expiryDateInput.style.borderColor = '';
+    }
+
     setExpiryDate(value);
+
 };
 
 
 
+// CVC change handlin
 const handleCVCChange = (e) => {
     const value = e.target.value;
     if (/^\d*$/.test(value)) {
         setCvc(value);
+
+        setErrors(prevErrors => {
+            const newErrors = { ...prevErrors };
+            delete newErrors.cvc;
+            return newErrors;
+        });
+
+        const cvcInput = document.querySelector('input[name="cvc"]');
+        if (cvcInput) {
+            cvcInput.style.borderColor = '';
+        }
     }
 };
 

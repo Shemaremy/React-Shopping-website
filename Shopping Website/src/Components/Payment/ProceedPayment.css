@@ -258,6 +258,10 @@
     position: relative;
 }
 
+.PhoneInputInput {
+    z-index: 1;
+}
+
 
 .phone_container > .first_name > .error {
     position: absolute;
@@ -269,6 +273,7 @@
     height: 75%;
     display: flex;
     align-items: flex-end;
+    z-index: 0;
 }
 
 
