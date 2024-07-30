@@ -680,6 +680,7 @@ if(!PhoneNumber) {
     addressFields.PhoneNumber.style.borderColor = 'red';
 }
 
+
     
 
     
@@ -797,23 +798,37 @@ const handleEmailChange = (e) => {
 
 
 const handlePhoneChange = (value) => {
-    if (/^\d*$/.test(value)) {
-        setPhoneNumber(value);
 
-        // Clear the error for PhoneNumber and reset the border color
+    setPhoneNumber(value);
+
+    if (value && value.length < 13) {
+        setErrors(prevErrors => ({
+            ...prevErrors,
+            PhoneNumber: 'Enter a 10 digit valid phone number!'
+        }));
+
+
+        const phoneInput = document.querySelector('input[name="PhoneNumber"]');
+        if (phoneInput) {
+            phoneInput.style.borderColor = 'red';
+        }
+
+    } else {
         setErrors(prevErrors => {
             const newErrors = { ...prevErrors };
             delete newErrors.PhoneNumber;
             return newErrors;
         });
 
-        // Reset the border color
         const phoneInput = document.querySelector('input[name="PhoneNumber"]');
         if (phoneInput) {
             phoneInput.style.borderColor = '';
         }
     }
 };
+
+
+
 
 
 
@@ -861,23 +876,40 @@ const handleCardholderNameChange = (e) => {
 // Handling accepting only numbers
 const handleCardNumberChange = (e) => {
     const value = e.target.value;
+    
     if (/^\d*$/.test(value)) {
         setCardNumber(value);
 
-        // Clear the error for CardNumber and reset the border color
-        setErrors(prevErrors => {
-            const newErrors = { ...prevErrors };
-            delete newErrors.cardNumber;
-            return newErrors;
-        });
+        if (value.length < 16 && value.length > 0) {
+            setErrors(prevErrors => ({
+                ...prevErrors,
+                cardNumber: 'Enter a valid 16 digit card number!'
+            }));
+            
+            const cardNumberInput = document.querySelector('input[name="cardNumber"]');
+            if (cardNumberInput) {
+                cardNumberInput.style.borderColor = 'red';
+            }
+        } else {
+            setErrors(prevErrors => {
+                const newErrors = { ...prevErrors };
+                delete newErrors.cardNumber;
+                return newErrors;
+            });
 
-        // Reset the border color
-        const cardNumberInput = document.querySelector('input[name="cardNumber"]');
-        if (cardNumberInput) {
-            cardNumberInput.style.borderColor = '';
+            const cardNumberInput = document.querySelector('input[name="cardNumber"]');
+            if (cardNumberInput) {
+                cardNumberInput.style.borderColor = '';
+            }
         }
+    } else {
+        setErrors(prevErrors => ({
+            ...prevErrors,
+            cardNumber: 'Please enter only numeric values!'
+        }));
     }
 };
+
 
 
 
