@@ -634,13 +634,26 @@ const validateForm = () => {
     const newErrors = {};
 
 
-//----------- Address Fields ----------------------
 
+
+
+
+
+//----------- Address Fields ----------------------
+ 
 const addressFields = {
     FirstName: document.querySelector('input[name="FirstName"]'),
     Email: document.querySelector('input[name="EmailAddress"]'),
-    PhoneNumber: document.querySelector('input[name="PhoneNumber"]')
+    PhoneNumber: document.querySelector('input[name="PhoneNumber"]'),
+
+    FirstName1: document.querySelector('input[name="FirstName1"]'),
+    Email1: document.querySelector('input[name="EmailAddress1"]'),
+    PhoneNumber1: document.querySelector('input[name="PhoneNumber1"]')
 };
+
+
+
+
 
 
 
@@ -652,7 +665,12 @@ const checkoutFields = {
     cardholderName: document.querySelector('input[name="cardholderName"]'),
     cardNumber: document.querySelector('input[name="cardNumber"]'),
     expiryDate: document.querySelector('input[name="expiryDate"]'),
-    cvc: document.querySelector('input[name="cvc"]')
+    cvc: document.querySelector('input[name="cvc"]'),
+
+    cardholderName1: document.querySelector('input[name="cardholderName1"]'),
+    cardNumber1: document.querySelector('input[name="cardNumber1"]'),
+    expiryDate1: document.querySelector('input[name="expiryDate1"]'),
+    cvc1: document.querySelector('input[name="cvc1"]')
 };
 
 
@@ -668,16 +686,19 @@ Object.values(checkoutFields).forEach(field => field.style.borderColor = '');
 if(!FirstName) {
     newErrors.FirstName = 'Fist name must be filled sir!';
     addressFields.FirstName.style.borderColor = 'red';
+    addressFields.FirstName1.style.borderColor = 'red';
 }
 
 if(!Email) {
     newErrors.Email = 'Email Address must be filled sir!';
     addressFields.Email.style.borderColor = 'red';
+    addressFields.Email1.style.borderColor = 'red';
 }
 
 if(!PhoneNumber) {
     newErrors.PhoneNumber = 'Your phone number must be filled!';
     addressFields.PhoneNumber.style.borderColor = 'red';
+    addressFields.PhoneNumber1.style.borderColor = 'red';
 }
 
 
@@ -693,24 +714,29 @@ if(!PhoneNumber) {
 if (!cardholderName) {
     newErrors.cardholderName = 'Cardholder name must be filled';
     checkoutFields.cardholderName.style.borderColor = 'red';
+    checkoutFields.cardholderName1.style.borderColor = 'red';
 }
 
 if (!cardNumber) {
     newErrors.cardNumber = 'Card number must be filled';
     checkoutFields.cardNumber.style.borderColor = 'red';
+    checkoutFields.cardNumber1.style.borderColor = 'red';
 } else if (cardNumber.length !== 16) {
     newErrors.cardNumber = 'Card number must be 16 digits';
     checkoutFields.cardNumber.style.borderColor = 'red';
+    checkoutFields.cardNumber1.style.borderColor = 'red';
 }
 
 if (!expiryDate) {
     newErrors.expiryDate = 'Expiry date must be filled';
     checkoutFields.expiryDate.style.borderColor = 'red';
+    checkoutFields.expiryDate1.style.borderColor = 'red';
 }
 
 if (!cvc) {
     newErrors.cvc = 'CVC must be filled';
     checkoutFields.cvc.style.borderColor = 'red';
+    checkoutFields.cvc1.style.borderColor = 'red';
 }
 
     return newErrors;
@@ -765,8 +791,12 @@ const handleFirstNameChange = (e) => {
 
         // Reset the border color
         const firstNameInput = document.querySelector('input[name="FirstName"]');
+        const firstNameInput1 = document.querySelector('input[name="FirstName1"]');
         if (firstNameInput) {
             firstNameInput.style.borderColor = '';
+        }
+        if (firstNameInput1) {
+            firstNameInput1.style.borderColor = '';
         }
     }
 };
@@ -791,6 +821,11 @@ const handleEmailChange = (e) => {
         if (emailInput) {
             emailInput.style.borderColor = '';
         }
+
+        const emailInput1 = document.querySelector('input[name="EmailAddress1"]');
+        if (emailInput1) {
+            emailInput1.style.borderColor = '';
+        }
     }
 };
 
@@ -801,19 +836,23 @@ const handlePhoneChange = (value) => {
 
     setPhoneNumber(value);
 
+
     if (value && value.length < 13) {
+
         setErrors(prevErrors => ({
             ...prevErrors,
             PhoneNumber: 'Enter a 10 digit valid phone number!'
         }));
-
 
         const phoneInput = document.querySelector('input[name="PhoneNumber"]');
         if (phoneInput) {
             phoneInput.style.borderColor = 'red';
         }
 
-    } else {
+    }
+    
+    else {
+
         setErrors(prevErrors => {
             const newErrors = { ...prevErrors };
             delete newErrors.PhoneNumber;
@@ -824,7 +863,13 @@ const handlePhoneChange = (value) => {
         if (phoneInput) {
             phoneInput.style.borderColor = '';
         }
+
+        const phoneInput1 = document.querySelector('input[name="PhoneNumber1"]');
+        if (phoneInput1) {
+            phoneInput1.style.borderColor = '';
+        }
     }
+
 };
 
 
@@ -1202,7 +1247,7 @@ const handleCVCChange = (e) => {
                                 placeholder='CVC'
                                 value={cvc}
                                 name="cvc1"
-                                onChange={(e) => setCvc(e.target.value)}
+                                onChange={handleCVCChange}
                                 maxLength="4"
                             />
                             {errors.cvc && <p className='error'>{errors.cvc}</p>}
@@ -1382,12 +1427,19 @@ const handleCVCChange = (e) => {
                     </div>
                 </div>
                 <div className='mobile_form_section'>
-                    <form action="" className='mobile-form'>
+                    <form action="" className='mobile-form' onSubmit={handleSubmit}>
                         <div className='one'>
-                            <input type="text" name="FirstName" placeholder='First name'/>
+                            <input type="text"
+                                placeholder='First name'
+                                value={FirstName}
+                                name="FirstName1"
+                                onChange={handleFirstNameChange}
+                                maxLength="20"
+                            />
+                            {errors.FirstName && <p className='error'>{errors.FirstName}</p>}
                         </div>
                         <div className='two'>
-                            <input type="text" name="LastName" placeholder='Last name'/>
+                            <input type="text" name="LastName" placeholder='Last name' maxLength="20"/>
                         </div>
                         <div className='three'>
                             <input type="text" name="StreetAdress" placeholder='Street Adress'/>
@@ -1402,13 +1454,24 @@ const handleCVCChange = (e) => {
                             <input type="text" name="City" placeholder='City'/>
                         </div>
                         <div className='six'>
-                            <input type="text" name="Email" placeholder='Email Address'/>
+                            <input type="text"
+                                placeholder='Email Address' 
+                                value={Email}
+                                name="EmailAddress1"
+                                onChange={handleEmailChange}
+                            />
+                            {errors.Email && <p className='error'>{errors.Email}</p>}
                         </div>
                         <div className='seven'>
-                            <PhoneInput placeholder="Enter phone number" 
-                            onChange={handlePhoneChange} 
-                            defaultCountry={currentCountry}  
-                            className='phone_input'/>
+                            <PhoneInput placeholder="Enter phone number"
+                                value={PhoneNumber}
+                                name="PhoneNumber1"
+                                onChange={handlePhoneChange} 
+                                defaultCountry={currentCountry}  
+                                className='phone_input'
+                                maxLength="12"
+                            />
+                            {errors.PhoneNumber && <p className='error'>{errors.PhoneNumber}</p>}
                         </div>
                     </form>
                 </div>

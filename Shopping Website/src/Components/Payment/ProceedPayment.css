@@ -1822,11 +1822,12 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
         align-items: center;
     }
 
+
     .mobile-form > div {
         width: 90%;
         height: 11%;
         border-style: solid;
-        border-width: 1px;
+        border-width: 0px;
         border-radius: 5px;
         border-color: rgba(95, 95, 95, 0.521);
     }
@@ -1840,7 +1841,7 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
         left: 100;
         right: 0;
         font-size: 15px;
-        border-width: 0;
+        border-width: 1;
     }
 
     .mobile-form > div:has(> input:focus) {
@@ -1889,6 +1890,11 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
         padding-left: 2%;
     }
 
+    .seven > .error {
+        width: 76%;
+        margin: 0 auto;
+    }
+
 
 
 
@@ -1908,6 +1914,11 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
         box-shadow: none;
         background-color: rgba(128, 0, 128, 0);
     }
+
+    .order_summary_button, .check_out_button {
+        background-color: rgba(192, 192, 192, 0.247);
+    }
+
 
     .lower_right_pay {
         height: auto;
@@ -2016,6 +2027,7 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
     .one-2 {
         position: relative;
         display: flex;
+        z-index: 2;
     }
 
 
@@ -2024,6 +2036,7 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
         height: 125%;
         display: flex;
         align-items: flex-end;
+        z-index: 1;
     }
 
     .error {
