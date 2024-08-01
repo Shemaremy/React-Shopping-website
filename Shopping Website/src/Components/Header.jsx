@@ -37,6 +37,27 @@ import item4 from '../images/item4.png';
 
 
 
+export const handleLinkClickMobile = (sectionClass, event) => {
+    event.preventDefault();
+
+    if (sectionClass) {
+        const mobile_panel = document.querySelector('.big-nav-panel-mobile');
+        const menu_btn = document.querySelector('.hamburger');
+        const mobile_menu = document.querySelector('.mobile_nav');
+        const body_fixed = document.querySelector('body');
+        
+        mobile_panel.classList.remove('is-active');
+        menu_btn.classList.remove('is-active');
+        mobile_menu.classList.remove('is-active');
+        body_fixed.style.overflowY = 'auto';
+
+        const section = document.querySelector(`.${sectionClass}`);
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+};
+
+
+
 
 
 
@@ -278,11 +299,7 @@ const handleSuggestionClick = (name) => {
     const mainer = document.querySelector('.B');
     const element = mainer.querySelector(`[data-name="${name}"]`);
     if (element) {
-
-        element.scrollIntoView({ behavior: 'smooth' });  
-        
-    } else {
-        console.warn(`Element with data-name="${name}" not found.`);
+        element.scrollIntoView({ behavior: 'smooth' }); 
     }
 };
 
@@ -701,11 +718,37 @@ const cartButtonhandleMobile = (
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//--------------------------------- HANDLING THE BURGER WHEN CLICKED -----------------------------------
+//--------------------------------- HANDLING THE BURGER WHEN CLICKED -----------------------------------
+//--------------------------------- HANDLING THE BURGER WHEN CLICKED -----------------------------------
+
 // When the burger is clicked, this is called
 const toggleMobileMenu = () => {
     const menu_btn = document.querySelector('.hamburger');
     const mobile_menu = document.querySelector('.mobile_nav');
-    const test_panel = document.querySelector('.big-nav-panel-mobile');
+    const mobile_panel = document.querySelector('.big-nav-panel-mobile');
     const body_fixed = document.querySelector('body');
 
     if (menu_btn) {
@@ -716,9 +759,9 @@ const toggleMobileMenu = () => {
         mobile_menu.classList.toggle('is-active');
     }
 
-    if (test_panel) {
-        test_panel.classList.toggle('is-active');
-        if (test_panel.classList.contains('is-active')) {
+    if (mobile_panel) {
+        mobile_panel.classList.toggle('is-active');
+        if (mobile_panel.classList.contains('is-active')) {
             body_fixed.style.overflowY = 'hidden';
         } else {
             body_fixed.style.overflowY = 'auto';
@@ -728,6 +771,39 @@ const toggleMobileMenu = () => {
 };
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//------------------------- HANDLES WHEN THE MOBILE SEARCH BUTTON IS CLICKED ---------------------
+//------------------------- HANDLES WHEN THE MOBILE SEARCH BUTTON IS CLICKED ---------------------
+//------------------------- HANDLES WHEN THE MOBILE SEARCH BUTTON IS CLICKED ---------------------
+
+
+const handleMobileSearch = () => {
+    const rightPart = document.querySelector('.right_part_mobile');
+    const theSearch = document.querySelector('.magnify-glass');
+    const theInput = document.querySelector('.mobile-search-input');
+
+    if (rightPart) {
+        rightPart.classList.add('is-active');
+        theInput.classList.add('is-active');
+    }
+
+    
+}
 
 
 
@@ -789,6 +865,10 @@ const toggleMobileMenu = () => {
                         <h4 className="mobile_verve_nav">Verve.</h4>
                     </div>
                     <div className="right_part_mobile">
+                        <div className="search_mobile_container" onClick={handleMobileSearch}>
+                            <i className="magnify-glass fa-solid fa-magnifying-glass"></i>
+                            <input className="mobile-search-input" maxLength={15} placeholder="Search ..." type="text" value={searchTerm} onChange={handleSearchChange} />
+                        </div>
                         {cartButtonhandleMobile}
                     </div>
                 </div>
@@ -803,6 +883,17 @@ const toggleMobileMenu = () => {
                             <Slider {...settings}>
                                 {highlightItem}
                             </Slider>       
+                        </div>
+                        <div className="in_the_sugg_mobile">
+                            {suggestions.length > 0 && (
+                                <div className="suggestions-container">
+                                    {suggestions.map((suggestion, index) => (
+                                        <div key={index} className="suggestion-item" onClick={() => handleSuggestionClick(suggestion.name)}>
+                                            <p className="suggestion_name">{suggestion.name}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}                            
                         </div>
                     </div>
                     <div className="Right_part_2">

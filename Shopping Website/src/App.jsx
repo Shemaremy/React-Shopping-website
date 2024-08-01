@@ -2,6 +2,9 @@ import React, { useEffect } from 'react'
 import A from './Components/Header'
 import B from './Components/Main'
 import C from './Components/Footer'
+
+import {handleLinkClickMobile} from './Components/Header'
+
 import { BrowserRouter as Router, Route, Routes, useLocation} from 'react-router-dom';
 import ProceedPayment from './Components/Payment/ProceedPayment';
 
@@ -44,6 +47,17 @@ function AppRoutes() {
 
   }, [location.pathname]);
 
+
+
+
+
+
+
+
+
+
+
+
   return (
     <Routes>
       <Route path="/" element={
@@ -51,7 +65,38 @@ function AppRoutes() {
         <A />
         <B />
         <C />
-        <div className="big-nav-panel-mobile"></div>
+        <div className="big-nav-panel-mobile">
+          <div className='main-nav-panel'>
+            <div className='list-container'>
+              <div className='main_lists'>
+                <div className='sect-1'>
+                  <div className='user-profile-container'>
+                    <i class="fa-solid fa-user"></i>
+                  </div>
+                  <div className='sign-in-container'>
+                    <h3 className='create-account-header'>Create account</h3>
+                    <h3 className='sign-in-header'>Sign in</h3>
+                  </div>
+                </div>
+                <div className='sect-2'>
+                  <h4 onClick={(e) => handleLinkClickMobile('B', e)}>Our products <i className="fa-solid fa-chevron-right"></i></h4>
+                </div>
+                <div className='sect-3'>
+                  <h4 onClick={(e) => handleLinkClickMobile('Our_picks_container', e)}>Our picks <i className="fa-solid fa-chevron-right"></i></h4>
+                </div>
+                <div className='sect-4'>
+                  <h4 onClick={(e) => handleLinkClickMobile('Upper-part-trend', e)}>Trending items <i className="fa-solid fa-chevron-right"></i></h4>
+                </div>
+                <div className='sect-5'>
+                  <h4 onClick={(e) => handleLinkClickMobile('C', e)}>About us <i className="fa-solid fa-chevron-right"></i></h4>
+                </div>
+                <div className='sect-6'>
+                  <h4 onClick={(e) => handleLinkClickMobile('C', e)}>Contact us <i className="fa-solid fa-chevron-right"></i></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         </>}></Route>
       <Route path="/payment" element={<ProceedPayment />}></Route>
     </Routes>
