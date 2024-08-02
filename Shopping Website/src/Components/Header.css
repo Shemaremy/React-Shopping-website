@@ -1045,176 +1045,7 @@ a:hover {
 
 
 
-
-
-@media (min-width: 768px) and (max-width: 980px) {
-  .Left_part1 {
-    width: 50%;
-  }
-
-  .Name_of_company {
-    width: 40%;
-  }
-
-  .desk_links {
-    width: 70%;
-  }
-
-  a {
-    font-size: 11px;
-    padding: 0;
-  }
-
-  .Right_part1 {
-    width: 33%;
-  }
-
-  .top_search_container {
-    height: 80%;
-    width: 90%;
-  }
-
-  .search_items_input {
-    font-size: 10px;
-  }
-
-  .Search_ico {
-    font-size: 10px;
-    color: rgb(173, 173, 173);
-  }
-
-  .User_ico {
-    font-size: 7px;
-    padding: 6px;
-  }
-
-  .cart_ico {
-    font-size: 16px;
-    padding: 6px;
-  }
-  
-  .items_counter {
-    font-size: 6px;
-    padding: 2px;
-    padding-left: 4px;
-    padding-right: 4px;
-  }
-
-}
-
-
-
-@media (min-width: 560px) and (max-width: 767px){
-  .left_part_mobile {
-    width: 30%;
-  }
-}
-
-
-@media (max-width: 450px){
-  .mobile_verve_nav {
-    font-size: 25px;
-    font-weight: 400;
-  }
-
-  .burger_container {
-    width: 35px;
-  }
-
-  .hamburger{
-    width: 25px;
-  }
-
-  .hamburger .bar, 
-  .hamburger:after, 
-  .hamburger:before {
-    height: 1px;
-    margin: 4px 0px;
-  }
-
-
-
-  
-.hamburger.is-active:before {
-	transform: rotate(-45deg) translate(-8px, 2px);
-}
-
-.hamburger.is-active:after {
-	transform: rotate(45deg) translate(-8px, -2px);
-}
-
-
-
-  .cart_ico_mobile {
-    font-size: 20px;
-  }
-
-  .items_counter_mobile {
-    font-size: 7px;
-  }
-  
-}
-
-
-
-@media (max-width: 280px){
-  .burger_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .mobile_verve_nav {
-    font-size: 20px;
-  }
-
-  .burger_container {
-    width: 35px;
-  }
-
-  .hamburger {
-    width: 20px;
-  }
-
-  .hamburger .bar, 
-  .hamburger:after, 
-  .hamburger:before {
-    height: 0.5px;
-    margin: 3px 0px;
-  }
-
-  .cart_ico_mobile {
-    font-size: 16px;
-  }
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*----------------- My phone nav -----------------------------*/
 
 @media (max-width: 767px) {
 
@@ -1603,6 +1434,9 @@ a:hover {
   }
   
   .right_part_mobile.is-active .search_mobile_container {
+    width: 75%;
+    height: 40%;
+    padding: 0;
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
@@ -1611,13 +1445,7 @@ a:hover {
     overflow: hidden;
     border-radius: 5px;
   }
-  
-  .right_part_mobile.is-active .search_mobile_container {
-    padding: 0;
-    width: 75%;
-    height: 40%;
-  }
-  
+    
   
   .right_part_mobile.is-active .magnify-glass {
     color: black;
@@ -1653,12 +1481,13 @@ a:hover {
     position: absolute;
     position: fixed;
     z-index: 0;
-    width: 60%;
+    width: 55%;
     height: auto;
     display: flex;
     z-index: 1000;
     justify-content: center;
     margin-top: 80px;
+    margin-right: 20px;
   }
 
   .suggestions-container {
@@ -1669,6 +1498,222 @@ a:hover {
 
   
 }
+
+
+
+
+
+
+
+
+/*------------------- Below my phone (nav) --------------------------*/
+
+
+
+@media (min-width: 768px) and (max-width: 980px) {
+  .Left_part1 {
+    width: 50%;
+  }
+
+  .Name_of_company {
+    width: 40%;
+  }
+
+  .desk_links {
+    width: 70%;
+  }
+
+  a {
+    font-size: 11px;
+    padding: 0;
+  }
+
+  .Right_part1 {
+    width: 33%;
+  }
+
+  .top_search_container {
+    height: 80%;
+    width: 90%;
+  }
+
+  .search_items_input {
+    font-size: 10px;
+  }
+
+  .Search_ico {
+    font-size: 10px;
+    color: rgb(173, 173, 173);
+  }
+
+  .User_ico {
+    font-size: 7px;
+    padding: 6px;
+  }
+
+  .cart_ico {
+    font-size: 16px;
+    padding: 6px;
+  }
+  
+  .items_counter {
+    font-size: 6px;
+    padding: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+}
+
+
+
+@media (min-width: 560px) and (max-width: 767px){
+  .left_part_mobile {
+    width: 30%;
+  }
+}
+
+
+@media (max-width: 450px){
+  .mobile_verve_nav {
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+  .burger_container {
+    width: 35px;
+  }
+
+  .hamburger{
+    width: 25px;
+  }
+
+  .hamburger .bar, 
+  .hamburger:after, 
+  .hamburger:before {
+    height: 1px;
+    margin: 4px 0px;
+  }
+
+
+
+  
+.hamburger.is-active:before {
+	transform: rotate(-45deg) translate(-8px, 2px);
+}
+
+.hamburger.is-active:after {
+	transform: rotate(45deg) translate(-8px, -2px);
+}
+
+
+
+  .cart_ico_mobile {
+    font-size: 20px;
+  }
+
+  .items_counter_mobile {
+    font-size: 7px;
+  }
+  
+}
+
+@media (max-width: 380px) {
+  .mobile_verve_nav {
+    font-size: 25px;
+  }
+
+  .left_part_mobile {
+    width: 38%;
+  }
+
+  .right_part_mobile.is-active {
+    width: 55%;
+  }
+}
+
+@media (max-width: 320px) {
+  .mobile_verve_nav {
+    font-size: 25px;
+  }
+
+  .left_part_mobile {
+    width: 40%;
+  }
+
+  .right_part_mobile.is-active {
+    width: 55%;
+  }
+
+  .magnify-glass {
+    font-size: 17px;
+  }
+
+  .cart_ico_mobile {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 280px){
+  .burger_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mobile_verve_nav {
+    font-size: 20px;
+  }
+
+  .burger_container {
+    width: 35px;
+  }
+
+  .hamburger {
+    width: 20px;
+  }
+
+  .hamburger .bar, 
+  .hamburger:after, 
+  .hamburger:before {
+    height: 0.5px;
+    margin: 3px 0px;
+  }
+
+  .cart_ico_mobile {
+    font-size: 16px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*------------------------------------ END OF NAVIGATION SECTION ---------------------------------*/
 /*------------------------------------ END OF NAVIGATION SECTION ---------------------------------*/
@@ -1834,8 +1879,8 @@ a:hover {
 
   .Add_to_cart_1 {
     width: 100%;
-    padding: 3px;
-    font-size: 8px;
+    padding: 5px;
+    font-size: 6px;
   }
 
   .The_shoe_container {
@@ -2285,7 +2330,8 @@ a:hover {
   }
 
   .Add_to_cart_1 {
-    font-size: 5px;
+    font-size: 7px;
+    padding: 4px;
   }
 
 }
@@ -2309,7 +2355,8 @@ a:hover {
   }
 
   .Add_to_cart_1 {
-    font-size: 5px;
+    font-size: 6px;
+    padding: 4px;
   }
 
 }

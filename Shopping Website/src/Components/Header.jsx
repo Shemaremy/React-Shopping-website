@@ -792,9 +792,8 @@ const toggleMobileMenu = () => {
 //------------------------- HANDLES WHEN THE MOBILE SEARCH BUTTON IS CLICKED ---------------------
 
 
-const handleMobileSearch = () => {
+const handleMobileSearch = (event) => { 
     const rightPart = document.querySelector('.right_part_mobile');
-    const theSearch = document.querySelector('.magnify-glass');
     const theInput = document.querySelector('.mobile-search-input');
 
     if (rightPart) {
@@ -802,14 +801,27 @@ const handleMobileSearch = () => {
         theInput.classList.add('is-active');
     }
 
-    
 }
 
 
 
+const handleSuggestionClickMobile = (name) => {
+    handleSearchTermChange(name);
+    setSuggestions([]);
+    
+    const mainer = document.querySelector('.mobile-products-div');
+    const element = mainer.querySelector(`[data-name="${name}"]`);
+    
+    const rightPart = document.querySelector('.right_part_mobile');
+    const theInput = document.querySelector('.mobile-search-input');
 
-
-
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' }); 
+        
+        rightPart.classList.remove('is-active');
+        theInput.classList.remove('is-active');
+    }
+};
 
 
 
@@ -865,9 +877,13 @@ const handleMobileSearch = () => {
                         <h4 className="mobile_verve_nav">Verve.</h4>
                     </div>
                     <div className="right_part_mobile">
-                        <div className="search_mobile_container" onClick={handleMobileSearch}>
-                            <i className="magnify-glass fa-solid fa-magnifying-glass" onClick={handleSearchClick}></i>
-                            <input className="mobile-search-input" maxLength={15} placeholder="Search ..." type="text" value={searchTerm} onChange={handleSearchChange} />
+                        <div className="search_mobile_container">
+                            <i className="magnify-glass fa-solid fa-magnifying-glass" onClick={handleMobileSearch}></i>
+                            <input className="mobile-search-input" 
+                                maxLength={15} placeholder="Search ..." 
+                                type="text" value={searchTerm} 
+                                onChange={handleSearchChange} 
+                            />
                         </div>
                         {cartButtonhandleMobile}
                     </div>
@@ -888,7 +904,7 @@ const handleMobileSearch = () => {
                             {suggestions.length > 0 && (
                                 <div className="suggestions-container">
                                     {suggestions.map((suggestion, index) => (
-                                        <div key={index} className="suggestion-item" onClick={() => handleSuggestionClick(suggestion.name)}>
+                                        <div key={index} className="suggestion-item" onClick={() => handleSuggestionClickMobile(suggestion.name)}>
                                             <p className="suggestion_name">{suggestion.name}</p>
                                         </div>
                                     ))}

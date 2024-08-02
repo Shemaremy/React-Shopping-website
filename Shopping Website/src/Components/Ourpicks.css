@@ -690,7 +690,7 @@
 
 /*----------------------------------- My Phone --------------------------------------------*/
 
-@media (min-width: 0px) and (max-width: 1024px) {
+@media (min-width: 0px) and (max-width: 767px) {
 
     .Our_picks_container {
         display: flex;
@@ -761,6 +761,8 @@
         width: 97%;
         margin: 0 auto;
         text-align: center;
+        font-size: 9px;
+        font-family: sans-serif;
     }
 
     .Picks_wardrobe {
