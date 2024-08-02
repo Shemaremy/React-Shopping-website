@@ -844,8 +844,8 @@ const handleMobileSearch = () => {
                         <div className="Input_container_one">
                             <div className="top_search_container">
                                 <input className="search_items_input" type="text" placeholder="Search..." value={searchTerm} onChange={handleSearchChange} />
-                                <div className="Search-icon-container" onClick={handleSearchClick}>
-                                    <i className="Search_ico fas fa-search"></i>
+                                <div className="Search-icon-container" >
+                                    <i className="Search_ico fas fa-search" onClick={handleSearchClick}></i>
                                 </div>
                             </div>
                         </div>
@@ -866,7 +866,7 @@ const handleMobileSearch = () => {
                     </div>
                     <div className="right_part_mobile">
                         <div className="search_mobile_container" onClick={handleMobileSearch}>
-                            <i className="magnify-glass fa-solid fa-magnifying-glass"></i>
+                            <i className="magnify-glass fa-solid fa-magnifying-glass" onClick={handleSearchClick}></i>
                             <input className="mobile-search-input" maxLength={15} placeholder="Search ..." type="text" value={searchTerm} onChange={handleSearchChange} />
                         </div>
                         {cartButtonhandleMobile}
