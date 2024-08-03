@@ -5,7 +5,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setSearchTerm } from './Redux store/actions';
 
 
-import Preloader from "../Preloader";
+import {Preloader} from "../Preloader";
+import { CheckOutPreloader } from "../Preloader";
 
 
 import { Employees } from "./Main";
@@ -856,6 +857,78 @@ const handleSuggestionClickMobile = (name) => {
 
 
 
+//------------------------------------------ CHECK OUT CONTENT ----------------------------------------------------
+//------------------------------------------ CHECK OUT CONTENT ----------------------------------------------------
+//------------------------------------------ CHECK OUT CONTENT ----------------------------------------------------
+
+
+const CheckOutContent = (
+    <div className="Choose_product_container">
+        <div className="One">
+            {imgloading && <CheckOutPreloader/>}
+            <img className="img_1" 
+                src={item1} alt="1" 
+                onLoad={handleImageLoad}
+                style={{ display: imgloading ? 'none' : 'flex' }}
+            />
+        </div>
+        <div className="Two">
+            {imgloading && <CheckOutPreloader/>}
+            <img className="img_2" 
+                src={item2} alt="2" 
+                onLoad={handleImageLoad}
+                style={{ display: imgloading ? 'none' : 'block' }}
+            />
+        </div>
+        <div className="Three">
+            {imgloading && <CheckOutPreloader/>}
+            <img className="img_3" 
+                src={item3} alt="3" 
+                onLoad={handleImageLoad}
+                style={{ display: imgloading ? 'none' : 'block' }}
+            />
+        </div>
+        <div className="Four">
+            {imgloading && <CheckOutPreloader/>}
+            <img className="img_4" 
+                src={item4} alt="4" 
+                onLoad={handleImageLoad}
+                style={{ display: imgloading ? 'none' : 'block' }}
+            />
+        </div>
+    </div>
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     return(
         <div className="A">
             <nav>
@@ -936,18 +1009,8 @@ const handleSuggestionClickMobile = (name) => {
                     <div className="Right_part_2">
                         <div className="Try_our_new_container">
                             <p className="try_our_new_paragraph" >Check out our new products</p>
-                            <div className="Choose_product_container">
-                                <div className="One"><img className="img_1" src={item1} alt="1" /></div>
-                                <div className="Two"><img className="img_2" src={item2} alt="2" /></div>
-                                <div className="Three"><img className="img_3" src={item3} alt="3" /></div>
-                                <div className="Four"><img className="img_4" src={item4} alt="4" /></div>
-                            </div>
-                            <div className="Choose_product_container">
-                                <div className="One"><img className="img_1" src={item1} alt="1" /></div>
-                                <div className="Two"><img className="img_2" src={item2} alt="2" /></div>
-                                <div className="Three"><img className="img_3" src={item3} alt="3" /></div>
-                                <div className="Four"><img className="img_4" src={item4} alt="4" /></div>
-                            </div>
+                            {CheckOutContent}
+                            {CheckOutContent}
                             <p className="see-more-mobile">View more <i class="fa-solid fa-angles-right"></i></p>
                         </div>
                         <div className="in_the_sugg">

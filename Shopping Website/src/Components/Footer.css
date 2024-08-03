@@ -631,6 +631,19 @@ form {
 
 /*---------------------------------- Below my phone ----------------------------------------*/
 
+
+@media (max-width: 420px) {
+
+    .phone_and_email_container {
+        height: 50%;
+    }
+
+    .phone, .email {
+        font-size: 10px;
+    }
+}
+
+
 @media (max-width: 380px) {
     .about_us_p {
         font-size: 10px;

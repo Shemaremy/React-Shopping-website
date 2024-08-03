@@ -697,10 +697,12 @@ a:hover {
 
 .Try_our_new_container {
   width: 100%;
-  height: auto;
+  height: 80%;
   background-color: rgba(210, 105, 30, 0);
   cursor: pointer;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .Choose_product_container {
@@ -748,8 +750,9 @@ a:hover {
 
 
 
+
 .One, .Two, .Three, .Four {
-  height: auto;
+  height: 85%;
   width: 23%;
   background-color: rgba(165, 42, 42, 0.445);
   display: flex;

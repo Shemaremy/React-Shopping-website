@@ -17,7 +17,7 @@ import {
 } from '@agney/react-loading';
 
 
-const Preloader = () => {
+export const Preloader = () => {
 
   const { containerProps, indicatorEl } = useLoading({
     loading: true,
@@ -31,7 +31,21 @@ const Preloader = () => {
   );
 };
 
-export default Preloader;
+
+
+export const CheckOutPreloader = () => {
+
+  const { containerProps, indicatorEl } = useLoading({
+    loading: true,
+    indicator: <ThreeDots width="40" color="Gray" />,
+  });
+
+  return (
+      <section {...containerProps}>
+        {indicatorEl}
+      </section>
+  );
+};
 
 
 
