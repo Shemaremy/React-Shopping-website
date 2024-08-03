@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useCounter } from "./Redux store/Counter";
-import MyModal from "./cartPanel/MyModal";
+
+import { OurproductsPreloader } from "../Preloader";
 
 import OurPicks from "./Ourpicks";
 import TrendCards from "./TrendCards";
@@ -94,6 +95,31 @@ function B() {
 
 
 
+
+
+
+
+
+
+// ------------------------------------------- IMAGE LOADERS -----------------------------------------------
+// ------------------------------------------- IMAGE LOADERS -----------------------------------------------
+// ------------------------------------------- IMAGE LOADERS -----------------------------------------------
+// ------------------------------------------- IMAGE LOADERS -----------------------------------------------
+
+
+const [imgloading, setimgLoading] = useState(true);
+
+const handleImageLoad = () => {
+    setimgLoading(false);
+};
+
+
+
+const Imageloader = (
+    <div className="loading-container">
+        <OurproductsPreloader/>
+    </div>
+);
 
 
 
@@ -368,7 +394,12 @@ const settings = {
         <>
             <div className="draftUp">
                 <div className="product_images_first_section">
-                    <img src={product.image} className="Shoes" alt="one" />
+                {imgloading && (Imageloader)}
+                <img src={product.image} 
+                    className="Shoes" alt="one" 
+                    onLoad={handleImageLoad}
+                    style={{ display: imgloading ? 'none' : 'block' }}
+                />
                 </div>
             </div>
             <div className="draftDown">
@@ -636,7 +667,7 @@ const settings = {
                                 </div>
                             </div>
                             <div className="mobile-products-div">
-                                {mobileProductsOne}
+                                {TrendDraftOne}
                             </div>
                         </div>
                         <div className="products_section_two">
@@ -648,7 +679,7 @@ const settings = {
                                 </div>
                             </div>   
                             <div className="mobile-products-div">
-                                {mobileProductsTwo}
+                                {TrendDraftTwo}
                             </div>              
                         </div>
                         <div className="mobile-view-more">

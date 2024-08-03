@@ -561,6 +561,13 @@ a:hover {
   margin-left: 8px;
 }
 
+.loading-container {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
 .The_shoe_container {

@@ -5,6 +5,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setSearchTerm } from './Redux store/actions';
 
 
+import Preloader from "../Preloader";
+
+
 import { Employees } from "./Main";
 
 import MyModal from "./cartPanel/MyModal";
@@ -112,8 +115,19 @@ const handleAddToCartClick = async (product) => {
 };
 
 
+const [imgloading, setimgLoading] = useState(true);
+
+const handleImageLoad = () => {
+    setimgLoading(false);
+};
 
 
+
+const Imageloader = (
+    <div className="loading-container">
+        <Preloader/>
+    </div>
+);
 
 
 
@@ -567,7 +581,14 @@ const card4Content = (product) =>(
             </button>
         </div>
         <div className="The_shoe_container">
-            <img src={product.image} className="Shoe_itself" alt={product.name} />
+            {imgloading && (Imageloader)}
+            <img
+                src={product.image}
+                className="Shoe_itself"
+                alt={product.name}
+                onLoad={handleImageLoad}
+                style={{ display: imgloading ? 'none' : 'block' }}
+            />
         </div>
     </>
 );

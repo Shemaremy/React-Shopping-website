@@ -1,6 +1,5 @@
-import React, { useState }  from "react";
+import React, { useState, useEffect }  from "react";
 import { useCounter } from "./Redux store/Counter";
-import MyModal from "./cartPanel/MyModal";
 
 import "./Ourpicks.css";
 
@@ -10,6 +9,8 @@ import "slick-carousel/slick/slick-theme.css";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+
+import { OurPicksPreloader } from "../Preloader";
 
 /*-------------------------------------------- SUMMER CLOTHES -----------------------------------------------------------------------*/
 
@@ -273,6 +274,39 @@ AOS.init({
 
 
 
+// --------------------------------------- IMAGE LOADERS --------------------------------------------
+// --------------------------------------- IMAGE LOADERS --------------------------------------------
+// --------------------------------------- IMAGE LOADERS --------------------------------------------
+
+
+
+const [imgloading, setimgLoading] = useState(true);
+
+const handleImageLoad = () => {
+    setimgLoading(false);
+};
+
+
+const Imageloader = (
+    <div className="loading-container">
+        <OurPicksPreloader/>
+    </div>
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -331,7 +365,13 @@ AOS.init({
             <Slider {...innersettings} className="wardrobe_slider">
                 {summerWardrobeItems.map((product, index) => (
                     <div className="card_2" key={index}>
-                        <img src={product.image} alt={product.name}/>
+                        {imgloading && (Imageloader)}
+                        <img src={product.image} 
+                            alt={product.name}
+                            onLoad={handleImageLoad}
+                            style={{ display: imgloading ? 'none' : 'block' }}
+                        />
+                        
                         <div className="item_purchase_container">
                             <div className="name_price_pick">
                                 <h3 className="name_pick">{product.name}</h3>
@@ -549,7 +589,12 @@ AOS.init({
         <Slider {...innersettings} className="wardrobe_slider">
             {winterWardrobeItems.map((product, index) => (
                 <div className="card_2" key={index}>
-                    <img src={product.image} alt={product.name} />
+                    {imgloading && (Imageloader)}
+                    <img src={product.image} 
+                        alt={product.name} 
+                        onLoad={handleImageLoad}
+                        style={{ display: imgloading ? 'none' : 'block' }}
+                    />                    
                     <div className="item_purchase_container">
                         <div className="name_price_pick">
                             <h3 className="name_pick">{product.name}</h3>

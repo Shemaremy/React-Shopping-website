@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useCounter } from "./Redux store/Counter";
-import MyModal from "./cartPanel/MyModal";
+
+import { TrendsPreloader } from "../Preloader";
+
 import './TrendCards.css';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -56,6 +58,18 @@ const TrendCards = () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 // ------------------------------- HANDLE ADD TO CART LOADER -----------------------------------------
 // ------------------------------- HANDLE ADD TO CART LOADER -----------------------------------------
 // ------------------------------- HANDLE ADD TO CART LOADER -----------------------------------------
@@ -88,12 +102,74 @@ const handleAddToCartClick = async (product) => {
 
 
 
-// ------------------------------------------------------------ OUR PRODUCTS CARDS -------------------------------------------------
-// ------------------------------------------------------------ OUR PRODUCTS CARDS -------------------------------------------------
-// ------------------------------------------------------------ OUR PRODUCTS CARDS -------------------------------------------------
-// ------------------------------------------------------------ OUR PRODUCTS CARDS -------------------------------------------------
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ------------------------------------------------------------ IMAGE LOADERS -------------------------------------------------
+// ------------------------------------------------------------ IMAGE LOADERS -------------------------------------------------
+// ------------------------------------------------------------ IMAGE LOADERS -------------------------------------------------
+
+
+const [imgloading, setimgLoading] = useState(true);
+
+const handleImageLoad = () => {
+    setimgLoading(false);
+};
+
+
+
+const Imageloader = (
+    <div className="loading-container">
+        <TrendsPreloader/>
+    </div>
+);
 
 
 
@@ -149,7 +225,14 @@ const handleAddToCartClick = async (product) => {
     // The html content for the card
     const card2Content = (product) => (
         <>
-            <div className="card_upper"><img className="Trend-img" src={product.image} alt={product.name} /></div>
+            <div className="card_upper">
+                {imgloading && (Imageloader)}
+                <img className="Trend-img" src={product.image} 
+                    alt={product.name}
+                    onLoad={handleImageLoad} 
+                    style={{ display: imgloading ? 'none' : 'block' }}
+                />
+            </div>
             <div className="card_lower">
                 <h2 className="name">{product.name}</h2>
                 <p className="price">{(product.price / 1000)},000 Frw</p>
