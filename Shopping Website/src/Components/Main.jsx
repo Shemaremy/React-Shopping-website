@@ -387,7 +387,6 @@ const settings = {
                         >
                             {loading[product.name] ? <i className="cart_icon fa-solid fa-spinner"></i> : <i className="cart_icon fa fa-cart-plus" aria-hidden="true"></i>}
                         </p>
-                        <MyModal product={Employees} />
                     </div>
                 </div>
             </div>
@@ -442,7 +441,6 @@ const settings = {
                         >
                             {loading[product.name] ? <i className="cart_icon fa-solid fa-spinner"></i> : <i className="cart_icon fa fa-cart-plus" aria-hidden="true"></i>}
                         </p>
-                        <MyModal product={Employees} />
                     </div>
                 </div>
             </div>

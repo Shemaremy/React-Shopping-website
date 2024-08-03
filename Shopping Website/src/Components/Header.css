@@ -277,12 +277,14 @@ a:hover {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  font-size: 7px;
+  font-size: 8px;
   position: absolute;
   bottom: 100;
   top: 0;
   left: 100;
   right: 0;
+  font-family: sans-serif;
+  font-weight: 100;
 }
 
 

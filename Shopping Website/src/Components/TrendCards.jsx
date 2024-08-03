@@ -159,7 +159,6 @@ const handleAddToCartClick = async (product) => {
                 >
                     {loading[product.name] ? <i className="cart_icon fa-solid fa-spinner"></i> : 'Add to cart'}
                 </button>
-                <MyModal product={currentProduct} />
             </div>
         </>
     );
@@ -189,7 +188,7 @@ const handleAddToCartClick = async (product) => {
 
     return (
         <>
-            <div className="main_trending_part">
+            <div className="main_trending_part" data-aos="fade-up">
                 <div className="slider-container-2">
                     <Slider {...settings}>
                         {slider}
@@ -206,35 +205,35 @@ const handleAddToCartClick = async (product) => {
                 </div>
                 <div className="service-container">
                     <div className="svg-container">
-                        <div className="contain2">
+                        <div className="contain2" data-aos="fade-up">
                             <div className="svg-real"><img className="svg" src={greatValue} alt="" /></div>
                             <div className="svg_words">
                                 <h5 className="svg_title">Great Value</h5>
                                 <p className="svg_paragraph">Verve offers various of items to select, promotions, and personalized products.</p>
                             </div>
                         </div>
-                        <div className="contain2">
+                        <div className="contain2" data-aos="fade-up">
                             <div className="svg-real"><img className="svg" src={world} alt="" /></div>
                             <div className="svg_words">
                                 <h5 className="svg_title">Worldwide Delivery</h5>
                                 <p className="svg_paragraph">Supported in more than 10 countries. Register to get 10,000Frw coupons.</p>
                             </div>
                         </div>
-                        <div className="contain2">
+                        <div className="contain2" data-aos="fade-up">
                             <div className="svg-real"><img className="svg" src={pay} alt="" /></div>
                             <div className="svg_words">
                                 <h5 className="svg_title">Safe Payment</h5>
                                 <p className="svg_paragraph">Pay with popular and secure payment methods.</p>
                             </div>
                         </div>
-                        <div className="contain2">
+                        <div className="contain2" data-aos="fade-up">
                             <div className="svg-real"><img className="svg" src={confidence} alt="" /></div>
                             <div className="svg_words">
                                 <h5 className="svg_title">Shop with Confidence:</h5>
                                 <p className="svg_paragraph">Buy high quality and popular products with verve that you won't regret.</p>
                             </div>
                         </div>
-                        <div className="contain2">
+                        <div className="contain2" data-aos="fade-up">
                             <div className="svg-real"><img className="svg" src={chat} alt="" /></div>
                             <div className="svg_words">
                                 <h5 className="svg_title">Contact Support</h5>
