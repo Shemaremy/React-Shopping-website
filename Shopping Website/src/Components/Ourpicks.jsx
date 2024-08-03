@@ -116,8 +116,8 @@ function OurPicks () {
                 settings: {
                     infinite: true,
                     dots: true,
-                    autoplay: true,
-                    speed: 1000,
+                    autoplay: false,
+                    speed: 500,
                     autoplaySpeed: 8000,
                     cssEase: "linear"
                 }
@@ -394,7 +394,7 @@ const Imageloader = (
     // Summer slider
     const slidingSummer = (
         <Slider {...mainsettings}>
-            <div className="In_the_rest_4" data-aos="fade-left">
+            <div className="In_the_rest_4">
                 <div className="Short_Explanation_container">
                     <p className="Try_on_these">Why don't you try these :</p>
                     <p className="short_exp_p"><i>A Polo T Shirt would match correctly on these shorts especially if you prefer shorts for the summer</i></p>
@@ -777,7 +777,7 @@ const Imageloader = (
                 <div className={!isSummer ? "Winter winter-btn" : 'Winter'} onClick={() => setIsSummer(false)}><i className="fa-solid fa-cloud"></i></div>
             </div>
             <div className="the_rest_2">
-                <div className="the_rest_3">
+                <div className="the_rest_3" data-aos="fade-left">
                     <div className="Question_header_container">
                         <p className="question_header">{isSummer ? "Summer vacation ?" : "Facing winter chills ?"}</p>
                     </div>

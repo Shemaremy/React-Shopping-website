@@ -713,3 +713,21 @@
 
 
 
+@media (max-width: 450px) {
+    .mobile-trends {
+        flex-direction: column;
+    }
+
+    .Trend-2 {
+        height: 16%;
+        width: 90%;
+    }
+
+    .card-2 {
+        height: 100%;
+    }
+
+    .card_upper {
+        width: 100%;
+    }
+}
