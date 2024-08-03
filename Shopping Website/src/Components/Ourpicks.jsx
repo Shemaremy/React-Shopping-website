@@ -404,7 +404,11 @@ const Imageloader = (
                     <div className="mobile_picks">
                         {summerWardrobeItems.slice(0, 3).map((product, index) => (
                                 <div className="card_2" key={index}>
-                                    <img src={product.image} alt={product.name} />
+                                    {imgloading && (Imageloader)}
+                                    <img src={product.image} alt={product.name}
+                                        onLoad={handleImageLoad}
+                                        style={{ display: imgloading ? 'none' : 'block' }}
+                                    />
                                     <div className="item_purchase_container">
                                         <div className="name_price_pick">
                                             <h3 className="name_pick">{product.name}</h3>
@@ -627,7 +631,11 @@ const Imageloader = (
                     <div className="mobile_picks">
                         {winterWardrobeItems.slice(0, 3).map((product, index) => (
                                 <div className="card_2" key={index}>
-                                    <img src={product.image} alt={product.name} />
+                                    {imgloading && (Imageloader)}
+                                    <img src={product.image} alt={product.name} 
+                                        onLoad={handleImageLoad}
+                                        style={{ display: imgloading ? 'none' : 'block' }}
+                                    />
                                     <div className="item_purchase_container">
                                         <div className="name_price_pick">
                                             <h3 className="name_pick">{product.name}</h3>

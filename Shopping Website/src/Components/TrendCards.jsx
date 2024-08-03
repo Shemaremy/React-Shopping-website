@@ -246,6 +246,29 @@ const Imageloader = (
         </>
     );
 
+    const card2ContentMobile = (product) => (
+        <>
+            <div className="card_upper">
+                {imgloading && (Imageloader)}
+                <img className="Trend-img" src={product.image} 
+                    alt={product.name}
+                    onLoad={handleImageLoad} 
+                    style={{ display: imgloading ? 'none' : 'flex' }}
+                />
+            </div>
+            <div className="card_lower">
+                <h2 className="name">{product.name}</h2>
+                <p className="price">{(product.price / 1000)},000 Frw</p>
+                <button className="cart-trend" 
+                    onClick={() => handleAddToCartClick(product)}
+                    disabled={loading[product.name]}
+                >
+                    {loading[product.name] ? <i className="cart_icon fa-solid fa-spinner"></i> : 'Add to cart'}
+                </button>
+            </div>
+        </>
+    );
+
 
 
 
@@ -253,6 +276,16 @@ const Imageloader = (
     const slider = items.slice(0, 6).map((product, index) => (
         <div className="Trend-2" key={index + 1} data-name={product.name}>
             <div className="card-2">{card2Content(product)}</div>
+        </div>
+    ));
+
+
+
+
+    // Final rendering and looping
+    const MobileTrends = items.slice(0, 6).map((product, index) => (
+        <div className="Trend-2" key={index + 1} data-name={product.name}>
+            <div className="card-2">{card2ContentMobile(product)}</div>
         </div>
     ));
 
@@ -277,7 +310,7 @@ const Imageloader = (
                         {slider}
                     </Slider>
                     <div className="mobile-trends">
-                        {slider}
+                        {MobileTrends}
                     </div>
                 </div>
             </div>
