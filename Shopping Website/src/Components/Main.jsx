@@ -480,19 +480,7 @@ const settings = {
 
 
 
-    const mobileProductsOne = Employees.slice(0, 4).map((product, index) => (
-        <div className="Trend-draft" key={index + 1} data-name={product.name}>
-            <div className="card-draft">{mobileProductsDraft(product)}</div>
-        </div>
-    ));
 
-
-
-    const mobileProductsTwo = Employees.slice(4).map((product, index) => (
-        <div className="Trend-draft" key={index + 1} data-name={product.name}>
-            <div className="card-draft">{cardDraftOne(product)}</div>
-        </div>
-    ));
 
 
 

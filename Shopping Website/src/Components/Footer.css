@@ -65,19 +65,21 @@ form {
     border-top: none;
     border-left: none;
     border-right: none;
+    font-size: 11px;
     background-color: rgba(255, 255, 255, 0);
     color: rgb(177, 177, 177);
     outline: none;
     transition: width 0.6s ease-in-out;
+    padding-left: 0;
 }
 
 .footer_input:hover {
-    width: 85%;
+    width: 75%;
     border-color: rgb(87, 140, 175);
 }  
 
 .footer_input:focus {
-    width: 85%;
+    width: 75%;
     border-color: rgb(87, 140, 175);
 }  
 
@@ -149,7 +151,6 @@ form {
 .About_us_par_container {
     height: auto;
     width: 100%;
-    overflow: hidden;
     padding: 0;
     display: flex;
     justify-content: center;
@@ -164,7 +165,6 @@ form {
     color: rgb(153, 153, 153);
     font-family: sans-serif;
     text-align: center;
-    overflow: hidden;
     font-size: 11px;
     overflow-wrap: break-word;
     margin-top: 0;
@@ -641,6 +641,16 @@ form {
     .phone, .email {
         font-size: 10px;
     }
+
+    .footer_input {
+        font-size: 11px;
+    }
+
+    .about_us_p {
+        font-size: 10px;
+    }
+
+
 }
 
 
