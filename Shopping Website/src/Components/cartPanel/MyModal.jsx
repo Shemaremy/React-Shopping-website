@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 import '@fortawesome/fontawesome-free/css/all.css';
 import cartSvg from './cartSVGs/cartSvg.png';
-import './MyModal.css';
+import './Mymodal.css';
 
 
 
