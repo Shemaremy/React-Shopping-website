@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from "react";
 
+import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 import { useCounter } from "./Redux store/Counter";
 import { useSelector, useDispatch } from 'react-redux';
 import { setSearchTerm } from './Redux store/actions';
@@ -908,6 +911,13 @@ const CheckOutContent = (
 
 
 
+const navigate = useNavigate();
+const handleGotoAccounts = () => {
+    navigate('/accounts');
+};
+
+
+
 
 
 
@@ -955,7 +965,11 @@ const CheckOutContent = (
                                 </div>
                             </div>
                         </div>
-                        <div className="Icon_one"><p className="User_contain"><i className="User_ico fas fa-user"></i></p></div>
+                        <div className="Icon_one">
+                            <p className="User_contain">
+                                <i className="User_ico fas fa-user" onClick={handleGotoAccounts}></i>
+                            </p>
+                        </div>
                         <div className="cart_button_container">
                             {cartButtonhandle}
                         </div>                    

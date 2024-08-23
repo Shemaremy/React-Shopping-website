@@ -7,6 +7,7 @@ import {handleLinkClickMobile} from './Components/Header'
 
 import { BrowserRouter as Router, Route, Routes, useLocation} from 'react-router-dom';
 import ProceedPayment from './Components/Payment/ProceedPayment';
+import Accounts from './Components/Accounts/Accounts';
 
 import { Provider } from 'react-redux';
 import store from './Components/Redux store/store'
@@ -39,6 +40,16 @@ function AppRoutes() {
       } else {
         document.body.style.height = '110vh';
       }      
+      document.body.style.overflowY = 'auto';
+    } else {
+      document.body.style.overflowY = 'auto';
+      document.body.style.height = ''
+    }
+
+
+
+    if (location.pathname === '/accounts') {
+      document.body.style.height = '100vh';  
       document.body.style.overflowY = 'auto';
     } else {
       document.body.style.overflowY = 'auto';
@@ -97,8 +108,11 @@ function AppRoutes() {
             </div>
           </div>
         </div>
-        </>}></Route>
+        </>}>
+      </Route>
+
       <Route path="/payment" element={<ProceedPayment />}></Route>
+      <Route path="/accounts" element={<Accounts />}></Route>
     </Routes>
   );
 }

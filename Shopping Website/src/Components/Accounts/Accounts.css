@@ -1,0 +1,304 @@
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.Account-parent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Form-container {
+  height: auto;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(146, 146, 146, 0.082);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  border-color: rgba(128, 128, 128, 0.349);
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding: 0;
+  transition: padding 0.3s ease-in-out;
+}
+
+.upper_part {
+  height: 25%;
+  height: auto;
+  width: 100%;
+}
+
+.upper_part {
+  font-family: sans-serif;
+  font-family: monospace;
+  color: rgba(0, 0, 0, 0.63);
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 100;
+  height: 100%;
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  text-decoration: underline;
+  height: 100px;
+}
+
+
+.login_form, .Sign-up-form {
+  height: 55%;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login_form > div, .Sign-up-form > div {
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.indicator {
+  width: 80%;
+  font-family: sans-serif;
+  margin: 0;
+  font-size: 12px;
+}
+
+.input_container {
+  width: 80%;
+  height: 50px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 5px;
+  border-color: rgba(128, 128, 128, 0.349);
+  transition: border-color 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.input_container:hover {
+  border-color: rgba(0, 110, 255, 0.575)
+}
+
+.for-password {
+  position: relative;
+}
+
+.eye-container {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  top: 100;
+  bottom: 0;
+  left: 100;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.eye-container > i {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.521);
+}
+
+
+.input_container > input {
+  height: 100%;
+  width: 100%;
+  border-style: solid;
+  border-width: 0;
+  padding: 0;
+  padding-left: 2%;
+  outline: none;
+  background-color: rgba(255, 0, 0, 0);
+}
+
+
+::placeholder {
+  font-size: 12px;
+}
+
+
+.error {
+  color: red;
+  font-family: sans-serif;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 10px;
+  top: 100;
+  bottom: 0;
+  width: 80%;
+}
+
+
+.account_button {
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 0;
+  background-color: rgba(0, 0, 0, 0.562);
+  width: 400px;
+  height: 45px;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.account_button:hover {
+  background-color: rgba(0, 0, 0, 0.76);
+}
+
+
+
+
+
+
+.lower_part {
+  height: 20%;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.lower_part > p {
+  font-size: 12px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: sans-serif;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.Sign-up-form {
+  background-color: rgba(0, 128, 0, 0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------- RESPONSIVENESS -----------------------------------*/
+/*------------------------------- RESPONSIVENESS -----------------------------------*/
+/*------------------------------- RESPONSIVENESS -----------------------------------*/
+/*------------------------------- RESPONSIVENESS -----------------------------------*/
+/*------------------------------- RESPONSIVENESS -----------------------------------*/
+/*------------------------------- RESPONSIVENESS -----------------------------------*/
+/*------------------------------- RESPONSIVENESS -----------------------------------*/
+/*------------------------------- RESPONSIVENESS -----------------------------------*/
+
+
+
+
+
+
+
+/*------------------------------- My Phone -----------------------------------*/
+
+@media (max-width: 768px) {
+  body
+  .Form-container {
+    width: 98%;
+    border-width: 0;
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+  .upper_part {
+    height: auto;
+    color: rgb(59, 59, 59);
+    font-size: 1.3rem;
+  }
+
+  .indicator {
+    width: 90%;
+  }
+
+  .input_container {
+    width: 90%;
+    height: 60px;
+  }
+
+  .account_button {
+    width: 90%;
+    height: 50px;
+  }
+
+  .lower_part {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+
+
+@media (min-width: 769px) and (max-width: 1220px) {
+  .Form-container {
+    width: 90%;
+    border-width: 1;
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+  .upper_part {
+    height: 100px;
+    color: rgba(128, 128, 128, 0.76);
+  }
+
+  .indicator {
+    width: 90%;
+  }
+
+  .input_container {
+    width: 90%;
+    height: 60px;
+  }
+
+  .account_button {
+    width: 90%;
+    height: 50px;
+  }
+
+  .lower_part {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+}
