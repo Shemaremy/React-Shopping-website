@@ -17,6 +17,8 @@ const ResetPasswordForm = () => {
 
   const [loading, setLoading] = useState(false);
 
+
+
   const GlitchUrl = 'https://verve-users.glitch.me/api';
   const resetEndpoint = `${GlitchUrl}/reset-password`;
 
@@ -29,6 +31,12 @@ const ResetPasswordForm = () => {
   const handleHidePasswordTwo = () => {
     setShowPasswordTwo(!showPasswordTwo);
   };
+
+  const showDialog = (message) => {
+    setDialogMessage(message);
+    setAutoOpenDialog(true);
+  };
+  
 
   const validateForm = () => {
     const newErrors = {};

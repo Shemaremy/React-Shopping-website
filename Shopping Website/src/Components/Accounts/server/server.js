@@ -176,10 +176,8 @@ app.post('/api/reset-password', async (req, res) => {
   const { token, passwordTwo } = req.body;
 
   try {
-    console.log('Received Token:', token);
     // Verify the token
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    console.log('Decoded Token Payload:', decoded);
     const { Email } = decoded;
 
     // Find the user by email
