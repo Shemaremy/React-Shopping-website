@@ -1,8 +1,59 @@
-import React from "react";
+import React, {useState} from "react";
 import './Footer.css';
+import Dialog from "./Accounts/Dialogs/Dialog";
 
 
 function C(){ 
+
+
+    const [loading, setLoading] = useState(false);
+    const [Email, setEmail] = useState('');
+    const [Message, setMessage] = useState('');
+
+    const [autoOpenDialog, setAutoOpenDialog] = useState(false);
+    const [dialogMessage, setDialogMessage] = useState('');
+
+
+
+    // Dialog boxes for the message 
+    const showDialog = (message) => {
+        setDialogMessage(message);
+        setAutoOpenDialog(true);
+    };
+
+
+
+
+
+
+
+    const handleEmailSend = (e) => {
+        e.preventDefault();
+        setLoading(true);
+        async function loginUser() {
+            try {
+              const response = await fetch('https://verve-users.glitch.me/submit', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ Email, Message}),
+              });
+          
+              const data = await response.json();
+              setLoading(false);
+          
+              if (response.ok) {
+                showDialog('Success: Your message was sent to us successfully, Thank you!');
+              } else {
+                alert(`Error: ${data.message}`);
+                console.error('Login failed:', data.message);
+              }
+            } catch (error) {
+              console.error('Error:', error);
+              alert('Error: Something went wrong. Please try again.');
+            }
+        }
+        loginUser();
+    };
     
     return(
         <div className="C">
@@ -12,10 +63,26 @@ function C(){
                         <p className="Tell_us_par">Tell us you were here / report an issue</p>
                     </div>
                     <div className="Form_container">
-                        <form action="">
-                            <input className="footer_input" type="text" placeholder="Name"/>
-                            <input className="footer_input" type="text" placeholder="Your message"/>
-                            <button className="Send_footer_button">Send</button> 
+                        <form onSubmit={handleEmailSend}>
+                            <input className="footer_input" 
+                                type="text" placeholder="Email"
+                                name="Email"
+                                value={Email} 
+                                onChange={(e) => setEmail(e.target.value)}
+                                maxLength={60}
+                                required
+                            />
+                            <input className="footer_input" 
+                                type="text" placeholder="Your message"
+                                name="Message"
+                                value={Message} 
+                                onChange={(e) => setMessage(e.target.value)}
+                                maxLength={500}
+                                required
+                            />
+                            <button className="Send_footer_button" type="submit">
+                                {loading ? <i className="fa-solid fa-spinner fa-spin"></i> : 'Send'}
+                            </button> 
                         </form>
                     </div>
                 </div>
@@ -52,6 +119,7 @@ function C(){
             <div className="Lower_part_footer">
                 <p className="Copyright_par">Copyright © 2024, Verve. All Rights Reserved</p>
             </div>
+            <Dialog autoOpen={autoOpenDialog} message={dialogMessage} />
         </div>
     )
 }

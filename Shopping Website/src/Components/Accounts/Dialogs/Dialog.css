@@ -58,6 +58,11 @@ body.active-modal {
     color: white;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.close-modal :hover {
+    background-color: rgb(82, 82, 82);
 }
 
 

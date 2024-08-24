@@ -1486,7 +1486,7 @@ const handleCVCChange = (e) => {
                     <button 
                         className={`check_out_button ${content === 'checkOut' ? 'active' : ''}`} 
                         onClick={handleCheckOutClick}>
-                        Check out &nbsp; <i class="fa-regular fa-money-bill-1"></i>
+                        Check out &nbsp; <i className="fa-regular fa-money-bill-1"></i>
                     </button>
                 </div>
                 <div className='lower_right_pay'>

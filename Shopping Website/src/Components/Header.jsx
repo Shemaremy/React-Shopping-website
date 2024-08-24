@@ -967,7 +967,7 @@ const handleGotoAccounts = () => {
                         </div>
                         <div className="Icon_one">
                             <p className="User_contain">
-                                <i className="User_ico fas fa-user" onClick={handleGotoAccounts}></i>
+                                <i className="User_ico fas fa-user" onClick={handleGotoAccounts} title="Create an account"></i>
                             </p>
                         </div>
                         <div className="cart_button_container">
@@ -1025,7 +1025,7 @@ const handleGotoAccounts = () => {
                             <p className="try_our_new_paragraph" >Check out our new products</p>
                             {CheckOutContent}
                             {CheckOutContent}
-                            <p className="see-more-mobile">View more <i class="fa-solid fa-angles-right"></i></p>
+                            <p className="see-more-mobile">View more <i className="fa-solid fa-angles-right"></i></p>
                         </div>
                         <div className="in_the_sugg">
                             {suggestions.length > 0 && (

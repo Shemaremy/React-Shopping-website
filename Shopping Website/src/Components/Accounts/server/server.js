@@ -143,8 +143,8 @@ app.post('/api/forgot', async (req, res) => {
         process.env.JWT_SECRET,
         { expiresIn: '2m' }
       );
-      const resetLink = `http://localhost:5173/reset-password?token=${token}`;
-      //const resetLink = `https://v3rve.netlify.app/reset-password?token=${token}`;
+      //const resetLink = `http://localhost:5173/reset-password?token=${token}`;
+      const resetLink = `https://v3rve.netlify.app/reset-password?token=${token}`;
 
       const msg = {
         to: Email,
@@ -183,7 +183,7 @@ app.post('/api/reset-password', async (req, res) => {
     // Find the user by email
     const user = await User.findOne({ Email });
     if (!user) {
-      return res.status(404).json({ message: 'Invalid token or user not found.' });
+      return res.status(404).json({ message: 'User not found.' });
     }
 
     // Hash the new password
@@ -203,6 +203,30 @@ app.post('/api/reset-password', async (req, res) => {
 
 
 
+
+// SEND EMAIL TO ME FROM THE HOME PAGE
+app.post('/submit', async (req, res) => {
+
+  const { Email, Message } = req.body;
+  const msg = {
+    to: 'shemaremy2003@gmail.com',
+    from: 'remyshema20@gmail.com',
+    subject: 'Form Submission from Verve',
+    html: `
+      <p><strong>Email:</strong> ${Email}</p>
+      <p><strong>Message:</strong> ${Message}</p>
+    `
+  };
+
+  try {
+    await sgMail.send(msg);
+    res.status(200).json({ message: 'Message has been sent successfully.' });
+  }
+  catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ message: 'Server error. Please try again later.' });
+  }
+});
 
 
 

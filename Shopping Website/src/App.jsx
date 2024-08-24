@@ -90,7 +90,7 @@ function AppRoutes() {
               <div className='main_lists'>
                 <div className='sect-1'>
                   <div className='user-profile-container'>
-                    <i class="fa-solid fa-user"></i>
+                    <i className="fa-solid fa-user"></i>
                   </div>
                   <div className='sign-in-container'>
                     <h3 className='create-account-header' onClick={handleGotoAccounts}>Create account</h3>

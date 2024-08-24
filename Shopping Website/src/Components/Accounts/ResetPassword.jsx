@@ -6,9 +6,11 @@ import Dialog from './Dialogs/Dialog';
 
 const ResetPasswordForm = () => {
 
+  const [errors, setErrors] = useState({});
+
   const [password, setPasswordOne] = useState('');
   const [passwordTwo, setPasswordTwo] = useState('');
-  const [errors, setErrors] = useState({});
+  
   const [showPasswordOne, setShowPasswordOne] = useState(false);
   const [showPasswordTwo, setShowPasswordTwo] = useState(false);
 
@@ -21,6 +23,11 @@ const ResetPasswordForm = () => {
 
   const GlitchUrl = 'https://verve-users.glitch.me/api';
   const resetEndpoint = `${GlitchUrl}/reset-password`;
+
+
+
+
+
 
 
 
@@ -37,6 +44,12 @@ const ResetPasswordForm = () => {
     setAutoOpenDialog(true);
   };
   
+
+
+
+
+
+
 
   const validateForm = () => {
     const newErrors = {};
@@ -58,6 +71,20 @@ const ResetPasswordForm = () => {
 
     return newErrors;
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -90,7 +117,8 @@ const ResetPasswordForm = () => {
       }
     }
     else {
-      alert("Check the else in handleFinalReset")
+      alert("You are trying to access the reset form without the token!");
+      window.close();
     }  
   }
 
@@ -115,6 +143,25 @@ const ResetPasswordForm = () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //RESET PASSWORD FORM COMPONENT
   const ResetForm = (
     <form className='Sign-up-form' onSubmit={handlePasswordReset}>
       <div className='two-a'>
@@ -163,6 +210,14 @@ const ResetPasswordForm = () => {
 
 
 
+
+
+
+
+
+
+
+  
 
 
   return (
