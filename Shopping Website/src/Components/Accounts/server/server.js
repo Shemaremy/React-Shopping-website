@@ -1,3 +1,4 @@
+// This how my server from Glitch looks like
 require('dotenv').config();
 
 const express = require('express');
@@ -27,7 +28,7 @@ app.use(express.json());
 // DB Connection
 async function connectDB() {
   // const localUri = 'mongodb://localhost:27017/Test';
-  const uri = 'mongodb+srv://RemyTest:mamito@testproject.qjbm0.mongodb.net/?retryWrites=true&w=majority&appName=TestProject'
+  const uri = process.env.MONGODB_URI;
   try {
     await mongoose.connect(uri);
     console.log('MongoDB connected');
@@ -143,6 +144,7 @@ app.post('/api/forgot', async (req, res) => {
         { expiresIn: '2m' }
       );
       const resetLink = `http://localhost:5173/reset-password?token=${token}`;
+      //const resetLink = `https://v3rve.netlify.app/reset-password?token=${token}`;
 
       const msg = {
         to: Email,
@@ -210,5 +212,6 @@ app.post('/api/reset-password', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
 
 

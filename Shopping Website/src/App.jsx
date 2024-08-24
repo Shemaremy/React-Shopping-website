@@ -9,6 +9,9 @@ import { BrowserRouter as Router, Route, Routes, useLocation} from 'react-router
 import ProceedPayment from './Components/Payment/ProceedPayment';
 import Accounts from './Components/Accounts/Accounts';
 
+import ResetPasswordForm from './Components/Accounts/ResetPassword'
+
+
 import { Provider } from 'react-redux';
 import store from './Components/Redux store/store'
 
@@ -48,7 +51,7 @@ function AppRoutes() {
 
 
 
-    if (location.pathname === '/accounts') {
+    if (location.pathname === '/accounts' || location.pathname === '/reset-password') {
       document.body.style.height = '100vh';  
       document.body.style.overflowY = 'auto';
     } else {
@@ -113,6 +116,7 @@ function AppRoutes() {
 
       <Route path="/payment" element={<ProceedPayment />}></Route>
       <Route path="/accounts" element={<Accounts />}></Route>
+      <Route path="/reset-password" element={<ResetPasswordForm />}></Route>
     </Routes>
   );
 }

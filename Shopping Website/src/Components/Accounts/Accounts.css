@@ -184,7 +184,7 @@ body {
   flex-direction: column;
 }
 
-.lower_part > p {
+.lower-part-renderer {
   font-size: 12px;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -193,6 +193,8 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+
 
 .Sign-up-form {
   background-color: rgba(0, 128, 0, 0);

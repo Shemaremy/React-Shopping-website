@@ -35,7 +35,7 @@ function Accounts() {
 
 
   // Fetch URLs
-  const GlitchUrl = 'https://test-login-authenticator.glitch.me/api';
+  const GlitchUrl = 'https://verve-users.glitch.me/api';
   
   const signUpEndpoint = `${GlitchUrl}/users`;
   const loginEndpoint = `${GlitchUrl}/login`;
@@ -602,12 +602,12 @@ function Accounts() {
           {formState === FORM_STATE.SIGNUP && SignUpForm}
           {formState === FORM_STATE.FORGOT_PASSWORD && ForgotPasswordForm}
           {formState === FORM_STATE.RESET_PASSWORD && ResetPasswordForm}
-          <p>
+          <div className='lower-part-renderer'>
             {formState === FORM_STATE.LOGIN ? 
-            ( <> 
-                <p>Forgot &nbsp; <a href="" onClick={() => handleFormChange(FORM_STATE.FORGOT_PASSWORD)}> Password </a>?</p>
+            ( <div className='rendered-container'> 
+                <p>Forgot &nbsp; <a href="#" onClick={() => handleFormChange(FORM_STATE.FORGOT_PASSWORD)}> Password </a>?</p>
                 <p>Don't have an account? &nbsp;<a href="#" onClick={() => handleFormChange(FORM_STATE.SIGNUP)}>Sign up</a></p>              
-              </>
+              </div>
             ) : formState === FORM_STATE.SIGNUP ?
             (<p>Already have an account? &nbsp; <a href="#" onClick={() => handleFormChange(FORM_STATE.LOGIN)}>Sign in</a></p>)
               : formState === FORM_STATE.RESET_PASSWORD ?
@@ -615,7 +615,7 @@ function Accounts() {
              : 
              (<p>Remember your password? &nbsp; <a href="#" onClick={() => handleFormChange(FORM_STATE.LOGIN)}>Sign in</a></p>)
             }
-          </p>
+          </div>
         </div>
       </div>
       <Dialog autoOpen={autoOpenDialog} message={dialogMessage} />

@@ -62,7 +62,7 @@ h4 {
   align-items: center;
 }
 
-a {
+.desk_links > a {
   width: auto;
   display: flex;
   justify-content: center;
@@ -81,7 +81,7 @@ a {
   cursor: pointer;
 }
 
-a:hover {
+.desk_links > a:hover {
   color: rgb(0, 255, 0);
 }
 
@@ -1538,7 +1538,7 @@ a:hover {
     width: 70%;
   }
 
-  a {
+  .desk_links > a {
     font-size: 11px;
     padding: 0;
   }
