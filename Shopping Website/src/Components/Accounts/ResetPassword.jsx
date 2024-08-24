@@ -4,7 +4,7 @@ import Dialog from './Dialogs/Dialog';
 
 
 
-const ResetPasswordForm = ({ handleFinalReset, loading }) => {
+const ResetPasswordForm = () => {
 
   const [password, setPasswordOne] = useState('');
   const [passwordTwo, setPasswordTwo] = useState('');
