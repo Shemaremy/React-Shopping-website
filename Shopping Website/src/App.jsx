@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Route, Routes, useLocation} from 'react-router
 import ProceedPayment from './Components/Payment/ProceedPayment';
 import Accounts from './Components/Accounts/Accounts';
 
+import { useNavigate } from 'react-router-dom';
 import ResetPasswordForm from './Components/Accounts/ResetPassword'
 
 
@@ -64,6 +65,10 @@ function AppRoutes() {
 
 
 
+  const navigate = useNavigate();
+  const handleGotoAccounts = () => {
+      navigate('/accounts');
+  };
 
 
 
@@ -88,7 +93,7 @@ function AppRoutes() {
                     <i class="fa-solid fa-user"></i>
                   </div>
                   <div className='sign-in-container'>
-                    <h3 className='create-account-header'>Create account</h3>
+                    <h3 className='create-account-header' onClick={handleGotoAccounts}>Create account</h3>
                     <h3 className='sign-in-header'>Sign in</h3>
                   </div>
                 </div>
