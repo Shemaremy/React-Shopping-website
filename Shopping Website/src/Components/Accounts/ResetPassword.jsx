@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './Accounts.css';
-import Dialog from './Dialogs/Dialog';
 
 
 
@@ -10,9 +9,6 @@ const ResetPasswordForm = ({ handleFinalReset, loading }) => {
   const [errors, setErrors] = useState({});
   const [showPasswordOne, setShowPasswordOne] = useState(false);
   const [showPasswordTwo, setShowPasswordTwo] = useState(false);
-
-  const [autoOpenDialog, setAutoOpenDialog] = useState(false);
-  const [dialogMessage, setDialogMessage] = useState('');
 
 
 
