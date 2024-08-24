@@ -1,14 +1,24 @@
 import React, { useState } from 'react';
 import './Accounts.css';
+import Dialog from './Dialogs/Dialog';
 
 
 
 const ResetPasswordForm = ({ handleFinalReset, loading }) => {
+
   const [password, setPasswordOne] = useState('');
   const [passwordTwo, setPasswordTwo] = useState('');
   const [errors, setErrors] = useState({});
   const [showPasswordOne, setShowPasswordOne] = useState(false);
   const [showPasswordTwo, setShowPasswordTwo] = useState(false);
+
+  const [autoOpenDialog, setAutoOpenDialog] = useState(false);
+  const [dialogMessage, setDialogMessage] = useState('');
+
+  const [loading, setLoading] = useState(false);
+
+  const GlitchUrl = 'https://verve-users.glitch.me/api';
+  const resetEndpoint = `${GlitchUrl}/reset-password`;
 
 
 
@@ -41,6 +51,41 @@ const ResetPasswordForm = ({ handleFinalReset, loading }) => {
     return newErrors;
   };
 
+
+
+   // RESET PASSWORD SECTION
+  const handleFinalReset = async () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const token = urlParams.get('token');
+    setLoading(true);
+  
+    if (token) {
+      try {
+        const response = await fetch(resetEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ token, passwordTwo }),
+        });
+    
+        const data = await response.json();
+        setLoading(false);
+        
+        if (response.ok) {
+          showDialog('Password has been reset successfully!!');
+        } else {
+          alert(`Error: ${data.message}`);
+          window.close();
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Error: Something went wrong. Please try again.');
+      }
+    }
+    else {
+      alert("Check the else in handleFinalReset")
+    }  
+  }
+
   const handlePasswordReset = (e) => {
     e.preventDefault();
     const newErrors = validateForm();
@@ -49,11 +94,14 @@ const ResetPasswordForm = ({ handleFinalReset, loading }) => {
 
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
-    } else {
+    } 
+    else {
+      // navigate('/');
+      // window.location.reload();
       setErrors({});
       BorderOne.style.borderColor = '';
       BorderTwo.style.borderColor = '';
-      handleFinalReset(passwordTwo);
+      handleFinalReset();  
     }
   };
 
@@ -118,6 +166,7 @@ const ResetPasswordForm = ({ handleFinalReset, loading }) => {
             <div className='lower_part'>{ResetForm}</div>
             <div className='lower-part-renderer'></div>
         </div>
+        <Dialog autoOpen={autoOpenDialog} message={dialogMessage} />
     </div>
   );
 };
