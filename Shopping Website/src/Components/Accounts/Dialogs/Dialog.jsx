@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./Dialog.css";
-
+import { useNavigate } from 'react-router-dom';
 
 function Dialog({ autoOpen = false, message = '' }) {
 
   const [modal, setModal] = useState(autoOpen);
+  const navigate = useNavigate();
 
 
 
@@ -12,7 +13,13 @@ function Dialog({ autoOpen = false, message = '' }) {
     setModal(!modal);
     if (message === "Password has been reset successfully!!") {
       window.close();
-    } else {
+    }
+    
+    else if (message === "Login successfull!!") {
+      navigate('/');
+    }
+    
+    else {
       window.location.reload();
     }
   };
