@@ -49,6 +49,11 @@ const UserSchema = new mongoose.Schema({
   UserName: { type: String, unique: true, required: true },
   Email: { type: String, unique: true, required: true },
   password: { type: String, required: true },
+  cart: [{
+    itemName: { type: String, default: "" },
+    price: { type: Number, default: 0 },
+    size: { type: String, default: "" }
+  }]
 });
 
 
@@ -74,7 +79,7 @@ app.post('/api/users', async (req, res) => {
 
   try {
     const hashedPassword = await bcrypt.hash(password, saltRounds);
-    const newUser = new User({ UserName, Email, password: hashedPassword });
+    const newUser = new User({ UserName, Email, password: hashedPassword, cart: [] });
     const user = await newUser.save();
     res.json(user);
   } 
