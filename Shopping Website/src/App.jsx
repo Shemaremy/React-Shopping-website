@@ -12,6 +12,7 @@ import Accounts from './Components/Accounts/Accounts';
 import { useNavigate } from 'react-router-dom';
 import ResetPasswordForm from './Components/Accounts/ResetPassword'
 
+import CookieFunction from './Components/Cookies/Cookie'
 
 import { Provider } from 'react-redux';
 import store from './Components/Redux store/store'
@@ -81,44 +82,43 @@ function AppRoutes() {
     <Routes>
       <Route path="/" element={
         <>
-        <A />
-        <B />
-        <C />
-        <div className="big-nav-panel-mobile">
-          <div className='main-nav-panel'>
-            <div className='list-container'>
-              <div className='main_lists'>
-                <div className='sect-1'>
-                  <div className='user-profile-container'>
-                    <i className="fa-solid fa-user"></i>
+          <A />
+          <B />
+          <C />
+          <div className="big-nav-panel-mobile">
+            <div className='main-nav-panel'>
+              <div className='list-container'>
+                <div className='main_lists'>
+                  <div className='sect-1'>
+                    <div className='user-profile-container'>
+                      <i className="fa-solid fa-user"></i>
+                    </div>
+                    <div className='sign-in-container'>
+                      <h3 className='create-account-header' onClick={handleGotoAccounts}>Create account</h3>
+                      <h3 className='sign-in-header'>Sign in</h3>
+                    </div>
                   </div>
-                  <div className='sign-in-container'>
-                    <h3 className='create-account-header' onClick={handleGotoAccounts}>Create account</h3>
-                    <h3 className='sign-in-header'>Sign in</h3>
+                  <div className='sect-2'>
+                    <h4 onClick={(e) => handleLinkClickMobile('B', e)}>Our products <i className="fa-solid fa-chevron-right"></i></h4>
                   </div>
-                </div>
-                <div className='sect-2'>
-                  <h4 onClick={(e) => handleLinkClickMobile('B', e)}>Our products <i className="fa-solid fa-chevron-right"></i></h4>
-                </div>
-                <div className='sect-3'>
-                  <h4 onClick={(e) => handleLinkClickMobile('Our_picks_container', e)}>Our picks <i className="fa-solid fa-chevron-right"></i></h4>
-                </div>
-                <div className='sect-4'>
-                  <h4 onClick={(e) => handleLinkClickMobile('Upper-part-trend', e)}>Trending items <i className="fa-solid fa-chevron-right"></i></h4>
-                </div>
-                <div className='sect-5'>
-                  <h4 onClick={(e) => handleLinkClickMobile('C', e)}>About us <i className="fa-solid fa-chevron-right"></i></h4>
-                </div>
-                <div className='sect-6'>
-                  <h4 onClick={(e) => handleLinkClickMobile('C', e)}>Contact us <i className="fa-solid fa-chevron-right"></i></h4>
+                  <div className='sect-3'>
+                    <h4 onClick={(e) => handleLinkClickMobile('Our_picks_container', e)}>Our picks <i className="fa-solid fa-chevron-right"></i></h4>
+                  </div>
+                  <div className='sect-4'>
+                    <h4 onClick={(e) => handleLinkClickMobile('Upper-part-trend', e)}>Trending items <i className="fa-solid fa-chevron-right"></i></h4>
+                  </div>
+                  <div className='sect-5'>
+                    <h4 onClick={(e) => handleLinkClickMobile('C', e)}>About us <i className="fa-solid fa-chevron-right"></i></h4>
+                  </div>
+                  <div className='sect-6'>
+                    <h4 onClick={(e) => handleLinkClickMobile('C', e)}>Contact us <i className="fa-solid fa-chevron-right"></i></h4>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
         </>}>
       </Route>
-
       <Route path="/payment" element={<ProceedPayment />}></Route>
       <Route path="/accounts" element={<Accounts />}></Route>
       <Route path="/reset-password" element={<ResetPasswordForm />}></Route>

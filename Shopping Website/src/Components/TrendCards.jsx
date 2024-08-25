@@ -240,7 +240,7 @@ const Imageloader = (
                     onClick={() => handleAddToCartClick(product)}
                     disabled={loading[product.name]}
                 >
-                    {loading[product.name] ? <i className="cart_icon fa-solid fa-spinner"></i> : 'Add to cart'}
+                    {loading[product.name] ? <i className="cart_icon fa-solid fa-spinner fa-spin"></i> : 'Add to cart'}
                 </button>
             </div>
         </>
@@ -263,7 +263,7 @@ const Imageloader = (
                     onClick={() => handleAddToCartClick(product)}
                     disabled={loading[product.name]}
                 >
-                    {loading[product.name] ? <i className="cart_icon fa-solid fa-spinner"></i> : 'Add to cart'}
+                    {loading[product.name] ? <i className="cart_icon fa-solid fa-spinner fa-spin"></i> : 'Add to cart'}
                 </button>
             </div>
         </>

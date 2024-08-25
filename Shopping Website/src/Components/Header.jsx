@@ -580,7 +580,7 @@ const card4Content = (product) =>(
                 onClick={() => { handleAddToCartClick(product); setShowModal(false); }}
                 disabled={loading} // Disable button while loading
             >
-                {loading ? <i className="cart_icon fa-solid fa-spinner"></i> : 'Add to cart'}
+                {loading ? <i className="cart_icon fa-solid fa-spinner fa-spin"></i> : 'Add to cart'}
                 {!loading && <i className="Cart_ico_2 fas fa-cart-plus"></i>}
             </button>
         </div>

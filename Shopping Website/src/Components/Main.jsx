@@ -416,7 +416,7 @@ const settings = {
                             onClick={() => handleAddToCartClick(product)}
                             disabled={loading[product.name]}
                         >
-                            {loading[product.name] ? <i className="cart_icon fa-solid fa-spinner"></i> : <i className="cart_icon fa fa-cart-plus" aria-hidden="true"></i>}
+                            {loading[product.name] ? <i className="cart_icon fa-solid fa-spinner fa-spin"></i> : <i className="cart_icon fa fa-cart-plus" aria-hidden="true"></i>}
                         </p>
                     </div>
                 </div>
