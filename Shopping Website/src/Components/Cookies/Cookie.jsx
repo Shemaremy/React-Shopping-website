@@ -36,7 +36,7 @@ function CookieFunction() {
     <>
       {modal && (
         <div className="cookie-modal-container">
-          <div className="modal-content">
+          <div className="cookie-modal-content">
             <h2 className="cookie_header">Cookie Policy</h2>
             <p className="cookie_par">
             Our website uses essential cookies to improve your browsing experience and enhance functionality. 

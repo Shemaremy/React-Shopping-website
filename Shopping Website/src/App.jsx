@@ -117,6 +117,7 @@ function AppRoutes() {
               </div>
             </div>
           </div>
+          <CookieFunction/>
         </>}>
       </Route>
       <Route path="/payment" element={<ProceedPayment />}></Route>
