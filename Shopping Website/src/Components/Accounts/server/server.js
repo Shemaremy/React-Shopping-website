@@ -51,8 +51,7 @@ const UserSchema = new mongoose.Schema({
   password: { type: String, required: true },
   cart: [{
     itemName: { type: String, default: "" },
-    price: { type: Number, default: 0 },
-    size: { type: String, default: "" }
+    price: { type: Number, default: 0 }
   }]
 });
 
@@ -89,16 +88,24 @@ const authenticateToken = (req, res, next) => {
   });
 };
 
+
+
+
+
 // ADD TO CART ROUTE
 app.post('/api/cart', authenticateToken, async (req, res) => {
-  const { itemName, price, size } = req.body;
+  const { itemName, price} = req.body;
 
   try {
     const user = await User.findById(req.user.id);
     if (!user) return res.status(404).json({ message: 'User not found' });
 
-    user.cart.push({ itemName, price, size });
+    user.cart.push({ itemName, price });
     await user.save();
+    console.log(itemName);
+    console.log(price);
+    console.log(user.cart);
+
     res.status(200).json({ message: 'Item added to cart', cart: user.cart });
   } catch (err) {
     if (err.name === 'JsonWebTokenError') {
@@ -108,6 +115,31 @@ app.post('/api/cart', authenticateToken, async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -143,6 +175,27 @@ app.post('/api/users', async (req, res) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // LOGIN route
 app.post('/api/login', async (req, res) => {
   const { identifier, password } = req.body;
@@ -160,7 +213,7 @@ app.post('/api/login', async (req, res) => {
       const token = jwt.sign(
         { id: user._id, UserName: user.UserName }, // Payload
         process.env.JWT_SECRET, // Secret key for signing
-        { expiresIn: '1h' } // Token expiration time (e.g., 1 hour)
+        { expiresIn: '5h' } // Token expiration time (e.g., 1 hour)
       );
       
         res.status(200).send({ message: 'Success', token });
@@ -180,6 +233,34 @@ app.post('/api/login', async (req, res) => {
 
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -226,6 +307,25 @@ app.post('/api/forgot', async (req, res) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // RESET PASSWORD ROUTE
 app.post('/api/reset-password', async (req, res) => {
   const { token, passwordTwo } = req.body;
@@ -259,6 +359,23 @@ app.post('/api/reset-password', async (req, res) => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // SEND EMAIL TO ME FROM THE HOME PAGE
 app.post('/submit', async (req, res) => {
 
@@ -282,6 +399,16 @@ app.post('/submit', async (req, res) => {
     res.status(500).json({ message: 'Server error. Please try again later.' });
   }
 });
+
+
+
+
+
+
+
+
+
+
 
 
 

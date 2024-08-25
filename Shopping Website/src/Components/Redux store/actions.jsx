@@ -5,12 +5,13 @@ export const SET_SEARCH_TERM = 'SET_SEARCH_TERM';
 
 
 
+
+
 export const addToCart = (product) => {
     return async (dispatch) => {
         const token = localStorage.getItem('token');
         if (!token) {
-        alert('No token found, please login first');
-        return;
+            alert('No token found, please login first');
         }
         
         try {
@@ -23,8 +24,7 @@ export const addToCart = (product) => {
                 },
                 body: JSON.stringify({ 
                     itemName: product.name,
-                    price: product.price,
-                    size: product.size
+                    price: product.price
                 })
             });
 
@@ -47,7 +47,6 @@ export const addToCart = (product) => {
         }
     };
 };
-
 
 export const removeItem = (index) => ({
     type: REMOVE_ITEM,
