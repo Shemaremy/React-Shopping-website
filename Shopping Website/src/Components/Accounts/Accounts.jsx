@@ -30,7 +30,7 @@ function Accounts() {
 
   const [loading, setLoading] = useState(false);
 
-  
+  const [token, setToken] = useState(null);
   
 
 
@@ -253,7 +253,7 @@ function Accounts() {
     
         if (response.ok) {
           showDialog('Login successfull!!');
-          console.log('Success:', data);
+          setToken(data.token);
         } else {
           alert(`Error: ${data.message}`);
           console.error('Login failed:', data.message);
@@ -497,7 +497,7 @@ function Accounts() {
           </div>
         </div>
       </div>
-      <Dialog autoOpen={autoOpenDialog} message={dialogMessage} />
+      <Dialog autoOpen={autoOpenDialog} message={dialogMessage} token={token}/>
     </div>
   )
 }

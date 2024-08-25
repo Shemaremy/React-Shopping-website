@@ -30,6 +30,7 @@
     "react-slick": "^0.30.2",
     "react-transition-group": "^4.4.5",
     "redux": "^5.0.1",
+    "redux-thunk": "^3.1.0",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.1.4"
   },

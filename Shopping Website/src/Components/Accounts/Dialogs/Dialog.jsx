@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Dialog.css";
 import { useNavigate } from 'react-router-dom';
 
-function Dialog({ autoOpen = false, message = '' }) {
+function Dialog({ autoOpen = false, message = '', token }) {
 
   const [modal, setModal] = useState(autoOpen);
   const navigate = useNavigate();
@@ -16,7 +16,12 @@ function Dialog({ autoOpen = false, message = '' }) {
     }
     
     else if (message === "Login successfull!!") {
-      navigate('/');
+      localStorage.setItem('token', token);
+      if (token) {
+        navigate('/');
+      } else {
+        alert("Failed to store the token");
+      }
     }
     
     else {

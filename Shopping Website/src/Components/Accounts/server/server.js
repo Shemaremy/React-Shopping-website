@@ -73,6 +73,49 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 
 
+
+// JWT Authentication Middleware
+const authenticateToken = (req, res, next) => {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1];
+
+  if (!token) return res.sendStatus(401); // Unauthorized
+
+  jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+    if (err) return res.sendStatus(403); // Forbidden
+
+    req.user = user;
+    next();
+  });
+};
+
+// ADD TO CART ROUTE
+app.post('/api/cart', authenticateToken, async (req, res) => {
+  const { itemName, price, size } = req.body;
+
+  try {
+    const user = await User.findById(req.user.id);
+    if (!user) return res.status(404).json({ message: 'User not found' });
+
+    user.cart.push({ itemName, price, size });
+    await user.save();
+    res.status(200).json({ message: 'Item added to cart', cart: user.cart });
+  } catch (err) {
+    if (err.name === 'JsonWebTokenError') {
+      return res.status(403).json({ message: 'Invalid token' }); // Send JSON response on token failure
+    }
+    console.error('Error:', err);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+
+
+
+
+
+
+
 // SIGNUP route
 app.post('/api/users', async (req, res) => {
   const { UserName, Email, password } = req.body;  
@@ -113,7 +156,14 @@ app.post('/api/login', async (req, res) => {
     else {
       const isMatch = await bcrypt.compare(password, user.password);
       if (isMatch) {
-        res.status(200).send({ message: 'Success' });
+        // Generate JWT token
+      const token = jwt.sign(
+        { id: user._id, UserName: user.UserName }, // Payload
+        process.env.JWT_SECRET, // Secret key for signing
+        { expiresIn: '1h' } // Token expiration time (e.g., 1 hour)
+      );
+      
+        res.status(200).send({ message: 'Success', token });
       } else {
         res.status(400).send({ message: 'Invalid password!' });
       }

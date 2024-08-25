@@ -109,7 +109,7 @@ const handleAddToCartClick = async (product) => {
     await new Promise((resolve) => setTimeout(resolve, 500));
     
     try {
-        handleClick(product); // Simulate the asynchronous operation
+        handleClick(product); 
     } catch (error) {
         console.error('Error adding item to cart:', error);
         setButtonText('Error');
