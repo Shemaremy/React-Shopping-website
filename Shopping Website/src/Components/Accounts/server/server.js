@@ -281,8 +281,8 @@ app.post('/api/login', async (req, res) => {
         // Generate JWT token
       const token = jwt.sign(
         { id: user._id, UserName: user.UserName }, // Payload
-        process.env.JWT_SECRET, // Secret key for signing
-        { expiresIn: '5h' } // Token expiration time (e.g., 1 hour)
+        process.env.JWT_SECRET, 
+        { expiresIn: '1h' }
       );
       
         res.status(200).send({ message: 'Success', token });

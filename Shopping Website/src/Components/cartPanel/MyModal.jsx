@@ -23,17 +23,12 @@ function MyModal(props) {
 
 
 
-useEffect(() => {
-  if (showModal) {
-    fetchCart();
-    // Initialize selectedSizes based on the fetched product data
-    const initialSelectedSizes = {};
-    props.currentProduct.forEach((item, index) => {
-      initialSelectedSizes[index] = item.selectedSize || ''; // Assuming `selectedSize` is the key for the size in the product object
-    });
-    setSelectedSizes(initialSelectedSizes);
-  }
-}, [showModal, fetchCart, props.currentProduct]);
+  useEffect(() => {
+    if (showModal) {
+      fetchCart();
+    }
+  }, [showModal, fetchCart, props.currentProduct]);
+  
 
 
 

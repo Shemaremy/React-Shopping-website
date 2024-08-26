@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 function Dialog({ autoOpen = false, message = '', token }) {
 
   const [modal, setModal] = useState(autoOpen);
-  const navigate = useNavigate();
+  
 
 
 

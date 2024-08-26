@@ -263,7 +263,9 @@ const combinedItems = [ ...Employees  ];
 // When the search button is clicked after entering an element
 const handleSearchClick = (event) => {
     event.preventDefault();
-    const item = combinedItems.find(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
+    const item = combinedItems
+    .filter(item => item && item.name)  // First remove out the undefined elements
+    .find(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
     if (item) {
         const mainer = document.querySelector('.B');
         const element = mainer.querySelector(`[data-name="${item.name}"]`);
@@ -296,9 +298,10 @@ const handleSearchChange = (e) => {
     handleSearchTermChange(value);
 
     if (value.length > 0) {
-        const filteredSuggestions = combinedItems.filter(item =>
-            item.name.toLowerCase().includes(value)
-        );
+        const filteredSuggestions = combinedItems
+        .filter(item => item && item.name)
+        .filter(item => item.name.toLowerCase().includes(value));
+
         setSuggestions(filteredSuggestions);
     } else {
         setSuggestions([]);
