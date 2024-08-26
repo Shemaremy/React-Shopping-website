@@ -14,7 +14,9 @@ import ResetPasswordForm from './Components/Accounts/ResetPassword'
 
 import CookieFunction from './Components/Cookies/Cookie'
 
-import { Provider } from 'react-redux';
+import { Provider, useDispatch } from 'react-redux';
+import { fetchCart } from './Components/Redux store/actions'
+
 import store from './Components/Redux store/store'
 
 function App() {
@@ -36,6 +38,14 @@ function App() {
 
 // Created this function to help me change the height of the page on the new one. It must be below
 function AppRoutes() {
+
+    // On load of the page, fetch data from the database of an account
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(fetchCart());
+    }, [dispatch]);
+
+
   const location = useLocation();
 
   useEffect(() => {

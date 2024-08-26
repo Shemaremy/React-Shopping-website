@@ -50,8 +50,11 @@ const UserSchema = new mongoose.Schema({
   Email: { type: String, unique: true, required: true },
   password: { type: String, required: true },
   cart: [{
-    itemName: { type: String, default: "" },
-    price: { type: Number, default: 0 }
+    name: { type: String, default: "" },
+    price: { type: Number, default: 0 },
+    quantity: { type: Number, default: 1 },
+    image: { type: String, default: "" },
+    sizes: { type: [String], default: [] }
   }]
 });
 
@@ -73,6 +76,20 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 
 
+
+
+
+
+
+
+
+
+// ---------------------------------------------------- CART SETTINGS ------------------------------------------------------------
+// ---------------------------------------------------- CART SETTINGS ------------------------------------------------------------
+// ---------------------------------------------------- CART SETTINGS ------------------------------------------------------------
+
+
+
 // JWT Authentication Middleware
 const authenticateToken = (req, res, next) => {
   const authHeader = req.headers['authorization'];
@@ -88,23 +105,34 @@ const authenticateToken = (req, res, next) => {
   });
 };
 
+// AUTO LOAD THE CART ROUTE
+app.get('/api/cart', authenticateToken, async (req, res) => {
+  try {
+      const user = await User.findById(req.user.id);
+      if (!user) return res.status(404).json({ message: 'User not found' });
+
+      // Return the cart data to the client
+      res.status(200).json({ cart: user.cart });
+  } catch (err) {
+      console.error('Error fetching cart:', err);
+      res.status(500).json({ message: 'Server error' });
+  }
+});
+
 
 
 
 
 // ADD TO CART ROUTE
 app.post('/api/cart', authenticateToken, async (req, res) => {
-  const { itemName, price} = req.body;
+  const { name, price, quantity, image, sizes} = req.body;
 
   try {
     const user = await User.findById(req.user.id);
     if (!user) return res.status(404).json({ message: 'User not found' });
 
-    user.cart.push({ itemName, price });
+    user.cart.push({ name, price, quantity, image, sizes });
     await user.save();
-    console.log(itemName);
-    console.log(price);
-    console.log(user.cart);
 
     res.status(200).json({ message: 'Item added to cart', cart: user.cart });
   } catch (err) {
@@ -115,6 +143,47 @@ app.post('/api/cart', authenticateToken, async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 });
+
+
+// DELETE FROM CART ROUTE (Using Index)
+app.delete('/api/cart', authenticateToken, async (req, res) => {
+  const { index } = req.body; // Receive the index of the item to delete
+
+  try {
+    const user = await User.findById(req.user.id);
+    if (!user) return res.status(404).json({ message: 'User not found' });
+
+    // Check if index is valid
+    if (index < 0 || index >= user.cart.length) {
+      return res.status(404).json({ message: 'Invalid item index' });
+    }
+
+    // Remove item by index
+    user.cart.splice(index, 1);
+
+    await user.save();
+
+    res.status(200).json({ message: 'Item removed from cart', cart: user.cart });
+  } catch (err) {
+    if (err.name === 'JsonWebTokenError') {
+      return res.status(403).json({ message: 'Invalid token' });
+    }
+    console.error('Error:', err);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+
+
+
+
+
+// ------------------------------------------------ END OF CART SETTINGS ------------------------------------------------------------
+// ------------------------------------------------ END OF CART SETTINGS ------------------------------------------------------------
+// ------------------------------------------------ END OF CART SETTINGS ------------------------------------------------------------
+
+
+
 
 
 

@@ -1,6 +1,7 @@
 
 import {
   ADD_TO_CART,
+  LOAD_CART,
   REMOVE_ITEM,
   UPDATE_QUANTITY,
   SET_SEARCH_TERM
@@ -26,14 +27,15 @@ const reducer = (state = initialState, action) => {
 
   switch (action.type) {
 
+    case LOAD_CART:
+    return {
+        ...state,
+        currentProduct: action.payload 
+    };
 
 
     case ADD_TO_CART:
-      const isAlreadyInCart = state.currentProduct.some(item => item.name === action.payload.name);
-      if (isAlreadyInCart) {
-        alert("You're adding an item twice, sir. Check your cart, and choose the quantity of the same product you want.");
-        return state;
-      } else if (state.counter >= 15) {
+      if (state.counter >= 15) {
         alert("You've reached the maximum items, sir! Please check your cart above.");
         return state;
       } else {
@@ -45,7 +47,6 @@ const reducer = (state = initialState, action) => {
       }
       
     case REMOVE_ITEM:
-      alert("Are you sure you want to remove this item?");
       return {
         ...state,
         counter: state.counter - 1,

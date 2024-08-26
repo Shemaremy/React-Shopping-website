@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { updateQuantity, removeItem } from '../Redux store/actions'; 
+import { updateQuantity, removeItem, fetchCart } from '../Redux store/actions'; 
 import { useNavigate } from 'react-router-dom';
 
 import '@fortawesome/fontawesome-free/css/all.css';
@@ -19,10 +19,21 @@ import './Mymodal.css';
 function MyModal(props) {
 
   // Extracting specific functions and data from props
-  const { showModal, setShowModal, content, product, counter, currentProduct, updateQuantity, removeItem } = props;
+  const { showModal, setShowModal, content, product, counter, currentProduct, updateQuantity, removeItem, fetchCart } = props;
 
 
 
+useEffect(() => {
+  if (showModal) {
+    fetchCart();
+    // Initialize selectedSizes based on the fetched product data
+    const initialSelectedSizes = {};
+    props.currentProduct.forEach((item, index) => {
+      initialSelectedSizes[index] = item.selectedSize || ''; // Assuming `selectedSize` is the key for the size in the product object
+    });
+    setSelectedSizes(initialSelectedSizes);
+  }
+}, [showModal, fetchCart, props.currentProduct]);
 
 
 
@@ -475,7 +486,9 @@ function MyModal(props) {
   // Render content based on whether the cart is empty or not
   const finalRender = () => {
     let finalContent;
-    if (counter === 0) {
+    const totalQuantity = currentProduct.reduce((acc, item) => acc + item.quantity, 0);
+
+    if (totalQuantity === 0) {
       finalContent = EmptyCart;
     } else {
       finalContent = (
@@ -595,7 +608,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
   updateQuantity,
-  removeItem
+  removeItem,
+  fetchCart
 };
 
 
