@@ -169,12 +169,6 @@ export const removeItem = (index) => {
 
 
 
-
-
-
-
-
-
 export const updateQuantity = (index, actionType) => ({
     type: UPDATE_QUANTITY,
     payload: { index, actionType }
@@ -188,5 +182,60 @@ export const setSearchTerm = (term) => ({
     type: SET_SEARCH_TERM,
     payload: term,
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+// LOGIN action
+export const loginUser = (identifier, password) => {
+    return async (dispatch) => {
+        try {
+            const response = await fetch('https://verve-users.glitch.me/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ identifier, password })
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                const { token, username } = data;
+                
+                // Store the token and username in local storage
+                localStorage.setItem('token', token);
+                localStorage.setItem('username', username);
+
+                dispatch({
+                    type: 'LOGIN_SUCCESS',
+                    payload: { token, username }
+                });
+            } else {
+                alert(data.message);
+            }
+        } catch (error) {
+            console.error('Error:', error);
+            alert('Login failed. Please try again.');
+        }
+    };
+};
+
+
+
 
 

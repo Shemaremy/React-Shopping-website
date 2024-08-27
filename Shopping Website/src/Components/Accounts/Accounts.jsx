@@ -253,6 +253,7 @@ function Accounts() {
     
         if (response.ok) {
           showDialog('Login successfull!!');
+          localStorage.setItem('username', data.username);
           setToken(data.token);
         } else {
           alert(`Error: ${data.message}`);

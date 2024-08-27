@@ -293,13 +293,12 @@ app.post('/api/login', async (req, res) => {
       const isMatch = await bcrypt.compare(password, user.password);
       if (isMatch) {
         // Generate JWT token
-      const token = jwt.sign(
+        const token = jwt.sign(
         { id: user._id, UserName: user.UserName }, // Payload
         process.env.JWT_SECRET, 
         { expiresIn: '1h' }
       );
-      
-        res.status(200).send({ message: 'Success', token });
+        res.status(200).send({ message: 'Success', token, username: user.UserName });
       } else {
         res.status(400).send({ message: 'Invalid password!' });
       }

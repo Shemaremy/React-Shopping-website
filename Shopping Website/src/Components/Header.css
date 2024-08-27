@@ -1275,11 +1275,22 @@ h4 {
     justify-content: center;
     align-items: center;
   }
+
+  .user-profile-container.is-active {
+    box-shadow: 0px 0px 10px rgba(119, 109, 60, 0.397);
+  }
+
   
-  .user-profile-container > i {
+  
+  .account-icon-mobile {
     color: rgba(255, 255, 255, 0.37);
     font-size: 25px;
   }
+
+  .account-icon-mobile.is-active {
+    color: rgb(119, 109, 60);
+  }
+ 
   
   .sign-in-container {
     width: 50%;
