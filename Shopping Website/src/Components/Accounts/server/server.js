@@ -54,7 +54,8 @@ const UserSchema = new mongoose.Schema({
     price: { type: Number, default: 0 },
     quantity: { type: Number, default: 1 },
     image: { type: String, default: "" },
-    sizes: { type: [String], default: [] }
+    sizes: { type: [String], default: [] },
+    stars: { type: Number, default: 1 }
   }]
 });
 
@@ -112,48 +113,7 @@ const authenticateToken = (req, res, next) => {
 };
 
 
-/*
-// JWT Authentication Middleware
-const authenticateToken = (req, res, next) => {
-  const authHeader = req.headers['authorization'];
-  const token = authHeader && authHeader.split(' ')[1];
 
-  if (!token) {
-    req.user = null; // No token provided, continue without user context
-    return next();
-  }
-
-  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
-    if (err) {
-      if (err.name === 'TokenExpiredError') {
-        // req.user = null; // Expired token, continue without user context
-        res.status(401).json({ message: 'Token expired' }); // Invalid token, return error
-      } else {
-        return req.user = null;
-      }
-    } else {
-      req.user = user; // Valid token, set the user context
-    }
-    next();
-  });
-};
-*/
-
-/*
-// AUTO LOAD THE CART ROUTE
-app.get('/api/cart', authenticateToken, async (req, res) => {
-  try {
-      const user = await User.findById(req.user.id);
-      if (!user) return res.status(404).json({ message: 'User not found' });
-
-      // Return the cart data to the client
-      res.status(200).json({ cart: user.cart });
-  } catch (err) {
-      console.error('Error fetching cart:', err);
-      res.status(500).json({ message: 'Server error' });
-  }
-});
-*/
 
 // AUTO LOAD THE CART ROUTE
 app.get('/api/cart', authenticateToken, async (req, res) => {
@@ -179,13 +139,13 @@ app.get('/api/cart', authenticateToken, async (req, res) => {
 
 // ADD TO CART ROUTE
 app.post('/api/cart', authenticateToken, async (req, res) => {
-  const { name, price, quantity, image, sizes} = req.body;
+  const { name, price, quantity, image, sizes, stars } = req.body;
 
   try {
     const user = await User.findById(req.user.id);
     if (!user) return res.status(404).json({ message: 'User not found' });
 
-    user.cart.push({ name, price, quantity, image, sizes });
+    user.cart.push({ name, price, quantity, image, sizes, stars });
     await user.save();
 
     res.status(200).json({ message: 'Item added to cart', cart: user.cart });
@@ -336,7 +296,7 @@ app.post('/api/login', async (req, res) => {
       const token = jwt.sign(
         { id: user._id, UserName: user.UserName }, // Payload
         process.env.JWT_SECRET, 
-        { expiresIn: '1h' }
+        { expiresIn: '1m' }
       );
       
         res.status(200).send({ message: 'Success', token });

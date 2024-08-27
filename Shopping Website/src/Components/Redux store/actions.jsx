@@ -43,7 +43,8 @@ export const addToCart = (product) => {
                         price: product.price,
                         image: product.image,
                         quantity: product.quantity,
-                        sizes: product.sizes 
+                        sizes: product.sizes, 
+                        stars: product.stars
                     })
                 });
 
@@ -53,7 +54,7 @@ export const addToCart = (product) => {
                         type: ADD_TO_CART,
                         payload: product
                     });
-                } else if (response.status === 403) {   // When my token is invalid or expired
+                } else if (response.status === 401) {   // When my token is invalid or expired
                     dispatch({
                         type: ADD_TO_CART,
                         payload: product
@@ -96,9 +97,9 @@ export const fetchCart = () => {
                         payload: data.cart // Assuming the response has the user's cart in "data.cart"
                     });
                 } else if (response.status === 401) {   // When my token is invalid or expired
-                    alert("Token just expired")
-                    //localStorage.removeItem('token'); 
-                    //navigate('/accounts')
+                    console.log("Token just expired")
+                    //localStorage.removeItem('token');
+                    //navigate('/accounts');
                 } else {
                     console.log('Failed to load cart data');
                 }
