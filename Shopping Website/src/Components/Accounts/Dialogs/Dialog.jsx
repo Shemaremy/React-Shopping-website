@@ -59,7 +59,7 @@ function Dialog({ autoOpen = false, message = '', token }) {
           <div className="modal-content">
             <i className="fa-regular fa-circle-check"></i>
             <h2 className="message-header">{message ? message : "Hello Modal"}</h2>
-            <button className="close-modal" onClick={toggleModal}> OK </button>
+            <button className="confirm-modal" onClick={toggleModal}> OK </button>
           </div>
         </div>
       )}

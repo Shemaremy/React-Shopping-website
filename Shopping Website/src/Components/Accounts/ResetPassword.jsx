@@ -201,7 +201,7 @@ const ResetPasswordForm = () => {
         {errors.passwordTwo && <p className='error'>{errors.passwordTwo}</p>}
       </div>
       <div className='three'>
-        <button className='account_button' type='submit'>
+        <button className='account_button' type='submit' disabled={loading}>
           {loading ? <i className='fa-solid fa-spinner fa-spin'></i> : 'Reset password'}
         </button>
       </div>
