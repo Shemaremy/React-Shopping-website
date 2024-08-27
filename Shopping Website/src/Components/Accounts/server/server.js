@@ -98,13 +98,48 @@ const authenticateToken = (req, res, next) => {
   if (!token) return res.sendStatus(401); // Unauthorized
 
   jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
-    if (err) return res.sendStatus(403); // Forbidden
+    //if (err) return res.sendStatus(403); // Forbidden
+    if (err) {
+      if (err.name === 'TokenExpiredError') {
+        // req.user = null; // Expired token, continue without user context
+        res.status(401).json({ message: 'Token expired' }); // Invalid token, return error
+      }
+    }
 
     req.user = user;
     next();
   });
 };
 
+
+/*
+// JWT Authentication Middleware
+const authenticateToken = (req, res, next) => {
+  const authHeader = req.headers['authorization'];
+  const token = authHeader && authHeader.split(' ')[1];
+
+  if (!token) {
+    req.user = null; // No token provided, continue without user context
+    return next();
+  }
+
+  jwt.verify(token, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+    if (err) {
+      if (err.name === 'TokenExpiredError') {
+        // req.user = null; // Expired token, continue without user context
+        res.status(401).json({ message: 'Token expired' }); // Invalid token, return error
+      } else {
+        return req.user = null;
+      }
+    } else {
+      req.user = user; // Valid token, set the user context
+    }
+    next();
+  });
+};
+*/
+
+/*
 // AUTO LOAD THE CART ROUTE
 app.get('/api/cart', authenticateToken, async (req, res) => {
   try {
@@ -118,7 +153,26 @@ app.get('/api/cart', authenticateToken, async (req, res) => {
       res.status(500).json({ message: 'Server error' });
   }
 });
+*/
 
+// AUTO LOAD THE CART ROUTE
+app.get('/api/cart', authenticateToken, async (req, res) => {
+  try {
+    if (!req.user) {
+      // If user context is null, assume token was expired or not provided
+      return res.status(200).json({ cart: [] }); // Return an empty cart or a similar response
+    }
+
+    const user = await User.findById(req.user.id);
+    if (!user) return res.status(404).json({ message: 'User not found' });
+
+    // Return the cart data to the client
+    res.status(200).json({ cart: user.cart });
+  } catch (err) {
+    console.error('Error fetching cart:', err);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
 
 
 

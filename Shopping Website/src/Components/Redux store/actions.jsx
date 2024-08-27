@@ -4,7 +4,7 @@ export const REMOVE_ITEM = 'REMOVE_ITEM';
 export const UPDATE_QUANTITY = 'UPDATE_QUANTITY';
 export const SET_SEARCH_TERM = 'SET_SEARCH_TERM';
 
-import { useNavigate } from 'react-router-dom';
+
 
 
 
@@ -32,7 +32,6 @@ export const addToCart = (product) => {
             }
             
             try {
-                // Call your backend API to add the product to the database
                 const response = await fetch('https://verve-users.glitch.me/api/cart', {
                     method: 'POST',
                     headers: {
@@ -48,9 +47,13 @@ export const addToCart = (product) => {
                     })
                 });
 
-                const data = await response.json();
-
                 if (response.ok) {
+                    const data = await response.json();
+                    dispatch({
+                        type: ADD_TO_CART,
+                        payload: product
+                    });
+                } else if (response.status === 403) {   // When my token is invalid or expired
                     dispatch({
                         type: ADD_TO_CART,
                         payload: product
@@ -65,6 +68,7 @@ export const addToCart = (product) => {
         }
     };
 };
+
 
 
 
@@ -91,12 +95,16 @@ export const fetchCart = () => {
                         type: LOAD_CART,
                         payload: data.cart // Assuming the response has the user's cart in "data.cart"
                     });
+                } else if (response.status === 401) {   // When my token is invalid or expired
+                    alert("Token just expired")
+                    //localStorage.removeItem('token'); 
+                    //navigate('/accounts')
                 } else {
                     console.log('Failed to load cart data');
                 }
             } catch (error) {
-                //console.error('Error fetching cart data:', error);
-                console.log('Your token has expired');
+                console.error('Error fetching cart data:', error);
+                //console.log('Your token has expired');
             }
         }
     };
@@ -111,7 +119,14 @@ export const removeItem = (index) => {
         const token = localStorage.getItem('token');
         alert("Are you sure you want to remove this item?");
 
-        if (token) {
+        if (!token) {
+            dispatch({
+                type: REMOVE_ITEM,
+                payload: index
+            });
+        }
+
+        else {
             try {
                 // Call your backend API to remove the product from the database
                 const response = await fetch('https://verve-users.glitch.me/api/cart', {
@@ -123,10 +138,13 @@ export const removeItem = (index) => {
                     body: JSON.stringify({ index }) // Send the product name to identify it
                 });
     
-                const data = await response.json();
-    
                 if (response.ok) {
-                    // Dispatch the action to remove the product from the Redux store
+                    const data = await response.json();
+                    dispatch({
+                        type: REMOVE_ITEM,
+                        payload: index
+                    });
+                } else if (response.status === 403) {   // When my token is invalid or expired
                     dispatch({
                         type: REMOVE_ITEM,
                         payload: index
@@ -136,18 +154,18 @@ export const removeItem = (index) => {
                 }
             } catch (error) {
                 console.error('Error deleting from cart:', error);
-                alert('Error deleting from cart. Please try again later.');
             }
-        }
-
-        else {
-            dispatch({
-                type: REMOVE_ITEM,
-                payload: index
-            });
         }
     };
 };
+
+
+
+
+
+
+
+
 
 
 

@@ -12,8 +12,8 @@ import {
 
   
 const initialState = {
-  counter: parseInt(localStorage.getItem('counter')) || 0,
-  currentProduct: JSON.parse(localStorage.getItem('cart')) || [].filter(item => item && item.name),
+  counter: 0,
+  currentProduct: [],
   searchTerm: '',
 };
 
@@ -45,8 +45,8 @@ const reducer = (state = initialState, action) => {
           counter: state.counter + 1,
           currentProduct: updatedCart
         };
-        localStorage.setItem('cart', JSON.stringify(newState.currentProduct));
-        localStorage.setItem('counter', newState.counter);
+        //localStorage.setItem('cart', JSON.stringify(newState.currentProduct));
+        //localStorage.setItem('counter', newState.counter);
 
         return newState;
       }
@@ -58,8 +58,8 @@ const reducer = (state = initialState, action) => {
         counter: state.counter - 1,
         currentProduct: updatedCartAfterRemove
       };
-      localStorage.setItem('cart', JSON.stringify(newStateAfterRemove.currentProduct)); 
-      localStorage.setItem('counter', newStateAfterRemove.counter);
+      //localStorage.setItem('cart', JSON.stringify(newStateAfterRemove.currentProduct)); 
+      //localStorage.setItem('counter', newStateAfterRemove.counter);
       return newStateAfterRemove;
 
 
