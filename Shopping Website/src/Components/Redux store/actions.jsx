@@ -55,10 +55,9 @@ export const addToCart = (product) => {
                         payload: product
                     });
                 } else if (response.status === 401) {   // When my token is invalid or expired
-                    dispatch({
-                        type: ADD_TO_CART,
-                        payload: product
-                    });
+                    alert("Token just expired you need to login again");
+                    localStorage.removeItem('token');
+                    window.location.reload();
                 } else {
                     alert("Failed to add item");
                 }
@@ -97,9 +96,9 @@ export const fetchCart = () => {
                         payload: data.cart // Assuming the response has the user's cart in "data.cart"
                     });
                 } else if (response.status === 401) {   // When my token is invalid or expired
-                    console.log("Token just expired")
-                    //localStorage.removeItem('token');
-                    //navigate('/accounts');
+                    alert("Token just expired you need to login again");
+                    localStorage.removeItem('token');
+                    window.location.reload();
                 } else {
                     console.log('Failed to load cart data');
                 }
@@ -145,6 +144,10 @@ export const removeItem = (index) => {
                         type: REMOVE_ITEM,
                         payload: index
                     });
+                } else if (response.status === 401) {   // When my token is invalid or expired
+                    alert("Token just expired you need to login again");
+                    localStorage.removeItem('token');
+                    window.location.reload();
                 } else if (response.status === 403) {   // When my token is invalid or expired
                     dispatch({
                         type: REMOVE_ITEM,
