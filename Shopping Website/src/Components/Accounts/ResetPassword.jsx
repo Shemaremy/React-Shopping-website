@@ -108,7 +108,7 @@ const ResetPasswordForm = () => {
         if (response.ok) {
           showDialog('Password has been reset successfully!!');
         } else {
-          alert(`Error: ${data.message}`);
+          showDialog(`Error: ${data.message}`);
           window.close();
         }
       } catch (error) {
@@ -117,7 +117,7 @@ const ResetPasswordForm = () => {
       }
     }
     else {
-      alert("You are trying to access the reset form without the token!");
+      showDialog("You are trying to access the reset form without the token!");
       window.close();
     }  
   }

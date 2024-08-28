@@ -77,6 +77,11 @@ function Accounts() {
     setAutoOpenDialog(true);
   };
 
+  const handleDialogClose = () => {
+    setAutoOpenDialog(false);
+  };
+  
+
 
 
 
@@ -171,17 +176,15 @@ function Accounts() {
         if (response.ok) {
           UsernameBorder.style.borderColor = '';
           EmailBorder.style.borderColor = '';
-          //alert('Success: User registered successfully');
           console.log('Success:', data);
-          //window.location.reload();
           showDialog('Success: User registered successfully');
         } else {
           const errorMessage = data.message;
           if (errorMessage.includes("UserName")) {
-            alert("Username already exists");
+            showDialog("Username already exists");
             UsernameBorder.style.borderColor = 'red';
           } else if (errorMessage.includes("Email")) {
-            alert("Email already exists");
+            showDialog("Email already exists");
             UsernameBorder.style.borderColor = '';
             EmailBorder.style.borderColor = 'red';
           }
@@ -256,12 +259,12 @@ function Accounts() {
           localStorage.setItem('username', data.username);
           setToken(data.token);
         } else {
-          alert(`Error: ${data.message}`);
+          showDialog(data.message);
           console.error('Login failed:', data.message);
         }
       } catch (error) {
         console.error('Error:', error);
-        alert('Error: Something went wrong. Please try again.');
+        alert('Error: Something went wrong. Please try again later.');
       }
     }
     loginUser();
@@ -291,11 +294,9 @@ function Accounts() {
     
         if (response.ok) {
           showDialog('Link sent successfully! Check your inbox.');
-          //alert('Link sent successfully!!');
           console.log('Success:', data);
-          //window.location.reload();
         } else {
-          alert(`Error: ${data.message}`);
+          showDialog("Email was not found in our database.");
           console.error('Sending failed:', data.message);
         }
       } catch (error) {
@@ -498,7 +499,11 @@ function Accounts() {
           </div>
         </div>
       </div>
-      <Dialog autoOpen={autoOpenDialog} message={dialogMessage} token={token}/>
+      <Dialog autoOpen={autoOpenDialog} 
+              message={dialogMessage} 
+              token={token}
+              onClose={handleDialogClose}
+      />
     </div>
   )
 }

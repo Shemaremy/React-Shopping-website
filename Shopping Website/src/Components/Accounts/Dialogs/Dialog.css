@@ -22,7 +22,7 @@ body.active-modal {
 .overlay {
     background: rgba(49,49,49,0.8);
 }
-.modal-content {
+.dialog-content {
     position: absolute;
     top: 40%;
     left: 50%;
@@ -39,7 +39,7 @@ body.active-modal {
     align-items: center;
 }
 
-.fa-circle-check {
+.dialog-mark {
     font-size: 50px;
     color: gray;
 }
@@ -48,6 +48,7 @@ body.active-modal {
     font-family: sans-serif;
     font-weight: 100;
     font-size: 17px;
+    text-align: center;
 }
 
 .confirm-modal{
@@ -67,3 +68,15 @@ body.active-modal {
 
 
 
+
+
+
+
+
+
+
+@media (max-width: 414px) {
+    .message-header {
+        font-size: 15px;
+    }
+}
