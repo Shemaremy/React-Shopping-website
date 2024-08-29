@@ -26,6 +26,7 @@ function Accounts() {
   const [loginPassword, setLoginPassword] = useState('');
 
   const [autoOpenDialog, setAutoOpenDialog] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [dialogMessage, setDialogMessage] = useState('');
 
   const [loading, setLoading] = useState(false);
@@ -75,10 +76,12 @@ function Accounts() {
   const showDialog = (message) => {
     setDialogMessage(message);
     setAutoOpenDialog(true);
+    setIsDialogOpen(true);
   };
 
   const handleDialogClose = () => {
     setAutoOpenDialog(false);
+    setIsDialogOpen(true);
   };
   
 
@@ -356,7 +359,7 @@ function Accounts() {
         </div>
       </div>
       <div className='three'>
-        <button className='account_button' type='submit' disabled={loading}>
+        <button className='account_button' type='submit' disabled={loading || isDialogOpen}>
           {loading ? <i className="fa-solid fa-spinner fa-spin"></i> : 'Sign in'}
         </button>
       </div>
@@ -427,7 +430,7 @@ function Accounts() {
         {errors.passwordTwo && <p className='error'>{errors.passwordTwo}</p>}
       </div>
       <div className='three'>
-        <button className='account_button' type='submit' disabled={loading}>
+        <button className='account_button' type='submit' disabled={loading || isDialogOpen}>
            {loading ? <i className="fa-solid fa-spinner fa-spin"></i> : 'Sign up'}
         </button>
       </div>
@@ -452,7 +455,7 @@ function Accounts() {
         </div>
       </div>
       <div className='three'>
-        <button className='account_button' type='submit' disabled={loading}>
+        <button className='account_button' type='submit' disabled={loading || isDialogOpen}>
           {loading ? <i className="fa-solid fa-spinner fa-spin"></i> : 'Send link'}
         </button>
       </div>

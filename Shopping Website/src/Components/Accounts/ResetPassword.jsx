@@ -15,6 +15,7 @@ const ResetPasswordForm = () => {
   const [showPasswordTwo, setShowPasswordTwo] = useState(false);
 
   const [autoOpenDialog, setAutoOpenDialog] = useState(false);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [dialogMessage, setDialogMessage] = useState('');
 
   const [loading, setLoading] = useState(false);
@@ -42,6 +43,7 @@ const ResetPasswordForm = () => {
   const showDialog = (message) => {
     setDialogMessage(message);
     setAutoOpenDialog(true);
+    setIsDialogOpen(true);
   };
   
 
@@ -201,7 +203,7 @@ const ResetPasswordForm = () => {
         {errors.passwordTwo && <p className='error'>{errors.passwordTwo}</p>}
       </div>
       <div className='three'>
-        <button className='account_button' type='submit' disabled={loading}>
+        <button className='account_button' type='submit' disabled={loading || isDialogOpen}>
           {loading ? <i className='fa-solid fa-spinner fa-spin'></i> : 'Reset password'}
         </button>
       </div>

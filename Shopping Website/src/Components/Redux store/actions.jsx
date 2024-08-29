@@ -95,7 +95,8 @@ export const fetchCart = () => {
                         payload: data.cart
                     });
                 } else if (response.status === 401) {
-                    alert("Token just expired you need to login again");
+                    //alert(data.message)     
+                    localStorage.setItem('alertMessage', "Token expired");
                     localStorage.removeItem('token');
                     window.location.reload();
                 } else {

@@ -5,7 +5,7 @@ import C from './Components/Footer'
 import Mobilepanel from './Mobilepanel'
 
 
-import { BrowserRouter as Router, Route, Routes, useLocation} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate} from 'react-router-dom';
 import ProceedPayment from './Components/Payment/ProceedPayment';
 import Accounts from './Components/Accounts/Accounts';
 
@@ -38,14 +38,31 @@ function App() {
 // Created this function to help me change the height of the page on the new one. It must be below
 function AppRoutes() {
 
-    // On load of the page, fetch data from the database of an account
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(fetchCart());
-    }, [dispatch]);
-
-
+  // On load of the page, fetch data from the database of an account
+  const dispatch = useDispatch();
   const location = useLocation();
+  const navigate = useNavigate();
+
+
+
+
+  useEffect(() => {
+      dispatch(fetchCart());
+  }, [dispatch]);
+
+
+
+  // Check localStorage for alert messages on load
+  useEffect(() => {
+    const message = localStorage.getItem('alertMessage');
+    if (message === 'Token expired') {
+      navigate('/accounts');
+      localStorage.removeItem('alertMessage');
+    }
+  }, []);
+
+
+
 
   useEffect(() => {
     if (location.pathname === '/payment') {
