@@ -90,12 +90,11 @@ export const fetchCart = () => {
                 const data = await response.json();
     
                 if (response.ok) {
-                    // Dispatch an action to update the cart in the Redux store
                     dispatch({
                         type: LOAD_CART,
-                        payload: data.cart // Assuming the response has the user's cart in "data.cart"
+                        payload: data.cart
                     });
-                } else if (response.status === 401) {   // When my token is invalid or expired
+                } else if (response.status === 401) {
                     alert("Token just expired you need to login again");
                     localStorage.removeItem('token');
                     window.location.reload();
@@ -104,7 +103,6 @@ export const fetchCart = () => {
                 }
             } catch (error) {
                 console.error('Error fetching cart data:', error);
-                //console.log('Your token has expired');
             }
         }
     };
