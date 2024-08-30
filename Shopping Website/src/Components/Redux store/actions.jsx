@@ -97,6 +97,7 @@ export const fetchCart = () => {
                     //alert(data.message)
                     localStorage.setItem('alertMessage', "Token expired");
                     localStorage.removeItem('token');
+                    localStorage.removeItem('username');
                     window.location.reload();
                 } else {
                     console.log('Failed to load cart data');

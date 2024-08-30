@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 import './ProceedPayment.css'
@@ -1152,7 +1153,7 @@ const handleCVCChange = (e) => {
                 <form action="" className='card_form' onSubmit={handleSubmit}>
                     <div className='cardholder_name'>
                         <div className='first_name'>
-                            <p className='indicator'>Cardholder name</p>
+                            <p className='paym-indicator'>Cardholder name</p>
                             <input type="text" placeholder='ex: Shema Remy' 
                                 value={cardholderName} 
                                 name="cardholderName"
@@ -1163,7 +1164,7 @@ const handleCVCChange = (e) => {
                     </div>
                     <div className='card_number'>
                         <div className='first_name'>
-                            <p className='indicator'>Card number</p>
+                            <p className='paym-indicator'>Card number</p>
                             <input type={showCardNumber ? "text" : "password"} placeholder='1234-5678-9012-3456'
                                 value={cardNumber}
                                 name="cardNumber"
@@ -1178,7 +1179,7 @@ const handleCVCChange = (e) => {
                     </div>
                     <div className='exp_and_cvc'>
                         <div className='first_name'>
-                            <p className='indicator'>Expiry date</p>
+                            <p className='paym-indicator'>Expiry date</p>
                             <input
                                 type="text"
                                 placeholder='MM/YY'
@@ -1190,7 +1191,7 @@ const handleCVCChange = (e) => {
                             {errors.expiryDate && <p className='error'>{errors.expiryDate}</p>}
                         </div>
                         <div className='last_name'>
-                            <p className='indicator'>CVC</p>
+                            <p className='paym-indicator'>CVC</p>
                             <input
                                 type="text"
                                 placeholder='CVC'
@@ -1361,7 +1362,7 @@ const handleCVCChange = (e) => {
                         <form action="" className='address_form' onSubmit={handleSubmit}>
                             <div className='names_container'>
                                 <div className='first_name'>
-                                    <p className='indicator'>FIRST NAME</p>
+                                    <p className='paym-indicator'>FIRST NAME</p>
                                     <input type="text" 
                                         placeholder='ex: Shema'
                                         value={FirstName}
@@ -1372,19 +1373,19 @@ const handleCVCChange = (e) => {
                                     {errors.FirstName && <p className='error'>{errors.FirstName}</p>}
                                 </div>
                                 <div className='last_name'>
-                                    <p className='indicator'>LAST NAME</p>
+                                    <p className='paym-indicator'>LAST NAME</p>
                                     <input type="text" placeholder='ex: Remy' maxLength="20"/>
                                 </div>
                             </div>
                             <div className='street_container'>
                                 <div className='first_name'>
-                                    <p className='indicator'>STREET ADDRESS</p>
+                                    <p className='paym-indicator'>STREET ADDRESS</p>
                                     <input type="text" placeholder='Airport Avenue (SAR Motor, KN 5 Rd, Kigali)'/>
                                 </div>
                             </div>
                             <div className='city_zipcode_container'>
                                 <div className='first_name'>
-                                    <p className='indicator'>COUNTRY</p>
+                                    <p className='paym-indicator'>COUNTRY</p>
                                     <CountrySelect
                                         value={countryId}
                                         placeHolder="Select Country" 
@@ -1392,14 +1393,14 @@ const handleCVCChange = (e) => {
                                     />
                                 </div>
                                 <div className='last_name'>
-                                    <p className='indicator'>CITY</p>
+                                    <p className='paym-indicator'>CITY</p>
                                     <input type="text" placeholder='ex: Kigali'/>
                                 </div>
                                 
                             </div>
                             <div className='country_container'>
                                 <div className='first_name'>
-                                    <p className='indicator'>EMAIL ADDRESS</p>
+                                    <p className='paym-indicator'>EMAIL ADDRESS</p>
                                     <input type="text" 
                                         placeholder='ex: remyshema20@gmail.com'
                                         value={Email}

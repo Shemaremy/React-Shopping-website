@@ -1,3 +1,7 @@
+.payment-body {
+    height: 110vh;
+}
+
 .paying-wrapper {
     height: 100%;
     width: 100%;
@@ -382,7 +386,7 @@
 
 
 
-.indicator {
+.paym-indicator {
     width: 95%;
     height: 25%;
     margin-top: 0;
@@ -1585,12 +1589,14 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
     border-width: 0px;
     border-radius: 5px;
     color: rgb(235, 234, 234);
+    font-size: 12px;
     cursor: pointer;
-    background-color: rgba(0, 128, 0, 0.671);
+    background-color: rgba(0, 0, 0, 0.479);
+    transition: background-color 0.3s ease-in-out;
 }
 
 .pay_now_button:hover {
-    background-color: green;
+    background-color: rgba(0, 0, 0, 0.699);
 }
 
 
@@ -1781,6 +1787,13 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
 
 
 /*--------------------------------------- My phone ---------------------------------------------*/
+
+
+@media (max-width: 768px) {
+    .payment-body {
+        height: auto;
+    }
+}
 
 @media (min-width: 0px) and (max-width: 1024px) {
 

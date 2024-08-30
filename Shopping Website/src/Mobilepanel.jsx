@@ -6,8 +6,21 @@ import {handleLinkClickMobile} from './Components/Header'
 
 function Mobilepanel () {
     const navigate = useNavigate();
+
     const handleGotoAccounts = () => {
+      if (switchAcc !== 'Log out') {
         navigate('/accounts');
+      }
+    };
+
+    const handleGotoLogout = () => {
+      if (switchAcc === 'Log out') {
+        localStorage.removeItem('token');
+        localStorage.removeItem('username');
+        window.location.reload();
+      } else {
+        navigate('/accounts');
+      }
     };
 
     const [username, setUsername] = useState('Create account');
@@ -19,7 +32,7 @@ function Mobilepanel () {
         const changeShadow = document.querySelector('.user-profile-container');
         if (storedUsername) {
         setUsername(storedUsername);
-        setSwitchAcc('Log out')
+        setSwitchAcc('Log out');        
         changeIcon.classList.add('is-active');
         changeShadow.classList.add('is-active');
         }
@@ -36,7 +49,9 @@ function Mobilepanel () {
                     </div>
                     <div className='sign-in-container'>
                       <h3 className='create-account-header' onClick={handleGotoAccounts}>{username}</h3>
-                      <h3 className='sign-in-header'>{switchAcc}</h3>
+                      <h3 className='sign-in-header' onClick={handleGotoLogout}>
+                        {switchAcc === 'Log out' ? <> Log out <i className="fa-solid fa-arrow-right-from-bracket logout-ico"></i></> : (switchAcc)}
+                      </h3>
                     </div>
                   </div>
                   <div className='sect-2'>

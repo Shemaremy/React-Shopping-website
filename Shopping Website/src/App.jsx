@@ -66,11 +66,8 @@ function AppRoutes() {
 
   useEffect(() => {
     if (location.pathname === '/payment') {
-      if (window.innerWidth <= 768) {
-        document.body.style.height = 'auto';
-      } else {
-        document.body.style.height = '110vh';
-      }      
+      const bodyHeight = document.querySelector('body');
+      bodyHeight.classList.add('payment-body')   
       document.body.style.overflowY = 'auto';
     } else {
       document.body.style.overflowY = 'auto';

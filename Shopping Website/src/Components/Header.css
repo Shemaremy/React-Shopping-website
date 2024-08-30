@@ -1316,7 +1316,13 @@ h4 {
   }
   
   
+  .logout-ico {
+    color: gray;
+    font-size: 12px;
+    margin-left: 3px;
+  }
   
+
   
   .main_lists > div > h4 {
     font-family: sans-serif;
