@@ -44,7 +44,7 @@ function C(){
               if (response.ok) {
                 showDialog('Success: Your message was sent to us successfully, Thank you!');
               } else {
-                alert(`Error: ${data.message}`);
+                showDialog(`Error: ${data.message}`);
                 console.error('Login failed:', data.message);
               }
             } catch (error) {

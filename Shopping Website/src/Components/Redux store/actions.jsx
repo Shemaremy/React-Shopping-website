@@ -15,55 +15,54 @@ export const SET_SEARCH_TERM = 'SET_SEARCH_TERM';
 export const addToCart = (product) => {
     return async (dispatch, getState) => {
         const token = localStorage.getItem('token');
+        const { currentProduct } = getState();
+        const isAlreadyInCart = currentProduct.some(item => item.name === product.name);
+
         if (!token) {
-            dispatch({
-                type: ADD_TO_CART,
-                payload: product
-            });
+            if (!isAlreadyInCart) {
+                dispatch({
+                    type: ADD_TO_CART,
+                    payload: product
+                });
+            }
         }
 
         else {
-            const { currentProduct } = getState();
-            const isAlreadyInCart = currentProduct.some(item => item.name === product.name);
-
-            if (isAlreadyInCart) {
-                alert("You're adding an item twice, sir. Check your cart, and choose the quantity of the same product you want.");
-                return;
-            }
-            
-            try {
-                const response = await fetch('https://verve-users.glitch.me/api/cart', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}` // assuming you stored the token in localStorage
-                    },
-                    body: JSON.stringify({ 
-                        name: product.name,
-                        price: product.price,
-                        image: product.image,
-                        quantity: product.quantity,
-                        sizes: product.sizes, 
-                        stars: product.stars
-                    })
-                });
-
-                if (response.ok) {
-                    const data = await response.json();
-                    dispatch({
-                        type: ADD_TO_CART,
-                        payload: product
+            if (!isAlreadyInCart) {
+                try {
+                    const response = await fetch('https://verve-users.glitch.me/api/cart', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        },
+                        body: JSON.stringify({ 
+                            name: product.name,
+                            price: product.price,
+                            image: product.image,
+                            quantity: product.quantity,
+                            sizes: product.sizes, 
+                            stars: product.stars
+                        })
                     });
-                } else if (response.status === 401) {   // When my token is invalid or expired
-                    alert("Token just expired you need to login again");
-                    localStorage.removeItem('token');
-                    window.location.reload();
-                } else {
-                    alert("Failed to add item");
-                }
-            } catch (error) {
-                console.error('Error adding to cart:', error);
-                alert('Error adding to cart. Please try again later.');
+    
+                    if (response.ok) {
+                        const data = await response.json();
+                        dispatch({
+                            type: ADD_TO_CART,
+                            payload: product
+                        });
+                    } else if (response.status === 401) {   // When my token is invalid or expired
+                        localStorage.setItem('alertMessage', "Token expired");
+                        localStorage.removeItem('token');
+                        window.location.reload();
+                    } else {
+                        alert("Failed to add item");
+                    }
+                } catch (error) {
+                    console.error('Error adding to cart:', error);
+                    alert('Error adding to cart. Please try again later.');
+                }   
             }
         }
     };
@@ -95,7 +94,7 @@ export const fetchCart = () => {
                         payload: data.cart
                     });
                 } else if (response.status === 401) {
-                    //alert(data.message)     
+                    //alert(data.message)
                     localStorage.setItem('alertMessage', "Token expired");
                     localStorage.removeItem('token');
                     window.location.reload();
@@ -116,7 +115,6 @@ export const fetchCart = () => {
 export const removeItem = (index) => {
     return async (dispatch) => {
         const token = localStorage.getItem('token');
-        alert("Are you sure you want to remove this item?");
 
         if (!token) {
             dispatch({

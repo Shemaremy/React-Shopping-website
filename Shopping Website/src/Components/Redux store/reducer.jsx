@@ -45,8 +45,6 @@ const reducer = (state = initialState, action) => {
           counter: state.counter + 1,
           currentProduct: updatedCart
         };
-        //localStorage.setItem('cart', JSON.stringify(newState.currentProduct));
-        //localStorage.setItem('counter', newState.counter);
 
         return newState;
       }
@@ -58,8 +56,6 @@ const reducer = (state = initialState, action) => {
         counter: state.counter - 1,
         currentProduct: updatedCartAfterRemove
       };
-      //localStorage.setItem('cart', JSON.stringify(newStateAfterRemove.currentProduct)); 
-      //localStorage.setItem('counter', newStateAfterRemove.counter);
       return newStateAfterRemove;
 
 
@@ -71,9 +67,9 @@ const reducer = (state = initialState, action) => {
             if (idx === index) {
               let newQuantity = item.quantity;
               if (actionType === 'increment') {
-                newQuantity = Math.min(item.quantity + 1, 10); // Example limit of 10, adjust as needed
+                newQuantity = Math.min(item.quantity + 1, 10); 
               } else if (actionType === 'decrement') {
-                newQuantity = Math.max(item.quantity - 1, 1); // Ensure quantity doesn't go below 1
+                newQuantity = Math.max(item.quantity - 1, 1);
               }
               return { ...item, quantity: newQuantity };
             }
