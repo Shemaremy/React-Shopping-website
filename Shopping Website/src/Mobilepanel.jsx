@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import Avatar from 'react-avatar';
 import { useNavigate } from 'react-router-dom';
 import {handleLinkClickMobile} from './Components/Header'
 
@@ -45,7 +46,11 @@ function Mobilepanel () {
                 <div className='main_lists'>
                   <div className='sect-1'>
                     <div className='user-profile-container'>
+                    {switchAcc === 'Log out' ? (
+                      <Avatar name={username} size="70" round={true} className="avatar" />
+                    ) : (
                       <i className="fa-solid fa-user account-icon-mobile"></i>
+                    )}
                     </div>
                     <div className='sign-in-container'>
                       <h3 className='create-account-header' onClick={handleGotoAccounts}>{username}</h3>

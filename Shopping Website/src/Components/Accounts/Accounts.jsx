@@ -81,7 +81,7 @@ function Accounts() {
 
   const handleDialogClose = () => {
     setAutoOpenDialog(false);
-    setIsDialogOpen(true);
+    setIsDialogOpen(false);
   };
   
 

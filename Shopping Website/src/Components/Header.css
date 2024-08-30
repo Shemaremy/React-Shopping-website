@@ -1280,6 +1280,12 @@ h4 {
     box-shadow: 0px 0px 10px rgba(119, 109, 60, 0.397);
   }
 
+  .avatar {
+    filter: grayscale(60%);
+    height: 100%;
+    width: 100%;
+  }
+
   
   
   .account-icon-mobile {

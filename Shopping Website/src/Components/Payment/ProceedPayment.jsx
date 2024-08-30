@@ -313,7 +313,7 @@ const calculateTotalQuantity = () => {
         theShipping = 10000;
     }
 
-    else if (totalPrice <= 70000) {
+    else if (totalPrice <= 70000 && totalPrice > 0) {
         theShipping = 5000;
     }
 
@@ -764,10 +764,8 @@ const handleSubmit = (e) => {
         setErrors(newErrors);
     } else {
         console.log('Processing payment...');
-        // navigate('/');
-        // window.location.reload();
-        setErrors({});        
-        alert('Success');
+        navigate('/');
+        setErrors({});
     }
 };
 
