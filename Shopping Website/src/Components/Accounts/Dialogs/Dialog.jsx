@@ -41,6 +41,14 @@ function Dialog({ autoOpen = false, message = '', token, onClose }) {
       } else {
         alert("Failed to store the token");
       }
+    } else if (message === 'Welcome back Admin!!') {
+      localStorage.setItem('token', token);
+      if (token) {
+        //navigate('/updator');
+        alert("Great");
+      } else {
+        alert("Failed to store the token");
+      }
     } else if (errorMessages.some(substring => message.includes(substring))) {
       setModal(!modal);
     } else {

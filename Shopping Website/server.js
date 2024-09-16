@@ -1,4 +1,3 @@
-// This how my server from Glitch looks like
 require('dotenv').config();
 
 const express = require('express');
@@ -16,7 +15,7 @@ const jwt = require('jsonwebtoken');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 app.use(cors());
 app.use(express.json());
@@ -44,7 +43,12 @@ connectDB();
 
 
 
-// Schema definition
+
+// -------------- Schema definition section ---------------------------------------
+// -------------- Schema definition section ---------------------------------------
+
+
+// User schema -----------------------
 const UserSchema = new mongoose.Schema({
   UserName: { type: String, unique: true, required: true },
   Email: { type: String, unique: true, required: true },
@@ -58,18 +62,21 @@ const UserSchema = new mongoose.Schema({
     stars: { type: Number, default: 1 }
   }]
 });
-
-
 UserSchema.plugin(uniqueValidator);
 const User = mongoose.model('Users', UserSchema);
 
 
 
+// Admin schema -----------------------
+const AdminSchema = new mongoose.Schema({
+  UserName: { type: String, unique: true, required: true },
+  Email: { type: String, unique: true, required: true },
+  password: { type: String, required: true },
+});
+AdminSchema.plugin(uniqueValidator);
+const Admin = mongoose.model('Admin', AdminSchema);
 
 
-
-// Configure SendGrid
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 
 
@@ -299,6 +306,45 @@ app.post('/api/login', async (req, res) => {
         { expiresIn: '1h' }
       );
         res.status(200).send({ message: 'Success', token, username: user.UserName });
+      } else {
+        res.status(400).send({ message: 'Invalid password!' });
+      }
+
+    }
+
+  } 
+  
+  
+  catch (err) {
+    console.error('Error:', err);
+    res.status(500).send({ message: 'Server error' });
+  }
+
+
+});
+
+
+
+// Login as an admin
+app.post('/api/adminlogin', async (req, res) => {
+  const { identifier, password } = req.body;
+
+  try {
+
+    const admin = await Admin.findOne({ $or: [{ UserName: identifier }, { Email: identifier }]});
+    if (!admin) {
+      res.status(400).send({ message: `There is no admin account with username or email: ${identifier}` });
+    } 
+    else {
+      const isMatch = password === admin.password;
+      if (isMatch) {
+        // Generate JWT token
+        const token = jwt.sign(
+        { id: admin._id, UserName: admin.UserName },
+        process.env.JWT_SECRET, 
+        { expiresIn: '1h' }
+      );
+        res.status(200).send({ message: 'Success', token, username: admin.UserName });
       } else {
         res.status(400).send({ message: 'Invalid password!' });
       }

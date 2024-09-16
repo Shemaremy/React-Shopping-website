@@ -8,6 +8,7 @@ import Mobilepanel from './Mobilepanel'
 import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate} from 'react-router-dom';
 import ProceedPayment from './Components/Payment/ProceedPayment';
 import Accounts from './Components/Accounts/Accounts';
+import Admin from './Components/Accounts/Admin'
 
 import ResetPasswordForm from './Components/Accounts/ResetPassword'
 
@@ -76,7 +77,7 @@ function AppRoutes() {
 
 
 
-    if (location.pathname === '/accounts' || location.pathname === '/reset-password') {
+    if (location.pathname === '/accounts' || location.pathname === '/admin'  || location.pathname === '/reset-password') {
       document.body.style.height = '100vh';  
       document.body.style.overflowY = 'auto';
     } else {
@@ -105,6 +106,7 @@ function AppRoutes() {
       </Route>
       <Route path="/payment" element={<ProceedPayment />}></Route>
       <Route path="/accounts" element={<Accounts />}></Route>
+      <Route path="/admin" element={<Admin />}></Route>
       <Route path="/reset-password" element={<ResetPasswordForm />}></Route>
     </Routes>
   );

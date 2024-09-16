@@ -74,6 +74,9 @@ function Mobilepanel () {
                   <div className='sect-6'>
                     <h4 onClick={(e) => handleLinkClickMobile('C', e)}>Contact us <i className="fa-solid fa-chevron-right"></i></h4>
                   </div>
+                  <div className='sect-7'>
+                    <h4>Admin area</h4>
+                  </div>
                 </div>
               </div>
             </div>
