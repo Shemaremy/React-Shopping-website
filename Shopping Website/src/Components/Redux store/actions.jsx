@@ -18,7 +18,7 @@ export const addToCart = (product) => {
         const { currentProduct } = getState();
         const isAlreadyInCart = currentProduct.some(item => item.name === product.name);
 
-        if (!token) {
+        if (token === null) {
             if (!isAlreadyInCart) {
                 dispatch({
                     type: ADD_TO_CART,
@@ -57,7 +57,7 @@ export const addToCart = (product) => {
                         localStorage.removeItem('token');
                         window.location.reload();
                     } else {
-                        alert("Failed to add item");
+                        console.log("Failed to add item");
                     }
                 } catch (error) {
                     console.error('Error adding to cart:', error);

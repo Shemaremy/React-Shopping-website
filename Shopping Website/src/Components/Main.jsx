@@ -50,7 +50,6 @@ import Jordan13white from '../images/Shoes products/Jordan 13 white.png';
 
 // CARD CONTENT FOR OUR PRODUCTS CARDS
 export const Employees = [
-,
     { name: "Jordan 4 black", price: "25000", stars: 3, image: Jordan4black, quantity: 1, sizes: ["40", "41", "42", "43"]  },
     { name: "Jordan 1 red", price: "28000", stars: 2, image: Jordan1red, quantity: 1, sizes: ["40", "41", "42", "43"]  },
     { name: "Jordan 4 white", price: "25000", stars: 4, image: Jordan4white, quantity: 1, sizes: ["40", "41", "42", "43"]  },
