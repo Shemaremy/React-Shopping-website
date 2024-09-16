@@ -24,6 +24,10 @@ function Mobilepanel () {
       }
     };
 
+    const handleGoToAdmin = () => {
+      navigate('/admin')
+    };
+
     const [username, setUsername] = useState('Create account');
     const [switchAcc, setSwitchAcc] = useState('Sign in');
 
@@ -75,7 +79,7 @@ function Mobilepanel () {
                     <h4 onClick={(e) => handleLinkClickMobile('C', e)}>Contact us <i className="fa-solid fa-chevron-right"></i></h4>
                   </div>
                   <div className='sect-7'>
-                    <h4>Admin area</h4>
+                    <h4 onClick={handleGoToAdmin}>Admin area</h4>
                   </div>
                 </div>
               </div>

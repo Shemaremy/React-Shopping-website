@@ -44,8 +44,8 @@ function Dialog({ autoOpen = false, message = '', token, onClose }) {
     } else if (message === 'Welcome back Admin!!') {
       localStorage.setItem('token', token);
       if (token) {
-        //navigate('/updator');
-        alert("Great");
+        navigate('/updator');
+        //alert("Great");
       } else {
         alert("Failed to store the token");
       }
