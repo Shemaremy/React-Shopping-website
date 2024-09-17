@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './Updator.css';
+import AddItems from "./commands/AddItems";
 
 function Updator() {
 
@@ -67,7 +68,7 @@ function Updator() {
     </div>
   );
 
-  const addItems = (<><h1>Adding items</h1></>);
+  const addItems = (<AddItems/>);
 
   const removeItems = (<><h1>Removing items</h1></>);
 

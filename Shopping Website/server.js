@@ -18,7 +18,8 @@ const PORT = process.env.PORT || 5000;
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 app.use(cors());
-app.use(express.json());
+app.use(express.json({ limit: '50mb' }));
+app.use(express.urlencoded({ limit: '50mb', extended: true }));
 
 
 
@@ -81,7 +82,16 @@ const Admin = mongoose.model('Admin', AdminSchema);
 
 
 
+// Product Schema
+const ProductSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  price: { type: Number, required: true },
+  quantity: { type: Number, required: true },
+  image: { type: String, required: true },
+  sizes: { type: [String], required: true },
+});
 
+const Product = mongoose.model('Product', ProductSchema);
 
 
 
@@ -360,6 +370,31 @@ app.post('/api/adminlogin', async (req, res) => {
   }
 
 
+});
+
+
+
+
+
+
+// Admin add to store route
+
+app.post('/api/adminadd', async (req, res) => {
+  const products = req.body.items; // Receive an array of products
+
+  try {
+    // Validate if products array is empty
+    if (!products || products.length === 0) {
+      return res.status(400).json({ message: 'No products to add.' });
+    }
+
+    // Insert multiple products into the database
+    await Product.insertMany(products);
+    res.status(200).json({ message: 'Products added successfully' });
+  } catch (err) {
+    console.error('Error adding products:', err);
+    res.status(500).json({ message: 'Server error' });
+  }
 });
 
 

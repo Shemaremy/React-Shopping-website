@@ -1,0 +1,97 @@
+/* ============================== ADDING ITEMS =========================================== */
+/* ============================== ADDING ITEMS =========================================== */
+/* ============================== ADDING ITEMS =========================================== */
+
+.add-items-container {
+    width: 90%;
+    padding: 20px;
+    background-color: #f9f9f991;
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(128, 128, 128, 0.315);
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  
+  .add-items-container h1 {
+    margin-bottom: 50px;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 100;
+    text-decoration: underline;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 100;
+    font-size: 13px;
+  }
+  
+  .form-group input {
+    width: 95%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin: 0 auto;
+  }
+  
+  button {
+    padding: 12px 23px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #007bff;
+    cursor: pointer;
+    font-size: 11px;
+    margin-right: 10px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .items-list {
+    margin-top: 20px;
+  }
+  
+  .item {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+  }
+  
+  .item img {
+    max-width: 100px;
+    height: auto;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .confirm-button {
+    width: 20%;
+    padding: 15px;
+    background-color: #28a745;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .confirm-button.disable {
+    background-color: #8b978e;
+    cursor: not-allowed;
+  }
+
+  .confirm-button.disable:hover {
+    background-color: #8b978e;
+  }
+  
+  .confirm-button:hover {
+    background-color: #218838;
+  }

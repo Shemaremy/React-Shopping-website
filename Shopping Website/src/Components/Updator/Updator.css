@@ -2,9 +2,7 @@
 /* Main Container */
 .admin-container {
     display: flex;
-    min-height: 100vh;
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f9;
     transition: all 0.3s ease;
   }
   
