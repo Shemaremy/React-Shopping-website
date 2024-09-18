@@ -85,10 +85,11 @@ const Admin = mongoose.model('Admin', AdminSchema);
 // Product Schema
 const ProductSchema = new mongoose.Schema({
   name: { type: String, required: true },
+  category: { type: String, required: true },
   price: { type: Number, required: true },
   quantity: { type: Number, required: true },
   image: { type: String, required: true },
-  sizes: { type: [String], required: true },
+  size: { type: String, required: true },
 });
 
 const Product = mongoose.model('Product', ProductSchema);
@@ -377,8 +378,14 @@ app.post('/api/adminlogin', async (req, res) => {
 
 
 
-// Admin add to store route
 
+// ==================================================== ADMIN ACTIONS =======================================================
+// ==================================================== ADMIN ACTIONS =======================================================
+// ==================================================== ADMIN ACTIONS =======================================================
+// ==================================================== ADMIN ACTIONS =======================================================
+
+
+// Admin add to route
 app.post('/api/adminadd', async (req, res) => {
   const products = req.body.items; // Receive an array of products
 
@@ -396,6 +403,30 @@ app.post('/api/adminadd', async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 });
+
+
+// Admin display storage items
+
+app.get('/api/admindisplay', async (req, res) => {
+  try {
+    const { category } = req.query;
+    let products;
+    
+    if (category) {
+      products = await Product.find({ category });
+    } else {
+      products = await Product.find();
+    }
+
+    res.status(200).json(products);
+  } catch (err) {
+    console.error('Error fetching products:', err);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+
+
 
 
 

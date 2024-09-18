@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import './Yall.css';
 import '../Updator.css';
 
@@ -22,8 +22,10 @@ function AddItems() {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
-  const [newItem, setNewItem] = useState({ name: '', price: '', quantity: '', size: '', image: null });
+  const [newItem, setNewItem] = useState({ name: '', category: '', price: '', quantity: '', size: '', image: null });
 
+  // Reference for the file input field
+  const fileInputRef = useRef(null);
   
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -51,15 +53,19 @@ function AddItems() {
   
 
   const addItemToList = () => {
-    const { name, price, quantity, size, image } = newItem;
+    const { name, category, price, quantity, size, image } = newItem;
   
-    if (!name || !price || !quantity || !size || !image) {
+    if (!name || !category || !price || !quantity || !size || !image) {
       alert("Please fill in all fields and upload an image.");
       return;
     }
   
     setItems([...items, newItem]);
-    setNewItem({ name: '', price: '', quantity: '', size: '', image: null });
+    setNewItem({ name: '', category: '', price: '', quantity: '', size: '', image: null });
+
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
   };
   
 
@@ -116,6 +122,9 @@ function AddItems() {
         alert("Items added to the store successfully!");
         setItems([]);
       } else {
+        setLoading(false);
+        disableButton.classList.remove('disable');
+        setIsButtonDisabled(false);
         alert("Failed to add items to the store.");
       }
     } catch (error) {
@@ -143,6 +152,18 @@ function AddItems() {
         <input type="text" name="name" value={newItem.name} onChange={handleChange}/>
       </div>
       <div className="form-group">
+        <label>Category:</label>
+        <select name="category" value={newItem.category} onChange={handleChange} className="category-input">
+          <option value=""></option>
+          <option value="Shoes">Shoes</option>
+          <option value="Pants">Pants</option>
+          <option value="T shirts">T-shirts</option>
+          <option value="Hoodies">Hoodies</option>
+          <option value="Jackets">Jackets</option>
+          <option value="Caps">Caps</option>
+        </select>
+      </div>
+      <div className="form-group">
         <label>Price:</label>
         <input type="number" name="price" value={newItem.price} onChange={handleChange} />
       </div>
@@ -156,7 +177,7 @@ function AddItems() {
       </div>
       <div className="form-group">
         <label>Image:</label>
-        <input type="file" onChange={handleImageChange} />
+        <input type="file" onChange={handleImageChange} ref={fileInputRef} />
       </div>
       <button onClick={addItemToList}>Add to List &nbsp; <i className="fa-solid fa-plus"></i></button>
 
@@ -164,6 +185,7 @@ function AddItems() {
         {items.map((item, index) => (
           <div key={index} className="item">
             <h3>{item.name}</h3>
+            <p>Category: {item.category}</p>
             <p>Price: ${item.price}</p>
             <p>Quantity: {item.quantity}</p>
             <p>Size: {item.size}</p>
