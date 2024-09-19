@@ -78,7 +78,6 @@ export const fetchCart = () => {
         const token = localStorage.getItem('token');
         if (token) {
             try {
-                // Fetch the cart data from your backend
                 const response = await fetch('https://verve-users.glitch.me/api/cart', {
                     method: 'GET',
                     headers: {
@@ -100,7 +99,7 @@ export const fetchCart = () => {
                     localStorage.removeItem('username');
                     window.location.reload();
                 } else {
-                    console.log('Failed to load cart data');
+                    console.log(data.message);                    
                 }
             } catch (error) {
                 console.error('Error fetching cart data:', error);
@@ -108,7 +107,6 @@ export const fetchCart = () => {
         }
     };
 };
-
 
 
 

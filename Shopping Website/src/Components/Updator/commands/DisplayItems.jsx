@@ -111,7 +111,7 @@ const DisplayItems = () => {
           <p className="product-category">Category: {item.category}</p>
           <p className="product-size">Size: {item.size}</p>
           <p className="product-quantity">Quantity: {item.quantity}</p>
-          <p className="product-price">${item.price}</p>
+          <p className="product-price">{item.price}</p>
         </div>
       ))}
     </>

@@ -129,6 +129,8 @@ function AddItems() {
       }
     } catch (error) {
       setLoading(false);
+      disableButton.classList.remove('disable');
+      setIsButtonDisabled(false);
       console.error("Error adding items to the store:", error);
       alert("An error occurred. Please try again.");
     }
@@ -179,18 +181,18 @@ function AddItems() {
         <label>Image:</label>
         <input type="file" onChange={handleImageChange} ref={fileInputRef} />
       </div>
-      <button onClick={addItemToList}>Add to List &nbsp; <i className="fa-solid fa-plus"></i></button>
+      <button className="add-to-list" onClick={addItemToList}>Add to List &nbsp; <i className="fa-solid fa-plus"></i></button>
 
       <div className="items-list">
         {items.map((item, index) => (
           <div key={index} className="item">
             <h3>{item.name}</h3>
             <p>Category: {item.category}</p>
-            <p>Price: ${item.price}</p>
+            <p>Price: {item.price}</p>
             <p>Quantity: {item.quantity}</p>
             <p>Size: {item.size}</p>
             {item.image && <img src={URL.createObjectURL(item.image)} alt="preview" />}
-            <button onClick={() => removeItem(index)}><i className="fa-solid fa-trash-can"></i></button>
+            <button className="delete-button" onClick={() => removeItem(index)}><i className="fa-solid fa-trash-can"></i></button>
           </div>
         ))}
       </div>

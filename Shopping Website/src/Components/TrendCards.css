@@ -199,12 +199,11 @@
   
 
 .slick-next {
-    right: -23px !important;
-    color: black !important;
+    right: -34px !important;
 }
   
 .slick-prev {
-    left: -23px !important;
+    left: -20px !important;
 }
 
 .slick-prev:before, .slick-next:before {

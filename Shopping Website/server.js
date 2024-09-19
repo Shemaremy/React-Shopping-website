@@ -142,7 +142,13 @@ app.get('/api/cart', authenticateToken, async (req, res) => {
     }
 
     const user = await User.findById(req.user.id);
-    if (!user) return res.status(404).json({ message: 'User not found' });
+    if (!user) {
+      if (req.user?.UserName !== 'Adeline') {
+        return res.status(404).json({ message: `User ${req.user?.UserName} not found` });
+      } else {
+        return res.status(200).json({ cart: [] });
+      }
+    }   
 
     // Return the cart data to the client
     res.status(200).json({ cart: user.cart });
