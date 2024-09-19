@@ -27,7 +27,7 @@ function Updator() {
       const storedUsername = localStorage.getItem("username");
       if (token === null) {
         alert("You are trying to access this page with no token. Login first!!");
-        navigate("/");
+        navigate("/admin");
       } else {
         setContent(true);
         setUsername(storedUsername);

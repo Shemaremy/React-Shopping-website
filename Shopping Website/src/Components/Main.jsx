@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useCounter } from "./Redux store/Counter";
 
 import { OurproductsPreloader } from "../Preloader";
+import { MainProductsPreloader } from "../Preloader";
 
 import OurPicks from "./Ourpicks";
 import TrendCards from "./TrendCards";
@@ -90,8 +91,31 @@ export const Employees = [
 function B() {
 
 
-    const { handleClick } = useCounter(); // Destructure handleClick from useCounter
+    const { handleClick } = useCounter();
+    const [ shoedata, setShoedata ] = useState([]);
+    const [ mainpreloader, setMainpreloader ] = useState(false);
 
+    useEffect(() => {
+        const fetchShoeData = async () => {
+            setMainpreloader(true);
+            try {
+                const response = await fetch('https://verve-users.glitch.me/api/admindisplay?category=Shoes');
+                const data = await response.json();
+                if (response.ok) {
+                    console.log(data);
+                    setMainpreloader(false);
+                    setShoedata(data);
+                } else {
+                    alert('Failed to fetch shoes from the store.');
+                }
+                }
+            catch (error) {
+                setMainpreloader(false);
+                console.error('Error fetching products:', error);
+            }
+        }; 
+        fetchShoeData();
+    }, []);
 
 
 
@@ -405,10 +429,9 @@ const settings = {
                 <div className="item_name_container"><p className="item_p">{product.name}</p></div>
                 <div className="stars_and_prices_container">
                     <div className="stars_container">
-                        {Array.from({ length: product.stars }, (_, i) => (
-                            <i key={i} className="star fa fa-star" aria-hidden="true"></i>
-                        ))}
+                        <p>Sizes : {product.size}</p>
                     </div>
+                    <p className="quantity-p">Quantity: 5</p>
                     <div className="price_and_cart_container">  
                         <p className="Price">{(product.price/1000)},000 Frw</p>
                         <p className="cart" 
@@ -426,7 +449,7 @@ const settings = {
 
 
     // This is the final rendering in cards but this is upper section
-    const TrendDraftOne = Employees.slice(0, 5).map((product, index) => (
+    const TrendDraftOne = shoedata.slice(0, 5).map((product, index) => (
         <div className="Trend-draft" key={index + 1} data-name={product.name}>
             <div className="card-draft">{cardDraftOne(product)}</div>
         </div>
@@ -435,7 +458,7 @@ const settings = {
 
 
     // Lower section for cards
-    const TrendDraftTwo = Employees.slice(5).map((product, index) => (
+    const TrendDraftTwo = shoedata.slice(5).map((product, index) => (
         <div className="Trend-draft" key={index + 1} data-name={product.name}>
             <div className="card-draft">{cardDraftOne(product)}</div>
         </div>
@@ -448,34 +471,6 @@ const settings = {
 
 
 
-    const mobileProductsDraft = (product) => (
-        <>
-            <div className="draftUp">
-                <div className="product_images_first_section">
-                    <img src={product.image} className="Shoes" alt="one" />
-                </div>
-            </div>
-            <div className="draftDown">
-                <div className="item_name_container"><p className="item_p">{product.name}</p></div>
-                <div className="stars_and_prices_container">
-                    <div className="stars_container">
-                        {Array.from({ length: product.stars }, (_, i) => (
-                            <i key={i} className="star fa fa-star" aria-hidden="true"></i>
-                        ))}
-                    </div>
-                    <div className="price_and_cart_container">  
-                        <p className="Price">{(product.price/1000)},000 Frw</p>
-                        <p className="cart" 
-                            onClick={() => handleAddToCartClick(product)}
-                            disabled={loading[product.name]}
-                        >
-                            {loading[product.name] ? <i className="cart_icon fa-solid fa-spinner"></i> : <i className="cart_icon fa fa-cart-plus" aria-hidden="true"></i>}
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </>
-    );
 
 
 
@@ -496,64 +491,7 @@ const settings = {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 
 
 
@@ -648,25 +586,29 @@ const settings = {
                         <div className="products_section_one">   
                             <div className="section-draft">
                                 <div className="slider-container-draft">
+                                    {mainpreloader ? <MainProductsPreloader/> 
+                                    : 
                                     <Slider {...settings}>
                                         {TrendDraftOne}
-                                    </Slider>
+                                    </Slider>}
                                 </div>
                             </div>
                             <div className="mobile-products-div">
-                                {TrendDraftOne}
+                                {mainpreloader ? <MainProductsPreloader/> : TrendDraftOne}
                             </div>
                         </div>
                         <div className="products_section_two">
                             <div className="section-draft">
                                 <div className="slider-container-draft">
+                                    {mainpreloader ? <MainProductsPreloader/> 
+                                    : 
                                     <Slider {...settings}>
                                         {TrendDraftTwo}
-                                    </Slider>
+                                    </Slider>}
                                 </div>
                             </div>   
                             <div className="mobile-products-div">
-                                {TrendDraftTwo}
+                                {mainpreloader ? <MainProductsPreloader/> : TrendDraftTwo}
                             </div>              
                         </div>
                         <div className="mobile-view-more">

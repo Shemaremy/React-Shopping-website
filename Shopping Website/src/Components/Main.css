@@ -438,7 +438,7 @@
 
 .card-draft {
     margin: 0 auto;
-    height: 280px;
+    height: 300px;
     width: 95%;
     display: flex;
     flex-direction: column;
@@ -490,7 +490,6 @@
 
 .item_name_container {
     width: 95%;
-    height: 40%;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -498,8 +497,8 @@
 
 .item_p {
     font-family: sans-serif;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 5px;
+    margin-bottom: 2px;
     font-weight: 600;
     color: rgb(31, 31, 31);
     font-size: 14px;
@@ -525,6 +524,14 @@
     border-color: rgb(184, 184, 184);
 }
 
+.stars_container > p,
+.quantity-p {
+    font-size: 11px;
+    font-family: sans-serif;
+    margin: 0;
+    margin-top: 10px;
+}
+
 .star {
     font-size: 6px;
 }
@@ -532,7 +539,6 @@
 
 
 .price_and_cart_container {
-    height: 80%;
     width: 100%;
     display: flex;
     flex-direction: row;

@@ -92,4 +92,19 @@ export const TrendsPreloader = () => {
           {indicatorEl}
       </section>
   );
-  };
+};
+
+
+export const MainProductsPreloader = () => {
+
+  const { containerProps, indicatorEl } = useLoading({
+    loading: true,
+    indicator: <ThreeDots width="200" color="White" />,
+  });
+  
+  return (
+    <section {...containerProps} className='products-div-preloader'>
+        {indicatorEl}
+    </section>
+  );
+};
