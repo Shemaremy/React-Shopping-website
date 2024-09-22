@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import './Updator.css';
 import AddItems from "./commands/AddItems";
 import DisplayItems from "./commands/DisplayItems";
+import UpdateItems from "./commands/UpdateItems";
 
 function Updator() {
 
@@ -73,7 +74,7 @@ function Updator() {
 
   const removeItems = (<><h1>Removing items</h1></>);
 
-  const updateItems = (<><h1>Updating items</h1></>);
+  const updateItems = (<UpdateItems />);
 
   const displayItems = (<DisplayItems/>);
 

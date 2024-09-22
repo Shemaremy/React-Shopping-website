@@ -170,7 +170,7 @@ const DisplayItems = () => {
       </nav>
 
       <div className="product-display">
-        {totalItems === 0 ? <p className='no-items'>No items found &nbsp; <i class="fa-solid fa-circle-exclamation"></i></p> : Renderer}
+        {totalItems === 0 ? <p className='no-items'>No items found &nbsp; <i className="fa-solid fa-circle-exclamation"></i></p> : Renderer}
       </div>
 
     </div>
