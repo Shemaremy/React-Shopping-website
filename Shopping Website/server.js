@@ -385,6 +385,10 @@ app.post('/api/adminlogin', async (req, res) => {
 
 
 
+
+
+
+
 // ==================================================== ADMIN ACTIONS =======================================================
 // ==================================================== ADMIN ACTIONS =======================================================
 // ==================================================== ADMIN ACTIONS =======================================================
@@ -412,7 +416,6 @@ app.post('/api/adminadd', async (req, res) => {
 
 
 // Admin display storage items
-
 app.get('/api/admindisplay', async (req, res) => {
   try {
     const { category } = req.query;
@@ -430,6 +433,30 @@ app.get('/api/admindisplay', async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 });
+
+
+
+// Admin update route
+app.put('/api/adminupdate/:id', async (req, res) => {
+  const { id } = req.params;  // The ID of the item to update
+  const updatedFields = req.body; // Only the fields that were provided will be updated
+
+  try {
+    // Validate that the item exists and update only the provided fields
+    const product = await Product.findByIdAndUpdate(id, { $set: updatedFields }, { new: true });
+
+    if (!product) {
+      return res.status(404).json({ message: 'Product not found.' });
+    }
+
+    res.status(200).json({ message: 'Product updated successfully', product });
+  } catch (err) {
+    console.error('Error updating product:', err);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+
 
 
 

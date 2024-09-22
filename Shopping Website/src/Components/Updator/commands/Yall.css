@@ -464,6 +464,15 @@ header p {
   cursor: pointer;
 }
 
+.update-button.disable {
+  background-color: #8b978e;
+  cursor: not-allowed;
+}
+
+.update-button.disable:hover {
+  background-color: #8b978e;
+}
+
 .update-button:hover {
   background-color: #218838;
 }

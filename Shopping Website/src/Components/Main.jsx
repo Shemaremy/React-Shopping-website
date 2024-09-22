@@ -431,7 +431,7 @@ const settings = {
                     <div className="stars_container">
                         <p>Sizes : {product.size}</p>
                     </div>
-                    <p className="quantity-p">Quantity: 5</p>
+                    <p className="quantity-p">Quantity: {product.quantity}</p>
                     <div className="price_and_cart_container">  
                         <p className="Price">{(product.price/1000)},000 Frw</p>
                         <p className="cart" 

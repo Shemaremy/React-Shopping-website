@@ -24,6 +24,8 @@ function AddItems() {
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const [newItem, setNewItem] = useState({ name: '', category: '', price: '', quantity: '', size: '', image: null });
 
+
+  
   // Reference for the file input field
   const fileInputRef = useRef(null);
   
@@ -49,24 +51,60 @@ function AddItems() {
 
     setNewItem({ ...newItem, image: file });
   };
+
+
+  const handleSizeInput = (sizeInput) => {
+    const validSize = sizeInput.replace(/[^a-zA-Z0-9,\s]/g, '').toUpperCase();
+  
+    let sizeArray = validSize.split(/[,\s]+/).filter(Boolean);
+    const validSizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'];
+  
+    sizeArray = sizeArray.filter(size => validSizes.includes(size) || /^\d+$/.test(size));
+  
+    if (sizeArray.length === 0) {
+      alert("Please enter valid size values: XS, S, M, L, XL, XXL, or numeric values (46, 27).");
+      return '';
+    }
+  
+    const isNumeric = sizeArray.every(size => !isNaN(size));
+  
+    if (isNumeric) {
+      sizeArray = [...new Set(sizeArray)].sort((a, b) => parseFloat(a) - parseFloat(b));
+    } else {
+      sizeArray = [...new Set(sizeArray)].sort((a, b) => validSizes.indexOf(a) - validSizes.indexOf(b));
+    }
+  
+    return sizeArray.join(', ');
+  };
+  
+  
   
   
 
   const addItemToList = () => {
     const { name, category, price, quantity, size, image } = newItem;
   
-    if (!name || !category || !price || !quantity || !size || !image) {
-      alert("Please fill in all fields and upload an image.");
+
+    const formattedSize = handleSizeInput(size);
+  
+    if (!name || !category || !price || !quantity || !formattedSize || !image) {
+      alert("Please fill in all fields with valid inputs and upload an image.");
       return;
     }
   
-    setItems([...items, newItem]);
+    // Update the item with the formatted size before adding it to the list
+    const updatedItem = { ...newItem, size: formattedSize };
+    setItems([...items, updatedItem]);
+  
+    // Reset form fields
     setNewItem({ name: '', category: '', price: '', quantity: '', size: '', image: null });
-
+    
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
     }
   };
+  
+  
   
 
   const removeItem = (index) => {
@@ -77,6 +115,27 @@ function AddItems() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // -------------- ADD TO DATABASE STORE -----------------------------------------
+  // -------------- ADD TO DATABASE STORE -----------------------------------------
   // -------------- ADD TO DATABASE STORE -----------------------------------------
 
   const handleAddToStore = async () => {
@@ -101,7 +160,6 @@ function AddItems() {
     };
   
     try {
-      // Convert each item's image to base64
       const updatedItems = await Promise.all(items.map(async (item) => {
         const base64Image = await convertImageToBase64(item.image);
         return { ...item, image: base64Image };
