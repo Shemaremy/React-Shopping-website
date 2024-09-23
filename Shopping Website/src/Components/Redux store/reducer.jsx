@@ -39,7 +39,7 @@ const reducer = (state = initialState, action) => {
         alert("You've reached the maximum items, sir! Please check your cart above.");
         return state;
       } else {
-        const updatedCart = [...state.currentProduct, { ...action.payload, quantity: 1 }];
+        const updatedCart = [...state.currentProduct, { ...action.payload, maxQuantity: action.payload.quantity, quantity: 1 }];
         const newState = {
           ...state,
           counter: state.counter + 1,
@@ -62,20 +62,20 @@ const reducer = (state = initialState, action) => {
     case UPDATE_QUANTITY:
       const { index, actionType } = action.payload;
       return {
-          ...state,
-          currentProduct: state.currentProduct.map((item, idx) => {
-            if (idx === index) {
-              let newQuantity = item.quantity;
-              if (actionType === 'increment') {
-                newQuantity = Math.min(item.quantity + 1, 10); 
-              } else if (actionType === 'decrement') {
-                newQuantity = Math.max(item.quantity - 1, 1);
-              }
-              return { ...item, quantity: newQuantity };
+        ...state,
+        currentProduct: state.currentProduct.map((item, idx) => {
+          if (idx === index) {
+            let newQuantity = item.quantity;
+            if (actionType === 'increment') {
+              newQuantity = Math.min(item.quantity + 1, item.maxQuantity); 
+            } else if (actionType === 'decrement') {
+              newQuantity = Math.max(item.quantity - 1, 1);
             }
-            return item;
-          })
-        };
+            return { ...item, quantity: newQuantity };
+          }
+          return item;
+        })
+      };
 
 
     case SET_SEARCH_TERM:

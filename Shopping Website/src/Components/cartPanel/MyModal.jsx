@@ -332,9 +332,10 @@ function MyModal(props) {
                     onChange={(event) => handleSizeChange(event, index)}
                     >
                       <option value="">Select size</option>
-                      {product.size.split(', ').map((size, idx) => (
+                      {product.size && typeof product.size === 'string' && product.size.split(', ').map((size, idx) => (
                         <option key={idx} value={size}>{size}</option>
                       ))}
+
                   </select>
                 </div>
                 <div className='quantity_container'>

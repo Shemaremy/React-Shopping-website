@@ -59,7 +59,7 @@ const UserSchema = new mongoose.Schema({
     price: { type: Number, default: 0 },
     quantity: { type: Number, default: 1 },
     image: { type: String, default: "" },
-    sizes: { type: [String], default: [] },
+    sizes: { type: String, default: "" },
     stars: { type: Number, default: 1 }
   }]
 });
