@@ -832,7 +832,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
     border-style: solid;
     border-width: 1px;
     border-color: white;
-    background-color: rgba(0, 107, 0, 0.199);
+    background-color: rgba(0, 82, 0, 0.288);
     color: white;
     border-radius: 20px;
     padding: 7px;
@@ -846,10 +846,23 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
 
 .Proceed_total_payment_button:hover {
     border-width: 0;
-    background-color: rgba(255, 255, 255, 0.658);
+    background-color: rgba(255, 255, 255, 0.295);
     color: black;
 }
 
+
+.Proceed_total_payment_button.disable {
+    cursor: not-allowed;
+    border-color: rgba(255, 255, 255, 0.363);
+    background-color: rgba(255, 255, 255, 0.068);
+    color: rgb(0, 0, 0);
+}
+
+.Proceed_total_payment_button.disable:hover {
+    border-color: rgba(255, 255, 255, 0.363);
+    background-color: rgba(255, 255, 255, 0.068);
+    color: rgb(0, 0, 0);
+}
 
 
 

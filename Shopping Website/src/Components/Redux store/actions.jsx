@@ -29,40 +29,10 @@ export const addToCart = (product) => {
 
         else {
             if (!isAlreadyInCart) {
-                try {
-                    const response = await fetch('https://verve-users.glitch.me/api/cart', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'Authorization': `Bearer ${token}`
-                        },
-                        body: JSON.stringify({ 
-                            name: product.name,
-                            price: product.price,
-                            image: product.image,
-                            quantity: product.quantity,
-                            sizes: product.sizes, 
-                            stars: product.stars
-                        })
-                    });
-    
-                    if (response.ok) {
-                        const data = await response.json();
-                        dispatch({
-                            type: ADD_TO_CART,
-                            payload: product
-                        });
-                    } else if (response.status === 401) {   // When my token is invalid or expired
-                        localStorage.setItem('alertMessage', "Token expired");
-                        localStorage.removeItem('token');
-                        window.location.reload();
-                    } else {
-                        console.log("Failed to add item");
-                    }
-                } catch (error) {
-                    console.error('Error adding to cart:', error);
-                    alert('Error adding to cart. Please try again later.');
-                }   
+                dispatch({
+                    type: ADD_TO_CART,
+                    payload: product
+                });
             }
         }
     };
@@ -76,6 +46,7 @@ export const addToCart = (product) => {
 export const fetchCart = () => {
     return async (dispatch) => {
         const token = localStorage.getItem('token');
+        /*
         if (token) {
             try {
                 const response = await fetch('https://verve-users.glitch.me/api/cart', {
@@ -105,6 +76,7 @@ export const fetchCart = () => {
                 console.error('Error fetching cart data:', error);
             }
         }
+        */
     };
 };
 
@@ -123,6 +95,11 @@ export const removeItem = (index) => {
         }
 
         else {
+            dispatch({
+                type: REMOVE_ITEM,
+                payload: index
+            });
+            /*
             try {
                 // Call your backend API to remove the product from the database
                 const response = await fetch('https://verve-users.glitch.me/api/cart', {
@@ -155,6 +132,7 @@ export const removeItem = (index) => {
             } catch (error) {
                 console.error('Error deleting from cart:', error);
             }
+            */
         }
     };
 };

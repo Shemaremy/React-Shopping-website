@@ -58,9 +58,11 @@ const UserSchema = new mongoose.Schema({
     name: { type: String, default: "" },
     price: { type: Number, default: 0 },
     quantity: { type: Number, default: 1 },
+    maxQuantity: { type: Number, default: 1 },
     image: { type: String, default: "" },
-    sizes: { type: String, default: "" },
-    stars: { type: Number, default: 1 }
+    size: { type: String, default: "" },
+    stars: { type: Number, default: 1 },
+    category: { type: String, default: "" },
   }]
 });
 UserSchema.plugin(uniqueValidator);
@@ -163,16 +165,22 @@ app.get('/api/cart', authenticateToken, async (req, res) => {
 
 // ADD TO CART ROUTE
 app.post('/api/cart', authenticateToken, async (req, res) => {
-  const { name, price, quantity, image, sizes, stars } = req.body;
+  const products = req.body.items;
 
   try {
     const user = await User.findById(req.user.id);
     if (!user) return res.status(404).json({ message: 'User not found' });
 
-    user.cart.push({ name, price, quantity, image, sizes, stars });
+    products.forEach(product => {
+      const existingProduct = user.cart.find(item => item._id.toString() === product._id.toString());
+      if (!existingProduct) {
+        user.cart.push(product);
+      }
+    });
+
     await user.save();
 
-    res.status(200).json({ message: 'Item added to cart', cart: user.cart });
+    res.status(200).json({ message: 'Items added to cart', cart: user.cart });
   } catch (err) {
     if (err.name === 'JsonWebTokenError') {
       return res.status(403).json({ message: 'Invalid token' }); // Send JSON response on token failure
@@ -181,6 +189,12 @@ app.post('/api/cart', authenticateToken, async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 });
+
+
+
+
+
+
 
 
 // DELETE FROM CART ROUTE (Using Index)
@@ -397,7 +411,7 @@ app.post('/api/adminlogin', async (req, res) => {
 
 // Admin add to route
 app.post('/api/adminadd', async (req, res) => {
-  const products = req.body.items; // Receive an array of products
+  const products = req.body.items;
 
   try {
     // Validate if products array is empty

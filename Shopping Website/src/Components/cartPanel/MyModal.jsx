@@ -22,6 +22,10 @@ function MyModal(props) {
   const { showModal, setShowModal, content, product, counter, currentProduct, updateQuantity, removeItem, fetchCart } = props;
 
 
+  const [loading, setLoading] = useState(false);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+  const navigate = useNavigate();
+
 
   useEffect(() => {
     if (showModal) {
@@ -49,6 +53,69 @@ function MyModal(props) {
 
 
 
+// ------------------------- ADD CART ITEMS TO THE STORE WHILE PROCEEDING ---------------------------------
+// ------------------------- ADD CART ITEMS TO THE STORE WHILE PROCEEDING ---------------------------------
+// ------------------------- ADD CART ITEMS TO THE STORE WHILE PROCEEDING ---------------------------------
+
+const addListToStore = async (currentProduct) => {
+  const disableButton = document.querySelector('.Proceed_total_payment_button');
+  disableButton.classList.add('disable');
+  setIsButtonDisabled(true);
+  setLoading(true);
+
+  const token = localStorage.getItem('token');
+  const ProductList = { items: currentProduct };
+  
+  try {
+      const response = await fetch('https://verve-users.glitch.me/api/cart', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify(ProductList)
+      });
+
+      if (response.ok) {
+          alert("Great, added success");
+          setLoading(false);
+          disableButton.classList.remove('disable');
+          setIsButtonDisabled(false);
+          //navigate('/payment', { state: { currentProduct, totalPrice, selectedSizes } });
+      } else if (response.status === 401) {
+          localStorage.setItem('alertMessage', "Token expired");
+          localStorage.removeItem('token');
+          window.location.reload();
+      } else {
+          console.log("Failed to add item");
+      }
+  } catch (error) {
+      setLoading(false);
+      disableButton.classList.remove('disable');
+      setIsButtonDisabled(false);
+      console.error('Error adding to cart:', error);
+      alert('Error adding to cart. Please try again later.');
+  }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -67,7 +134,6 @@ function MyModal(props) {
 // --------------------------------------------- GOING TO PAYMENT PAGE SECTION ----------------------------------------------------
 // --------------------------------------------- GOING TO PAYMENT PAGE SECTION ----------------------------------------------------
 
-  const navigate = useNavigate();
 
   // checking if all products have selected sizes
   const allSizesSelected = () => {
@@ -79,7 +145,13 @@ function MyModal(props) {
     if (!allSizesSelected()) {
       alert("Please select a size for all products before proceeding");
     } else {
-      navigate('/payment', { state: { currentProduct, totalPrice, selectedSizes } });
+      const token = localStorage.getItem('token');
+      if (token === null) {
+        alert('No token found')
+      } else {
+        addListToStore(currentProduct);
+        console.log(currentProduct);
+      }
     }
   };
 
@@ -393,7 +465,10 @@ function MyModal(props) {
         <p className='total-price-par'>{(totalPrice) / 1000},000Frw <span> &nbsp; &nbsp; (${(totalPrice) / 1000})</span></p>
       </div>
       <div className='proceed_total_payment_panel'>
-        <button className='Proceed_total_payment_button' onClick={handleProceedPayment}>Proceed <i className="fa-solid fa-truck-fast"></i></button>
+        <button className='Proceed_total_payment_button' onClick={handleProceedPayment} disabled={isButtonDisabled}>
+          {loading ? <>Loading &nbsp; <i className="fa-solid fa-spinner fa-spin"></i></>
+          : <>Proceed <i className="fa-solid fa-truck-fast"></i></>}
+        </button>
       </div>
     </div>
   );
