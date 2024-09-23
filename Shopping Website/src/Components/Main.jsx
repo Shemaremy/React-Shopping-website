@@ -102,7 +102,7 @@ function B() {
                 const response = await fetch('https://verve-users.glitch.me/api/admindisplay?category=Shoes');
                 const data = await response.json();
                 if (response.ok) {
-                    console.log(data);
+                    //console.log(data);
                     setMainpreloader(false);
                     setShoedata(data);
                 } else {
@@ -434,10 +434,7 @@ const settings = {
                     <p className="quantity-p">Quantity: {product.quantity}</p>
                     <div className="price_and_cart_container">  
                         <p className="Price">{(product.price/1000)},000 Frw</p>
-                        <p className="cart" 
-                            onClick={() => handleAddToCartClick(product)}
-                            disabled={loading[product.name]}
-                        >
+                        <p className="cart" onClick={() => handleAddToCartClick(product)} disabled={loading[product.name]}>
                             {loading[product.name] ? <i className="cart_icon fa-solid fa-spinner fa-spin"></i> : <i className="cart_icon fa fa-cart-plus" aria-hidden="true"></i>}
                         </p>
                     </div>
