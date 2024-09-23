@@ -990,6 +990,13 @@
         border-color: rgba(0, 0, 0, 0.171);
     }
 
+    .stars_container > p, .quantity-p {
+        margin-top: 5px;
+    }
+
+    .Price {
+        font-size: 10px;
+    }
     
     .mobile-view-more {
         width: 100%;
