@@ -45,7 +45,6 @@ function Dialog({ autoOpen = false, message = '', token, onClose }) {
       localStorage.setItem('token', token);
       if (token) {
         navigate('/updator');
-        //alert("Great");
       } else {
         alert("Failed to store the token");
       }

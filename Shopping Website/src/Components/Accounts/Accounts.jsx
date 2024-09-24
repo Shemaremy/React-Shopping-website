@@ -179,7 +179,6 @@ function Accounts() {
         if (response.ok) {
           UsernameBorder.style.borderColor = '';
           EmailBorder.style.borderColor = '';
-          console.log('Success:', data);
           showDialog('Success: User registered successfully');
         } else {
           const errorMessage = data.message;

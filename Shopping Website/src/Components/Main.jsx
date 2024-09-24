@@ -90,7 +90,6 @@ function B() {
                 const response = await fetch('https://verve-users.glitch.me/api/admindisplay?category=Shoes');
                 const data = await response.json();
                 if (response.ok) {
-                    //console.log(data);
                     setMainpreloader(false);
                     setShoedata(data);
                 } else {

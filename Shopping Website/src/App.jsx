@@ -55,7 +55,6 @@ function AppRoutes() {
 
 
   // Check localStorage for alert messages on load
-  /*
   useEffect(() => {
     const message = localStorage.getItem('alertMessage');
     if (message === 'Token expired') {
@@ -63,7 +62,6 @@ function AppRoutes() {
       localStorage.removeItem('alertMessage');
     }
   }, []);
-  */
 
 
 

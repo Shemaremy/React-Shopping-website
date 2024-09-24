@@ -72,7 +72,6 @@ const UpdateItems = () => {
         disableButton.classList.remove('disable');
         setIsButtonDisabled(false);
         setTotalItems(data.length);
-        console.log(data);
       } else {
         setLoading(category, false);
         disableButton.classList.remove('disable');

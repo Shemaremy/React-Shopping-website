@@ -77,7 +77,6 @@ const addListToStore = async (currentProduct) => {
       });
 
       if (response.ok) {
-          alert("Great, added success");
           setLoading(false);
           disableButton.classList.remove('disable');
           setIsButtonDisabled(false);
@@ -142,6 +141,7 @@ const addListToStore = async (currentProduct) => {
 
   // Handle the proceed payment action
   const handleProceedPayment = () => {
+    const token = localStorage.getItem('token');
     if (!allSizesSelected()) {
       alert("Please select a size for all products before proceeding");
     } else {
@@ -151,9 +151,9 @@ const addListToStore = async (currentProduct) => {
         size: selectedSizes[index],
       }));
   
-      const token = localStorage.getItem('token');
+
       if (token === null) {
-        addListToStore(updatedProduct);
+        navigate('/payment', { state: { currentProduct, totalPrice, selectedSizes } });
       } else {
         addListToStore(updatedProduct);
       }
