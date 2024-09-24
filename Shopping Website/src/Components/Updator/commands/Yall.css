@@ -476,3 +476,100 @@ header p {
 .update-button:hover {
   background-color: #218838;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================== REMOVING ITEMS =========================================== */
+/* ============================== REMOVING ITEMS =========================================== */
+/* ============================== REMOVING ITEMS =========================================== */
+
+.delete-card:hover {
+  box-shadow: none;
+  transform: none;
+  cursor: auto;
+}
+
+
+.remove-item {
+  width: 100%;
+  cursor: pointer;
+  background-color: rgba(32, 39, 32, 0.671);
+  color: white;
+  border-style: solid;
+  border-width: 0px;
+  border-radius: 3px;
+  font-size: 10px;
+  padding: 8px;
+  margin-top: 5px;
+  transition: background-color 0.1s ease-in-out;
+}
+
+
+.remove-item:hover {
+  background-color: rgba(32, 39, 32, 0.801);
+}
+
+
+.remove-item.disable {
+  cursor: not-allowed;
+  background-color: rgba(32, 39, 32, 0.308);
+}
+
+.remove-item.disable:hover {
+  background-color: rgba(32, 39, 32, 0.308);
+}

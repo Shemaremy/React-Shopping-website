@@ -472,6 +472,27 @@ app.put('/api/adminupdate/:id', async (req, res) => {
 
 
 
+// Admin delete route
+app.delete('/api/admindelete', async (req, res) => {
+  console.log('Request received to delete:', req.body);
+  const { id } = req.body;
+
+  try {
+    // Attempt to find and delete the product by its ID
+    const product = await Product.findById(id);
+
+    if (!product) {
+      return res.status(404).json({ message: 'Product not found.' });
+    }
+
+    res.status(200).json({ message: 'Product deleted successfully', product });
+  } catch (err) {
+    console.error('Error deleting product:', err);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+
+
 
 
 

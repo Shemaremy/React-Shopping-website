@@ -853,13 +853,11 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
 
 .Proceed_total_payment_button.disable {
     cursor: not-allowed;
-    border-color: rgba(255, 255, 255, 0.363);
     background-color: rgba(255, 255, 255, 0.068);
     color: rgb(0, 0, 0);
 }
 
 .Proceed_total_payment_button.disable:hover {
-    border-color: rgba(255, 255, 255, 0.363);
     background-color: rgba(255, 255, 255, 0.068);
     color: rgb(0, 0, 0);
 }
