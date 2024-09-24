@@ -447,6 +447,13 @@ h4 {
   cursor: grab;
 }
 
+.highlights-div-preloader {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 
 .Products_container > .slick-slider {

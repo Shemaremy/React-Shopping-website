@@ -16,7 +16,7 @@ export const addToCart = (product) => {
     return async (dispatch, getState) => {
         const token = localStorage.getItem('token');
         const { currentProduct } = getState();
-        const isAlreadyInCart = currentProduct.some(item => item.name === product.name);
+        const isAlreadyInCart = currentProduct.some(item => item.name === product.name && item.size === product.size);
 
         if (token === null) {
             if (!isAlreadyInCart) {

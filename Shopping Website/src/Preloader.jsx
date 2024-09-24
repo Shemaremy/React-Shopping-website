@@ -96,7 +96,6 @@ export const TrendsPreloader = () => {
 
 
 export const MainProductsPreloader = () => {
-
   const { containerProps, indicatorEl } = useLoading({
     loading: true,
     indicator: <ThreeDots width="200" color="White" />,
@@ -104,6 +103,34 @@ export const MainProductsPreloader = () => {
   
   return (
     <section {...containerProps} className='products-div-preloader'>
+        {indicatorEl}
+    </section>
+  );
+};
+
+
+export const HighlightsPreloader = () => {
+  const { containerProps, indicatorEl } = useLoading({
+    loading: true,
+    indicator: <ThreeDots width="100" color="White" />,
+  });
+  
+  return (
+    <section {...containerProps} className='highlights-div-preloader'>
+        {indicatorEl}
+    </section>
+  );
+};
+
+
+export const AutoSlidePreloader = () => {
+  const { containerProps, indicatorEl } = useLoading({
+    loading: true,
+    indicator: <ThreeDots width="100" color="White" />,
+  });
+  
+  return (
+    <section {...containerProps} className='autoslide-div-preloader'>
         {indicatorEl}
     </section>
   );

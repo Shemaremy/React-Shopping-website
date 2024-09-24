@@ -10,9 +10,9 @@ import { setSearchTerm } from './Redux store/actions';
 
 import {Preloader} from "../Preloader";
 import { CheckOutPreloader } from "../Preloader";
+import { HighlightsPreloader } from "../Preloader";
 
 
-import { Employees } from "./Main";
 
 import MyModal from "./cartPanel/MyModal";
 import './Header.css';
@@ -250,10 +250,27 @@ useEffect(() => {
 // ------------------------------------------------ SEARCHING AN ITEM -------------------------------------------------------------------
 // ------------------------------------------------ SEARCHING AN ITEM -------------------------------------------------------------------
 
+const [shoedata, setShoedata] = useState([]);
+
+useEffect(() => {
+    const fetchShoeData = async () => {
+        try {
+            const response = await fetch('https://verve-users.glitch.me/api/admindisplay?category=Shoes');
+            const data = await response.json();
+            if (response.ok) {
+                setShoedata(data);
+            } else {
+                alert('Failed to fetch shoes from the store.');
+            }
+            }
+        catch (error) {
+            console.error('Error fetching products:', error);
+        }
+    }; 
+    fetchShoeData();
+}, []);
 
 
-// Combine Highlight and items arrays
-const combinedItems = [ ...Employees  ];
 
 
 
@@ -263,7 +280,7 @@ const combinedItems = [ ...Employees  ];
 // When the search button is clicked after entering an element
 const handleSearchClick = (event) => {
     event.preventDefault();
-    const item = combinedItems
+    const item = shoedata
     .filter(item => item && item.name)  // First remove out the undefined elements
     .find(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
     if (item) {
@@ -298,7 +315,7 @@ const handleSearchChange = (e) => {
     handleSearchTermChange(value);
 
     if (value.length > 0) {
-        const filteredSuggestions = combinedItems
+        const filteredSuggestions = shoedata
         .filter(item => item && item.name)
         .filter(item => item.name.toLowerCase().includes(value));
 
@@ -561,12 +578,34 @@ const settings = {
 
 
 
-// State for highlighted items on the first page
-const [Highlight, setHighlight] = useState([
-    { name: "Jordan 1 red", price: "35000", image: shoe, quantity: 1, stars: 2, sizes: ["40", "41", "42", "43"] },
-    { name: "Jordan 4 white", price: "30000", image: shoe2, quantity: 1, stars: 4, sizes: ["40", "41", "42", "43"]  },
-    { name: "Jordan 4 black", price: "45000", image: shoe3, quantity: 1, stars: 3, sizes: ["40", "41", "42", "43"]  }
-]);
+
+// Elements containing highlight items on first page
+const [Highlight, setHighlight] = useState([]);
+const [ mainpreloader, setMainpreloader ] = useState(false);
+
+useEffect(() => {
+    const fetchShoeData = async () => {
+        setMainpreloader(true);
+        try {
+            const response = await fetch('https://verve-users.glitch.me/api/admindisplay?category=Shoes');
+            const data = await response.json();
+            if (response.ok) {
+                setMainpreloader(false);
+                setHighlight(data);
+            } else {
+                alert('Failed to fetch shoes from the store.');
+            }
+            }
+        catch (error) {
+            setMainpreloader(false);
+            console.error('Error fetching products:', error);
+        }
+    }; 
+    fetchShoeData();
+}, []);
+
+
+
 
 
 
@@ -1006,10 +1045,12 @@ const handleGotoAccounts = () => {
                         <div className="Shop_with_container">
                             <h1 className="shop_with_header">Shop With <br/> <span className="Verve_colored">Verve.</span></h1>
                         </div>
-                        <div className="Products_container">  
+                        <div className="Products_container">
+                            {mainpreloader ? <HighlightsPreloader/> 
+                            :
                             <Slider {...settings}>
                                 {highlightItem}
-                            </Slider>       
+                            </Slider>}   
                         </div>
                         <div className="in_the_sugg_mobile">
                             {suggestions.length > 0 && (

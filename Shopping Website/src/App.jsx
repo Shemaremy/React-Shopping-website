@@ -55,6 +55,7 @@ function AppRoutes() {
 
 
   // Check localStorage for alert messages on load
+  /*
   useEffect(() => {
     const message = localStorage.getItem('alertMessage');
     if (message === 'Token expired') {
@@ -62,6 +63,7 @@ function AppRoutes() {
       localStorage.removeItem('alertMessage');
     }
   }, []);
+  */
 
 
 
@@ -69,7 +71,7 @@ function AppRoutes() {
   useEffect(() => {
     if (location.pathname === '/payment') {
       const bodyHeight = document.querySelector('body');
-      bodyHeight.classList.toggle('payment-body')   
+      bodyHeight.classList.add('payment-body')   
       document.body.style.overflowY = 'auto';
     } else {
       const bodyHeight = document.querySelector('body');

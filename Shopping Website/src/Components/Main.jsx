@@ -49,18 +49,6 @@ import Jordan13white from '../images/Shoes products/Jordan 13 white.png';
 
 
 
-// CARD CONTENT FOR OUR PRODUCTS CARDS
-export const Employees = [
-    { name: "Jordan 4 black", price: "25000", stars: 3, image: Jordan4black, quantity: 1, sizes: ["40", "41", "42", "43"]  },
-    { name: "Jordan 1 red", price: "28000", stars: 2, image: Jordan1red, quantity: 1, sizes: ["40", "41", "42", "43"]  },
-    { name: "Jordan 4 white", price: "25000", stars: 4, image: Jordan4white, quantity: 1, sizes: ["40", "41", "42", "43"]  },
-    { name: "Jordan 5 white", price: "32000", stars: 3, image: Jordan5white, quantity: 1, sizes: ["40", "41", "42", "43"]  },
-    { name: "Jordan 12 white", price: "30000", stars: 5, image: Jordan12white, quantity: 1, sizes: ["40", "41", "42", "43"]  },
-    { name: "Jordan 11 black", price: "26000", stars: 3, image: Jordan11black, quantity: 1, sizes: ["40", "41", "42", "43"]  },
-    { name: "Jordan 13 black", price: "33000", stars: 4, image: Jordan13black, quantity: 1, sizes: ["40", "41", "42", "43"]  },
-    { name: "Jordan 14 gray", price: "35000", stars: 2, image: Jordan14gray, quantity: 1, sizes: ["40", "41", "42", "43"]  },
-    { name: "Jordan 13 white", price: "33000", stars: 5, image: Jordan13white, quantity: 1, sizes: ["40", "41", "42", "43"]  }
-];
 
 
 
@@ -292,7 +280,7 @@ const [loading, setLoading] = useState({});
 
 
 const handleAddToCartClick = async (product) => {
-    setLoading((prevLoading) => ({ ...prevLoading, [product.name]: true }));
+    setLoading((prevLoading) => ({ ...prevLoading, [product.name]: true, [product.size]: true }));
     setButtonText('...');
 
     // Simulate a delay (e.g., API call duration)
@@ -304,7 +292,7 @@ const handleAddToCartClick = async (product) => {
         console.error('Error adding item to cart:', error);
         setButtonText('Error');
     } finally {
-        setLoading((prevLoading) => ({ ...prevLoading, [product.name]: false }));
+        setLoading((prevLoading) => ({ ...prevLoading, [product.name]: false, [product.size]: false }));
         setTimeout(() => setButtonText('A'), 100); // Reset after 2 seconds
     }
 };
@@ -429,13 +417,13 @@ const settings = {
                 <div className="item_name_container"><p className="item_p">{product.name}</p></div>
                 <div className="stars_and_prices_container">
                     <div className="stars_container">
-                        <p>Sizes : {product.size}</p>
+                        <p>Size : {product.size}</p>
                     </div>
                     <p className="quantity-p">Quantity: {product.quantity}</p>
                     <div className="price_and_cart_container">  
                         <p className="Price">{(product.price/1000)},000 Frw</p>
                         <p className="cart" onClick={() => handleAddToCartClick(product)} disabled={loading[product.name]}>
-                            {loading[product.name] ? <i className="cart_icon fa-solid fa-spinner fa-spin"></i> : <i className="cart_icon fa fa-cart-plus" aria-hidden="true"></i>}
+                            {loading[product.name] && loading[product.size] ? <i className="cart_icon fa-solid fa-spinner fa-spin"></i> : <i className="cart_icon fa fa-cart-plus" aria-hidden="true"></i>}
                         </p>
                     </div>
                 </div>
@@ -446,20 +434,42 @@ const settings = {
 
 
     // This is the final rendering in cards but this is upper section
-    const TrendDraftOne = shoedata.slice(0, 5).map((product, index) => (
+    const TrendDraftOne = shoedata
+    .sort((a, b) => {
+        // Sort by name first
+        if (a.name < b.name) return -1;
+        if (a.name > b.name) return 1;
+        
+        // If names are the same, sort by size
+        return a.size - b.size;
+    })
+    .slice(0, 5)
+    .map((product, index) => (
         <div className="Trend-draft" key={index + 1} data-name={product.name}>
             <div className="card-draft">{cardDraftOne(product)}</div>
         </div>
     ));
+
 
 
 
     // Lower section for cards
-    const TrendDraftTwo = shoedata.slice(5).map((product, index) => (
+    const TrendDraftTwo = shoedata
+    .sort((a, b) => {
+        // Sort by name first
+        if (a.name < b.name) return -1;
+        if (a.name > b.name) return 1;
+        
+        // If names are the same, sort by size
+        return a.size - b.size;
+    })
+    .slice(5)
+    .map((product, index) => (
         <div className="Trend-draft" key={index + 1} data-name={product.name}>
             <div className="card-draft">{cardDraftOne(product)}</div>
         </div>
     ));
+
 
 
 

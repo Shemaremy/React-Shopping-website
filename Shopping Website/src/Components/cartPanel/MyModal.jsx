@@ -81,7 +81,7 @@ const addListToStore = async (currentProduct) => {
           setLoading(false);
           disableButton.classList.remove('disable');
           setIsButtonDisabled(false);
-          //navigate('/payment', { state: { currentProduct, totalPrice, selectedSizes } });
+          navigate('/payment', { state: { currentProduct, totalPrice, selectedSizes } });
       } else if (response.status === 401) {
           localStorage.setItem('alertMessage', "Token expired");
           localStorage.removeItem('token');
@@ -145,15 +145,21 @@ const addListToStore = async (currentProduct) => {
     if (!allSizesSelected()) {
       alert("Please select a size for all products before proceeding");
     } else {
+      // Create a new array where each product includes its selected size
+      const updatedProduct = currentProduct.map((product, index) => ({
+        ...product,
+        size: selectedSizes[index],
+      }));
+  
       const token = localStorage.getItem('token');
       if (token === null) {
-        alert('No token found')
+        addListToStore(updatedProduct);
       } else {
-        addListToStore(currentProduct);
-        console.log(currentProduct);
+        addListToStore(updatedProduct);
       }
     }
   };
+  
 
 
 
@@ -211,7 +217,9 @@ const addListToStore = async (currentProduct) => {
     setSelectedSizes({ ...selectedSizes, [index]: event.target.value });
   };
     
-
+  useEffect(() => {
+    //console.log(selectedSizes);
+  }, [selectedSizes]);
     
   
 
