@@ -148,6 +148,7 @@ const addListToStore = async (currentProduct) => {
       // Create a new array where each product includes its selected size
       const updatedProduct = currentProduct.map((product, index) => ({
         ...product,
+        
         size: selectedSizes[index],
       }));
   
