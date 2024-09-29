@@ -26,9 +26,6 @@ import "slick-carousel/slick/slick-theme.css";
 
 
 
-import shoe from '../images/Shoes products/Jordan 1 red.png';
-import shoe2 from '../images/Shoes products/Jordan 4 white.png';
-import shoe3 from '../images/Shoes products/Jordan 4 black.png';
 
 import item1 from '../images/Item1.png';
 import item2 from '../images/Item2.png';

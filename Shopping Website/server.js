@@ -373,7 +373,7 @@ app.post('/api/adminlogin', async (req, res) => {
         const token = jwt.sign(
         { id: admin._id, UserName: admin.UserName },
         process.env.JWT_SECRET, 
-        { expiresIn: '1h' }
+        { expiresIn: '5h' }
       );
         res.status(200).send({ message: 'Success', token, username: admin.UserName });
       } else {
@@ -429,6 +429,9 @@ app.post('/api/adminadd', async (req, res) => {
 });
 
 
+
+
+
 // Admin display storage items
 app.get('/api/admindisplay', async (req, res) => {
   try {
@@ -474,12 +477,10 @@ app.put('/api/adminupdate/:id', async (req, res) => {
 
 // Admin delete route
 app.delete('/api/admindelete', async (req, res) => {
-  console.log('Request received to delete:', req.body);
   const { id } = req.body;
-
   try {
     // Attempt to find and delete the product by its ID
-    const product = await Product.findById(id);
+    const product = await Product.findByIdAndDelete(id);
 
     if (!product) {
       return res.status(404).json({ message: 'Product not found.' });

@@ -237,6 +237,7 @@ header p {
 }
 
 .product-card {
+  width: 200px;
   background-color: #f9f9f9be;
   background-color: #ececec;
   border: 1px solid #cfcfcf;
@@ -253,14 +254,16 @@ header p {
 
 
 .product-card img {
-  width: 100%;
+  width: 40%;
   height: 110px;
+  height: auto;
   object-fit: cover;
   border-style:dashed;
-  border-width: 1px;
+  border-width: 0px;
   border-color: rgba(128, 128, 128, 0.226);
   border-radius: 0px;
   margin-bottom: 10px;
+  padding: 5px;
 }
 
 

@@ -25,36 +25,6 @@ import '@fortawesome/fontawesome-free/css/all.css';
 
 
 
-import Jordan1orange from '../images/Shoes products/Jordan 1 orange.png'; 
-import Jordan4black from '../images/Shoes products/Jordan 4 black.png'; 
-import Jordan1red from '../images/Shoes products/Jordan 1 red.png'; 
-import Jordan4white from '../images/Shoes products/Jordan 4 white.png'; 
-import Jordan5white from '../images/Shoes products/Jordan 5 white.png'; 
-import Jordan12white from '../images/Shoes products/Jordan 12 white.png'; 
-import Jordan11black from '../images/Shoes products/Jordan 11 black.png'; 
-import Jordan13black from '../images/Shoes products/Jordan 13 black.png'; 
-import Jordan14gray from '../images/Shoes products/Jordan 14 gray.png'; 
-import Jordan13white from '../images/Shoes products/Jordan 13 white.png'; 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -80,9 +50,16 @@ function B() {
 
 
     const { handleClick } = useCounter();
-    const [ shoedata, setShoedata ] = useState([]);
     const [ mainpreloader, setMainpreloader ] = useState(false);
+    
+    const [ shoedata, setShoedata ] = useState([]);
+    const [ pants, setPants ] = useState([]);
+    const [ tshirts, setTshirts ] = useState([]);
+    const [ hoodies, setHoodies ] = useState([]);
+    const [ jackets, setJackets ] = useState([]);
+    const [ caps, setcaps ] = useState([]);
 
+    /*
     useEffect(() => {
         const fetchShoeData = async () => {
             setMainpreloader(true);
@@ -103,6 +80,8 @@ function B() {
         }; 
         fetchShoeData();
     }, []);
+    */
+    
 
 
 
@@ -178,7 +157,7 @@ const Imageloader = (
 
 
 const [isToggled, setIsToggled] = useState(false);
-const [activeButton, setActiveButton] = useState('Men Shoes');
+const [activeButton, setActiveButton] = useState('Shoes');
 
 
 
@@ -209,6 +188,28 @@ const handleCategoryClick = (event) => {
 
 
 
+
+
+
+useEffect(() => {
+    const fetchData = async () => {
+        setMainpreloader(true);
+        try {
+            const response = await fetch(`https://verve-users.glitch.me/api/admindisplay?category=${activeButton}`);
+            const data = await response.json();
+            if (response.ok) {
+                setMainpreloader(false);
+                setShoedata(data);
+            } else {
+                alert(`Failed to fetch ${activeButton} from the store.`);
+            }
+        } catch (error) {
+            setMainpreloader(false);
+            console.error('Error fetching products:', error);
+        }
+    };
+    fetchData();
+}, [activeButton]);
 
 
 
@@ -529,11 +530,11 @@ const settings = {
                             </div>
                             <div className="buttons-container">
                                 <button
-                                    className={`browse_button ${activeButton === 'Men Shoes' ? 'active' : ''}`}
-                                    data-category="Men Shoes"
+                                    className={`browse_button ${activeButton === 'Shoes' ? 'active' : ''}`}
+                                    data-category="Shoes"
                                     onClick={handleCategoryClick}
                                 >
-                                    Men Shoes
+                                    Shoes
                                 </button>
                                 <button
                                     className={`browse_button ${activeButton === 'Pants' ? 'active' : ''}`}
@@ -543,11 +544,11 @@ const settings = {
                                     Pants
                                 </button>
                                 <button
-                                    className={`browse_button ${activeButton === 'T-Shirts' ? 'active' : ''}`}
-                                    data-category="T-Shirts"
+                                    className={`browse_button ${activeButton === 'T shirts' ? 'active' : ''}`}
+                                    data-category="T shirts"
                                     onClick={handleCategoryClick}
                                 >
-                                    T-Shirts
+                                    T-shirts
                                 </button>
                                 <button
                                     className={`browse_button ${activeButton === 'Hoodies' ? 'active' : ''}`}

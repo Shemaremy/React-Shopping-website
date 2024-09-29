@@ -408,12 +408,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow-y: auto;
 }
 
 
 
 .products_section_one {
     height: 45%;
+    height: auto;
     width: 100%;
     align-content: center;
 }
@@ -439,19 +441,23 @@
 .card-draft {
     margin: 0 auto;
     height: 300px;
-    width: 95%;
+    height: auto;
+    width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border: solid rgba(0, 0, 0, 0.322) 1px;
-    border-radius: 5px;
+    border-radius: 3px;
     transition: background-color 0.7s ease-in-out, height 0.4s ease-in-out, width 0.4s ease-in-out;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.288), rgba(0, 0, 0, 0));
+    padding: 3px;
+    padding-top: 5px;
 }
 
 .draftUp {
     height: 70%;
+    height: auto;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -461,23 +467,27 @@
 .draftDown{
     height: 30%;
     width: 100%;
+    height: auto;
 }
   
 
   
 .product_images_first_section {
     background-color: rgba(0, 0, 0, 0.205);
-    border-radius: 5px;
+    border-radius: 3px;
     width: 95%;
     height: 95%;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    padding: 3px;
 }
 
-.Shoes {
-    overflow: hidden;
+
+.product_images_first_section > img {
+    width: 80%;
 }
 
 .card_lower_part {
@@ -485,7 +495,9 @@
     flex-direction: column;
     width: 100%;
     height: 30%;
+    height: auto;
     background-color: rgb(221, 221, 221);
+    background-color: green;
 }
 
 .item_name_container {
@@ -509,6 +521,7 @@
     width: 95%;
     height: 60%;
     margin: 0 auto;
+    height: auto;
 }
 
 
@@ -529,7 +542,7 @@
     font-size: 11px;
     font-family: sans-serif;
     margin: 0;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .star {
@@ -589,11 +602,13 @@
   
 .products_section_two {
     height: 50%;
+    height: auto;
     width: 100%;
     border-style: solid;
     border-width: 0px;
     border-radius: 10px;
     align-content: center;
+    margin-top: 25px;
 }
   
   

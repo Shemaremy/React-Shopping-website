@@ -99,10 +99,9 @@ const UpdateItems = () => {
   const displayShoes = () => fetchData(buttonState.SHOES, 'https://verve-users.glitch.me/api/admindisplay?category=Shoes');
   const displayHoodies = () => fetchData(buttonState.HOODIES, 'https://verve-users.glitch.me/api/admindisplay?category=Hoodies');
   const displayJackets = () => fetchData(buttonState.JACKETS, 'https://verve-users.glitch.me/api/admindisplay?category=Jackets');
-  const displayTshirts = () => fetchData(buttonState.TSHIRTS, 'https://verve-users.glitch.me/api/admindisplay?category=T-shirts');
+  const displayTshirts = () => fetchData(buttonState.TSHIRTS, 'https://verve-users.glitch.me/api/admindisplay?category=T shirts');
   const displayPants = () => fetchData(buttonState.PANTS, 'https://verve-users.glitch.me/api/admindisplay?category=Pants');
   const displayCaps = () => fetchData(buttonState.CAPS, 'https://verve-users.glitch.me/api/admindisplay?category=Caps');
-
 
 
 

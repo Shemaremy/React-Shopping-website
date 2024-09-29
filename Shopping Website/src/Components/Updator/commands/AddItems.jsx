@@ -255,7 +255,7 @@ function AddItems() {
         ))}
       </div>
       <button className="confirm-button" onClick={handleAddToStore} disabled={isButtonDisabled}>
-        {loading ? <i className="fa-solid fa-spinner fa-spin"></i> 
+        {loading ? <>Wait a minute &nbsp; <i className="fa-solid fa-spinner fa-spin"></i></> 
         : <>Add All to Store &nbsp; <i className="fa-solid fa-check"></i></>}
       </button>
     </div>
