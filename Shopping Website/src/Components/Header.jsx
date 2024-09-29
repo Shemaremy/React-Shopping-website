@@ -252,7 +252,7 @@ const [shoedata, setShoedata] = useState([]);
 useEffect(() => {
     const fetchShoeData = async () => {
         try {
-            const response = await fetch('https://verve-users.glitch.me/api/admindisplay?category=Shoes');
+            const response = await fetch('https://verve-users.glitch.me/api/admindisplay');
             const data = await response.json();
             if (response.ok) {
                 setShoedata(data);

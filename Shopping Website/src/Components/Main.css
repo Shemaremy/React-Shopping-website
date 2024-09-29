@@ -403,22 +403,36 @@
 .Our_products_lower_part {
     position: relative;
     height: 75%;
-    height: auto;
-    width: 100%;
+    width: 97%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
     overflow-y: auto;
-    padding-top: 50px;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
+
+.Our_products_lower_part::-webkit-scrollbar {
+    width: 5px;
+}
+
+.Our_products_lower_part::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+}
+
+
+
+
 
 
 
 .products_section_one {
     height: 45%;
     height: auto;
-    width: 100%;
-    align-content: center;
+    width: 99%;
 }
 
 
@@ -426,24 +440,25 @@
 
 
 .slider-container-draft {
-    width: 90%;
+    width: 100%;
     height: 100%;
-    margin: 0 auto;
-    cursor: grab;
-    border-radius: 10px;
-    align-content: center;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-left: 50px;
 }
 
 .Trend-draft {
-    height: 100%;
-    width: 100%;
+    height: auto;
+    width: 220px;
 }
 
 .card-draft {
     margin: 0 auto;
     height: 300px;
     height: auto;
-    width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -452,7 +467,7 @@
     border-radius: 3px;
     transition: background-color 0.7s ease-in-out, height 0.4s ease-in-out, width 0.4s ease-in-out;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.288), rgba(0, 0, 0, 0));
-    padding: 3px;
+    padding: 5px;
     padding-top: 5px;
 }
 
@@ -483,12 +498,12 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    padding: 3px;
+    padding: 10px;
 }
 
 
 .product_images_first_section > img {
-    width: 80%;
+    width: 100%;
 }
 
 .card_lower_part {
@@ -498,7 +513,6 @@
     height: 30%;
     height: auto;
     background-color: rgb(221, 221, 221);
-    background-color: green;
 }
 
 .item_name_container {
@@ -934,7 +948,8 @@
 
 
 @media (min-width: 769px) {
-    .mobile-products-div {
+    .mobile-products-div,
+    .mobile-view-more {
         display: none;
     }
 }
@@ -995,25 +1010,28 @@
         height: 84%;
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
     }
 
     .section-draft {
         display: none;
     }
 
-    .products_section_one, 
-    .products_section_two {
+    .products_section_one {
         height: 45%;
+        height: auto;
+        width: 100%;
+        overflow-y: scroll;
     }
 
     .mobile-products-div {
         width: 100%;
         height: 100%;
+        height: auto;
         overflow: hidden;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        gap: 15px;
         align-items: center;
         justify-content: space-around;
     }

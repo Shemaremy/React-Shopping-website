@@ -51,36 +51,7 @@ function B() {
 
     const { handleClick } = useCounter();
     const [ mainpreloader, setMainpreloader ] = useState(false);
-    
     const [ shoedata, setShoedata ] = useState([]);
-    const [ pants, setPants ] = useState([]);
-    const [ tshirts, setTshirts ] = useState([]);
-    const [ hoodies, setHoodies ] = useState([]);
-    const [ jackets, setJackets ] = useState([]);
-    const [ caps, setcaps ] = useState([]);
-
-    /*
-    useEffect(() => {
-        const fetchShoeData = async () => {
-            setMainpreloader(true);
-            try {
-                const response = await fetch('https://verve-users.glitch.me/api/admindisplay?category=Shoes');
-                const data = await response.json();
-                if (response.ok) {
-                    setMainpreloader(false);
-                    setShoedata(data);
-                } else {
-                    alert('Failed to fetch shoes from the store.');
-                }
-                }
-            catch (error) {
-                setMainpreloader(false);
-                console.error('Error fetching products:', error);
-            }
-        }; 
-        fetchShoeData();
-    }, []);
-    */
     
 
 
@@ -105,7 +76,7 @@ const handleImageLoad = () => {
 
 
 const Imageloader = (
-    <div className="loading-container">
+    <div className="">
         <OurproductsPreloader/>
     </div>
 );
@@ -443,42 +414,11 @@ const settings = {
         // If names are the same, sort by size
         return a.size - b.size;
     })
-    .slice(0, 5)
     .map((product, index) => (
         <div className="Trend-draft" key={index + 1} data-name={product.name}>
             <div className="card-draft">{cardDraftOne(product)}</div>
         </div>
     ));
-
-
-
-
-    // Lower section for cards
-    const TrendDraftTwo = shoedata
-    .sort((a, b) => {
-        // Sort by name first
-        if (a.name < b.name) return -1;
-        if (a.name > b.name) return 1;
-        
-        // If names are the same, sort by size
-        return a.size - b.size;
-    })
-    .slice(5)
-    .map((product, index) => (
-        <div className="Trend-draft" key={index + 1} data-name={product.name}>
-            <div className="card-draft">{cardDraftOne(product)}</div>
-        </div>
-    ));
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -593,38 +533,20 @@ const settings = {
                         <div className="products_section_one">   
                             <div className="section-draft">
                                 <div className="slider-container-draft">
-                                    {mainpreloader ? <MainProductsPreloader/> 
-                                    : 
-                                    <Slider {...settings}>
-                                        {TrendDraftOne}
-                                    </Slider>}
+                                    {mainpreloader ? <MainProductsPreloader/> : TrendDraftOne }
                                 </div>
                             </div>
                             <div className="mobile-products-div">
                                 {mainpreloader ? <MainProductsPreloader/> : TrendDraftOne}
                             </div>
                         </div>
-                        <div className="products_section_two">
-                            <div className="section-draft">
-                                <div className="slider-container-draft">
-                                    {mainpreloader ? <MainProductsPreloader/> 
-                                    : 
-                                    <Slider {...settings}>
-                                        {TrendDraftTwo}
-                                    </Slider>}
-                                </div>
-                            </div>   
-                            <div className="mobile-products-div">
-                                {mainpreloader ? <MainProductsPreloader/> : TrendDraftTwo}
-                            </div>              
-                        </div>
-                        <div className="mobile-view-more">
+                        {/* <div className="mobile-view-more">
                             <p>View more &nbsp; <i className="fa-solid fa-arrow-right"></i></p>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
                 
-                {/* <div className="Our_picks_container">
+                <div className="Our_picks_container">
                     <div className="our_picks_heading_container">
                         <h4 className="our_picks_header">Our Picks</h4>
                         <p>
@@ -635,14 +557,14 @@ const settings = {
                     <div className="The_rest">
                         <OurPicks/>
                     </div>
-                </div> */}
+                </div>
 
                 <div className="Trend-section">
                     <div className="Upper-part-trend">
                         <h4 className="Trending_items_header">Discover What's Trending</h4>
                         <p className="Trend-description">Stay ahead of the fashion curve with our handpicked trending items! From the latest sneaker drops to classic wardrobe staples, explore the top picks that everyone is talking about.</p>
                     </div>
-                    <div className="Lower-part-trend">                        
+                    <div className="Lower-part-trend">                    
                         <div className="TrendCards-panel">
                             <TrendCards/>
                         </div>                        

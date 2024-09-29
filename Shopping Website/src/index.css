@@ -25,6 +25,8 @@ body {
 
 
 .products-div-preloader {
+  height: 300px;
+  width: 95%;
   display: flex;
   justify-content: center;
   align-items: center;
