@@ -156,7 +156,8 @@ const addListToStore = async (currentProduct) => {
       if (token === null) {
         navigate('/payment', { state: { currentProduct, totalPrice, selectedSizes } });
       } else {
-        addListToStore(updatedProduct);
+        //addListToStore(updatedProduct);
+        navigate('/payment', { state: { currentProduct, totalPrice, selectedSizes } });
       }
     }
   };

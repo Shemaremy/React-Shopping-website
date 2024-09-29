@@ -1156,6 +1156,7 @@ const handleCVCChange = (e) => {
                                 value={cardholderName} 
                                 name="cardholderName"
                                 onChange={handleCardholderNameChange}
+                                required
                             />
                             {errors.cardholderName && <p className='error'>{errors.cardholderName}</p>}
                         </div>
@@ -1168,6 +1169,7 @@ const handleCVCChange = (e) => {
                                 name="cardNumber"
                                 onChange={handleCardNumberChange}
                                 maxLength="16"
+                                required
                             />
                             <div className='see-container' type="button" onClick={() => setShowCardNumber(!showCardNumber)}>
                                 {showCardNumber ? <i className="fa-regular fa-eye-slash"></i> : <i className="fa-regular fa-eye"></i>}
@@ -1185,6 +1187,7 @@ const handleCVCChange = (e) => {
                                 name="expiryDate"
                                 onChange={handleExpiryDateChange}
                                 maxLength="5"
+                                required
                             />
                             {errors.expiryDate && <p className='error'>{errors.expiryDate}</p>}
                         </div>
@@ -1197,6 +1200,7 @@ const handleCVCChange = (e) => {
                                 name="cvc"
                                 onChange={handleCVCChange}
                                 maxLength="4"
+                                required
                             />
                             {errors.cvc && <p className='error'>{errors.cvc}</p>}
                         </div>
@@ -1213,6 +1217,7 @@ const handleCVCChange = (e) => {
                                 value={cardholderName} 
                                 name="cardholderName1"
                                 onChange={handleCardholderNameChange}
+                                required
                             />
                             {errors.cardholderName && <p className='error'>{errors.cardholderName}</p>}
                         </div>
@@ -1222,6 +1227,7 @@ const handleCVCChange = (e) => {
                                 name="cardNumber1"
                                 onChange={handleCardNumberChange}
                                 maxLength="16"
+                                required
                             />
                             <div className='see-container' type="button" onClick={() => setShowCardNumber(!showCardNumber)}>
                                 {showCardNumber ? <i className="fa-regular fa-eye-slash"></i> : <i className="fa-regular fa-eye"></i>}
@@ -1236,6 +1242,7 @@ const handleCVCChange = (e) => {
                                 name="expiryDate1"
                                 onChange={handleExpiryDateChange}
                                 maxLength="5"
+                                required
                             />
                             {errors.expiryDate && <p className='error'>{errors.expiryDate}</p>}
                         </div>
@@ -1247,6 +1254,7 @@ const handleCVCChange = (e) => {
                                 name="cvc1"
                                 onChange={handleCVCChange}
                                 maxLength="4"
+                                required
                             />
                             {errors.cvc && <p className='error'>{errors.cvc}</p>}
                         </div>
@@ -1367,18 +1375,19 @@ const handleCVCChange = (e) => {
                                         name='FirstName'
                                         onChange={handleFirstNameChange}
                                         maxLength="20"
+                                        required
                                     />
                                     {errors.FirstName && <p className='error'>{errors.FirstName}</p>}
                                 </div>
                                 <div className='last_name'>
                                     <p className='paym-indicator'>LAST NAME</p>
-                                    <input type="text" placeholder='ex: Remy' maxLength="20"/>
+                                    <input type="text" placeholder='ex: Remy' maxLength="20" required/>
                                 </div>
                             </div>
                             <div className='street_container'>
                                 <div className='first_name'>
                                     <p className='paym-indicator'>STREET ADDRESS</p>
-                                    <input type="text" placeholder='Airport Avenue (SAR Motor, KN 5 Rd, Kigali)'/>
+                                    <input type="text" placeholder='Airport Avenue (SAR Motor, KN 5 Rd, Kigali)' required/>
                                 </div>
                             </div>
                             <div className='city_zipcode_container'>
@@ -1392,7 +1401,7 @@ const handleCVCChange = (e) => {
                                 </div>
                                 <div className='last_name'>
                                     <p className='paym-indicator'>CITY</p>
-                                    <input type="text" placeholder='ex: Kigali'/>
+                                    <input type="text" placeholder='ex: Kigali' required/>
                                 </div>
                                 
                             </div>
@@ -1404,6 +1413,7 @@ const handleCVCChange = (e) => {
                                         value={Email}
                                         name='EmailAddress'
                                         onChange={handleEmailChange}
+                                        required
                                     />
                                     {errors.Email && <p className='error'>{errors.Email}</p>}
                                 </div>
@@ -1417,6 +1427,7 @@ const handleCVCChange = (e) => {
                                         defaultCountry={currentCountry}  
                                         className='phone_input'
                                         maxLength="12"
+                                        required
                                     />
                                     {errors.PhoneNumber && <p className='error'>{errors.PhoneNumber}</p>}
                                 </div>
@@ -1433,14 +1444,15 @@ const handleCVCChange = (e) => {
                                 name="FirstName1"
                                 onChange={handleFirstNameChange}
                                 maxLength="20"
+                                required
                             />
                             {errors.FirstName && <p className='error'>{errors.FirstName}</p>}
                         </div>
                         <div className='two'>
-                            <input type="text" name="LastName" placeholder='Last name' maxLength="20"/>
+                            <input type="text" name="LastName" placeholder='Last name' maxLength="20" required/>
                         </div>
                         <div className='three'>
-                            <input type="text" name="StreetAdress" placeholder='Street Adress'/>
+                            <input type="text" name="StreetAdress" placeholder='Street Adress' required/>
                         </div>
                         <div className='four'>
                             <CountrySelect 
@@ -1449,7 +1461,7 @@ const handleCVCChange = (e) => {
                             />
                         </div>
                         <div className='five'>
-                            <input type="text" name="City" placeholder='City'/>
+                            <input type="text" name="City" placeholder='City' required/>
                         </div>
                         <div className='six'>
                             <input type="text"
@@ -1457,6 +1469,7 @@ const handleCVCChange = (e) => {
                                 value={Email}
                                 name="EmailAddress1"
                                 onChange={handleEmailChange}
+                                required
                             />
                             {errors.Email && <p className='error'>{errors.Email}</p>}
                         </div>
@@ -1468,6 +1481,7 @@ const handleCVCChange = (e) => {
                                 defaultCountry={currentCountry}  
                                 className='phone_input'
                                 maxLength="12"
+                                required
                             />
                             {errors.PhoneNumber && <p className='error'>{errors.PhoneNumber}</p>}
                         </div>
