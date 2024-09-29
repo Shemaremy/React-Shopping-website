@@ -623,7 +623,8 @@ const settings = {
                         </div>
                     </div>
                 </div>
-                <div className="Our_picks_container">
+                
+                {/* <div className="Our_picks_container">
                     <div className="our_picks_heading_container">
                         <h4 className="our_picks_header">Our Picks</h4>
                         <p>
@@ -632,10 +633,10 @@ const settings = {
                         </p>
                     </div>
                     <div className="The_rest">
-                        
                         <OurPicks/>
                     </div>
-                </div>
+                </div> */}
+
                 <div className="Trend-section">
                     <div className="Upper-part-trend">
                         <h4 className="Trending_items_header">Discover What's Trending</h4>
