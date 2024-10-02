@@ -11,6 +11,7 @@ import './Main.css';
 
 
 import '@fortawesome/fontawesome-free/css/all.css';
+import cartSvg from './cartPanel/cartSVGs/emptyBox.png';
 
 
 
@@ -153,13 +154,17 @@ const handleCategoryClick = (event) => {
 
 
 
-// ------------------------------ END -------------------------------------
-// ------------------------------ END -------------------------------------
-// ------------------------------ END -------------------------------------
 
 
 
 
+
+
+
+
+// ------------------- FETCHING PRODUCTS FROM THE DATABASE -------------------------------------------------------
+// ------------------- FETCHING PRODUCTS FROM THE DATABASE -------------------------------------------------------
+// ------------------- FETCHING PRODUCTS FROM THE DATABASE -------------------------------------------------------
 
 
 useEffect(() => {
@@ -184,6 +189,20 @@ useEffect(() => {
 
 
 
+
+// -------- Products not found during fetch ------------------------- 
+const notFound = (
+    <div className="emptyCart empty-stock">
+      <div className="upper_empty">
+        <div className="svg_container_cart">
+          <img className='cartSvg empty-box' src={cartSvg} alt="cart svg" />
+        </div>
+      </div>
+      <div className="lower_empty">
+        <p className='empty_cart_paragraph'>This stock is currently empty !!</p>
+      </div>
+    </div>
+);
 
 
 
@@ -533,11 +552,11 @@ const settings = {
                         <div className="products_section_one">   
                             <div className="section-draft">
                                 <div className="slider-container-draft">
-                                    {mainpreloader ? <MainProductsPreloader/> : TrendDraftOne }
+                                    {mainpreloader ? <MainProductsPreloader /> : shoedata.length === 0 ? notFound : TrendDraftOne}
                                 </div>
                             </div>
                             <div className="mobile-products-div">
-                                {mainpreloader ? <MainProductsPreloader/> : TrendDraftOne}
+                                {mainpreloader ? <MainProductsPreloader /> : shoedata.length === 0 ? notFound : TrendDraftOne}
                             </div>
                         </div>
                         {/* <div className="mobile-view-more">

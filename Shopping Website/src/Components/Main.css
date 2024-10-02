@@ -402,6 +402,8 @@
 
 
 
+
+
 .Our_products_lower_part {
     position: relative;
     height: 75%;
@@ -661,8 +663,23 @@
   
   
   
+
+
+
+
+
+/* ----------- Empty stock ---------- */
+
+.empty-stock {
+    background-color: rgba(0, 128, 0, 0);
+    border-width: 0;
+    margin-top: 50px;
+}
   
-  
+.empty-box {
+    filter: grayscale(100%);
+    margin-bottom: 20px;
+}
   
   
   
