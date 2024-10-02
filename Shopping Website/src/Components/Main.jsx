@@ -4,9 +4,9 @@ import { useCounter } from "./Redux store/Counter";
 import { OurproductsPreloader } from "../Preloader";
 import { MainProductsPreloader } from "../Preloader";
 
-import OurPicks from "./Ourpicks";
+//import OurPicks from "./Ourpicks";
 import TrendCards from "./TrendCards";
-import Slider from "react-slick";
+//import Slider from "react-slick";
 import './Main.css';
 
 
@@ -546,7 +546,7 @@ const settings = {
                     </div>
                 </div>
                 
-                <div className="Our_picks_container">
+                {/* <div className="Our_picks_container">
                     <div className="our_picks_heading_container">
                         <h4 className="our_picks_header">Our Picks</h4>
                         <p>
@@ -557,7 +557,7 @@ const settings = {
                     <div className="The_rest">
                         <OurPicks/>
                     </div>
-                </div>
+                </div> */}
 
                 <div className="Trend-section">
                     <div className="Upper-part-trend">

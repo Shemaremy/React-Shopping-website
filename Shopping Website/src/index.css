@@ -2,8 +2,9 @@ body {
   position: relative;
   margin: 0;
   padding: 0;
-  width: 100vw; /* Use viewport width */
-  height: 500vh; /* Use viewport height */
+  width: 100vw;
+  height: 500vh;
+  height: 370vh;
   background-color: rgb(255, 255, 255);
   overflow-x: hidden !important;
   display: flex;
@@ -81,19 +82,19 @@ B : Footer
 @media (max-width: 768px) {
 
   body {
-    height: 850vh;
+    height: 650vh;
   }
 
   .A {
-    height: 15%;
+    height: 19%;
   }
 
   .B {
-    height: 75%;
+    height: 68%;
   }
 
   .C {
-    height: 10%;
+    height: 13%;
   }
 
 }
@@ -103,12 +104,16 @@ B : Footer
 
 @media (min-width: 769px) and (max-width: 1024px) {
 
+  body {
+    height: 280vh;
+  }
+
   .A {
-    height: 15%;
+    height: 24% !important;
   }
 
   .B {
-    height: 77%;
+    height: 68% !important;
   }
 }
 
@@ -169,7 +174,7 @@ B : Footer
   }
 
   .Trend-section {
-      height: 55%;
+      height: 70%;
   }
 
 }

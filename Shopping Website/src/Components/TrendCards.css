@@ -1,6 +1,6 @@
 .Trend-section {
     width: 100%;
-    height: 32%;
+    height: 43%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -545,7 +545,7 @@
     }
 
     .svg {
-        width: 50%;
+        width: 40%;
     }
     
 
