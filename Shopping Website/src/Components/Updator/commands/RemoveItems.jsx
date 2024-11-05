@@ -89,14 +89,15 @@ const RemoveItems = () => {
 
   // ---- Helper functions -------------------------------------------------------------------
 
-  const displayAll = () => fetchData(buttonState.ALL, 'https://verve-users.glitch.me/api/admindisplay');
-  const displayShoes = () => fetchData(buttonState.SHOES, 'https://verve-users.glitch.me/api/admindisplay?category=Shoes');
-  const displayHoodies = () => fetchData(buttonState.HOODIES, 'https://verve-users.glitch.me/api/admindisplay?category=Hoodies');
-  const displayJackets = () => fetchData(buttonState.JACKETS, 'https://verve-users.glitch.me/api/admindisplay?category=Jackets');
-  const displayTshirts = () => fetchData(buttonState.TSHIRTS, 'https://verve-users.glitch.me/api/admindisplay?category=T shirts');
-  const displayPants = () => fetchData(buttonState.PANTS, 'https://verve-users.glitch.me/api/admindisplay?category=Pants');
-  const displayCaps = () => fetchData(buttonState.CAPS, 'https://verve-users.glitch.me/api/admindisplay?category=Caps');
+  const URL = 'https://verve-users.glitch.me';
 
+  const displayAll = () => fetchData(buttonState.ALL, `${URL}/api/admindisplay`);
+  const displayShoes = () => fetchData(buttonState.SHOES, `${URL}/api/admindisplay?category=Shoes`);
+  const displayHoodies = () => fetchData(buttonState.HOODIES, `${URL}/api/admindisplay?category=Hoodies`);
+  const displayJackets = () => fetchData(buttonState.JACKETS, `${URL}/api/admindisplay?category=Jackets`);
+  const displayTshirts = () => fetchData(buttonState.TSHIRTS, `${URL}/api/admindisplay?category=T%20shirts`);
+  const displayPants = () => fetchData(buttonState.PANTS, `${URL}/api/admindisplay?category=Pants`);
+  const displayCaps = () => fetchData(buttonState.CAPS, `${URL}/api/admindisplay?category=Caps`);
 
 
 
