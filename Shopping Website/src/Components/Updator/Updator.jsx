@@ -23,11 +23,13 @@ function Updator() {
   const [ bodystate, setBodystate ] = useState(BodyState.HOME)
 
 
+
+  // Use username instead cause of uniqueness, cause tokens aint unique
   useEffect(() => {
     const checkValidity = () => {
       const token = localStorage.getItem("token");
       const storedUsername = localStorage.getItem("username");
-      if (token === null) {
+      if (storedUsername !== 'Shemaremy') {
         alert("You are trying to access this page with no token. Login first!!");
         navigate("/admin");
       } else {

@@ -17,6 +17,25 @@ import {
 } from '@agney/react-loading';
 
 
+
+export const PagePreloader = () => {
+
+  const { containerProps, indicatorEl } = useLoading({
+    loading: true,
+    indicator: <Grid width="50" color="gray" />,
+  });
+
+  return (
+      <section {...containerProps}>
+        {indicatorEl}
+      </section>
+  );
+};
+
+
+
+
+
 export const Preloader = () => {
 
   const { containerProps, indicatorEl } = useLoading({

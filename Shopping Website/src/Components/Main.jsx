@@ -47,7 +47,7 @@ import cartSvg from './cartPanel/cartSVGs/emptyBox.png';
 
 
 
-function B() {
+function B({allData}) {
 
 
     const { handleClick } = useCounter();
@@ -166,7 +166,7 @@ const handleCategoryClick = (event) => {
 // ------------------- FETCHING PRODUCTS FROM THE DATABASE -------------------------------------------------------
 // ------------------- FETCHING PRODUCTS FROM THE DATABASE -------------------------------------------------------
 
-
+/*
 useEffect(() => {
     const fetchData = async () => {
         setMainpreloader(true);
@@ -186,7 +186,22 @@ useEffect(() => {
     };
     fetchData();
 }, [activeButton]);
+*/
 
+useEffect(() => {
+    const fetchData = () => {
+        setMainpreloader(true);
+        try {
+            const filteredData = allData.filter(item => item.category === activeButton);
+            setMainpreloader(false);
+            setShoedata(filteredData);
+        } catch (error) {
+            setMainpreloader(false);
+            console.error('Error filtering products:', error);
+        }
+    };
+    fetchData();
+}, [activeButton, allData]);
 
 
 

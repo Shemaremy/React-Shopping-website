@@ -3,6 +3,7 @@ import A from './Components/Header'
 import B from './Components/Main'
 import C from './Components/Footer'
 import Mobilepanel from './Mobilepanel'
+import { PagePreloader } from './Preloader'
 
 
 import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate} from 'react-router-dom';
@@ -44,6 +45,11 @@ function AppRoutes() {
   const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
+
+
+  const [shoeData, setShoeData] = useState([]);
+  const [allData, setAllData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
 
 
@@ -92,6 +98,55 @@ function AppRoutes() {
 
 
 
+  // // Fetching shoe data ----------------------------------------
+  // useEffect(() => {
+  //   const fetchShoeData = async () => {
+  //       //setMainpreloader(true);
+  //       try {
+  //           const response = await fetch('https://verve-users.glitch.me/api/admindisplay?category=Shoes');
+  //           const data = await response.json();
+  //           if (response.ok) {
+  //               //setMainpreloader(false);
+  //               //setHighlight(data);
+  //               setShoeData(data)
+  //           } else {
+  //               alert('Failed to fetch shoes from the store.');
+  //           }
+  //           }
+  //       catch (error) {
+  //           //setMainpreloader(false);
+  //         console.error('Error fetching products:', error);
+  //       }
+  //   }; 
+  //   fetchShoeData();
+  // }, []);
+
+
+  // Fetching all data from the database -----------------------
+  useEffect(() => {
+    const fetchShoeData = async () => {
+        try {
+            const response = await fetch('https://verve-users.glitch.me/api/admindisplay');
+            const data = await response.json();
+            if (response.ok) {
+              setAllData(data)
+            } else {
+                alert('Failed to fetch shoes from the store.');
+            }
+            }
+        catch (error) {
+          console.error('Error fetching products:', error);
+        }
+    }; 
+    fetchShoeData();
+  }, []);
+
+
+  useEffect(() => {
+    if (allData.length !== 0) {
+      setIsLoading(false)
+    }
+  },[allData]);
 
 
 
@@ -100,11 +155,19 @@ function AppRoutes() {
     <Routes>
       <Route path="/" element={
         <>
-          <A />
-          <B />
-          <C />
-          <Mobilepanel />
-          <CookieFunction />
+          { isLoading ? 
+            (<div className='loader-panel'>
+              <PagePreloader />
+            </div>) :
+            (<>
+                <A shoeData={allData}/>
+                <B allData={allData}/>
+                <C />
+                <Mobilepanel />
+                <CookieFunction />
+              </>
+            )
+          }
         </>}>
       </Route>
       <Route path="/payment" element={<ProceedPayment />}></Route>

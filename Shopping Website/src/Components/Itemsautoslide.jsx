@@ -20,7 +20,7 @@ import nine from '../images/autoslides/Jordan 4 white.png';
 
 
 
-function Itemsautoslide () {
+function Itemsautoslide ({shoeData}) {
     const settings = {
         dots: false,
         infinite: true,
@@ -52,6 +52,7 @@ function Itemsautoslide () {
     const [item, setItem] = useState ([]);
     const [ mainpreloader, setMainpreloader ] = useState(false);
 
+    /*
     useEffect(() => {
         const fetchShoeData = async () => {
             setMainpreloader(true);
@@ -72,12 +73,17 @@ function Itemsautoslide () {
         }; 
         fetchShoeData();
     }, []);
+    */
+
+    useEffect (() => {
+        setItem(shoeData)
+    }, []);
 
     
 
 
     // Rendering card images and looping
-    const slider = item.slice(0, 9).map((product, index) => (
+    const slider = item.slice(0, 5).map((product, index) => (
         <div className="Trend" key={index + 1}>
             <div className="card-3"><img className="item_auto" src={product.image} alt="" /></div>
         </div>

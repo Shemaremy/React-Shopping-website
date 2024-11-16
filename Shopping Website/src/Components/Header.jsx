@@ -67,7 +67,7 @@ export const handleLinkClickMobile = (sectionClass, event) => {
 
 
  
-function A(){
+function A({shoeData}){
 
     const dispatch = useDispatch();
     const [showModal, setShowModal] = useState(false);
@@ -250,21 +250,7 @@ useEffect(() => {
 const [shoedata, setShoedata] = useState([]);
 
 useEffect(() => {
-    const fetchShoeData = async () => {
-        try {
-            const response = await fetch('https://verve-users.glitch.me/api/admindisplay');
-            const data = await response.json();
-            if (response.ok) {
-                setShoedata(data);
-            } else {
-                alert('Failed to fetch shoes from the store.');
-            }
-            }
-        catch (error) {
-            console.error('Error fetching products:', error);
-        }
-    }; 
-    fetchShoeData();
+    setShoedata(shoeData)
 }, []);
 
 
@@ -580,6 +566,7 @@ const settings = {
 const [Highlight, setHighlight] = useState([]);
 const [ mainpreloader, setMainpreloader ] = useState(false);
 
+/*
 useEffect(() => {
     const fetchShoeData = async () => {
         setMainpreloader(true);
@@ -600,9 +587,14 @@ useEffect(() => {
     }; 
     fetchShoeData();
 }, []);
+*/
 
 
 
+// Setting Highlighted items
+useEffect (() => {
+    setHighlight(shoeData);
+}, []);
 
 
 
@@ -1081,7 +1073,7 @@ const handleGotoAccounts = () => {
                         </div>
                     </div>
                 </div>
-                <div className="Lower_part_1"><Itemsautoslide/></div>
+                <div className="Lower_part_1"><Itemsautoslide shoeData={shoeData}/></div>
             </div>
         </div> 
     )
