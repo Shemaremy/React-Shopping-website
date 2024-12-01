@@ -33,47 +33,11 @@ function Itemsautoslide ({shoeData}) {
         arrows: false
     };
 
-/*
-      const [item, setItem] = useState (
-        [
-            { image: one },
-            { image: two },
-            { image: three },
-            { image: four },
-            { image: five },
-            { image: six },
-            { image: seven },
-            { image: eight },
-            { image: nine }
-        ]
-      );
-*/
 
     const [item, setItem] = useState ([]);
     const [ mainpreloader, setMainpreloader ] = useState(false);
 
-    /*
-    useEffect(() => {
-        const fetchShoeData = async () => {
-            setMainpreloader(true);
-            try {
-                const response = await fetch('https://verve-users.glitch.me/api/admindisplay?category=Shoes');
-                const data = await response.json();
-                if (response.ok) {
-                    setMainpreloader(false);
-                    setItem(data);
-                } else {
-                    alert('Failed to fetch shoes from the store.');
-                }
-                }
-            catch (error) {
-                setMainpreloader(false);
-                console.error('Error fetching products:', error);
-            }
-        }; 
-        fetchShoeData();
-    }, []);
-    */
+
 
     useEffect (() => {
         setItem(shoeData)
@@ -83,7 +47,7 @@ function Itemsautoslide ({shoeData}) {
 
 
     // Rendering card images and looping
-    const slider = item.slice(0, 5).map((product, index) => (
+    const slider = item.slice(0, 10).map((product, index) => (
         <div className="Trend" key={index + 1}>
             <div className="card-3"><img className="item_auto" src={product.image} alt="" /></div>
         </div>

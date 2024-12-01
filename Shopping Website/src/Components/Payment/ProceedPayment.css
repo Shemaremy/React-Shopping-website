@@ -1389,6 +1389,11 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
     font-size: 18px;
     color: rgba(21, 0, 54, 0.644);
     font-family: sans-serif;
+}
+
+.use-momo {
+    font-size: 11px;
+    color: gray;
     text-decoration: underline;
 }
 

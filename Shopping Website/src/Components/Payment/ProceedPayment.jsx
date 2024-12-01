@@ -1134,7 +1134,7 @@ const handleCVCChange = (e) => {
     const checkOut = (
         <div className='check_out_panel'>
             <div className='upper_check_out'>
-                <h2 className='check_out_header'>Checkout</h2>
+                <h2 className='check_out_header'>Checkout &nbsp;&nbsp; <a href="" className='use-momo'>(Use Momo instead)</a></h2>
                 <div className='card_images'>
                     <div className='mastercard'>
                         <img src={mastercard} alt="" />
