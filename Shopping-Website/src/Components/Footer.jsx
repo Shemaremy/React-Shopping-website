@@ -117,7 +117,7 @@ function C(){
                 </div>
             </div>
             <div className="Lower_part_footer">
-                <p className="Copyright_par">Copyright © 2024, Verve. All Rights Reserved</p>
+                <p className="Copyright_par">Copyright © 2025, Verve. All Rights Reserved</p>
             </div>
             <Dialog autoOpen={autoOpenDialog} message={dialogMessage} />
         </div>
