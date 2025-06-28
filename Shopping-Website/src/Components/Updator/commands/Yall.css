@@ -329,7 +329,7 @@ header p {
   opacity: 0;
   pointer-events: none;
   background-color: rgba(83, 83, 83, 0.699);
-  width: 100%;
+  width: 98%;
   height: 100vh;
   position: fixed;
   display: flex;
@@ -350,6 +350,7 @@ header p {
   width: 50%;
   margin: auto;
   padding: 20px;
+  margin-bottom: 20px;
   background-color: #f9f9f9;
   border-radius: 3px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
