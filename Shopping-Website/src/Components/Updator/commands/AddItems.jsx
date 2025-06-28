@@ -262,7 +262,7 @@ function AddItems() {
             <p>Category: {item.category}</p>
             <p>Price: {item.price}</p>
             <p>Quantity: {item.quantity}</p>
-            <p>Sizes: {item.size}</p>
+            <p>Size: {item.size}</p>
             {item.image && <img src={item.image} alt={item.name} className="preview-image" />}
             <button className="delete-button" onClick={() => removeItem(index)}><i className="fa-solid fa-trash-can"></i></button>
           </div>

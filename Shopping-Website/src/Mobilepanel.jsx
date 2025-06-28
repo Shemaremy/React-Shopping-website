@@ -66,9 +66,6 @@ function Mobilepanel () {
                   <div className='sect-2'>
                     <h4 onClick={(e) => handleLinkClickMobile('B', e)}>Our products <i className="fa-solid fa-chevron-right"></i></h4>
                   </div>
-                  <div className='sect-3'>
-                    <h4 onClick={(e) => handleLinkClickMobile('Our_picks_container', e)}>Our picks <i className="fa-solid fa-chevron-right"></i></h4>
-                  </div>
                   <div className='sect-4'>
                     <h4 onClick={(e) => handleLinkClickMobile('Upper-part-trend', e)}>Trending items <i className="fa-solid fa-chevron-right"></i></h4>
                   </div>

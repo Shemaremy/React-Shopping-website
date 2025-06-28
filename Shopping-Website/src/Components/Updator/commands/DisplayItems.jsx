@@ -104,7 +104,7 @@ const DisplayItems = () => {
             <img src={item.image} alt={item.name} className="product-image" />
             <h3 className="product-name">{item.name}</h3>
             <p className="product-category">Category: {item.category}</p>
-            <p className="product-size">Sizes: {item.size}</p>
+            <p className="product-size">Size: {item.size}</p>
             <p className="product-quantity">Quantity: {item.quantity}</p>
             <p className="product-price">Price: {Number(item.price).toLocaleString("en-US")}</p>
           </div>

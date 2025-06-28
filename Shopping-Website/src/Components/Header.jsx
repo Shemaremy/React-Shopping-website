@@ -981,7 +981,6 @@ const handleGotoAccounts = () => {
                         <div className="desk_links">
                             <a onClick={(e) => handleLinkClickDesk('A', e)} className="Home">Home</a>
                             <a onClick={(e) => handleLinkClickDesk('B', e)} className="Products">Products</a>
-                            <a onClick={(e) => handleLinkClickDesk('Our_picks_container', e)} className="Arrivals">Picks</a>
                             <a onClick={(e) => handleLinkClickDesk('Upper-part-trend', e)} className="Trends">Trends</a>
                             <a onClick={(e) => handleLinkClickDesk('C', e)} className="Contact">Contact</a>   
                         </div>
