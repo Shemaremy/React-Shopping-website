@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import './Yall.css';
 import '../Updator.css';
 
 function AddItems() {
 
   const [showIframe, setShowIframe] = useState(true);
-  const [iframeSrc, setIframeSrc] = useState("https://remydp.netlify.app/kpuppies");
+  const [iframeSrc, setIframeSrc] = useState("https://remydp.netlify.app/verve");
 
 
 
@@ -31,35 +31,20 @@ function AddItems() {
 
   // Input fields container
   const fields = [
-    { label: 'Name', name: 'name', type: 'text', placeholder: 'Ex: Fiston' },
-    { label: 'Price', name: 'price', type: 'number', placeholder: 'Ex: 400000' },
+    { label: 'Name', name: 'name', type: 'text', placeholder: 'Ex: Jordan 1 Black' },
+    { label: 'Price', name: 'price', type: 'number', placeholder: 'Ex: 35000' },
     { label: 'Quantity', name: 'quantity', type: 'number', placeholder: 'Ex: 10' },
-    { label: 'Description', name: 'description', type: 'text', placeholder: 'Ex: Nice quality' },
+    { label: 'Size', name: 'size', type: 'text', placeholder: 'Ex: 40, 41, S, M, XL,...' },
   ];
 
 
   // Dropdown fields container
   const dropdowns = [
     {
-      label: 'Type',
-      name: 'type',
-      options: ['German Shepherd', 'Bulldog', 'Siberian Husky', 'Alaskan Malamute', 'Poodle'],
-    },
-    {
-      label: 'Age',
-      name: 'age',
-      options: ['Less than 5 months', '5 - 12 months', '1 - 5 years'],
-    },
-    {
-      label: 'Gender',
-      name: 'gender',
-      options: ['Male', 'Female'],
-    },
-    {
-      label: 'Plug',
-      name: 'plug',
-      options: ['IGOBE', 'ANTOINE'],
-    },
+      label: 'Category',
+      name: 'category',
+      options: ['Shoes', 'Pants', 'T-shirts', 'Hoodies', 'Jackets', 'Caps'],
+    }
   ];
 
 
@@ -68,7 +53,6 @@ function AddItems() {
     ...Object.fromEntries(fields.map(f => [f.name, ''])),
     ...Object.fromEntries(dropdowns.map(d => [d.name, ''])),
     image: '',
-    subImages: ['', '', ''],
   };
 
   const [newItem, setNewItem] = useState(initialFormState);
@@ -76,13 +60,6 @@ function AddItems() {
 
 
 
-
-  // Handle change of sub images
-  const handleSubImageChange = (index, value) => {
-    const updated = [...newItem.subImages];
-    updated[index] = value;
-    setNewItem({ ...newItem, subImages: updated });
-  };
   
   
   // Handle change for normal products values
@@ -103,7 +80,6 @@ function AddItems() {
     const requiredFields = [
       ...fields.map(f => f.name),
       ...dropdowns.map(d => d.name),
-      'subImages'
     ];
 
 
@@ -133,7 +109,7 @@ function AddItems() {
     setNewItem(initialFormState);
 
     setIframeSrc("");  // Temporarily remove the src
-    setTimeout(() => setIframeSrc("https://remydp.netlify.app/kpuppies"), 50);
+    setTimeout(() => setIframeSrc("https://remydp.netlify.app/verve"), 50);
     
   };
   
@@ -192,8 +168,7 @@ function AddItems() {
         return { ...item };
       }));
   
-      // const response = await fetch('https://kigali-puppies.glitch.me/api/adminadd', {
-      const response = await fetch('https://kigalipuppies.up.railway.app/api/adminadd', {
+      const response = await fetch('https://verve-users.glitch.me/api/adminadd', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -234,7 +209,7 @@ function AddItems() {
 
   return (
     <div className="add-items-container">
-      <h1>Add New Dogs</h1>
+      <h1>Add New Products</h1>
       <a href="">Back</a>
 
       {/* Mapping normal input fields */}
@@ -251,7 +226,7 @@ function AddItems() {
         </div>
       ))}
 
-      {/* Images section */}
+      {/* Image section */}
       <div className="form-group image-group">
         {showIframe && (
           <div style={{ marginTop: "10px" }}>
@@ -261,10 +236,7 @@ function AddItems() {
             />
           </div>
         )}
-        <input type="text" name="image" onChange={handleChange} value={newItem.image} placeholder='MAIN IMAGE' />
-        <input type="text" onChange={(e) => handleSubImageChange(0, e.target.value)} value={newItem.subImages[0]} placeholder='Sub Image 1' />
-        <input type="text" onChange={(e) => handleSubImageChange(1, e.target.value)} value={newItem.subImages[1]} placeholder='Sub Image 2' />
-        <input type="text" onChange={(e) => handleSubImageChange(2, e.target.value)} value={newItem.subImages[2]} placeholder='Sub Image 3' />
+        <input type="text" name="image" onChange={handleChange} value={newItem.image} placeholder='Place here url fetched' />
       </div>
 
 
@@ -287,13 +259,10 @@ function AddItems() {
         {items.map((item, index) => (
           <div key={index} className="item">
             <h3>{item.name}</h3>
-            <p>Type: {item.type}</p>
-            <p>Age range: {item.age}</p>
-            <p>Gender: {item.gender}</p>
+            <p>Category: {item.category}</p>
             <p>Price: {item.price}</p>
             <p>Quantity: {item.quantity}</p>
-            <p>Description: {item.description}</p>
-            <p>Plug: {item.plug}</p>
+            <p>Size: {item.size}</p>
             {item.image && <img src={item.image} alt={item.name} className="preview-image" />}
             <button className="delete-button" onClick={() => removeItem(index)}><i className="fa-solid fa-trash-can"></i></button>
           </div>
