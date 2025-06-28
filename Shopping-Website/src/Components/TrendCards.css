@@ -581,8 +581,27 @@
 
 /*---------------------------------- Above my phone ------------------------------------*/
 
+@media (min-width: 450px) {
+    .mobile-trends {
+        gap: 20px;
+    }
+
+    .cart-trend {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+}
 
 @media (min-width: 500px) {
+
+    .mobile-trends {
+        gap: 0px;
+    }
+
+    .Trend-description {
+        width: 80%;
+    }
+
     .Trend-2 {
         width: 50%;
         height: 32%;
@@ -614,13 +633,13 @@
     }
 
     .card-2 {
-        height: 460px;
-        width: 700px;
+        height: 230px;
+        width: 70%;
     }
 
 
     .Trend-img {
-        width: 350px;
+        width: 170px;
     }
 
     .card_lower {
@@ -642,8 +661,20 @@
 }
 
 
+@media (min-width: 820px) {
+    .card-2 {
+        height: 230px;
+        width: 60%;
+    }
+}
+
 
 @media (min-width: 1024px) {
+
+    .Trend-description {
+        width: 55%;        
+    }
+
     .Trend-img {
         width: 50%;
     }

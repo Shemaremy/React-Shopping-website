@@ -340,6 +340,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
     width: 90%;
     height: 25vh;
     border-radius: 10px;
+    padding-left: 10px;
     border-style: solid;
     border-width: 1px;
     border-color: rgba(255, 255, 255, 0.377);
@@ -359,9 +360,9 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
 
 
 .image_container_panel {
-    height: auto;
+    height: 90%;
     width: 20%;
-    border-radius: 10px 0px 0px 10px;
+    border-radius: 10px;
     background-color: rgba(146, 146, 146, 0.658);
     display: flex;
     justify-content: center;
@@ -473,6 +474,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-top: 5px;
 }
 
 
@@ -515,11 +517,11 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
 
 .quantity_size_pan {
     width: 95%;
-    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 0;
 }
 
 .left_quantity_size_panel {
@@ -562,6 +564,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
     appearance: none;
     transition: border-color 0.2s ease;
     padding-left: 5px;
+    padding: 7px;
     display: flex;
 }
 
@@ -766,6 +769,8 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 
 
@@ -831,7 +836,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
 .Proceed_total_payment_button {
     border-style: solid;
     border-width: 1px;
-    border-color: white;
+    border-color: rgba(255, 255, 255, 0.63);
     background-color: rgba(0, 82, 0, 0.288);
     color: white;
     border-radius: 20px;
@@ -919,7 +924,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
     .panel_container {
         border-radius: 0;
         border-width: 0;
-        height: auto;
+        height: 100%;
         width: 100%;
     }
 

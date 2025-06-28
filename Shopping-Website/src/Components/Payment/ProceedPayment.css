@@ -1,11 +1,10 @@
 .payment-body {
-    height: 110vh;
+    height: auto;
 }
 
 .paying-wrapper {
     height: auto;
     width: 100%;
-    background-color: rgb(231, 231, 231);
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -70,6 +69,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    margin-top: 60px;
 }
 
 
@@ -87,15 +87,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 15px;
 }
 
 .address_details {
-    width: 90%;
+    width: 100%;
     font-size: 30px;
 }
 
 .header_description {
-    width: 90%;
+    width: 100%;
     margin-top: 1%;
     font-size: 11px;
 }
@@ -197,14 +198,15 @@
 
 
 .upper_form_title {
-    width: 90%;
+    width: 100%;
     height: 8%;
     font-size: 20px;
+    margin-bottom: 20px;
 }
 
 .address_form_container {
     height: auto;
-    width: 93%;
+    width: 100%;
 }
 
 .address_form {
@@ -221,6 +223,7 @@
 
 
 
+
 .names_container, 
 .street_container,
 .city_zipcode_container,
@@ -230,6 +233,7 @@
     width: 100%;
     display: flex;
     align-items: center;
+    gap: 15px;
 }
 
 
@@ -252,7 +256,6 @@
     bottom: 0;
     left: 100;
     right: 0;
-    width: 97%;
 }
 
 
@@ -387,10 +390,10 @@
 
 
 .paym-indicator {
-    width: 95%;
+    width: 100%;
     height: 25%;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 4px;
     font-family: sans-serif;
     font-size: 10px;
     color: rgb(53, 53, 53);
@@ -411,8 +414,7 @@ input, .phone_input {
     height: 45%;
     border-radius: 4px;
     outline: none;
-    padding: 0;
-    padding-left: 2%;
+    padding: 13px;
 }
 
 
@@ -617,7 +619,7 @@ input:focus {
 
 
 .city_zipcode_container > .first_name > div {
-    width: 96%;
+    width: 100%;
     height: 45%;
 }
 
@@ -628,6 +630,8 @@ input:focus {
     border-color: rgba(167, 167, 167, 0.884) !important;
     background-color: rgba(170, 170, 170, 0.11) !important;
     align-content: center;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 .stsearch-box input {
@@ -875,10 +879,11 @@ input:focus {
 
 
 .right_part_pay {
-    height: auto;
+    height: 80vh;
     width: 40%;
     display: flex;
     flex-direction: column;
+    margin-top: 60px;
     
 }
 
@@ -1037,6 +1042,9 @@ input:focus {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    gap: 5px;
+    padding-top: 10px;
+    padding-bottom: 20px;
 }
 
 .items_word_summary,
@@ -1133,6 +1141,8 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
     margin-bottom: 1%;
     border-radius: 2px;
     overflow: hidden;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .img_and_name {
@@ -1145,12 +1155,12 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
 }
 
 .img_summary {
-    height: auto;
+    height: 90%;
     width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(128, 128, 128, 0.158);
+    background-color: rgba(128, 128, 128, 0.089);
 }
 
 .img_summary > img {
@@ -1164,6 +1174,7 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 15px;
 }
 
 
@@ -1203,6 +1214,8 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    padding-bottom: 15px;
+    padding-top: 15px;
 }
 
 
@@ -1367,6 +1380,8 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .upper_check_out {
@@ -1440,6 +1455,7 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
     padding-left: 0;
     height: auto;
     width: 100%;
+    margin-top: 15px;
 }
 
 
@@ -1474,9 +1490,8 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
 }
 
 .cardholder_name > .first_name > input {
-    width: 93%;
-    padding: 0;
-    padding-left: 2%;
+    width: 95%;
+    padding-left: 0;
 }
 
 
@@ -1571,6 +1586,8 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
     width: 95%;
     padding: 0%;
     padding-left: 2%;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .exp_and_cvc > .last_name > .error {
@@ -1596,6 +1613,8 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
     color: rgb(235, 234, 234);
     font-size: 12px;
     cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 10px;
     background-color: rgba(0, 0, 0, 0.479);
     transition: background-color 0.3s ease-in-out;
 }
@@ -1854,7 +1873,6 @@ div.lower_summary::-webkit-scrollbar-thumb:hover {
     .stsearch-box input  {
         width: 98%;
         height: auto;
-        padding: 0;
         padding-left: 2%;
         left: 100;
         right: 0;

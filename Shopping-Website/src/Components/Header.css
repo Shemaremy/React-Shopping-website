@@ -1071,7 +1071,6 @@ h4 {
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    height: auto;
     width: 100%;
     background-color: rgb(44, 44, 44);
     z-index: 1500;
@@ -1203,7 +1202,7 @@ h4 {
     z-index: 998;
     overflow: hidden;
     background-color: rgba(32, 36, 34, 0.712);
-    position: absolute;
+    position: fixed;
     top: 0;
     bottom: 100;
     opacity: 0;
@@ -1212,6 +1211,9 @@ h4 {
   }
   
   .big-nav-panel-mobile.is-active {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.452);
     opacity: 1;
     z-index: 1;
   }
@@ -1220,20 +1222,20 @@ h4 {
   .main-nav-panel {
     position: fixed;
     background-color: rgb(32, 36, 34);
-    height: auto;
+    height: 100vh;
     width: 80%;
   }
   
   
   .list-container {
     display: flex;
-    align-items: flex-end;
     height: auto;
     width: 100%;
+    margin-top: 100px;
   }
   
   .main_lists {
-    height: auto;
+    height: 350px;
     width: 100%;
     display: flex;
     flex-direction: column;

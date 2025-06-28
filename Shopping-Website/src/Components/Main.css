@@ -450,12 +450,11 @@
 .slider-container-draft {
     width: 100%;
     height: auto;
-
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-    padding-left: 50px;
 }
 
 .Trend-draft {
@@ -1133,7 +1132,7 @@
     }
 
     .item_p {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .star {
@@ -1141,7 +1140,7 @@
     }
 
     .Price {
-        font-size: 15px;
+        font-size: 12px;
     }
 
     .mobile-view-more > p {
@@ -1203,9 +1202,7 @@
         padding-left: 0;
     }
 
-    .Trend-draft {
-        width: 400px;
-    }
+
 
     .product_images_first_section {
         width: auto;
