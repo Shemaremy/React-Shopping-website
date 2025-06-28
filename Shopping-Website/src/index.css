@@ -3,8 +3,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: 500vh;
-  height: 370vh;
+  height: auto;
   background-color: rgb(255, 255, 255);
   overflow-x: hidden !important;
   display: flex;
@@ -19,14 +18,14 @@ body {
 
 #root {
   width: 100%;
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
 }
 
 
 .products-div-preloader {
-  height: 300px;
+  height: auto;
   width: 95%;
   display: flex;
   justify-content: center;
@@ -60,7 +59,7 @@ B : Footer
 
 
 .loader-panel {
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(207, 207, 207, 0.438);
   position: fixed;
   z-index: 1000;
   height: 100vh;
@@ -70,146 +69,40 @@ B : Footer
   align-items: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*------------------- SCALE RESPONSIVENESS -----------------------*/
-/*------------------- SCALE RESPONSIVENESS -----------------------*/
-/*------------------- SCALE RESPONSIVENESS -----------------------*/
-
-@media (max-width: 768px) {
-
-  body {
-    height: 650vh;
-  }
-
-  .A {
-    height: 19%;
-  }
-
-  .B {
-    height: 68%;
-  }
-
-  .C {
-    height: 13%;
-  }
-
+.loader-spinner {
+  width: 50px;
+  height: 50px;
+  border: 2.5px solid #ccc;
+  border-top: 2.5px solid #000000; 
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 50px auto;
 }
 
-
-
-
-@media (min-width: 769px) and (max-width: 1024px) {
-
-  body {
-    height: 280vh;
-  }
-
-  .A {
-    height: 24% !important;
-  }
-
-  .B {
-    height: 68% !important;
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
 
 
-
-
-@media (min-width: 1025px){
-  /*--- Defaults are above ---------------*/
+.check-out-loader {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccccccc7;
+  border-top: 2px solid #000000d8; 
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*--------------------------------- main.jsx scale responsives ------------------------------------------*/
-/*--------------------------------- main.jsx scale responsives ------------------------------------------*/
-/*--------------------------------- main.jsx scale responsives ------------------------------------------*/
-
-
-
-
-@media (max-width: 768px) {
-
-  .All_products_container {
-    height: 30%;
-  }
-
-  .Our_picks_container {
-      height: 20%;
-  }
-
-  .Trend-section {
-      height: 70%;
-  }
-
+.image-skimmer {
+  height: 180px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-
-
-@media (min-width: 769px) and (max-width: 1024px) {
-
-  .A {
-    height: 15%;
-  }
-
-  .B {
-    height: 77%;
-  }
+.image-skimmer > div {
+  border: 2.5px solid #cccccc7c;
+  border-top: 2.5px solid #0000007c; 
 }
-
-
-
-
-@media (min-width: 1025px){
-  /*--- Defaults are above ---------------*/
-}
-
-

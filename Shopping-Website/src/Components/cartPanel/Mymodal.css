@@ -5,7 +5,7 @@
     bottom: 0;
     right: -100%;
     width: 100%;
-    height: 100%;
+    height: auto;
     transition: opacity 0.3s linear, right 0.3s ease-out;
     display: flex;
     justify-content: center;
@@ -38,7 +38,7 @@
 
 
 .top-nav {
-    height: 10%;
+    height: auto;
     width: 83%;
     display: flex;
     flex-direction: row;
@@ -63,7 +63,7 @@
 
 .close_container {
     width: 5%;
-    height: 50%;
+    height: auto;
     margin-top: 0;
     margin-bottom: 0;
     display: flex;
@@ -169,7 +169,7 @@
 }
 
 .svg_container_cart {
-    height: 70%;
+    height: auto;
     width: 20%;
     display: flex;
     justify-content: center;
@@ -359,7 +359,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
 
 
 .image_container_panel {
-    height: 100%;
+    height: auto;
     width: 20%;
     border-radius: 10px 0px 0px 10px;
     background-color: rgba(146, 146, 146, 0.658);
@@ -393,7 +393,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
 
 
 .main_details_panel {
-    height: 90%;
+    height: auto;
     width: 78%;
     border-radius: 10px;
     display: flex;
@@ -413,7 +413,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
 
 .Item_name_panel {
     width: 95%;
-    height: 30%;
+    height: auto;
     margin-bottom: 4px;
     display: flex;
     flex-direction: row;
@@ -515,7 +515,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
 
 .quantity_size_pan {
     width: 95%;
-    height: 40%;
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -524,14 +524,14 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
 
 .left_quantity_size_panel {
     width: 80%;
-    height: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
 .size_container {
-    height: 60%;
+    height: auto;
     width: 40%;
     display: flex;
     flex-direction: row;
@@ -550,7 +550,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
 
 .size-values {
     width: 110px;
-    height: 80%;
+    height: auto;
     font-size: 11px;
     border-radius: 20px;
     border-style: solid;
@@ -592,7 +592,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
 
 
 .quantity_container {
-    height: 40%;
+    height: auto;
     width: 40%;
     display: flex;
     flex-direction: row;
@@ -606,7 +606,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
 }
 
 .quantity {
-    height: 80%;
+    height: auto;
     width: 120px;
     border-style: dashed;
     border-width: 0px;
@@ -626,7 +626,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
 .qnty, 
 .add {
     width: 40%;
-    height: 80%;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -634,13 +634,13 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
 
 .qnty {
     font-size: 15px;
-    height: 100%;
+    height: auto;
     width: 20%;
 }
 
 .reduce, 
 .add {
-    height: 100%;
+    height: auto;
     font-size: 10px;
     cursor: pointer;
     color: rgb(53, 53, 53);
@@ -756,7 +756,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
 
 .summation-pannel {
     width: 90%;
-    height: 10%;
+    height: auto;
     border-radius: 25px;
     border-style: dashed;
     border-width: 1px;
@@ -919,12 +919,12 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
     .panel_container {
         border-radius: 0;
         border-width: 0;
-        height: 100%;
+        height: auto;
         width: 100%;
     }
 
     .top-nav {
-        height: 10%;
+        height: auto;
         width: 95%;
     }
 
@@ -997,7 +997,7 @@ div.cartItems::-webkit-scrollbar-thumb:hover {
 
     .size-values, .quantity {
         width: 60%;
-        height: 70%;
+        height: auto;
     }
 
     .size-values {

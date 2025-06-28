@@ -1,6 +1,4 @@
 .B {
-    height: 69%;
-    height: 59%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -13,7 +11,7 @@
    
 .Upper_part_main {
     width: 100%;
-    height: 10%;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -120,7 +118,7 @@
 
 .Lower_part_main {
     width: 100%;
-    height: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -174,8 +172,7 @@
 
 .All_products_container {
     width: 100%;
-    height: 40%;
-    height: 57%;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -183,7 +180,6 @@
 }
 
 .Our_products_upper_part {
-    height: 25%;
     width: 100%;
     background-color: rgba(136, 136, 136, 0.144);
     display: flex;
@@ -207,6 +203,7 @@
 .our-products-header {
     font-size: 30px;
     margin-bottom: 15px;
+    margin-top: 50px;
     color: rgb(0, 0, 0);
 }
 
@@ -224,23 +221,30 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 30%;
+    height: auto;
     background-color: rgba(136, 136, 136, 0.144);
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .popular-container,
 .filter-container {
-    height: 100%;
+    height: auto;
     width: 15%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.popular-chooser, 
+.filter-chooser {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
 
 .popular-chooser {
     width: 50%;
-    height: 50%;
+    height: auto;
     border-radius: 8px;
     display: flex;
     flex-direction: row;
@@ -277,7 +281,7 @@
     top: 0;
     z-index: 1;
     width: 90%;
-    height: 20%;
+    height: auto;
 }
 
 .dropdown-panel {
@@ -317,7 +321,7 @@
 
 .buttons-container {
     width: 65%;
-    height: 100%;
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -360,7 +364,7 @@
 
 .filter-chooser {
     width: 50%;
-    height: 40%;
+    height: auto;
     border-radius: 50px;
     display: flex;
     flex-direction: row;
@@ -412,7 +416,7 @@
     flex-direction: column;
     align-items: center;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 70px;
     overflow-y: auto;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -445,7 +449,7 @@
 
 .slider-container-draft {
     width: 100%;
-    height: 100%;
+    height: auto;
 
     display: flex;
     align-items: center;
@@ -476,7 +480,7 @@
 }
 
 .draftUp {
-    height: 70%;
+    height: auto;
     height: auto;
     width: 100%;
     display: flex;
@@ -485,7 +489,7 @@
 }
 
 .draftDown{
-    height: 30%;
+    height: auto;
     width: 100%;
     height: auto;
 }
@@ -514,7 +518,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 30%;
+    height: auto;
     height: auto;
     background-color: rgb(221, 221, 221);
 }
@@ -538,14 +542,14 @@
 
 .stars_and_prices_container {
     width: 95%;
-    height: 60%;
+    height: auto;
     margin: 0 auto;
     height: auto;
 }
 
 
 .stars_container {
-    height: 20%;
+    height: auto;
     width: 70%;
     display: flex;
     flex-direction: row;
@@ -588,12 +592,12 @@
 .cart {
     margin-top: 0;
     margin-bottom: 0;
-    background-color: rgba(0, 140, 145, 0.986);
-    padding: 3%;
+    background-color: rgba(95, 95, 95, 0.986);
+    padding: 5px;
     border-style: solid;
     border-width: 0px;
     border-color: rgb(255, 255, 255);
-    border-radius: 5px;
+    border-radius: 2px;
     margin-right: 2%;
     display: flex;
     justify-content: center;
@@ -605,7 +609,7 @@
 
 
 .cart:hover {
-    background-color: rgba(50, 182, 187, 0.986);
+    background-color: rgba(95, 95, 95, 0.589);
 }
 
 .cart_icon {
@@ -620,7 +624,7 @@
   
   
 .products_section_two {
-    height: 50%;
+    height: auto;
     height: auto;
     width: 100%;
     border-style: solid;
@@ -673,12 +677,12 @@
 .empty-stock {
     background-color: rgba(0, 128, 0, 0);
     border-width: 0;
-    margin-top: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
   
 .empty-box {
     filter: grayscale(100%);
-    margin-bottom: 20px;
 }
   
   
@@ -994,7 +998,7 @@
 
 
     .Our_products_upper_part {
-        height: 20%;
+        height: auto;
     }
 
     .our-products-description {
@@ -1004,7 +1008,7 @@
     }
 
     .our-products-nav {
-        height: 30%;
+        height: auto;
     }
 
     .popular-container, 
@@ -1015,7 +1019,7 @@
 
     .buttons-container {
         width: 100%;
-        height: 90%;
+        height: auto;
         justify-content: space-around;
     }
 
@@ -1026,7 +1030,7 @@
     }
 
     .Our_products_lower_part {
-        height: 80%;
+        height: auto;
         display: flex;
         flex-direction: column;
     }
@@ -1044,7 +1048,7 @@
 
     .mobile-products-div {
         width: 100%;
-        height: 100%;
+        height: auto;
         height: auto;
         overflow: hidden;
         display: flex;
@@ -1058,7 +1062,7 @@
 
     .mobile-products-div > .Trend-draft {
         width: 47%;
-        height: 50%;
+        height: auto;
         align-content: center;
     }
 
@@ -1119,13 +1123,6 @@
 /*--------------------------- Above my Phone -------------------------------*/
 
 @media (min-width: 580px) {
-    .our-products-header {
-        font-size: 45px;
-    }
-
-    .our-products-description {
-        font-size: 15px;
-    }
 
     .browse_button {
         font-size: 14px;
@@ -1164,11 +1161,11 @@
     }
 
     .Our_products_upper_part {
-        height: 20%;
+        height: auto;
     }
 
     .Our_products_lower_part {
-        height: 80%;
+        height: auto;
     }
 
     .popular-container, 
@@ -1183,7 +1180,7 @@
 
     .popular-chooser,
     .filter-chooser {
-        height: 40%;
+        height: auto;
     }
 
     .buttons-container {
@@ -1193,10 +1190,6 @@
     .browse_button {
         margin-right: 5px;
         font-size: 13px;
-    }
-
-    .our-products-header {
-        font-size: 50px;
     }
 
     .our-products-description {

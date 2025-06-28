@@ -3,7 +3,6 @@ import A from './Components/Header'
 import B from './Components/Main'
 import C from './Components/Footer'
 import Mobilepanel from './Mobilepanel'
-import { PagePreloader } from './Preloader'
 
 
 import { BrowserRouter as Router, Route, Routes, useLocation, useNavigate} from 'react-router-dom';
@@ -98,29 +97,6 @@ function AppRoutes() {
 
 
 
-  // // Fetching shoe data ----------------------------------------
-  // useEffect(() => {
-  //   const fetchShoeData = async () => {
-  //       //setMainpreloader(true);
-  //       try {
-  //           const response = await fetch('https://verve-users.glitch.me/api/admindisplay?category=Shoes');
-  //           const data = await response.json();
-  //           if (response.ok) {
-  //               //setMainpreloader(false);
-  //               //setHighlight(data);
-  //               setShoeData(data)
-  //           } else {
-  //               alert('Failed to fetch shoes from the store.');
-  //           }
-  //           }
-  //       catch (error) {
-  //           //setMainpreloader(false);
-  //         console.error('Error fetching products:', error);
-  //       }
-  //   }; 
-  //   fetchShoeData();
-  // }, []);
-
 
   // Fetching all data from the database -----------------------
   useEffect(() => {
@@ -153,7 +129,7 @@ function AppRoutes() {
         <>
           { isLoading ? 
             (<div className='loader-panel'>
-              <PagePreloader />
+              <div className='loader-spinner'></div>
             </div>) :
             (<>
                 <A shoeData={allData}/>

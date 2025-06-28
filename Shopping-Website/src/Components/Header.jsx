@@ -7,17 +7,13 @@ import { useCounter } from "./Redux store/Counter";
 import { useSelector, useDispatch } from 'react-redux';
 import { setSearchTerm } from './Redux store/actions';
 
-
-import {Preloader} from "../Preloader";
-import { CheckOutPreloader } from "../Preloader";
-import { HighlightsPreloader } from "../Preloader";
+;
 
 
 
 import MyModal from "./cartPanel/MyModal";
 import './Header.css';
 
-import '@fortawesome/fontawesome-free/css/all.css';
 import Itemsautoslide from './Itemsautoslide';
 
 import Slider from "react-slick";
@@ -125,8 +121,8 @@ const handleImageLoad = () => {
 
 
 const Imageloader = (
-    <div className="loading-container">
-        <Preloader/>
+    <div className="image-skimmer">
+        <div className='loader-spinner'></div>
     </div>
 );
 
@@ -566,30 +562,6 @@ const settings = {
 const [Highlight, setHighlight] = useState([]);
 const [ mainpreloader, setMainpreloader ] = useState(false);
 
-/*
-useEffect(() => {
-    const fetchShoeData = async () => {
-        setMainpreloader(true);
-        try {
-            const response = await fetch('https://verve-users.glitch.me/api/admindisplay?category=Shoes');
-            const data = await response.json();
-            if (response.ok) {
-                setMainpreloader(false);
-                setHighlight(data);
-            } else {
-                alert('Failed to fetch shoes from the store.');
-            }
-            }
-        catch (error) {
-            setMainpreloader(false);
-            console.error('Error fetching products:', error);
-        }
-    }; 
-    fetchShoeData();
-}, []);
-*/
-
-
 
 // Setting Highlighted items
 useEffect (() => {
@@ -896,42 +868,30 @@ const handleSuggestionClickMobile = (name) => {
 //------------------------------------------ CHECK OUT CONTENT ----------------------------------------------------
 
 
+const checkImages = [
+  { src: item1, alt: "1", className: "img_1", wrapperClass: "One", display: "flex" },
+  { src: item2, alt: "2", className: "img_2", wrapperClass: "Two", display: "block" },
+  { src: item3, alt: "3", className: "img_3", wrapperClass: "Three", display: "block" },
+  { src: item4, alt: "4", className: "img_4", wrapperClass: "Four", display: "block" },
+];
+
 const CheckOutContent = (
-    <div className="Choose_product_container">
-        <div className="One">
-            {imgloading && <CheckOutPreloader/>}
-            <img className="img_1" 
-                src={item1} alt="1" 
-                onLoad={handleImageLoad}
-                style={{ display: imgloading ? 'none' : 'flex' }}
-            />
-        </div>
-        <div className="Two">
-            {imgloading && <CheckOutPreloader/>}
-            <img className="img_2" 
-                src={item2} alt="2" 
-                onLoad={handleImageLoad}
-                style={{ display: imgloading ? 'none' : 'block' }}
-            />
-        </div>
-        <div className="Three">
-            {imgloading && <CheckOutPreloader/>}
-            <img className="img_3" 
-                src={item3} alt="3" 
-                onLoad={handleImageLoad}
-                style={{ display: imgloading ? 'none' : 'block' }}
-            />
-        </div>
-        <div className="Four">
-            {imgloading && <CheckOutPreloader/>}
-            <img className="img_4" 
-                src={item4} alt="4" 
-                onLoad={handleImageLoad}
-                style={{ display: imgloading ? 'none' : 'block' }}
-            />
-        </div>
-    </div>
+  <div className="Choose_product_container">
+    {checkImages.map(({ src, alt, className, wrapperClass, display }, i) => (
+      <div key={i} className={wrapperClass}>
+        {imgloading && <div className='loader-spinner check-out-loader'></div>}
+        <img
+          className={className}
+          src={src}
+          alt={alt}
+          onLoad={handleImageLoad}
+          style={{ display: imgloading ? 'none' : display }}
+        />
+      </div>
+    ))}
+  </div>
 );
+
 
 
 
@@ -972,7 +932,6 @@ const handleGotoAccounts = () => {
 
     return(
         <div className="A">
-            <nav>
                 <div className="desktop_nav">
                     <div className="Left_part1">
                         <div className="Name_of_company">
@@ -1026,7 +985,6 @@ const handleGotoAccounts = () => {
                         {cartButtonhandleMobile}
                     </div>
                 </div>
-            </nav>
             <div className="Two_parts_1">
                 <div className="Upper_part_1">
                     <div className="Left_part_2">

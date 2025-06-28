@@ -4,7 +4,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import { AutoSlidePreloader } from "../Preloader";
 
 import one from '../images/autoslides/Jordan 12 white.png';
 import two from '../images/autoslides/Jordan 1 orange.png';

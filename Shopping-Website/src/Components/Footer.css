@@ -1,6 +1,5 @@
 .C {
-    height: 8%;
-    height: 10%;
+    height: auto;
     width: 100%;
     overflow: hidden;
     background-color: rgb(26, 26, 26);
@@ -8,25 +7,27 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 40px;
 }
 
 .Upper_part_footer {
-    height: 85%;
+    height: auto;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 30px;
 }
 
 .Left_part_footer {
-    height: 100%;
+    height: auto;
     width: 33%;
     display: flex;
     flex-direction: column;
 }
 
 .Tell_us_container {
-    height: 40%;
+    height: auto;
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -40,10 +41,11 @@
     color: white;
     font-size: 15px;
     text-decoration: underline;
+    margin-bottom: 40px;
 }
 
 .Form_container {
-    height: 60%;
+    height: auto;
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -51,47 +53,38 @@
 
 form {
     width: 90%;
-    height: 80%;
+    height: auto;
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
 
 .footer_input {
     width: 70%;
-    margin-top: 3%;
     border-style: solid;
     border-width: 1px;
     border-radius: 0;
     border-top: none;
     border-left: none;
     border-right: none;
-    font-size: 11px;
+    font-size: 13px;
     background-color: rgba(255, 255, 255, 0);
     color: rgb(177, 177, 177);
     outline: none;
     transition: width 0.6s ease-in-out;
     padding-left: 0;
+    padding-bottom: 4px;
 }
-
-.footer_input:hover {
-    width: 75%;
-    border-color: rgb(87, 140, 175);
-}  
-
-.footer_input:focus {
-    width: 75%;
-    border-color: rgb(87, 140, 175);
-}  
+ 
 
 
 .Send_footer_button {
     width: 40%;
-    margin-top: 5%;
     background-color: rgba(128, 128, 128, 0.219);
     color: white;
     border-style: solid;
-    padding: 1%;
+    padding: 6px;
     border-width: 1px;
     border-color: rgba(255, 255, 255, 0.486);
     border-radius: 10px;
@@ -101,7 +94,7 @@ form {
 }
 
 .Send_footer_button:hover {
-    background-color: rgba(68, 180, 255, 0.281);
+    background-color: rgba(128, 128, 128, 0.301);
 }
 
 
@@ -118,7 +111,7 @@ form {
 
 
 .Middle_part_footer {
-    height: 100%;
+    height: auto;
     width: 33%;
     display: flex;
     flex-direction: column;
@@ -128,7 +121,7 @@ form {
 
 
 .About_us_container {
-    height: 40%;
+    height: auto;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -138,9 +131,9 @@ form {
 
 .About_us_header {
     width: 100%;
-    height: 40%;
+    height: auto;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 15px;
     font-family: sans-serif;
     color: white;
     font-size: 20px;
@@ -190,13 +183,13 @@ form {
 
 
 .Right_part_footer {
-    height: 100%;
+    height: auto;
     width: 33%;
 }
 
 
 .Contact_container {
-    height: 40%;
+    height: auto;
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -206,7 +199,7 @@ form {
 
 .contact_header {
     width: 90%;
-    height: 40%;
+    height: auto;
     text-align: right;
     font-family: sans-serif;
     text-decoration: underline;
@@ -219,7 +212,7 @@ form {
 
 
 .Phone_and_icons_container {
-    height: 60%;
+    height: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -326,7 +319,7 @@ form {
 
 
 .Lower_part_footer {
-    height: 15%;
+    height: auto;
     width: 100%;
     border-style: solid;
     border-color: rgba(255, 255, 255, 0.185);
@@ -452,22 +445,22 @@ form {
 @media (min-width: 0px) and (max-width: 768px) {
     .Upper_part_footer {
         flex-direction: column;
-        height: 93%;
+        height: auto;
     }
 
     .Lower_part_footer {
-        height: 7%;
+        height: auto;
     }
 
     .Left_part_footer, 
     .Middle_part_footer, 
     .Right_part_footer {
         width: 100%;
-        height: 33%;
+        height: auto;
     }
 
     .Left_part_footer {
-        height: 39%;
+        height: auto;
         width: 98%;
         margin: 0 auto;
     }
@@ -481,7 +474,7 @@ form {
     }
 
     .Form_container > form {
-        height: 100%;
+        height: auto;
         margin: 0 auto;
         overflow: hidden;
         justify-content: space-evenly;
@@ -521,7 +514,7 @@ form {
 
 
     .Right_part_footer {
-        height: 25%;
+        height: auto;
         background-color: rgba(210, 105, 30, 0);
     }
 
@@ -532,7 +525,7 @@ form {
     }
 
     .phone_and_email_container {
-        height: 60%;
+        height: auto;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -546,7 +539,7 @@ form {
     }
 
     .Icons_container {
-        height: 40%;
+        height: auto;
         width: 90%;
         justify-content: flex-start;
         align-items: center;
@@ -583,7 +576,7 @@ form {
     }
 
     .Right_part_footer {
-        height: 30%;
+        height: auto;
     }
 
     .phone, .email {
@@ -613,7 +606,7 @@ form {
 
     .Form_container > form {
         width: 95%;
-        height: 60%;
+        height: auto;
     }
 
     .footer_input {
@@ -637,7 +630,7 @@ form {
 @media (max-width: 420px) {
 
     .phone_and_email_container {
-        height: 50%;
+        height: auto;
     }
 
     .phone, .email {
@@ -665,11 +658,11 @@ form {
 
 @media (max-width: 360px) {
     .Right_part_footer {
-        height: 23%;
+        height: auto;
     }
 
     .Middle_part_footer {
-        height: 38%;
+        height: auto;
     }
 
     .about_us_p {

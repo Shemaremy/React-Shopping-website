@@ -2,8 +2,7 @@
   background-color: rgb(247, 247, 247);
   background-color: rgba(172, 255, 47, 0.966);
   width: 100%;
-  height: 23%;
-  height: 31%;
+  height: auto;
   overflow: hidden;
 }
 
@@ -15,7 +14,7 @@
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  height: 10%;
+  height: 70px;
   width: 100%;
   background-color: rgb(44, 44, 44);
   z-index: 999;
@@ -24,7 +23,7 @@
 
 .Left_part1 {
   width: 40%;
-  height: 70%;
+  height: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -34,7 +33,7 @@
 
 .Name_of_company {
   width: 30%;
-  height: 80%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,7 +56,7 @@ h4 {
 
 .desk_links {
   width: 60%;
-  height: 80%;
+  height: auto;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -103,7 +102,7 @@ h4 {
 
 .Right_part1 {
   width: 30%;
-  height: 70%;
+  height: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -127,7 +126,7 @@ h4 {
 
 .Input_container_one {
   width: 70%;
-  height: 80%;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -135,7 +134,7 @@ h4 {
 
 
 .top_search_container {
-  height: 90%;
+  height: auto;
   width: 90%;
   display: flex;
   flex-direction: row;
@@ -150,18 +149,20 @@ h4 {
 }
 
 .search_items_input {
-  height: 90%;
+  height: auto;
   width: 70%;
   border-style: solid;
   border-width: 0px;
   color: rgba(255, 255, 255, 0.747);
   outline: none;
   background-color: #cccccc00;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 
 .Search-icon-container {
-  height: 100%;
+  height: auto;
   width: 5%;
   border-width: 0px;
   display: flex;
@@ -184,7 +185,7 @@ h4 {
 
 .Icon_one {
   width: auto;
-  height: 80%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -223,7 +224,7 @@ h4 {
 
 .cart_button_container {
   width: 10%;
-  height: 100%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -232,7 +233,7 @@ h4 {
 }
 
 .cart_button_one {
-  height: 100%;
+  height: auto;
   width: 100%;
   /*background-color: rgba(60, 255, 0, 0.274);*/
   background-color: rgba(60, 255, 0, 0);
@@ -255,7 +256,7 @@ h4 {
 
 .Cart_icon_container {
   width: 100%;
-  height: 80%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -387,35 +388,37 @@ h4 {
 .Two_parts_1 {
   background-color: rgb(34, 34, 34);
   background-image: linear-gradient(to right, rgb(24, 24, 24), rgba(0, 255, 213, 0.062));
-  height: 100%;
+  height: auto;
   width: 100%;
-  padding-top: 50px;
+  margin-top: 0px;
   display: flex;
   flex-direction: column;
 }
 
 .Upper_part_1 {
   width: 95%;
-  height: 75%;
+  height: auto;
   display: flex;
   align-items: center;
   flex-direction: row;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 .Left_part_2 {
   width: 55%;
-  height: 95%;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  margin-top: 170px;
 }
 
 
 
 .Shop_with_container {
   width: 98%;
-  height: 65%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -458,17 +461,17 @@ h4 {
 
 
 .Products_container > .slick-slider {
-  height: 100%;
+  height: auto;
   align-content: center;
 }
 
 .Products_container > .slick-slider > .slick-list {
-  height: 100%;
+  height: auto;
   align-content: center;
 }
 
 .Products_container > .slick-slider > .slick-list > .slick-track {
-  height: 100%;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -481,14 +484,14 @@ h4 {
 
 .Products_container > .slick-slider > .slick-list > .slick-track > .slick-slide > div {
   align-content: center;
-  height: 100%;
+  height: auto;
 }
 
 
 
 
 .contain {
-  height: 100%;
+  height: auto;
   width: 100%;
   display: flex !important;
   justify-content: center;
@@ -496,14 +499,14 @@ h4 {
 }
 
 .contain > .Trend {
-  height: 100%;
+  height: auto;
 } 
 
 
 
 
 .card-4 {
-  height: 100%;
+  height: auto;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -545,26 +548,22 @@ h4 {
 }
 
 .Add_to_cart_1 {
-  width: 75%;
+  width: 200px;
   background-color: rgba(0, 216, 54, 0.164);
   border-style: solid;
   border-width: 1px;
-  border-color: rgba(255, 255, 255, 0.76);
+  border-color: rgba(255, 255, 255, 0.185);
   color: rgba(255, 255, 255, 0.74);
-  padding: 6px;
+  padding: 5px;
   border-radius: 30px;
-  font-size: 11px;
+  font-size: 10px;
   cursor: pointer;
   transition: background-color 0.2s ease;
   transition: transform 0.1s ease;
 }
 
 .Add_to_cart_1:hover {
-  background-color: rgba(0, 216, 54, 0.39);
-}
-
-.Add_to_cart_1:active {
-  transform: scale(1);
+  background-color: rgba(110, 255, 146, 0.068);
 }
 
 
@@ -601,7 +600,7 @@ h4 {
 .Right_part_2 {
   position: relative;
   width: 45%;
-  height: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   border-style: solid;
@@ -702,7 +701,7 @@ h4 {
 
 .Try_our_new_container {
   width: 100%;
-  height: 80%;
+  height: auto;
   background-color: rgba(210, 105, 30, 0);
   cursor: pointer;
   display: flex;
@@ -722,8 +721,6 @@ h4 {
   border-width: 0px;
   border-radius: 70px;
   margin-top: 5%;
-  padding-top: 2%;
-  padding-bottom: 2%;
 }
 
 .try_our_new_paragraph {
@@ -757,7 +754,7 @@ h4 {
 
 
 .One, .Two, .Three, .Four {
-  height: 85%;
+  height: auto;
   width: 23%;
   background-color: rgba(165, 42, 42, 0.445);
   display: flex;
@@ -849,6 +846,7 @@ h4 {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  margin-bottom: 30px;
 }
 
 
@@ -1073,7 +1071,7 @@ h4 {
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    height: 10%;
+    height: auto;
     width: 100%;
     background-color: rgb(44, 44, 44);
     z-index: 1500;
@@ -1095,7 +1093,7 @@ h4 {
 
   
   .left_part_mobile {
-    height: 100%;
+    height: auto;
     width: 40%;
     display: flex;
     flex-direction: row;
@@ -1199,7 +1197,7 @@ h4 {
   /*----- The panel when the burger is clicked ---*/
   
   .big-nav-panel-mobile {
-    height: 100%;
+    height: auto;
     width: 100%;
     z-index: 998;
     overflow: hidden;
@@ -1221,7 +1219,7 @@ h4 {
   .main-nav-panel {
     position: fixed;
     background-color: rgb(32, 36, 34);
-    height: 100vh;
+    height: auto;
     width: 80%;
   }
   
@@ -1229,12 +1227,12 @@ h4 {
   .list-container {
     display: flex;
     align-items: flex-end;
-    height: 80%;
+    height: auto;
     width: 100%;
   }
   
   .main_lists {
-    height: 90%;
+    height: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -1244,14 +1242,14 @@ h4 {
   
   .main_lists > div {
     width: 100%;
-    height: 10%;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
   .sect-1 {
-    height: 33% !important;
+    height: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly !important;
@@ -1283,7 +1281,7 @@ h4 {
 
   .avatar {
     filter: grayscale(60%);
-    height: 100%;
+    height: auto;
     width: 100%;
   }
 
@@ -1301,7 +1299,7 @@ h4 {
   
   .sign-in-container {
     width: 50%;
-    height: 70%;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1396,7 +1394,7 @@ h4 {
   
   
   .right_part_mobile {
-    height: 100%;
+    height: auto;
     width: 25%;
     display: flex;
     justify-content: center;
@@ -1474,14 +1472,14 @@ h4 {
   .right_part_mobile.is-active .mobile-search-input{
     display: flex;
     width: 80%;
-    height: 100%;
+    height: auto;
     padding-left: 2%;
     border-width: 0;
   }
   
   .right_part_mobile.is-active .search_mobile_container {
     width: 75%;
-    height: 40%;
+    height: auto;
     padding: 0;
     display: flex;
     flex-direction: row-reverse;
@@ -1579,7 +1577,7 @@ h4 {
   }
 
   .top_search_container {
-    height: 80%;
+    height: auto;
     width: 90%;
   }
 
@@ -1867,18 +1865,18 @@ h4 {
 
   .Upper_part_1 {
     flex-direction: column;
-    height: 100%;
+    height: auto;
     width: 100%;
   }
 
   .Left_part_2 {
     width: 100%;
-    height: 60%;
+    height: auto;
   }
 
   .Shop_with_container {
     justify-content: flex-start;
-    height: 60%;
+    height: auto;
   }
 
 
@@ -1893,7 +1891,7 @@ h4 {
   }
 
   .Products_container {
-    height: 30%;
+    height: auto;
     width: 90%;
   }
 
@@ -1920,14 +1918,9 @@ h4 {
     font-size: 10px;
   }
 
-  .Add_to_cart_1 {
-    width: 100%;
-    padding: 5px;
-    font-size: 6px;
-  }
 
   .The_shoe_container {
-    height: 100%;
+    height: auto;
     width: 70%;
   }
 
@@ -1937,12 +1930,11 @@ h4 {
 
   .Right_part_2 {
     width: 100%;
-    height: 40%;
+    height: auto;
     background-color: rgba(190, 190, 190, 0.068);
   }
 
   .Try_our_new_container {
-    height: 97%;
     display: flex;
     flex-direction: column;
     justify-content: space-around !important;
@@ -2007,7 +1999,7 @@ h4 {
   
 
   .Lower_part_1 {
-    height: 10%;
+    height: auto;
     background-color: green;
     background-color: rgba(0, 0, 0, 0);
     align-content: center;
@@ -2072,10 +2064,6 @@ h4 {
     font-size: 13px;
   }
 
-  .Add_to_cart_1 {
-    font-size: 10px;
-    width: 95%;
-  }
 }
 
 
@@ -2090,10 +2078,6 @@ h4 {
     font-size: 15px;
   }
 
-  .Add_to_cart_1 {
-    font-size: 11px;
-    width: 90%;
-  }
 
   .img_1, .img_2, .img_3, .img_4 {
     width: 70%;
@@ -2134,11 +2118,6 @@ h4 {
     width: 90%;
   }
 
-  .Add_to_cart_1 {
-    font-size: 8px;
-    padding: 5px;
-    width: 90%;
-  }
 }
 
 
@@ -2146,10 +2125,6 @@ h4 {
 /*---------------- Big Tablets ---------------*/
 
 @media (min-width: 769px) and (max-width: 1024px) {
-
-  .desktop_nav {
-    height: 70px;
-  }
 
   .Left_part_2 {
     height: auto;
@@ -2181,14 +2156,9 @@ h4 {
     font-size: 12px;
   }
 
-  .Add_to_cart_1 {
-    width: 130px;
-    font-size: 8px;
-    padding: 4px;
-  }
 
   .Right_part_2 {
-    height: 70%;
+    height: auto;
   }
 
   .try_our_new_paragraph {
@@ -2236,13 +2206,9 @@ h4 {
     font-size: 15px;
   }
 
-  .Add_to_cart_1 {
-    width: 75%;
-    font-size: 8px;
-  }
 
   .Right_part_2 {
-    height: 90%;
+    height: auto;
   }
 
   .Choose_product_container {
@@ -2257,7 +2223,7 @@ h4 {
 
 @media (min-width: 1120px) and (max-width: 1290px){
   .Left_part_2 {
-    height: 70%;
+    height: auto;
   }
 
   .Products_container {
@@ -2285,19 +2251,11 @@ h4 {
     width: 100%;
   }
 
-  .Add_to_cart_1 {
-    width: 100%;
-    font-size: 10px;
-  }
 }
 
 
 
 @media (min-width: 1291px) {
-  .Left_part_2 {
-    height: 85%;
-  }
-
   .shop_with_header {
     font-size: 85px;
   }
@@ -2314,19 +2272,12 @@ h4 {
     width: 65%;
   }
 
-  .Add_to_cart_1 {
-    width: 65%;
-    font-size: 11px;
-  }
 
 
   .The_shoe_container {
     width: 55%;
   }
 
-  .Right_part_2 {
-    height: 95%;
-  }
 
   .Choose_product_container {
     width: 100%;
@@ -2372,11 +2323,6 @@ h4 {
     font-size: 10px;
   }
 
-  .Add_to_cart_1 {
-    font-size: 7px;
-    padding: 4px;
-  }
-
 }
 
 
@@ -2395,11 +2341,6 @@ h4 {
 
   .item_price {
     font-size: 9px;
-  }
-
-  .Add_to_cart_1 {
-    font-size: 6px;
-    padding: 4px;
   }
 
 }
@@ -2422,9 +2363,6 @@ h4 {
     font-size: 8px;
   }
 
-  .Add_to_cart_1 {
-    font-size: 4px;
-  }
 
   .try_our_new_paragraph {
     font-size: 9px;
@@ -2477,11 +2415,6 @@ h4 {
     font-size: 4px;
   }
 
-  .Add_to_cart_1 {
-    font-size: 5px;
-  }
-
-
 }
 
 
@@ -2500,10 +2433,6 @@ h4 {
 
   .item_price {
     font-size: 3px;
-  }
-
-  .Add_to_cart_1 {
-    font-size: 5px;
   }
 
 }

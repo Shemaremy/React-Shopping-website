@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useCounter } from "./Redux store/Counter";
 
-import { OurproductsPreloader } from "../Preloader";
-import { MainProductsPreloader } from "../Preloader";
 
 //import OurPicks from "./Ourpicks";
 import TrendCards from "./TrendCards";
 //import Slider from "react-slick";
 import './Main.css';
 
-
-import '@fortawesome/fontawesome-free/css/all.css';
 import cartSvg from './cartPanel/cartSVGs/emptyBox.png';
 
 
@@ -78,7 +74,7 @@ const handleImageLoad = () => {
 
 const Imageloader = (
     <div className="">
-        <OurproductsPreloader/>
+        <div className='loader-spinner'></div>
     </div>
 );
 
@@ -165,28 +161,6 @@ const handleCategoryClick = (event) => {
 // ------------------- FETCHING PRODUCTS FROM THE DATABASE -------------------------------------------------------
 // ------------------- FETCHING PRODUCTS FROM THE DATABASE -------------------------------------------------------
 // ------------------- FETCHING PRODUCTS FROM THE DATABASE -------------------------------------------------------
-
-/*
-useEffect(() => {
-    const fetchData = async () => {
-        setMainpreloader(true);
-        try {
-            const response = await fetch(`https://verve-users.glitch.me/api/admindisplay?category=${activeButton}`);
-            const data = await response.json();
-            if (response.ok) {
-                setMainpreloader(false);
-                setShoedata(data);
-            } else {
-                alert(`Failed to fetch ${activeButton} from the store.`);
-            }
-        } catch (error) {
-            setMainpreloader(false);
-            console.error('Error fetching products:', error);
-        }
-    };
-    fetchData();
-}, [activeButton]);
-*/
 
 useEffect(() => {
     const fetchData = () => {
@@ -481,15 +455,6 @@ const settings = {
 
     return( 
         <div className="B">
-            <div className="Upper_part_main">
-                <h2 className="Our_products_header">Our Products</h2>
-                <div className="Browse_by_category">
-                    <div className="upper_part_category">
-                        <h3 className="browse_header">Browse by category</h3>
-                        <p className="browse_par">I'm looking for:</p>
-                    </div>
-                </div>
-            </div>
             <div className="Lower_part_main">
                 <div className="All_products_container">
                     <div className="Our_products_upper_part">
@@ -567,11 +532,11 @@ const settings = {
                         <div className="products_section_one">   
                             <div className="section-draft">
                                 <div className="slider-container-draft">
-                                    {mainpreloader ? <MainProductsPreloader /> : shoedata.length === 0 ? notFound : TrendDraftOne}
+                                    {mainpreloader ? (Imageloader) : shoedata.length === 0 ? notFound : TrendDraftOne}
                                 </div>
                             </div>
                             <div className="mobile-products-div">
-                                {mainpreloader ? <MainProductsPreloader /> : shoedata.length === 0 ? notFound : TrendDraftOne}
+                                {mainpreloader ? (Imageloader) : shoedata.length === 0 ? notFound : TrendDraftOne}
                             </div>
                         </div>
                         {/* <div className="mobile-view-more">
@@ -580,19 +545,6 @@ const settings = {
                     </div>
                 </div>
                 
-                {/* <div className="Our_picks_container">
-                    <div className="our_picks_heading_container">
-                        <h4 className="our_picks_header">Our Picks</h4>
-                        <p>
-                            Explore our curated selections of must-have items for the season, whether you're gearing up for summer or winter, you can find the perfect outfits tailored to each season. Don't miss out on these picks 
-                            &nbsp; <i className="fa-solid fa-fire"></i>
-                        </p>
-                    </div>
-                    <div className="The_rest">
-                        <OurPicks/>
-                    </div>
-                </div> */}
-
                 <div className="Trend-section">
                     <div className="Upper-part-trend">
                         <h4 className="Trending_items_header">Discover What's Trending</h4>

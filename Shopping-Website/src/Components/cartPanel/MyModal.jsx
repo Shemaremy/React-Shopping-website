@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { updateQuantity, removeItem, fetchCart } from '../Redux store/actions'; 
 import { useNavigate } from 'react-router-dom';
 
-import '@fortawesome/fontawesome-free/css/all.css';
 import cartSvg from './cartSVGs/cartSvg.png';
 import './Mymodal.css';
 

@@ -1,6 +1,6 @@
 .cookie-modal-container {
   background-color: rgba(22, 22, 22, 0.8);
-  height: 100%;
+  height: auto;
   width: 100%;
   display: flex;
   justify-content: center;

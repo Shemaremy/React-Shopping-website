@@ -32,7 +32,7 @@
 
 .our_picks_heading_container {
     width: 100%;
-    height: 20%;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -78,7 +78,7 @@
 
 .The_rest {
     width: 95%;
-    height: 80%;
+    height: auto;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -109,7 +109,7 @@
 .Summer, 
 .Winter {
     width: 45%;
-    height: 100%;
+    height: auto;
     font-family: sans-serif;
     font-size: 15px;
     background-color: rgba(0, 0, 0, 0);
@@ -175,7 +175,7 @@
 }
 
 .Summer_picks_header_container {
-    height: 10%;
+    height: auto;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -188,7 +188,7 @@
 
 
 .the_rest_3 {
-    height: 90%;
+    height: auto;
     width: 98%;
     display: flex;
     flex-direction: column;
@@ -219,7 +219,7 @@
 }
 
 .In_the_rest_4 {
-    height: 100%;
+    height: auto;
     display: flex !important;
     flex-direction: row;
     justify-content: space-around;
@@ -249,19 +249,19 @@
 
 .the_rest_4 > .slick-slider,
 .Picks_wardrobe > .slick-slider  {
-    height: 100%;
+    height: auto;
     align-content: center;
 }
 
 .the_rest_4 > .slick-slider > .slick-list,
 .Picks_wardrobe > .slick-slider > .slick-list {
-    height: 100%;
+    height: auto;
     align-content: center;
 }
 
 .the_rest_4 > .slick-slider > .slick-list > .slick-track,
 .Picks_wardrobe > .slick-slider > .slick-list > .slick-track {
-    height: 100%;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -275,14 +275,14 @@
 .the_rest_4 > .slick-slider > .slick-list > .slick-track > .slick-slide > div,
 .Picks_wardrobe > .slick-slider > .slick-list > .slick-track > .slick-slide > div {
     align-content: center;
-    height: 100%;
+    height: auto;
 }
 
 
 
 
 .Short_Explanation_container {
-    height: 100%;
+    height: auto;
     width: 20%;
     background-color: rgba(11, 161, 141, 0);
     display: flex;
@@ -307,7 +307,7 @@
 
 
 .Picks_wardrobe {
-    height: 90%;
+    height: auto;
     width: 70%;
     background-image: linear-gradient(to right, rgba(0, 0, 255, 0) 0%,  rgba(0, 0, 0, 0.192) 50%, rgba(0, 128, 0, 0) 100%);
 
@@ -352,7 +352,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: auto;
     bottom: 0;
     box-sizing: border-box;
     transition: transform 0.8s ease;
@@ -467,7 +467,7 @@
 
 .top_item, .leg_item, .bottom_item {
     width: 98%;
-    height: 70%;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -533,7 +533,7 @@
 
 .top_item_2, .leg_item_2, .bottom_item_2 {
     width: 98%;
-    height: 70%;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -736,7 +736,7 @@
 
     .the_rest_3 {
         width: 100%;
-        height: 100%;
+        height: auto;
     }
 
     .summer-btn, .winter-btn {
@@ -775,7 +775,7 @@
     .Picks_wardrobe {
         background-image: none;
         width: 100%;
-        height: 100%;
+        height: auto;
         border-radius: 0;
     }
 
@@ -824,7 +824,7 @@
         align-items: center;
         justify-content: space-evenly;
         width: 100%;
-        height: 100%;
+        height: auto;
         padding: 0;
     } 
 
@@ -945,7 +945,7 @@
 
     .our_picks_heading_container {
         width: 100%;
-        height: 20%;
+        height: auto;
     }
     
     .our_picks_header {
@@ -961,7 +961,7 @@
     
     
     .The_rest {
-        height: 80%;
+        height: auto;
         margin: 0 auto;
     }    
 
@@ -984,7 +984,7 @@
     }
 
     .mobile_picks {
-        height: 90%;
+        height: auto;
     }
 }
 

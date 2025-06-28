@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useCounter } from "./Redux store/Counter";
 
-import { TrendsPreloader } from "../Preloader";
 
 import './TrendCards.css';
 import Slider from "react-slick";
@@ -167,7 +166,7 @@ const handleImageLoad = () => {
 
 const Imageloader = (
     <div className="loading-container">
-        <TrendsPreloader/>
+        <div>Loading</div>
     </div>
 );
 
