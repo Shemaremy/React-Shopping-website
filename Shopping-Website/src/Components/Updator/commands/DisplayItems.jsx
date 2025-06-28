@@ -71,7 +71,6 @@ const DisplayItems = () => {
       if (response.ok) {
         setProducts(data);
         setTotalItems(data.length);
-        console.log(data)
       } else {
         alert('Failed to fetch items from the store.');
       }
