@@ -5,34 +5,84 @@ import '../Updator.css';
 const UpdateItems = () => {  
 
 
-  const buttonState = {
-    ALL: 'all',
-    SHOES: 'shoes',
-    HOODIES: 'hoodies',
-    JACKETS: 'jackets',
-    TSHIRTS: 'tshirts',
-    PANTS: 'pants',
-    CAPS: 'caps'
-  };
+  const categories = [
+    { key: 'all', label: 'View All', query: '' },
+    { key: 'german_shepherd', label: 'German Shepherds', query: 'German Shepherd' },
+    { key: 'bulldog', label: 'Bulldogs', query: 'Bulldog' },
+    { key: 'husky', label: 'Siberian Huskies', query: 'Siberian Husky' },
+    { key: 'malamute', label: 'Alaskan Malamutes', query: 'Alaskan Malamute' },
+    { key: 'poodle', label: 'Poodles', query: 'Poodle' }
+  ];
 
   const [button, setButton] = useState();
   const [totalItems, setTotalItems] = useState(0);
-  const [loadingState, setLoadingState] = useState({}); // Keep track of loading state for each category
+  const [loadingState, setLoadingState] = useState({});
   const [load, setUpdateLoad] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
   const [products, setProducts] = useState([]);
 
 
-  const [newItem, setNewItem] = useState({ name: '', category: '', price: '', quantity: '', size: '', image: null });
   const [passedname, setPassedname] = useState('');
   const [passedId, setPassedId] = useState('');
 
-  const fileInputRef = useRef(null);
+  const [showIframe, setShowIframe] = useState(true);
+  const [iframeSrc, setIframeSrc] = useState("https://remydp.netlify.app/kpuppies");
+
 
   const isActive = (panel) => button === panel ? 'active' : '';
 
 
 
+
+
+  // Input fields container
+  const fields = [
+    { label: 'Name', name: 'name', type: 'text', placeholder: 'Ex: Fiston' },
+    { label: 'Price', name: 'price', type: 'number', placeholder: 'Ex: 400000' },
+    { label: 'Quantity', name: 'quantity', type: 'number', placeholder: 'Ex: 10' },
+    { label: 'Description', name: 'description', type: 'text', placeholder: 'Ex: Nice quality' },
+  ];
+
+
+  // Dropdown fields container
+  const dropdowns = [
+    {
+      label: 'Type',
+      name: 'type',
+      options: ['German Shepherd', 'Bulldog', 'Siberian Husky', 'Alaskan Malamute', 'Poodle'],
+    },
+    {
+      label: 'Age',
+      name: 'age',
+      options: ['Less than 5 months', '5 - 12 months', '1 - 5 years'],
+    },
+    {
+      label: 'Gender',
+      name: 'gender',
+      options: ['Male', 'Female'],
+    },
+    {
+      label: 'Plug',
+      name: 'plug',
+      options: ['IGOBE', 'ANTOINE'],
+    },
+    {
+      label: 'Reservatiom',
+      name: 'reservation',
+      options: ['True', 'False'],
+    },
+  ];
+
+
+  // Initial fields state i.e: ''
+  const initialFormState = {
+    ...Object.fromEntries(fields.map(f => [f.name, ''])),
+    ...Object.fromEntries(dropdowns.map(d => [d.name, ''])),
+    image: '',
+    subImages: ['', '', ''],
+  };
+
+  const [newItem, setNewItem] = useState(initialFormState);
 
 
 
@@ -56,28 +106,32 @@ const UpdateItems = () => {
 
   // -- Function to fetch data --------------------------------------------------------------
 
-  const fetchData = async (category, url) => {
+  // const URL = 'https://kigali-puppies.glitch.me';
+  const URL = 'https://kigalipuppies.up.railway.app';
+
+  const fetchData = async (categoryKey, categoryQuery) => {
     const disableButton = document.querySelector('.nav-button');
     disableButton.classList.add('disable');
     setIsButtonDisabled(true);
-    setLoading(category, true);
+    setLoading(categoryKey, true);
+    setButton(categoryKey);
 
-    setButton(category);
+    const endpoint = categoryQuery 
+    ? `${URL}/api/admindisplay?type=${encodeURIComponent(categoryQuery)}`
+    : `${URL}/api/admindisplay`;
+
     try {
-      const response = await fetch(url);
+      const response = await fetch(endpoint);
       const data = await response.json();
       if (response.ok) {
         setProducts(data);
-        setLoading(category, false);
-        disableButton.classList.remove('disable');
-        setIsButtonDisabled(false);
         setTotalItems(data.length);
       } else {
-        setLoading(category, false);
-        disableButton.classList.remove('disable');
-        setIsButtonDisabled(false);
         alert('Failed to fetch items from the store.');
       }
+      setLoading(categoryKey, false);
+      disableButton.classList.remove('disable');
+      setIsButtonDisabled(false);
     } catch (error) {
       setLoading(category, false);
       disableButton.classList.remove('disable');
@@ -85,25 +139,6 @@ const UpdateItems = () => {
       console.error('Error fetching products:', error);
     }
   };
-
-
-
-
-
-
-
-
-  // ---- Helper functions -------------------------------------------------------------------
-
-  const URL = 'https://verve-users.glitch.me';
-
-  const displayAll = () => fetchData(buttonState.ALL, `${URL}/api/admindisplay`);
-  const displayShoes = () => fetchData(buttonState.SHOES, `${URL}/api/admindisplay?category=Shoes`);
-  const displayHoodies = () => fetchData(buttonState.HOODIES, `${URL}/api/admindisplay?category=Hoodies`);
-  const displayJackets = () => fetchData(buttonState.JACKETS, `${URL}/api/admindisplay?category=Jackets`);
-  const displayTshirts = () => fetchData(buttonState.TSHIRTS, `${URL}/api/admindisplay?category=T%20shirts`);
-  const displayPants = () => fetchData(buttonState.PANTS, `${URL}/api/admindisplay?category=Pants`);
-  const displayCaps = () => fetchData(buttonState.CAPS, `${URL}/api/admindisplay?category=Caps`);
 
 
 
@@ -177,61 +212,21 @@ const UpdateItems = () => {
     }, []);
 
 
-    const handleChange = (e) => {
+      // Handle change of sub images
+      const handleSubImageChange = (index, value) => {
+        const updated = [...newItem.subImages];
+        updated[index] = value;
+        setNewItem({ ...newItem, subImages: updated });
+      };
+      
+      
+      // Handle change for normal products values
+      const handleChange = (e) => {
         const { name, value } = e.target;
         setNewItem({ ...newItem, [name]: value });
-    };
+      };
 
-    const handleImageUpload = (e) => {
-        const file = e.target.files[0];
 
-        const validTypes = ['image/jpeg', 'image/png'];
-        if (!validTypes.includes(file.type)) {
-            alert("Only .jpg and .png files are supported.");
-            return;
-        }
-
-        const maxSize = 10 * 1024 * 1024;
-        if (file.size > maxSize) {
-            alert("File size must be less than 10MB.");
-            return;
-        }
-
-        setNewItem({ ...newItem, image: file });
-    };
-
-    const convertImageToBase64 = (file) => {
-        return new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = () => resolve(reader.result);
-            reader.onerror = (error) => reject(error);
-        });
-    };
-
-    const handleSizeInput = (sizeInput) => {
-      const validSize = sizeInput.replace(/[^a-zA-Z0-9,\s]/g, '').toUpperCase();
-    
-      let sizeArray = validSize.split(/[,\s]+/).filter(Boolean);
-      const validSizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL', 'XXXL'];
-    
-      sizeArray = sizeArray.filter(size => validSizes.includes(size) || /^\d+$/.test(size));
-    
-      if (sizeArray.length === 0) {
-        alert("Please enter valid size values: XS, S, M, L, XL, XXL, or numeric values (46, 27).");
-        return '';
-      }
-    
-      const isNumeric = sizeArray.every(size => !isNaN(size));
-    
-      if (isNumeric) {
-        sizeArray = [...new Set(sizeArray)].sort((a, b) => parseFloat(a) - parseFloat(b));
-      } else {
-        sizeArray = [...new Set(sizeArray)].sort((a, b) => validSizes.indexOf(a) - validSizes.indexOf(b));
-      }
-    
-      return sizeArray.join(', ');
-    };
 
     const handleUpdateItem = async () => {
         const bringPage = document.querySelector('.update-page');
@@ -240,61 +235,80 @@ const UpdateItems = () => {
         setIsButtonDisabled(true);
         setUpdateLoad(true);
 
-        const { name, category, price, quantity, size, image } = newItem;
         const updatedFields = {};
+        const keys = ['name', 'type', 'age', 'gender', 'reserved', 'price', 'quantity', 'description', 'image', 'plug'];
 
-        if (name) updatedFields.name = name;
-        if (category) updatedFields.category = category;
-        if (price) updatedFields.price = price;
-        if (quantity) updatedFields.quantity = quantity;
-        if (size) {
-          const formattedSize = handleSizeInput(size);
-          if (!formattedSize) {
+        keys.forEach(key => {
+          if (newItem[key]) updatedFields[key] = newItem[key];
+        });
+
+
+        // if (subImages) updatedFields.subImages = subImages;
+        // if (subImages && Array.isArray(subImages) && subImages.some(img => img)) {
+        //   updatedFields.subImages = subImages;
+        // }
+
+
+        // Handling proper allocating of sub image urls
+        const currentProduct = products.find(p => p._id === passedId);
+        const cleanedSubImages = newItem.subImages.map((img, idx) => {
+          return img === '' && currentProduct?.subImages?.[idx] ? currentProduct.subImages[idx] : img;
+        });
+
+
+        // Only set subImages if at least one is valid
+        if (cleanedSubImages.some(img => img)) {
+          updatedFields.subImages = cleanedSubImages;
+        }
+        
+
+        
+        try {
+          if (Object.keys(updatedFields).length === 0) {
+            alert("Please input at least one field to update.");
+            disableButton.classList.remove('disable');
+            setIsButtonDisabled(false);
+            setUpdateLoad(false);
+            return;
+          }
+
+          const response = await fetch(`${URL}/api/adminupdate/${passedId}`, {
+              method: 'PUT',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(updatedFields),
+          });
+
+          const data = await response.json();
+
+          if (response.ok) {
+              setUpdateLoad(false);
+              disableButton.classList.remove('disable');
+              setIsButtonDisabled(false);              
+              //alert('Product updated successfully.');
+              // Update the local products state
+              setProducts((prevProducts) =>
+                prevProducts.map((product) =>
+                    product._id === passedId
+                        ? { ...product, ...updatedFields }
+                        : product
+                )
+            );
+
+            setNewItem(initialFormState);
+
+            setIframeSrc("");
+            setTimeout(() => setIframeSrc("https://remydp.netlify.app/kpuppies"), 50);
+
+            bringPage.classList.remove('is-active');
+            
+          } else {
               setUpdateLoad(false);
               disableButton.classList.remove('disable');
               setIsButtonDisabled(false);
-              return;
+              alert(`Error: ${data.message}`);
           }
-          updatedFields.size = formattedSize;
-        }
-
-        try {
-            if (image) {
-                const base64Image = await convertImageToBase64(image);
-                updatedFields.image = base64Image;
-            }
-
-            if (Object.keys(updatedFields).length === 0) {
-                alert("Please input at least one field to update.");
-                return;
-            }
-
-            const response = await fetch(`https://verve-users.glitch.me/api/adminupdate/${passedId}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(updatedFields),
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-                setUpdateLoad(false);
-                disableButton.classList.remove('disable');
-                setIsButtonDisabled(false);              
-                alert('Product updated successfully.');
-                if (fileInputRef.current) {
-                    fileInputRef.current.value = '';
-                }
-                bringPage.classList.remove('is-active');
-                displayAll();
-            } else {
-                setUpdateLoad(false);
-                disableButton.classList.remove('disable');
-                setIsButtonDisabled(false);
-                alert(`Error: ${data.message}`);
-            }
         } catch (error) {
             setUpdateLoad(false);
             disableButton.classList.remove('disable');
@@ -302,41 +316,61 @@ const UpdateItems = () => {
             console.error('Error updating product:', error);
             alert('Failed to update product.');
         }
+        
     };
   
   
 
     const updateItems = (
         <div className="update-container">
+          <div className='top-update-settings'>
             <h2>Update Item: &nbsp; <span className='passed-name'>({passedname})</span></h2>
-            <label>Name</label>
-            <input type="text" name="name" value={newItem.name} onChange={handleChange} placeholder="Enter new name" />
+            <button className='close-update' onClick={handleClosePage}>X</button>
+          </div>
             
-            <label>Category</label>
-            <select name="category" value={newItem.category} onChange={handleChange} className="category-update">
-                <option value=""></option>
-                <option value="Shoes">Shoes</option>
-                <option value="Pants">Pants</option>
-                <option value="T shirts">T-shirts</option>
-                <option value="Hoodies">Hoodies</option>
-                <option value="Jackets">Jackets</option>
-                <option value="Caps">Caps</option>
-            </select>
 
-            <label>Size</label>
-            <input type="text" name="size" value={newItem.size} onChange={handleChange} placeholder="Enter sizes available" />
+          {/* Mapping normal input fields */}
+          {fields.map(field => (
+            <div className="form-group" key={field.name}>
+              <label>{field.label}:</label>
+              <input
+                type={field.type}
+                name={field.name}
+                value={newItem[field.name]}
+                onChange={handleChange}
+                placeholder={field.placeholder}
+              />
+            </div>
+          ))}
+
+          {/* Images section */}
+          <div className="form-group image-group">
+            {showIframe && (
+              <div style={{ marginTop: "10px" }}>
+                <iframe className="img-url-iframe"
+                  src={iframeSrc}
+                  style={{ border: "none" }}
+                />
+              </div>
+            )}
+            <input type="text" name="image" onChange={handleChange} value={newItem.image} placeholder='MAIN IMAGE' />
+            <input type="text" onChange={(e) => handleSubImageChange(0, e.target.value)} value={newItem.subImages[0]} placeholder='Sub Image 1' />
+            <input type="text" onChange={(e) => handleSubImageChange(1, e.target.value)} value={newItem.subImages[1]} placeholder='Sub Image 2' />
+            <input type="text" onChange={(e) => handleSubImageChange(2, e.target.value)} value={newItem.subImages[2]} placeholder='Sub Image 3' />
+          </div>
 
 
-            <label>Quantity:</label>
-            <input type="number" name="quantity" value={newItem.quantity} onChange={handleChange} />
-
-
-            <label>Price</label>
-            <input type="text" name="price" value={newItem.price} onChange={handleChange} placeholder="Enter new price" />
-
-
-            <label>Image</label>
-            <input type="file" onChange={handleImageUpload} ref={fileInputRef}/>
+          {dropdowns.map(drop => (
+            <div className="form-group" key={drop.name}>
+              <label>{drop.label}:</label>
+              <select name={drop.name} value={newItem[drop.name]} onChange={handleChange} className="category-input">
+                <option value="">-- Select {drop.label} --</option>
+                {drop.options.map(opt => (
+                  <option key={opt} value={opt}>{opt}</option>
+                ))}
+              </select>
+            </div>
+          ))}
             
             <button className="update-button" onClick={handleUpdateItem} disabled={isButtonDisabled}>
                 {load ? <>Updating &nbsp; <i className="fa-solid fa-spinner fa-spin"></i></> 
@@ -402,14 +436,22 @@ const UpdateItems = () => {
 
   const Renderer = (
     <>
-      {products.map((item, index) => (
-        <div key={index} className="product-card" onClick={() => handleBringPage(item.name, item._id)}>
-          <img src={item.image} alt={item.name} className="product-image" />
-          <h3 className="product-name">{item.name}</h3>
-          <p className="product-category">Category: {item.category}</p>
-          <p className="product-size">Size: {item.size}</p>
-          <p className="product-quantity">Quantity: {item.quantity}</p>
-          <p className="product-price">{item.price}</p>
+      {[...products]
+        //.sort((a, b) => a.name.localeCompare(b.name)) Names A - Z
+        //.sort((a, b) => a.price - b.price) // Price A - Z
+        //.sort((a, b) => a.quantity - b.quantity) // Quantity A - Z
+        .sort((a, b) => a.plug.localeCompare(b.plug))
+        .map((item, index) => (
+          <div key={index} className="product-card" onClick={() => handleBringPage(item.name, item._id)}>
+            <img src={item.image} alt={item.name} className="product-image" />
+            <h3 className="product-name">{item.name}</h3>
+            <p className="product-category">Type: {item.type}</p>
+            <p className="product-age">Age range: {item.age}</p>
+            <p className="product-size">Gender: {item.gender}</p>
+            <p className="product-quantity">Quantity: {item.quantity}</p>
+            <p className="product-description">Description: {item.description}</p>
+            <p className="product-price">Price: {Number(item.price).toLocaleString("en-US")}</p>
+            <p className="product-plug">Plug: {item.plug}</p>
         </div>
       ))}
     </>
@@ -434,44 +476,27 @@ const UpdateItems = () => {
       <header>
         <h2>Updating existing products</h2>
         <p>Total Products: {totalItems}</p>
+        <a href="">Back</a>
       </header>
 
       <nav className="category-nav">
-        <button className={`nav-button ${isActive(buttonState.ALL)}`} onClick={displayAll} disabled={isButtonDisabled}> 
-          {loadingState[buttonState.ALL] ? <>Fetching &nbsp; <i className="fa-solid fa-spinner fa-spin"></i></> 
-          : 'View All Products'} 
-        </button>
-        <button className={`nav-button ${isActive(buttonState.SHOES)}`} onClick={displayShoes} disabled={isButtonDisabled}> 
-          {loadingState[buttonState.SHOES] ? <>Fetching &nbsp; <i className="fa-solid fa-spinner fa-spin"></i></> 
-          : 'View Shoes'} 
-        </button>
-        <button className={`nav-button ${isActive(buttonState.HOODIES)}`} onClick={displayHoodies} disabled={isButtonDisabled}>
-          {loadingState[buttonState.HOODIES] ? <>Fetching &nbsp; <i className="fa-solid fa-spinner fa-spin"></i></> 
-          : 'View Hoodies'}
-        </button>
-        <button className={`nav-button ${isActive(buttonState.JACKETS)}`} onClick={displayJackets} disabled={isButtonDisabled}>
-          {loadingState[buttonState.JACKETS] ? <>Fetching &nbsp; <i className="fa-solid fa-spinner fa-spin"></i></> 
-          : 'View Jackets'}
-        </button>
-        <button className={`nav-button ${isActive(buttonState.TSHIRTS)}`} onClick={displayTshirts} disabled={isButtonDisabled}>
-          {loadingState[buttonState.TSHIRTS] ? <>Fetching &nbsp; <i className="fa-solid fa-spinner fa-spin"></i></> 
-          : 'View T-shirts'}
-        </button>
-        <button className={`nav-button ${isActive(buttonState.PANTS)}`} onClick={displayPants} disabled={isButtonDisabled}>
-          {loadingState[buttonState.PANTS] ? <>Fetching &nbsp; <i className="fa-solid fa-spinner fa-spin"></i></> 
-          : 'View Pants'}
-        </button>
-        <button className={`nav-button ${isActive(buttonState.CAPS)}`} onClick={displayCaps} disabled={isButtonDisabled}>
-          {loadingState[buttonState.CAPS] ? <>Fetching &nbsp; <i className="fa-solid fa-spinner fa-spin"></i></> 
-          : 'View Caps'}
-        </button>
+        {categories.map(cat => (
+          <button
+            key={cat.key}
+            className={`nav-button ${isActive(cat.key)}`}
+            onClick={() => fetchData(cat.key, cat.query)}
+            disabled={isButtonDisabled}
+          >
+            {loadingState[cat.key] ? <>Fetching &nbsp;<i className="fa-solid fa-spinner fa-spin"></i></> : cat.label}
+          </button>
+        ))}
       </nav>
 
       <div className="product-display">
         {totalItems === 0 ? <p className='no-items'>No items found &nbsp; <i className="fa-solid fa-circle-exclamation"></i></p> : Renderer}
       </div>
 
-      <div className='update-page' onClick={handleClosePage}>{updateItems}</div>
+      <div className='update-page'>{updateItems}</div>
 
     </div>
   );

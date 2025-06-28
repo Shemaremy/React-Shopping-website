@@ -129,12 +129,14 @@ function AppRoutes() {
             const response = await fetch('https://verve-users.glitch.me/api/admindisplay');
             const data = await response.json();
             if (response.ok) {
+              setIsLoading(false)
               setAllData(data)
             } else {
                 alert('Failed to fetch shoes from the store.');
             }
             }
         catch (error) {
+          setIsLoading(false)
           console.error('Error fetching products:', error);
         }
     }; 
@@ -142,14 +144,8 @@ function AppRoutes() {
   }, []);
 
 
-  useEffect(() => {
-    if (allData.length !== 0) {
-      setIsLoading(false)
-    }
-  },[allData]);
 
-
-
+  
 
   return (
     <Routes>
