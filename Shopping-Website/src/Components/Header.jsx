@@ -550,7 +550,7 @@ const settings = {
     slidesToScroll: 1,
     autoplay: true,
     speed: 1000,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 50000,
     cssEase: "linear"
 };
 

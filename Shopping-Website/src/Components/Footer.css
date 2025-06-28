@@ -225,6 +225,7 @@ form {
 
 .phone_and_email_container {
     width: 100%;
+    gap: 10px;
 }
 
 .phone, .email {
@@ -446,6 +447,7 @@ form {
     .Upper_part_footer {
         flex-direction: column;
         height: auto;
+        gap: 55px;
     }
 
     .Lower_part_footer {
@@ -515,9 +517,16 @@ form {
 
     .Right_part_footer {
         height: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
         background-color: rgba(210, 105, 30, 0);
     }
 
+    .Phone_and_icons_container {
+        display: flex;
+        gap: 10px;
+    }
     .contact_header {
         margin: 0 auto;
         text-align: left;

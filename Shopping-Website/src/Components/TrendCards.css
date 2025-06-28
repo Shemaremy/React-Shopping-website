@@ -424,7 +424,7 @@
 
 
 
-@media (min-width: 0px) and (max-width: 768px) {
+@media (max-width: 768px) {
 
     .main_trending_part {
         width: 95%;
@@ -517,10 +517,6 @@
         height: auto;
     }
 
-    .service-container {
-        height: auto;
-    }
-
     .offers_you_header {
         font-size: 20px;
         color: rgba(0, 0, 0, 0.445);
@@ -534,6 +530,7 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
+        gap: 30px;
     }
 
     .contain2 {
@@ -711,6 +708,7 @@
 @media (max-width: 450px) {
     .mobile-trends {
         flex-direction: column;
+        gap: 25px;
     }
 
     .Trend-2 {

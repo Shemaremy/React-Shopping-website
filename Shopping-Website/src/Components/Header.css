@@ -548,7 +548,7 @@ h4 {
 }
 
 .Add_to_cart_1 {
-  width: 200px;
+  width: 70%;
   background-color: rgba(0, 216, 54, 0.164);
   border-style: solid;
   border-width: 1px;
@@ -1078,7 +1078,8 @@ h4 {
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.363);
     background-color: rgb(37, 37, 37);
     background-image: linear-gradient(to right, rgb(37, 37, 37), rgba(0, 255, 213, 0.062));
-  
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
 
 
@@ -1854,7 +1855,7 @@ h4 {
 /*------------------ MY PHONE ----------------------*/
 
 
-@media (min-width: 0px) and (max-width: 768px) {
+@media (max-width: 768px) {
 
   .Two_parts_1 {
     justify-content: space-evenly;
@@ -1865,13 +1866,13 @@ h4 {
 
   .Upper_part_1 {
     flex-direction: column;
-    height: auto;
     width: 100%;
   }
 
   .Left_part_2 {
     width: 100%;
-    height: auto;
+    margin-top: 180px;
+    margin-bottom: 80px;
   }
 
   .Shop_with_container {
@@ -1891,7 +1892,6 @@ h4 {
   }
 
   .Products_container {
-    height: auto;
     width: 90%;
   }
 
@@ -1911,11 +1911,16 @@ h4 {
   }
 
   .Item_name {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .item_price {
     font-size: 10px;
+  }
+
+  .Add_to_cart_1 {
+    width: 100%;
+    font-size: 7px;
   }
 
 
@@ -1937,8 +1942,10 @@ h4 {
   .Try_our_new_container {
     display: flex;
     flex-direction: column;
-    justify-content: space-around !important;
     justify-content: center;
+    gap: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   .try_our_new_paragraph {
@@ -2032,62 +2039,6 @@ h4 {
   }
 }
 
-@media (min-width: 560px) {
-
-  .Products_container {
-    background-color: rgba(128, 0, 128, 0);
-  }
-
-  .Item_and_price_container {
-    background-color: rgba(0, 128, 0, 0);
-  }
-
-  .The_shoe_container {
-    width: 300px;
-  }
-
-}
-
-
-@media (min-width: 570px) {
-  .Products_container {
-    margin: 0 auto;
-  }
-
-  .Item_name {
-    width: 95%;
-    font-size: 20px;
-  }
-
-  .item_price {
-    width: 95%;
-    font-size: 13px;
-  }
-
-}
-
-
-@media (min-width: 710px) {
-  .Item_name {
-    width: 90%;
-    font-size: 25px;
-  }
-
-  .item_price {
-    width: 90%;
-    font-size: 15px;
-  }
-
-
-  .img_1, .img_2, .img_3, .img_4 {
-    width: 70%;
-  }
-
-  .Choose_product_container {
-    width: 70%;
-  }
-}
-
 
 @media (min-width: 600px) {
 
@@ -2104,39 +2055,33 @@ h4 {
     font-size: 85px;
   }
 
-
-  .Left_part_2 {
-    align-items: flex-start;
-  }
-
   .Products_container {
     width: 80%;
-    margin: 0;
+    margin: 0 auto;
   }
 
-  .Item_name, .item_price {
-    width: 90%;
+  .Item_name {
+    font-size: 23px;
   }
 
 }
 
 
 
+
+
 /*---------------- Big Tablets ---------------*/
 
-@media (min-width: 769px) and (max-width: 1024px) {
-
-  .Left_part_2 {
-    height: auto;
-  }
+@media (min-width: 769px) and (max-width: 1150px) {
 
   .Shop_with_container {
     width: 100%;
   }
 
   .shop_with_header {
-    width: 100%;
+    width: auto;
     font-size: 75px;
+    margin-right: 15%;
   }
 
   .Verve_colored {
@@ -2144,15 +2089,16 @@ h4 {
   }
 
   .Products_container {
-    width: 400px;
+    width: 100%;
   }
+  
   .Item_name {
-    width: 130px;
+    width: 70%;
     font-size: 18px;
   }
 
   .item_price {
-    width: 130px;
+    width: 70%;
     font-size: 12px;
   }
 
@@ -2179,115 +2125,6 @@ h4 {
 }
 
 
-@media (min-width: 1025px) {
-  .Left_part_2 {
-    height: auto;
-  }
-
-  .shop_with_header {
-    font-size: 80px;
-  }
-
-  .Verve_colored {
-    font-size: 75px;
-  }
-
-  .Products_container {
-    width: 95%;    
-  }
-
-  .Item_name {
-    width: 75%;
-    font-size: 23px;
-  }
-
-  .item_price {
-    width: 75%;
-    font-size: 15px;
-  }
-
-
-  .Right_part_2 {
-    height: auto;
-  }
-
-  .Choose_product_container {
-    width: 100%;
-  }
-
-  .img_1, .img_2, .img_3, .img_4 {
-    width: 90%;
-  }
-}
-
-
-@media (min-width: 1120px) and (max-width: 1290px){
-  .Left_part_2 {
-    height: auto;
-  }
-
-  .Products_container {
-    width: 100%;
-  }
-
-  .Item_and_price_container {
-    width: 30%;
-  }
-
-  .The_shoe_container {
-    width: 45%;
-  }
-
-  .Shoe_itself {
-    width: 100%;
-  }
-
-  .Item_name {
-    width: 100%;
-    font-size: 23px;
-  }
-
-  .item_price {
-    width: 100%;
-  }
-
-}
-
-
-
-@media (min-width: 1291px) {
-  .shop_with_header {
-    font-size: 85px;
-  }
-
-  .Verve_colored {
-    font-size: 80px;
-  }
-
-  .Item_and_price_container {
-    width: 45%;
-  }
-
-  .Item_name, .item_price {
-    width: 65%;
-  }
-
-
-
-  .The_shoe_container {
-    width: 55%;
-  }
-
-
-  .Choose_product_container {
-    width: 100%;
-  }
-
-  .img_1, .img_2, .img_3, .img_4 {
-    width: 80%;
-  }
-
-}
 
 
 
