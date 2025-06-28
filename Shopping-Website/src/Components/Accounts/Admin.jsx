@@ -31,13 +31,14 @@ function Admin() {
 
   const [loading, setLoading] = useState(false);
 
-  const [token, setToken] = useState(null);
+  const [adminToken, setAdminToken] = useState(null);
   
 
 
-  // Fetch URLs
+  // Fetch URLs 
   const GlitchUrl = 'https://verve-users.glitch.me/api';
   const loginEndpoint = `${GlitchUrl}/adminlogin`;
+
 
 
 
@@ -108,8 +109,8 @@ function Admin() {
     
         if (response.ok) {
           showDialog('Welcome back Admin!!');
-          localStorage.setItem('username', data.username);
-          setToken(data.token);
+          localStorage.setItem('adminName', data.username);
+          setAdminToken(data.token);
         } else {
           showDialog(data.message);
           console.error('Login failed:', data.message);
@@ -209,9 +210,9 @@ function Admin() {
         </div>
       </div>
       <Dialog autoOpen={autoOpenDialog} 
-              message={dialogMessage} 
-              token={token}
-              onClose={handleDialogClose}
+        message={dialogMessage}
+        adminToken={adminToken}
+        onClose={handleDialogClose}
       />
     </div>
   )

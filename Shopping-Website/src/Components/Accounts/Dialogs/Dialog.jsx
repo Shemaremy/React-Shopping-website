@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./Dialog.css";
 import { useNavigate } from 'react-router-dom';
 
-function Dialog({ autoOpen = false, message = '', token, onClose }) {
+function Dialog({ autoOpen = false, message = '', token, adminToken, onClose }) {
 
   const [modal, setModal] = useState(autoOpen);
   const [mark, setMark] = useState(true);
@@ -28,8 +28,27 @@ function Dialog({ autoOpen = false, message = '', token, onClose }) {
   }
 
 
+
+    // Give the admin short duration to access the portal
+  const handleAdminToken = () => {
+    const expiryTime = new Date().getTime() + 600000; // Set expiry time to 10 minutes
+
+    localStorage.setItem('adminToken', adminToken);
+    localStorage.setItem("adminTokenExpiry", expiryTime.toString());
+
+
+    if (adminToken) {
+      navigate('/updator');
+    } else {
+      alert("Failed to store the token");
+    }
+  }
+
+
+
+
+
   const toggleModal = () => {
-    /*setModal(!modal);*/
     if (onClose) onClose();
 
     if (message === "Password has been reset successfully!!") {
@@ -42,12 +61,7 @@ function Dialog({ autoOpen = false, message = '', token, onClose }) {
         alert("Failed to store the token");
       }
     } else if (message === 'Welcome back Admin!!') {
-      localStorage.setItem('token', token);
-      if (token) {
-        navigate('/updator');
-      } else {
-        alert("Failed to store the token");
-      }
+        handleAdminToken();
     } else if (errorMessages.some(substring => message.includes(substring))) {
       setModal(!modal);
     } else {

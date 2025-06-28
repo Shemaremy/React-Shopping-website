@@ -6,6 +6,7 @@ import DisplayItems from "./commands/DisplayItems";
 import RemoveItems from "./commands/RemoveItems";
 import UpdateItems from "./commands/UpdateItems";
 
+
 function Updator() {
 
   const BodyState = {
@@ -23,22 +24,40 @@ function Updator() {
   const [ bodystate, setBodystate ] = useState(BodyState.HOME)
 
 
-
-  // Use username instead cause of uniqueness, cause tokens aint unique
   useEffect(() => {
     const checkValidity = () => {
-      const token = localStorage.getItem("token");
-      const storedUsername = localStorage.getItem("username");
-      if (storedUsername !== 'Shemaremy') {
-        alert("You are trying to access this page with no token. Login first!!");
+      const adminToken = localStorage.getItem("adminToken");
+      const adminName = localStorage.getItem("adminName");
+      const expiry = localStorage.getItem("adminTokenExpiry");
+
+
+      if (adminToken === null) {
+        //alert("You are trying to access this page with no token. Login first!!");
         navigate("/admin");
       } else {
-        setContent(true);
-        setUsername(storedUsername);
+
+        if (new Date().getTime() > parseInt(expiry)) {
+          // Token expired
+          localStorage.removeItem("adminToken");
+          localStorage.removeItem("adminTokenExpiry");
+          //console.log("Token expired and removed.");
+        } else {
+          setContent(true);
+          setUsername(adminName);
+        }
       }
     };
     checkValidity();
   }, [navigate]);
+
+
+  const handleLogout = async () => {
+    //const token = localStorage.getItem('token');
+    localStorage.removeItem('adminToken');
+    localStorage.removeItem('adminName');
+    navigate('/admin');
+  };
+  
 
 
 
@@ -50,25 +69,29 @@ function Updator() {
       </div>
 
       <div className="action-cards">
-        <div className="card add-card" onClick={() => setBodystate(BodyState.ADD)}>
+        <div className="upd-card add-card" onClick={() => setBodystate(BodyState.ADD)}>
           <h3>Add Items</h3>
           <p>Add new items to the store database.</p>
         </div>
 
-        <div className="card remove-card" onClick={() => setBodystate(BodyState.REMOVE)}>
+        <div className="upd-card remove-card" onClick={() => setBodystate(BodyState.REMOVE)}>
           <h3>Remove Items</h3>
           <p>Delete items that are no longer available.</p>
         </div>
 
-        <div className="card update-card" onClick={() => setBodystate(BodyState.UPDATE)}>
+        <div className="upd-card update-card" onClick={() => setBodystate(BodyState.UPDATE)}>
           <h3>Update Items</h3>
           <p>Update existing items with new details.</p>
         </div>
 
-        <div className="card view-card" onClick={() => setBodystate(BodyState.DISPLAY)}>
+        <div className="upd-card view-card" onClick={() => setBodystate(BodyState.DISPLAY)}>
           <h3>View Items</h3>
           <p>Browse all items in the store database.</p>
         </div>
+
+      </div>
+      <div className="logout-container">
+        <button className="logout-button" onClick={handleLogout}>Logout</button>
       </div>
     </div>
   );
@@ -80,6 +103,7 @@ function Updator() {
   const updateItems = (<UpdateItems/>);
 
   const displayItems = (<DisplayItems/>);
+
 
 
   const bodyContent = (

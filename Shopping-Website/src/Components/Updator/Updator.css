@@ -10,6 +10,7 @@
   position: absolute;
   width: 100%;
   height: auto;
+  min-height: 100vh;
   z-index: 10000;
 }
 
