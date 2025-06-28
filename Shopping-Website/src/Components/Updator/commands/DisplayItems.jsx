@@ -7,12 +7,14 @@ const DisplayItems = () => {
 
   const categories = [
     { key: 'all', label: 'View All', query: '' },
-    { key: 'german_shepherd', label: 'German Shepherds', query: 'German Shepherd' },
-    { key: 'bulldog', label: 'Bulldogs', query: 'Bulldog' },
-    { key: 'husky', label: 'Siberian Huskies', query: 'Siberian Husky' },
-    { key: 'malamute', label: 'Alaskan Malamutes', query: 'Alaskan Malamute' },
-    { key: 'poodle', label: 'Poodles', query: 'Poodle' }
+    { key: 'shoes', label: 'Shoes', query: 'Shoes' },
+    { key: 'hoodies', label: 'Hoodies', query: 'Hoodies' },
+    { key: 'jackets', label: 'Jackets', query: 'Jackets' },
+    { key: 'tshirts', label: 'T-shirts', query: 'T-shirts' },
+    { key: 'pants', label: 'Pants', query: 'Pants' },
+    { key: 'caps', label: 'Caps', query: 'Caps' }
   ];
+
 
 
 
@@ -49,8 +51,7 @@ const DisplayItems = () => {
 
   // -- Function to fetch data --------------------------------------------------------------
 
-  // const URL = 'https://kigali-puppies.glitch.me';
-  const URL = 'https://kigalipuppies.up.railway.app';
+  const URL = 'https://verve-users.glitch.me';
   
 
   const fetchData = async (categoryKey, categoryQuery) => {
@@ -61,7 +62,7 @@ const DisplayItems = () => {
     setButton(categoryKey);
 
     const endpoint = categoryQuery 
-    ? `${URL}/api/admindisplay?type=${encodeURIComponent(categoryQuery)}`
+    ? `${URL}/api/admindisplay?category=${encodeURIComponent(categoryQuery)}`
     : `${URL}/api/admindisplay`;
 
     try {
@@ -70,6 +71,7 @@ const DisplayItems = () => {
       if (response.ok) {
         setProducts(data);
         setTotalItems(data.length);
+        console.log(data)
       } else {
         alert('Failed to fetch items from the store.');
       }
@@ -97,19 +99,15 @@ const DisplayItems = () => {
       {[...products]
         //.sort((a, b) => a.name.localeCompare(b.name)) Names A - Z
         //.sort((a, b) => a.price - b.price) // Price A - Z
-        //.sort((a, b) => a.quantity - b.quantity) // Quantity A - Z
-        .sort((a, b) => a.plug.localeCompare(b.plug))
+        .sort((a, b) => a.quantity - b.quantity) // Quantity A - Z
         .map((item, index) => (
           <div key={index} className="product-card">
             <img src={item.image} alt={item.name} className="product-image" />
             <h3 className="product-name">{item.name}</h3>
-            <p className="product-category">Type: {item.type}</p>
-            <p className="product-age">Age range: {item.age}</p>
-            <p className="product-size">Gender: {item.gender}</p>
+            <p className="product-category">Category: {item.category}</p>
+            <p className="product-size">Size: {item.size}</p>
             <p className="product-quantity">Quantity: {item.quantity}</p>
-            <p className="product-description">Description: {item.description}</p>
             <p className="product-price">Price: {Number(item.price).toLocaleString("en-US")}</p>
-            <p className="product-plug">Plug: {item.plug}</p>
           </div>
       ))}
     </>
