@@ -31,18 +31,6 @@ import cartSvg from './cartPanel/cartSVGs/emptyBox.png';
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 function B({allData}) {
 
 

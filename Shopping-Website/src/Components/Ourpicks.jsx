@@ -12,68 +12,6 @@ import 'aos/dist/aos.css';
 
 import { OurPicksPreloader } from "../Preloader";
 
-/*-------------------------------------------- SUMMER CLOTHES -----------------------------------------------------------------------*/
-
-import shortArmedTshirt from '../images/Tops/Tshirt1.png'; 
-import sweatshort from '../images/pantsandshorts/sweatshorts.png';
-import sandals1 from '../images/bottoms/blue sandals.png';
-
-import shortArmedcollarTshirt from '../images/Tops/Tshirt2.png'; 
-import fitshort from '../images/pantsandshorts/dadshorts.png';
-import coolsandals1 from '../images/bottoms/coolsandals1.png';
-
-import hawaishirt from '../images/Tops/hawaii shirt.png'; 
-import dadshort from '../images/pantsandshorts/otherdadshort.png';
-import coolsandals2 from '../images/bottoms/coolsandals2.png';
-
-/*----------------------------------------------------------------------------------------------------------------------------------------*/
-
-/*---------------------------------------------------------- WINTER CLOTHES ----------------------------------------------------------------*/
-
-import sweater1 from '../images/Tops/sweater1.png'; 
-import cargokhaki1 from '../images/pantsandshorts/cargokhaki1.png';
-import jordan4 from '../images/bottoms/Jordan 4 white.png';
-
-import sweater2 from '../images/Tops/sweater2.png'; 
-import blackjogging from '../images/pantsandshorts/blackjogging.png';
-import jordan12 from '../images/bottoms/Jordan 12 gray.png';
-
-import hoodie1 from '../images/Tops/hoodie1.png'; 
-import cargokhaki3 from '../images/pantsandshorts/cargokhaki1.png';
-import jordan1 from '../images/bottoms/Jordan 1 red.png';
-
-/*----------------------------------------------------------------------------------------------------------------------------------------*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 function OurPicks () {

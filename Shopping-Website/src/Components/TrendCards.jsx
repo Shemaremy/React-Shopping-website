@@ -7,12 +7,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import bluesandals from '../images/Trends/coolsandals1.png';
-import sweater1 from '../images/Trends/sweater1.png';
-import jordan1red from '../images/Trends/Jordan 1 red.png';
-import jordan4white from '../images/Trends/Jordan 4 white.png';
-import tshirt2 from '../images/Trends/Tshirt2.png';
-import jordan13white from '../images/Trends/Jordan 13 white.png';
 
 import greatValue from '../images/verveofferspngs/value.png';
 import world from '../images/verveofferspngs/world.png';

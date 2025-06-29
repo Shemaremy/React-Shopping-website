@@ -5,18 +5,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 
-import one from '../images/autoslides/Jordan 12 white.png';
-import two from '../images/autoslides/Jordan 1 orange.png';
-import three from '../images/autoslides/Jordan 5 white.png';
-import four from '../images/autoslides/Jordan 1 red.png';
-import five from '../images/autoslides/Jordan 4 white.png';
-import six from '../images/autoslides/Jordan 13 white.png';
-import seven from '../images/autoslides/Jordan 4 black.png';
-import eight from '../images/autoslides/Jordan 13 black.png';
-import nine from '../images/autoslides/Jordan 4 white.png';
-
-
-
 
 
 function Itemsautoslide ({shoeData}) {

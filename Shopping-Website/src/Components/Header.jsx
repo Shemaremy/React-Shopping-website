@@ -23,13 +23,6 @@ import "slick-carousel/slick/slick-theme.css";
 
 
 
-import item1 from '../images/Item1.png';
-import item2 from '../images/Item2.png';
-import item3 from '../images/Item3.png';
-import item4 from '../images/Item4.png';
-
-
-
 
 
 
