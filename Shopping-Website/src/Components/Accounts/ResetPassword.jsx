@@ -22,7 +22,7 @@ const ResetPasswordForm = () => {
 
 
 
-  const GlitchUrl = 'https://verve-users.glitch.me/api';
+  const GlitchUrl = 'https://verve-backend-xswh.onrender.com/api';
   const resetEndpoint = `${GlitchUrl}/reset-password`;
 
 

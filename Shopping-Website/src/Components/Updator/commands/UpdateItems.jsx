@@ -87,7 +87,7 @@ const UpdateItems = () => {
 
   // -- Function to fetch data --------------------------------------------------------------
 
-  const URL = 'https://verve-users.glitch.me';
+  const URL = 'https://verve-backend-xswh.onrender.com';
   
 
   const fetchData = async (categoryKey, categoryQuery) => {

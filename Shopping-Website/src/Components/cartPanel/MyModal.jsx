@@ -66,7 +66,7 @@ const addListToStore = async (currentProduct) => {
   const ProductList = { items: currentProduct };
   
   try {
-      const response = await fetch('https://verve-users.glitch.me/api/cart', {
+      const response = await fetch('https://verve-backend-xswh.onrender.com/api/cart', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json',

@@ -32,7 +32,7 @@ function C(){
         setLoading(true);
         async function loginUser() {
             try {
-              const response = await fetch('https://verve-users.glitch.me/submit', {
+              const response = await fetch('https://verve-backend-xswh.onrender.com/submit', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ Email, Message}),

@@ -49,7 +49,7 @@ export const fetchCart = () => {
         /*
         if (token) {
             try {
-                const response = await fetch('https://verve-users.glitch.me/api/cart', {
+                const response = await fetch('https://verve-backend-xswh.onrender.com/api/cart', {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${token}`
@@ -102,7 +102,7 @@ export const removeItem = (index) => {
             /*
             try {
                 // Call your backend API to remove the product from the database
-                const response = await fetch('https://verve-users.glitch.me/api/cart', {
+                const response = await fetch('https://verve-backend-xswh.onrender.com/api/cart', {
                     method: 'DELETE',
                     headers: {
                         'Content-Type': 'application/json',
@@ -178,7 +178,7 @@ export const setSearchTerm = (term) => ({
 export const loginUser = (identifier, password) => {
     return async (dispatch) => {
         try {
-            const response = await fetch('https://verve-users.glitch.me/api/login', {
+            const response = await fetch('https://verve-backend-xswh.onrender.com/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

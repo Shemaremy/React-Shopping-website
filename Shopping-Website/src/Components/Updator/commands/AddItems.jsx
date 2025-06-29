@@ -168,7 +168,7 @@ function AddItems() {
         return { ...item };
       }));
   
-      const response = await fetch('https://verve-users.glitch.me/api/adminadd', {
+      const response = await fetch('https://verve-backend-xswh.onrender.com/api/adminadd', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
