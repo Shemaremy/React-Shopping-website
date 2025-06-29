@@ -8,9 +8,6 @@ import visacard from './cardImages/visacard.jpg'
 import paypal from './cardImages/paypal.jpg'
 
 
-import PhoneInput from 'react-phone-number-input'
-import 'react-phone-number-input/style.css'
-
 
 import {CitySelect, CountrySelect, StateSelect, LanguageSelect } from "react-country-state-city";
 import "react-country-state-city/dist/react-country-state-city.css";
@@ -1354,7 +1351,7 @@ const handleCVCChange = (e) => {
 
 
 
-    // Payment content wrapper
+    // Address & Payment content wrapper
     const Payment = (
         <div className='paying-wrapper'>
             <div className='left_part_pay'>
@@ -1420,13 +1417,12 @@ const handleCVCChange = (e) => {
                             </div>
                             <div className='phone_container'>
                                 <div className='first_name'>
-                                    <PhoneInput placeholder="Enter phone number" 
+                                    <input placeholder="Enter phone number" 
                                         value={PhoneNumber}
                                         name="PhoneNumber" 
                                         onChange={handlePhoneChange} 
-                                        defaultCountry={currentCountry}  
                                         className='phone_input'
-                                        maxLength="12"
+                                        maxLength="10"
                                         required
                                     />
                                     {errors.PhoneNumber && <p className='error'>{errors.PhoneNumber}</p>}
@@ -1474,13 +1470,12 @@ const handleCVCChange = (e) => {
                             {errors.Email && <p className='error'>{errors.Email}</p>}
                         </div>
                         <div className='seven'>
-                            <PhoneInput placeholder="Enter phone number"
+                            <input placeholder="Enter phone number"
                                 value={PhoneNumber}
                                 name="PhoneNumber1"
-                                onChange={handlePhoneChange} 
-                                defaultCountry={currentCountry}  
+                                onChange={handlePhoneChange}  
                                 className='phone_input'
-                                maxLength="12"
+                                maxLength="10"
                                 required
                             />
                             {errors.PhoneNumber && <p className='error'>{errors.PhoneNumber}</p>}
