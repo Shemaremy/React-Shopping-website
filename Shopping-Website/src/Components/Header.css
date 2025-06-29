@@ -82,7 +82,7 @@ h4 {
 }
 
 .desk_links > a:hover {
-  color: rgb(0, 255, 0);
+  color: rgba(52, 226, 96, 0.795);
 }
 
 
@@ -703,7 +703,6 @@ h4 {
   width: 100%;
   height: auto;
   background-color: rgba(210, 105, 30, 0);
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -712,7 +711,7 @@ h4 {
 .Choose_product_container {
   background-color: rgba(255, 255, 0, 0.034);
   height: auto;
-  width: 95%;
+  width: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -721,7 +720,10 @@ h4 {
   border-width: 0px;
   border-radius: 70px;
   margin-top: 5%;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
+
 
 .try_our_new_paragraph {
   font-family: sans-serif;
@@ -753,7 +755,7 @@ h4 {
 
 
 
-.One, .Two, .Three, .Four {
+.eight-items {
   height: auto;
   width: 23%;
   background-color: rgba(165, 42, 42, 0.445);
@@ -765,30 +767,27 @@ h4 {
   border-width: 1px;
   border-radius: 50%;
   cursor: grab;
-  padding-top: 2%;
-  padding-bottom: 2%;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
-.img_1, .img_2, .img_3, .img_4 {
-  width: 80%;
+
+.eight-items .check-out-loader {
+  padding: 20px;
+  display: none;
+}
+
+
+.new-item {
+  width: 100%;
   height: auto; 
   overflow: hidden;
   filter: brightness(90%);
   transition: filter 0.1s ease;
 }
 
-.img_3 {
-  filter: brightness(130%);
-}
 
-.img_3:hover {
-  filter: brightness(150%);
-}
-
-
-.img_1:hover,
-.img_2:hover,
-.img_4:hover {
+.new-item:hover {
   filter: brightness(110%);
 }
 
@@ -800,9 +799,6 @@ h4 {
 
 
 
-.see-more-mobile {
-  display: none;
-}
 
 
 
@@ -1873,7 +1869,6 @@ h4 {
 
   .Left_part_2 {
     width: 100%;
-    margin-top: 180px;
     margin-bottom: 80px;
   }
 
@@ -1980,29 +1975,9 @@ h4 {
     margin: 0 auto;
   }
 
-  .img_1, .img_2, .img_3, .img_4 {
-    width: 90%;
-  }
-
-  .see-more-mobile {
-    display: flex;
-    margin-bottom: 0;
-    color: rgba(128, 255, 116, 0.473);
-    font-size: 10px;
-    padding: 5px;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.178);
-    margin: 0 auto;
-    font-family: sans-serif;
-    text-align: center;
-    background-color: rgba(90, 90, 90, 0.103);
-  }
-
-  .see-more-mobile > i {
-    color: rgba(128, 255, 116, 0.582);
-    margin-left: 5px;
+  .new-item {
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   
@@ -2032,9 +2007,6 @@ h4 {
 /*----------------------------------- ABOVE MY PHONE----------------------------------*/
 
 @media (min-width: 450px) {
-  .img_1, .img_2, .img_3, .img_4 {
-    width: 70%;
-  }
 
   .try_our_new_paragraph {
     font-size: 13px;
@@ -2109,19 +2081,12 @@ h4 {
     height: auto;
   }
 
-  .try_our_new_paragraph {
-    width: 50%;
-    font-size: 10px;
-    margin: 0 auto;
-    margin-left: 110px;
-    margin-bottom: 20px;
-  }
 
   .Choose_product_container {
     width: 100%;
   }
 
-  .img_1, .img_2, .img_3, .img_4 {
+  .new-item {
     width: 90%;
   }
 }

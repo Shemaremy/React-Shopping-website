@@ -29,28 +29,9 @@ import chat from '../images/verveofferspngs/chat.png';
 
 
 
-// Array of trending items
-export const items = [
-    { name: "Leather Sandals", price: "20000", image: bluesandals, stars: 5, sizes: ["M", "L", "XL", "XXL"] },
-    { name: "Gray sweater", price: "25000", image: sweater1, stars: 5, sizes: ["M", "L", "XL", "XXL"] },
-    { name: "Jordan 1 red", price: "28000", image: jordan1red, stars: 2, sizes: ["40", "41", "42", "43"] },
-    { name: "Jordan 4 white", price: "25000", image: jordan4white, stars: 4, sizes: ["40", "41", "42", "43"] },
-    { name: "White Polo T-shirt", price: "17000", image: tshirt2, stars: 4, sizes: ["M", "L", "XL", "XXL"] },
-    { name: "Jordan 13 white", price: "30000", image: jordan13white, stars: 5, sizes: ["40", "41", "42", "43"] }
-];
 
 
-
-
-
-
-
-
-
-
-
-
-const TrendCards = () => {
+const TrendCards = ({allData}) => {
     
     const [activeIndex, setActiveIndex] = useState(0);
     const { handleClick, currentProduct} = useCounter();
@@ -58,6 +39,7 @@ const TrendCards = () => {
 
 
 
+    const trendData = allData;
 
 
 
@@ -165,9 +147,7 @@ const handleImageLoad = () => {
 
 
 const Imageloader = (
-    <div className="loading-container">
-        <div>Loading</div>
-    </div>
+    <div className="loader-spinner"></div>
 );
 
 
@@ -272,7 +252,7 @@ const Imageloader = (
 
 
     // Final rendering and looping
-    const slider = items.slice(0, 6).map((product, index) => (
+    const slider = trendData.slice(0, 6).map((product, index) => (
         <div className="Trend-2" key={index + 1} data-name={product.name}>
             <div className="card-2">{card2Content(product)}</div>
         </div>
@@ -282,7 +262,7 @@ const Imageloader = (
 
 
     // Final rendering and looping
-    const MobileTrends = items.slice(0, 6).map((product, index) => (
+    const MobileTrends = trendData.slice(0, 6).map((product, index) => (
         <div className="Trend-2" key={index + 1} data-name={product.name}>
             <div className="card-2">{card2ContentMobile(product)}</div>
         </div>

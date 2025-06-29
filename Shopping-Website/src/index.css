@@ -1,3 +1,7 @@
+* {
+  font-family: sans-serif;
+}
+
 body {
   position: relative;
   margin: 0;
@@ -65,17 +69,24 @@ B : Footer
   height: 100vh;
   width: 100vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+.loader-panel > p {
+  margin: 0;
+  width: 80%;
+  text-align: center;
+}
+
 .loader-spinner {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border: 2.5px solid #ccc;
   border-top: 2.5px solid #000000; 
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  animation: spin 0.5s linear infinite;
   margin: 50px auto;
 }
 
@@ -98,6 +109,7 @@ B : Footer
   height: 180px;
   width: 200px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -105,4 +117,12 @@ B : Footer
 .image-skimmer > div {
   border: 2.5px solid #cccccc7c;
   border-top: 2.5px solid #0000007c; 
+}
+
+
+
+.wire-icon {
+  font-size: 30px;
+  margin-top: 20px;
+  color: rgb(0, 110, 255);
 }

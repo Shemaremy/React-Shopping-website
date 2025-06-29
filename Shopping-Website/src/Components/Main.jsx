@@ -552,7 +552,7 @@ const settings = {
                     </div>
                     <div className="Lower-part-trend">                    
                         <div className="TrendCards-panel">
-                            <TrendCards/>
+                            <TrendCards allData={allData}/>
                         </div>                        
                     </div>
                 </div>

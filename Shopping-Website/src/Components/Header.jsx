@@ -868,29 +868,41 @@ const handleSuggestionClickMobile = (name) => {
 //------------------------------------------ CHECK OUT CONTENT ----------------------------------------------------
 
 
-const checkImages = [
-  { src: item1, alt: "1", className: "img_1", wrapperClass: "One", display: "flex" },
-  { src: item2, alt: "2", className: "img_2", wrapperClass: "Two", display: "block" },
-  { src: item3, alt: "3", className: "img_3", wrapperClass: "Three", display: "block" },
-  { src: item4, alt: "4", className: "img_4", wrapperClass: "Four", display: "block" },
-];
+const checkImages = shoeData;
 
-const CheckOutContent = (
+const newItems1 = (
   <div className="Choose_product_container">
-    {checkImages.map(({ src, alt, className, wrapperClass, display }, i) => (
-      <div key={i} className={wrapperClass}>
-        {imgloading && <div className='loader-spinner check-out-loader'></div>}
+    {checkImages.slice(0, 4).map(({ image, name }, i) => (
+      <div key={name} className="eight-items">
+        {imgloading && <div className="loader-spinner check-out-loader"></div>}
         <img
-          className={className}
-          src={src}
-          alt={alt}
+          className="new-item"
+          src={image}
+          alt=''
           onLoad={handleImageLoad}
-          style={{ display: imgloading ? 'none' : display }}
         />
       </div>
     ))}
   </div>
 );
+
+
+const newItems2 = (
+  <div className="Choose_product_container">
+    {checkImages.slice(5, 9).map(({ image, name }, i) => (
+      <div key={name} className="eight-items">
+        {imgloading && <div className="loader-spinner check-out-loader"></div>}
+        <img
+          className="new-item"
+          src={image}
+          alt=''
+          onLoad={handleImageLoad}
+        />
+      </div>
+    ))}
+  </div>
+);
+
 
 
 
@@ -1013,9 +1025,8 @@ const handleGotoAccounts = () => {
                     <div className="Right_part_2">
                         <div className="Try_our_new_container">
                             <p className="try_our_new_paragraph" >Check out our new products</p>
-                            {CheckOutContent}
-                            {CheckOutContent}
-                            <p className="see-more-mobile">View more <i className="fa-solid fa-angles-right"></i></p>
+                            {newItems1}
+                            {newItems2}
                         </div>
                         <div className="in_the_sugg">
                             {suggestions.length > 0 && (

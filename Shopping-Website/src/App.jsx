@@ -50,6 +50,30 @@ function AppRoutes() {
   const [allData, setAllData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const pageState = {
+    LOADING: 'loading',
+    NOLOADING: 'noloading',
+    ERROR: 'error'
+  }
+
+  const [loadingStatus, setLoadingStatus] = useState(pageState.LOADING);
+
+
+  // Preloader page for fetching data
+  const preloaderPage = (
+    <div className='loader-panel'>
+      <p>Please be patient, while we're fetching from the database! 🛸</p>
+      <div className='loader-spinner'></div>
+    </div>
+  );
+
+  // Error page for code 500
+  const errorPage = (
+    <div className='loader-panel'>
+      <p>Internal Server error (500), Please try again later!</p>
+      <i className="wire-icon fa-solid fa-plug"></i>
+    </div>
+  );
 
 
 
@@ -71,6 +95,7 @@ function AppRoutes() {
 
 
 
+  // Tracking route the page is on to adjust height
   useEffect(() => {
     if (location.pathname === '/payment') {
       const bodyHeight = document.querySelector('body');
@@ -97,7 +122,6 @@ function AppRoutes() {
 
 
 
-
   // Fetching all data from the database -----------------------
   useEffect(() => {
     const fetchShoeData = async () => {
@@ -105,20 +129,21 @@ function AppRoutes() {
             const response = await fetch('https://verve-backend-xswh.onrender.com/api/admindisplay');
             const data = await response.json();
             if (response.ok) {
-              setIsLoading(false)
+              //setIsLoading(false)
+              setLoadingStatus(pageState.NOLOADING)
               setAllData(data)
             } else {
-                alert('Failed to fetch shoes from the store.');
+              alert('Failed to fetch shoes from the store.');
             }
             }
         catch (error) {
-          setIsLoading(false)
+          //setIsLoading(false)
+          setLoadingStatus(pageState.ERROR)
           console.error('Error fetching products:', error);
         }
     }; 
     fetchShoeData();
   }, []);
-
 
 
   
@@ -127,13 +152,15 @@ function AppRoutes() {
     <Routes>
       <Route path="/" element={
         <>
-          { isLoading ? 
-            (<div className='loader-panel'>
-              <div className='loader-spinner'></div>
-            </div>) :
-            (<>
-                <A shoeData={allData}/>
-                <B allData={allData}/>
+          {
+            loadingStatus === pageState.LOADING ? (
+              preloaderPage
+            ) : loadingStatus === pageState.ERROR ? (
+              errorPage
+            ) : (
+              <>
+                <A shoeData={allData} />
+                <B allData={allData} />
                 <C />
                 <Mobilepanel />
                 <CookieFunction />
