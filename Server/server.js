@@ -667,6 +667,11 @@ app.post('/submit', async (req, res) => {
 
 
 
+// Testing purposes only
+
+app.get('/test', (req, res) => {
+  res.json({ message: 'Verve Server is working!' });   // https://verve-backend-xswh.onrender.com/test
+});
 
 
 
