@@ -36,11 +36,11 @@ function Accounts() {
 
 
   // Fetch URLs
-  const GlitchUrl = 'https://verve-backend-xswh.onrender.com/api';
+  const RenderUrl = 'https://verve-backend-xswh.onrender.com/api';
   
-  const signUpEndpoint = `${GlitchUrl}/users`;
-  const loginEndpoint = `${GlitchUrl}/login`;
-  const forgotEndpoint = `${GlitchUrl}/forgot`;
+  const signUpEndpoint = `${RenderUrl}/users`;
+  const loginEndpoint = `${RenderUrl}/login`;
+  const forgotEndpoint = `${RenderUrl}/forgot`;
 
 
 

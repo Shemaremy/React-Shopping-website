@@ -36,8 +36,8 @@ function Admin() {
 
 
   // Fetch URLs 
-  const GlitchUrl = 'https://verve-backend-xswh.onrender.com/api';
-  const loginEndpoint = `${GlitchUrl}/adminlogin`;
+  const RenderUrl = 'https://verve-backend-xswh.onrender.com/api';
+  const loginEndpoint = `${RenderUrl}/adminlogin`;
 
 
 
